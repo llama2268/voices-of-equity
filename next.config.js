@@ -6,10 +6,6 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
-<<<<<<< HEAD
-    distDir: "../build-output", // Moves .next build output up one directory
-=======
->>>>>>> 0125855 (Go back to a regular export)
     typescript: {
         ignoreBuildErrors: true,
     },
