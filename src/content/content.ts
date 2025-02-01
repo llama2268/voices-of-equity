@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Voices of Equity',
   description: 'Empowering voices for a more equitable future',
 };
-
+//testing push
 export const navigation = {
   mainNav: [
     {
