@@ -2,9 +2,13 @@ import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import { chapters, chaptersContent } from '@/content/chapters';
 import Link from 'next/link';
+import { RelatedContent } from '@/components/RelatedContent';
+import { chapterPagesContent } from '@/content/chapter-pages';
+import { Callout } from '@/components/ui/Callout';
 
 export default function ChaptersPage() {
   const { page, benefits, stats, cta } = chaptersContent;
+  const { chapters } = chapterPagesContent;
   
   return (
     <PageLayout
@@ -123,6 +127,13 @@ export default function ChaptersPage() {
         </div>
       </Section>
 
+      {/* Related Content */}
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto">
+          <RelatedContent {...chapters.relatedContent} />
+        </div>
+      </Section>
+
       {/* Call to Action */}
       <Section variant="highlight" spacing="sm">
         <div className="max-w-3xl mx-auto text-center">
@@ -142,6 +153,21 @@ export default function ChaptersPage() {
               {cta.secondaryButton.text}
             </Link>
           </div>
+        </div>
+      </Section>
+
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto">
+          <Callout
+            eyebrow="Chapter Success Stories"
+            title="Making Real Change"
+            description="Discover how our chapters are creating lasting impact in their communities through innovative programs and dedicated leadership."
+            link={{
+              text: "Read Impact Stories",
+              href: "/what-we-do/impact"
+            }}
+            variant="impact"
+          />
         </div>
       </Section>
     </PageLayout>

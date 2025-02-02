@@ -612,7 +612,7 @@ export const cornellChapter = {
   subtitle: "Our Founding Chapter",
   hero: {
     image: "/cornell-chapter.jpg",
-    logo: "/cornell-logo.jpg",
+    logo: "/cornell-logo.png",
     tagline: "Founded in January 2025, as the inaugural chapter of Voices of Equity"
   },
   introduction: {

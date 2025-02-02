@@ -3,18 +3,30 @@ import { Section } from '@/components/ui/Section';
 import { chapters } from '@/content/chapters';
 import { startChapterContent } from '@/content/start-chapter';
 import Link from 'next/link';
+import { chapterPagesContent } from '@/content/chapter-pages';
+import { RelatedContent } from '@/components/RelatedContent';
+import { Callout } from '@/components/ui/Callout';
 
 export default function StartChapterPage() {
-  const { page, vision, process, cta } = startChapterContent;
+  const { start } = chapterPagesContent;
+  const { vision, process, cta } = startChapterContent;
 
   return (
     <PageLayout
-      title={page.title}
-      subtitle={page.subtitle}
+      title={start.page.title}
+      subtitle={start.page.subtitle}
+      hero
       reduced
     >
-      {/* Vision Section */}
+      {/* Introduction */}
       <Section spacing="sm">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <p className="text-lg text-gray-600 leading-relaxed">
+            {start.page.introduction}
+          </p>
+        </div>
+        
+        {/* Vision Section */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-sm p-8 md:p-12">
             <div className="max-w-3xl mx-auto">
@@ -50,6 +62,21 @@ export default function StartChapterPage() {
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto">
+          <Callout
+            eyebrow="Chapter Resources"
+            title="Tools for Success"
+            description="Access our comprehensive collection of guides, templates, and best practices for running a successful chapter."
+            link={{
+              text: "Explore Resources",
+              href: "/what-we-do/resources"
+            }}
+            variant="resources"
+          />
         </div>
       </Section>
 
@@ -100,6 +127,12 @@ export default function StartChapterPage() {
               </a>
             </div>
           </div>
+        </div>
+      </Section>
+
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto">
+          <RelatedContent {...chapterPagesContent.start.relatedContent} />
         </div>
       </Section>
     </PageLayout>

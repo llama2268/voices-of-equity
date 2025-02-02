@@ -3,6 +3,7 @@ import StatCard from '../components/Stats/StatCard';
 import PageLayout from '../components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import { homePage } from '@/content/content';
+import { Callout } from '@/components/ui/Callout';
 
 export default function HomePage() {
   return (
@@ -40,6 +41,32 @@ export default function HomePage() {
           {homePage.stats.map((stat, index) => (
             <StatCard key={index} {...stat} />
           ))}
+        </div>
+      </Section>
+
+      {/* Callouts */}
+      <Section>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <Callout
+            eyebrow="Latest Impact"
+            title="Healthcare Access Initiative"
+            description="See how our chapters are breaking down barriers to healthcare access across communities."
+            link={{
+              text: "View Impact Stories",
+              href: "/what-we-do/impact"
+            }}
+            variant="impact"
+          />
+          <Callout
+            eyebrow="Featured Resource"
+            title="Health Equity Toolkit"
+            description="Access our comprehensive guide for understanding and addressing health disparities."
+            link={{
+              text: "Browse Resources",
+              href: "/what-we-do/resources"
+            }}
+            variant="resources"
+          />
         </div>
       </Section>
 

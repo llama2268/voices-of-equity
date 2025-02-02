@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { cornellChapter } from '@/content/content';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Callout } from '@/components/ui/Callout';
 
 export default function CornellChapterPage() {
   const { title, subtitle, hero, introduction, initiatives, leadership, impact, getInvolved, contact } = cornellChapter;
@@ -106,6 +107,21 @@ export default function CornellChapterPage() {
               </p>
             </Card>
           ))}
+        </div>
+      </Section>
+
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto">
+          <Callout
+            eyebrow="Success Story"
+            title="Community Health Initiative"
+            description="Learn how our Cornell chapter's health literacy program has impacted over 500 community members."
+            link={{
+              text: "Read Full Story",
+              href: "/what-we-do/impact/cornell-health-literacy"
+            }}
+            variant="impact"
+          />
         </div>
       </Section>
 

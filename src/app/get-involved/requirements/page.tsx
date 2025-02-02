@@ -2,15 +2,28 @@ import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import { chapters } from '@/content/chapters';
 import Link from 'next/link';
+import { chapterPagesContent } from '@/content/chapter-pages';
+import { RelatedContent } from '@/components/RelatedContent';
 
 export default function RequirementsPage() {
-  const { requirements } = chapters;
+  const { requirements } = chapterPagesContent;
 
   return (
-    <PageLayout 
-      title={requirements.title}
-      subtitle={requirements.subtitle}
+    <PageLayout
+      title={requirements.page.title}
+      subtitle={requirements.page.subtitle}
+      hero
+      reduced
     >
+      {/* Introduction */}
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <p className="text-lg text-gray-600 leading-relaxed">
+            {requirements.page.introduction}
+          </p>
+        </div>
+      </Section>
+
       {/* Requirements Overview */}
       <Section>
         <div className="max-w-4xl mx-auto">
@@ -123,6 +136,13 @@ export default function RequirementsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </Section>
+
+      {/* Related Content */}
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto">
+          <RelatedContent {...chapterPagesContent.requirements.relatedContent} />
         </div>
       </Section>
 
