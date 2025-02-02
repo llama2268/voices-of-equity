@@ -1,9 +1,9 @@
 import '../styles/globals.css';
-import { Montserrat, Playfair_Display } from 'next/font/google';
+import { Instrument_Sans, Playfair_Display } from 'next/font/google';
 import NavBar from '../components/Navigation/NavBar';
 import { Footer } from '../components/Layout/Footer';
 
-const montserrat = Montserrat({
+const montserrat = Instrument_Sans({
 	subsets: ['latin'],
 	weight: ['400', '500', '600', '700'],
 	display: 'swap',

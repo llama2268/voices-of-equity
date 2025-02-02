@@ -59,7 +59,7 @@ export function FeaturedArticle({
               </div>
 
               {/* Title & Excerpt */}
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-primary-200 transition-colors">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-secondary-200 transition-colors">
                 {title}
               </h2>
               <p className="text-lg text-white/90 line-clamp-2 mb-4">

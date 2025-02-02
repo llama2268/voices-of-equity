@@ -43,7 +43,7 @@ export function ArticleCard({
         <div className="p-6">
           {/* Category & Meta */}
           <div className="flex items-center justify-between mb-3">
-            <span className="px-3 py-1 text-sm font-medium bg-primary-50 text-primary-600 rounded-full">
+            <span className="px-3 py-1 text-sm font-medium bg-secondary-50 text-secondary-600 rounded-lg">
               {category}
             </span>
             <div className="text-sm text-gray-500">

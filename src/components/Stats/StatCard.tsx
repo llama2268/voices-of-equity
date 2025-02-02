@@ -6,11 +6,15 @@ interface StatCardProps {
 
 const StatCard = ({ value, label, description }: StatCardProps) => {
   return (
-    <div className="px-6 py-8 bg-white rounded-none border-t-4 border-[#498B86] shadow-sm">
-      <dt className="text-sm font-medium text-[#607AD4] uppercase tracking-wide">{label}</dt>
-      <dd className="mt-2 text-4xl font-bold text-gradient-primary">{value}</dd>
+    <div className="text-center p-6 bg-white rounded-lg shadow-sm group hover:shadow-md transition-all">
+      <dt className="text-sm font-medium text-primary-600 uppercase tracking-wide">{label}</dt>
+      <dd className="mt-2 text-4xl font-bold text-gray-900">
+        <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+          {value}
+        </span>
+      </dd>
       {description && (
-        <p className="mt-4 text-base text-gray-600">{description}</p>
+        <p className="mt-4 text-base text-gray-600 group-hover:text-secondary-700 transition-colors">{description}</p>
       )}
     </div>
   );

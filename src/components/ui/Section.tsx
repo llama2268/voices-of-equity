@@ -1,56 +1,52 @@
 import { cn } from '@/lib/utils';
+import { Container } from '@/components/ui/Container';
 
-interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+interface SectionProps {
   children: React.ReactNode;
   variant?: 'default' | 'alternate' | 'highlight';
-  spacing?: 'sm' | 'md' | 'lg' | 'xl';
-  contained?: boolean;
+  spacing?: 'sm' | 'default' | 'lg';
+  className?: string;
+  title: string;
+  subtitle: string;
+  description?: string;
 }
 
 export function Section({ 
   children, 
-  variant = 'default', 
-  spacing = 'lg',
-  contained = true,
+  variant = 'default',
+  spacing = 'default',
   className,
-  ...props 
+  title,
+  subtitle,
+  description
 }: SectionProps) {
-  const sectionClasses = cn(
-    // Base styles
-    'w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw]',
-    
-    // Refined spacing variants
-    {
-      'py-8 md:py-12': spacing === 'sm',
-      'py-12 md:py-16': spacing === 'md',
-      'py-16 md:py-20': spacing === 'lg',
-      'py-20 md:py-24': spacing === 'xl',
-    },
-    
-    // Updated background variants
-    {
-      'bg-white': variant === 'default',
-      'bg-gray-50': variant === 'alternate',
-      'bg-gradient-to-br from-primary-50/80 to-primary-100/80': variant === 'highlight',
-    },
-    
-    className
-  );
-
-  const contentClasses = cn(
-    // Content container styles
-    contained && [
-      'max-w-7xl mx-auto',
-      'px-4 sm:px-6 lg:px-8', // Consistent horizontal padding
-      'w-full'
-    ]
-  );
-
   return (
-    <section className={sectionClasses} {...props}>
-      <div className={contentClasses}>
+    <section className={cn(
+      'w-full',
+      {
+        'bg-white': variant === 'default',
+        'bg-gray-50': variant === 'alternate',
+        'bg-gradient-to-br from-white to-gray-50': variant === 'highlight', // Updated gradient
+      },
+      {
+        'py-8': spacing === 'sm',
+        'py-16': spacing === 'default',
+        'py-24': spacing === 'lg',
+      },
+      className
+    )}>
+      <Container>
+        <div className="text-center mb-12">
+          <p className="font-serif text-lg text-secondary-600 mb-3 italic">
+            {subtitle}
+          </p>
+          <h2 className="text-3xl font-bold mb-4">{title}</h2>
+          {description && (
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{description}</p>
+          )}
+        </div>
         {children}
-      </div>
+      </Container>
     </section>
   );
 } 

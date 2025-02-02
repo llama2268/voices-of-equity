@@ -1,6 +1,6 @@
 'use client'
 
-import PageLayout from '../../../components/Layout/PageLayout';
+import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import VideoPlayer from '../../../components/Video/VideoPlayer';
 import { whatWeDo } from '@/content/content';

@@ -38,12 +38,20 @@ const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
 
           {/* Right side CTA */}
           <div className="hidden lg:block">
-            <a
-              href="/get-involved/chapters"
-              className="inline-block px-8 py-4 text-lg font-semibold bg-[#E4826D] hover:bg-[#d97661] text-white transition-colors duration-300"
-            >
-              Join Our Movement
-            </a>
+            <div className="flex gap-4 justify-center">
+              <a
+                href="/get-involved/chapters"
+                className="px-8 py-4 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg font-semibold transition-colors"
+              >
+                Join Our Movement
+              </a>
+              <a
+                href="/who-we-are/mission"
+                className="px-8 py-4 bg-white hover:bg-gray-50 text-primary-600 font-semibold rounded-lg transition-colors border-2 border-primary-100"
+              >
+                Learn More
+              </a>
+            </div>
           </div>
         </div>
       </div>
