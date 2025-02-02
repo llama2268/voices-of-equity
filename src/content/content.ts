@@ -90,8 +90,13 @@ export const homePage = {
 export const whoWeAre = {
   mission: {
     title: "Our Mission",
+    header1: "VOICES OF EQUITY IS AT THE FOREFRONT OF ADVANCING HEALTH EQUITY.",
     subtitle: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives.",
-    content: "We are a nationwide organization committed to addressing systemic health disparities. Through a growing network of empowered students, healthcare professionals, and community leaders, we create opportunities for education, share impactful stories, and develop actionable initiatives that drive meaningful change."
+    content: "We are a nationwide organization committed to addressing systemic health disparities. Through a growing network of empowered students, healthcare professionals, and community leaders, we create opportunities for education, share impactful stories, and develop actionable initiatives that drive meaningful change.",
+    header2: "OUR MISSION",
+    content2: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives.",
+    header3: "OUR VISION",
+    content3: " To build a nationwide network of students, healthcare professionals, and community leaders working together to address systemic health disparities and create lasting change in communities across the country"
   },
   history: {
     title: "Our History",
@@ -138,7 +143,7 @@ export const whoWeAre = {
         id: "caleb-suh",
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/team/caleb-suh.jpg",
+        image: "/caleb-suh.jpg",
         shortBio: "Caleb has dedicated his career to advancing equity in healthcare...",
         fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
@@ -148,6 +153,19 @@ export const whoWeAre = {
 
         Caleb's diverse experiences in leadership, healthcare, and research inform his work at Voices of Equity, where he remains committed to creating sustainable, community-driven solutions that address systemic inequities.`,
         email: "caleb@voicesofequity.org"
+      },
+      {
+        id:"zaid-al-shoha",
+        name:"Zaid Al-Shoha",
+        role: "Co-Founder and Co-Director",
+        image: "/zaid.jpg",
+        shortBio: "Zaid is dedicated to addressing systemic health disparities...",
+        fullBio: `Zaid Al-Shoha is an undergraduate student at Cornell University, studying Biological Sciences. Passionate about medical research and leveraging leadership to drive positive change, Zaid is dedicated to addressing systemic health disparities and empowering future healthcare leaders through education and advocacy. As the Co-Founder of Voices of Equity, Zaid combines his interest in academic 
+        
+        medicine and surgery with his commitment to fostering health equity. He plays a pivotal role in developing impactful educational content, mobilizing campus chapters across the U.S., and building partnerships with influential public health leaders. Through social media engagement and community-based initiatives, Zaid inspires university students to take action and create meaningful change in their 
+        
+        local communities.`,
+        email: "zaid@voicesofequity.org"
       }
     ]
   }

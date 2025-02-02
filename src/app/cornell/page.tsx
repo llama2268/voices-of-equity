@@ -9,7 +9,13 @@ export default function CornellChapterPage() {
       title={title}
       subtitle={subtitle}
     >
-      {/* Cornell chapter specific content will be added here */}
+      <h1 className="text-center">The Cornell University Voices of Equity chapter was founded in January 2025, as our founding chapter.</h1>
+      <div className="text-center">
+        Events
+      </div>
+      <div className="text-center">
+        Meet The Executive Board
+      </div>
     </PageLayout>
   );
 } 
