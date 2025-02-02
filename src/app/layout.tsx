@@ -1,16 +1,20 @@
 import '../styles/globals.css';
-import { Inter, Montserrat } from 'next/font/google';
+import { Montserrat, Playfair_Display } from 'next/font/google';
 import NavBar from '../components/Navigation/NavBar';
+import { Footer } from '../components/Layout/Footer';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
 	weight: ['400', '500', '600', '700'],
 	display: 'swap',
+	variable: '--font-montserrat',
 });
 
-const inter = Inter({
+const playfair = Playfair_Display({
 	subsets: ['latin'],
+	weight: ['400', '700'],
 	display: 'swap',
+	variable: '--font-playfair',
 });
 
 export const metadata = {
@@ -24,10 +28,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body className={`${montserrat.className}`}>
+		<html lang="en" className="h-full">
+			<body className={`
+				${montserrat.variable} 
+				${playfair.variable}
+				min-h-full flex flex-col
+				font-display
+			`}>
 				<NavBar />
-				{children}
+				<main className="flex-grow">
+					{children}
+				</main>
+				<Footer />
 			</body>
 		</html>
 	);

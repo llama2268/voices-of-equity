@@ -90,17 +90,17 @@ const NavBar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <div key={item.title} className="relative group/item">
+              <div key={item.title} className="h-20 flex items-center">
                 {item.submenu ? (
-                  <>
-                    <button className={`py-2 font-medium text-sm transition-colors ${
+                  <div className="relative group/item h-full flex items-center">
+                    <button className={`h-full px-2 font-medium text-sm transition-colors ${
                       isScrolled || !isHomePage ? 'text-[#607AD4]' : 'text-white group-hover:text-[#607AD4]'
                     }`}>
                       {item.title}
                     </button>
-                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-none shadow-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all duration-200">
+                    <div className="absolute left-0 w-48 bg-white rounded-none shadow-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all duration-200 top-full">
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.title}
@@ -111,15 +111,16 @@ const NavBar = () => {
                         </Link>
                       ))}
                     </div>
-                  </>
+                  </div>
                 ) : (
-                  <button className={`py-2 font-medium text-sm transition-colors ${
-                    isScrolled || !isHomePage ? 'text-[#607AD4]' : 'text-white group-hover:text-[#607AD4]'
-                  }`}>
-                    <Link href={item.href!} className="block">
-                      {item.title}
-                    </Link>
-                  </button>
+                  <Link 
+                    href={item.href!}
+                    className={`h-full px-2 flex items-center font-medium text-sm transition-colors ${
+                      isScrolled || !isHomePage ? 'text-[#607AD4]' : 'text-white group-hover:text-[#607AD4]'
+                    }`}
+                  >
+                    {item.title}
+                  </Link>
                 )}
               </div>
             ))}

@@ -1,6 +1,14 @@
 export const siteConfig = {
   name: 'Voices of Equity',
   description: 'Empowering voices for a more equitable future',
+  links: {
+    apply: '/get-involved/chapters',
+    contact: 'mailto:contact@voicesofequity.org',
+    social: {
+      instagram: 'https://instagram.com/voicesofequity',
+      linkedin: 'https://linkedin.com/company/voices-of-equity',
+    }
+  }
 };
 //testing push
 export const navigation = {
@@ -16,8 +24,7 @@ export const navigation = {
     {
       title: 'WHAT WE DO',
       submenu: [
-        { title: 'Our Voices', href: '/what-we-do/voices' },
-        { title: 'Our Impact', href: '/what-we-do/impact' },
+        { title: 'Voices & Impact', href: '/what-we-do/news' },
         { title: 'Our Resources', href: '/what-we-do/resources' },
       ],
     },
@@ -34,6 +41,27 @@ export const navigation = {
       href: '/cornell',
     },
   ],
+  footerNav: {
+    about: [
+      { title: 'Mission', href: '/who-we-are/mission' },
+      { title: 'Team', href: '/who-we-are/team' },
+      { title: 'History', href: '/who-we-are/history' }
+    ],
+    resources: [
+      { title: 'Educational Content', href: '/what-we-do/resources' },
+      { title: 'Research', href: '/what-we-do/research' },
+      { title: 'Impact Reports', href: '/what-we-do/impact' }
+    ],
+    getInvolved: [
+      { title: 'Start a Chapter', href: '/get-involved/start' },
+      { title: 'Requirements', href: '/get-involved/requirements' },
+      { title: 'Apply', href: '/get-involved/apply' }
+    ],
+    legal: [
+      { title: 'Privacy Policy', href: '/legal/privacy' },
+      { title: 'Terms of Service', href: '/legal/terms' }
+    ]
+  }
 };
 
 export const homePage = {
@@ -41,10 +69,18 @@ export const homePage = {
     title: "Amplifying Voices for Change",
     subtitle: "Building a more equitable future, one voice at a time",
     description: "We're a non-profit organization dedicated to promoting equity and inclusion through education, advocacy, and community engagement.",
-    ctaButton: {
-      text: "Join Our Movement",
-      href: "/get-involved/chapters"
-    }
+    ctaButtons: [
+      {
+        text: 'Join Our Movement',
+        href: '/get-involved/chapters',
+        primary: true
+      },
+      {
+        text: 'Learn More',
+        href: '/who-we-are/mission',
+        primary: false
+      }
+    ]
   },
   stats: [
     {
@@ -84,19 +120,91 @@ export const homePage = {
       description: "Amplifying voices and driving policy changes for a more equitable society.",
       icon: "📢"
     }
-  ]
+  ],
+  mission: {
+    quote: "We believe in creating a world where every voice is heard, every story matters, and every individual has the opportunity to thrive."
+  }
 };
 
 export const whoWeAre = {
   mission: {
     title: "Our Mission",
-    header1: "VOICES OF EQUITY IS AT THE FOREFRONT OF ADVANCING HEALTH EQUITY.",
-    subtitle: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives.",
-    content: "We are a nationwide organization committed to addressing systemic health disparities. Through a growing network of empowered students, healthcare professionals, and community leaders, we create opportunities for education, share impactful stories, and develop actionable initiatives that drive meaningful change.",
-    header2: "OUR MISSION",
-    content2: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives.",
-    header3: "OUR VISION",
-    content3: " To build a nationwide network of students, healthcare professionals, and community leaders working together to address systemic health disparities and create lasting change in communities across the country"
+    subtitle: "Building a more equitable future in healthcare",
+    content: {
+      introduction: {
+        mainHeading: "VOICES OF EQUITY IS AT THE FOREFRONT OF ADVANCING HEALTH EQUITY",
+        text: "We are a nationwide organization committed to addressing systemic health disparities through education, advocacy, and community engagement. Through our growing network of empowered students, healthcare professionals, and community leaders, we create opportunities for meaningful change in healthcare accessibility and outcomes."
+      },
+      mission: {
+        heading: "OUR MISSION",
+        text: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives.",
+        keyPoints: [
+          {
+            title: "Education",
+            description: "Providing comprehensive education on health equity issues and their systemic causes",
+            icon: "📚"
+          },
+          {
+            title: "Advocacy",
+            description: "Amplifying voices and stories from affected communities",
+            icon: "📢"
+          },
+          {
+            title: "Action",
+            description: "Creating tangible initiatives that drive real change in communities",
+            icon: "✨"
+          }
+        ]
+      },
+      vision: {
+        heading: "OUR VISION",
+        text: "To build a nationwide network of students, healthcare professionals, and community leaders working together to address systemic health disparities and create lasting change in communities across the country.",
+        stats: [
+          {
+            number: "50+",
+            label: "University Chapters",
+            description: "Across the United States"
+          },
+          {
+            number: "10,000+",
+            label: "Active Members",
+            description: "Working for change"
+          },
+          {
+            number: "100+",
+            label: "Community Partners",
+            description: "Supporting our mission"
+          }
+        ]
+      },
+      values: {
+        heading: "OUR CORE VALUES",
+        items: [
+          {
+            title: "Equity",
+            description: "Ensuring fair access to healthcare resources and opportunities"
+          },
+          {
+            title: "Education",
+            description: "Empowering through knowledge and understanding"
+          },
+          {
+            title: "Community",
+            description: "Building strong networks for lasting change"
+          },
+          {
+            title: "Action",
+            description: "Converting awareness into meaningful initiatives"
+          }
+        ]
+      },
+      callToAction: {
+        heading: "Join Our Mission",
+        text: "Together, we can create a more equitable healthcare system for all.",
+        buttonText: "Get Involved",
+        buttonLink: "/get-involved/chapters"
+      }
+    }
   },
   history: {
     title: "Our History",
@@ -172,17 +280,285 @@ export const whoWeAre = {
 };
 
 export const whatWeDo = {
+  news: {
+    title: "Voices & Impact",
+    subtitle: "Deep dives into health equity issues and updates from our community",
+    featured: {
+      title: "The Hidden Cost of Healthcare",
+      excerpt: "An in-depth analysis of how indirect costs create barriers to healthcare access",
+      author: "Dr. Sarah Chen",
+      date: "2024-02-15",
+      image: "/featured-memo.jpg",
+      category: "Analysis",
+      readTime: "12 min read",
+      slug: "hidden-cost-healthcare",
+      type: "memo"
+    },
+    articles: [
+      {
+        title: "Rural Healthcare Deserts",
+        type: "memo",
+        excerpt: "Examining the growing crisis of healthcare access in rural America",
+        content: `
+          <h2>The Growing Crisis</h2>
+          <p>Rural communities across America are facing an unprecedented healthcare crisis...</p>
+          
+          <blockquote>
+            "In my county, the nearest hospital is over 50 miles away. That's not just inconvenient—it's dangerous."
+            <cite>- Sarah Johnson, Rural Health Advocate</cite>
+          </blockquote>
+
+          <h2>Key Findings</h2>
+          <ul>
+            <li>Over 130 rural hospitals have closed since 2010</li>
+            <li>20% of Americans live in rural areas but only 10% of physicians practice there</li>
+          </ul>
+        `,
+        author: {
+          name: "Dr. Michael Roberts",
+          role: "Healthcare Policy Researcher",
+          image: "/authors/michael-roberts.jpg"
+        },
+        date: "2024-02-10",
+        image: "/memos/rural-healthcare.jpg",
+        category: "Research",
+        readTime: "8 min read",
+        slug: "rural-healthcare-deserts",
+        callout: {
+          type: "statistic",
+          content: "60% of rural Americans live in healthcare deserts",
+          description: "Areas with limited access to primary care facilities"
+        }
+      },
+      {
+        title: "New Partnership Launches",
+        type: "news",
+        excerpt: "Voices of Equity partners with major healthcare providers to launch mobile clinics",
+        content: `
+          <h2>New Partnership</h2>
+          <p>Voices of Equity is excited to announce a new partnership with major healthcare providers...</p>
+          
+          <div class="event-details">
+            <p>Date: February 20, 2024</p>
+            <p>Location: Various locations across the country</p>
+          </div>
+        `,
+        date: "2024-02-20",
+        image: "/news/partnership-launch.jpg",
+        category: "Announcement",
+        slug: "healthcare-partnership-2024",
+        highlight: {
+          type: "cta",
+          text: "Learn More",
+          link: "/what-we-do/news"
+        }
+      }
+    ]
+  },
   voices: {
     title: "Our Voices",
-    subtitle: "Stories that inspire change"
+    subtitle: "Deep dives into health equity issues",
+    featured: {
+      title: "The Hidden Cost of Healthcare",
+      excerpt: "An in-depth analysis of how indirect costs create barriers to healthcare access",
+      author: "Dr. Sarah Chen",
+      date: "2024-02-15",
+      image: "/featured-memo.jpg",
+      category: "Analysis",
+      readTime: "12 min read",
+      slug: "hidden-cost-healthcare"
+    },
+    memos: [
+      {
+        title: "Rural Healthcare Deserts",
+        excerpt: "Examining the growing crisis of healthcare access in rural America",
+        content: `
+          <h2>The Growing Crisis</h2>
+          <p>Rural communities across America are facing an unprecedented healthcare crisis...</p>
+          
+          <blockquote>
+            "In my county, the nearest hospital is over 50 miles away. That's not just inconvenient—it's dangerous."
+            <cite>- Sarah Johnson, Rural Health Advocate</cite>
+          </blockquote>
+
+          <h2>Key Findings</h2>
+          <ul>
+            <li>Over 130 rural hospitals have closed since 2010</li>
+            <li>20% of Americans live in rural areas but only 10% of physicians practice there</li>
+          </ul>
+        `,
+        author: {
+          name: "Dr. Michael Roberts",
+          role: "Healthcare Policy Researcher",
+          image: "/authors/michael-roberts.jpg"
+        },
+        date: "2024-02-10",
+        image: "/memos/rural-healthcare.jpg",
+        category: "Research",
+        readTime: "8 min read",
+        slug: "rural-healthcare-deserts",
+        callout: {
+          type: "statistic",
+          content: "60% of rural Americans live in healthcare deserts",
+          description: "Areas with limited access to primary care facilities"
+        }
+      },
+      {
+        title: "Language Barriers in Healthcare",
+        excerpt: "How language differences impact patient outcomes and access to care",
+        content: `
+          <h2>Communication is Critical</h2>
+          <p>For millions of Americans, language barriers represent a significant obstacle...</p>
+          
+          <aside class="case-study">
+            <h3>Case Study: Community Solutions</h3>
+            <p>In Boston's Chinatown, a innovative program is bridging the gap...</p>
+          </aside>
+        `,
+        author: {
+          name: "Maria Garcia, MPH",
+          role: "Health Equity Researcher",
+          image: "/authors/maria-garcia.jpg"
+        },
+        date: "2024-02-01",
+        image: "/memos/language-barriers.jpg",
+        category: "Case Study",
+        readTime: "15 min read",
+        slug: "language-barriers-healthcare",
+        callout: {
+          type: "quote",
+          content: "When you can't communicate your symptoms clearly, every hospital visit becomes a source of anxiety",
+          author: "Anonymous Patient"
+        }
+      }
+    ]
   },
   impact: {
     title: "Our Impact",
-    subtitle: "Making a difference in communities across the nation"
+    subtitle: "News and updates from our community",
+    featured: {
+      title: "New Partnership Brings Healthcare to Underserved Communities",
+      excerpt: "Voices of Equity partners with major healthcare providers to launch mobile clinics",
+      date: "2024-02-20",
+      image: "/news/partnership-launch.jpg",
+      category: "Announcement",
+      slug: "healthcare-partnership-2024"
+    },
+    news: [
+      {
+        title: "Student-Led Initiative Breaks Down Barriers",
+        excerpt: "Cornell chapter's innovative program reaches milestone of 1,000 community members served",
+        content: `
+          <p>What started as a small student initiative has grown into...</p>
+          
+          <div class="impact-metric">
+            <h3>1,000+</h3>
+            <p>Community members served</p>
+          </div>
+        `,
+        date: "2024-02-18",
+        image: "/news/student-initiative.jpg",
+        category: "Success Story",
+        slug: "student-initiative-milestone",
+        highlight: {
+          type: "metric",
+          value: "1,000+",
+          label: "Lives Impacted",
+          description: "Through direct community engagement"
+        }
+      },
+      {
+        title: "Health Equity Summit 2024 Announced",
+        excerpt: "Annual gathering to focus on technological innovations in healthcare access",
+        content: `
+          <h2>Mark Your Calendars</h2>
+          <p>The upcoming Health Equity Summit will bring together...</p>
+          
+          <div class="event-details">
+            <p>Date: June 15-17, 2024</p>
+            <p>Location: Cornell University</p>
+          </div>
+        `,
+        date: "2024-02-15",
+        image: "/news/summit-2024.jpg",
+        category: "Event",
+        slug: "health-equity-summit-2024",
+        highlight: {
+          type: "cta",
+          text: "Register Now",
+          link: "/events/summit-2024"
+        }
+      }
+    ]
   },
   resources: {
     title: "Our Resources",
-    subtitle: "Tools for change"
+    subtitle: "Educational materials and research on health equity",
+    sections: {
+      videos: {
+        eyebrow: "Educational Content",
+        heading: "Learn Through Stories",
+        description: "Explore our curated collection of videos highlighting key issues and solutions in health equity"
+      },
+      research: {
+        eyebrow: "Academic Research",
+        heading: "Evidence-Based Insights",
+        description: "Discover peer-reviewed research and analysis on health equity challenges and solutions"
+      },
+      guides: {
+        eyebrow: "Practical Tools",
+        heading: "Implementation Guides",
+        description: "Step-by-step resources to help you make a difference in your community"
+      }
+    },
+    quote: {
+      text: "Knowledge is the first step toward change. These resources are your gateway to understanding and action.",
+      author: "Voices of Equity"
+    },
+    content: {
+      videos: [
+        {
+          videoId: "your_video_id_here",
+          title: "Understanding Health Equity",
+          description: "An introduction to health equity and why it matters in today's healthcare landscape."
+        },
+        {
+          videoId: "another_video_id",
+          title: "Healthcare Disparities in Practice",
+          description: "Real-world examples of healthcare disparities and their impact on communities."
+        }
+      ],
+      researchPapers: [
+        {
+          title: "Health Equity in Urban Communities",
+          authors: "Smith, J., et al.",
+          year: "2023",
+          description: "A comprehensive study of health disparities in urban settings.",
+          link: "/papers/health-equity-urban.pdf"
+        },
+        {
+          title: "Social Determinants of Health Access",
+          authors: "Johnson, M., et al.",
+          year: "2023",
+          description: "Analysis of social factors affecting healthcare access.",
+          link: "/papers/social-determinants.pdf"
+        }
+      ],
+      guides: [
+        {
+          title: "Chapter Leadership Guide",
+          description: "Complete guide for running a successful VoE chapter.",
+          icon: "📚",
+          link: "/guides/chapter-leadership.pdf"
+        },
+        {
+          title: "Health Equity Advocacy Toolkit",
+          description: "Resources and strategies for effective advocacy.",
+          icon: "🔧",
+          link: "/guides/advocacy-toolkit.pdf"
+        }
+      ]
+    }
   }
 };
 
@@ -233,5 +609,168 @@ export const getInvolved = {
 
 export const cornellChapter = {
   title: "The Cornell Chapter",
-  subtitle: "Leading change at Cornell University"
+  subtitle: "Our Founding Chapter",
+  hero: {
+    image: "/cornell-chapter.jpg",
+    logo: "/cornell-logo.jpg",
+    tagline: "Founded in January 2025, as the inaugural chapter of Voices of Equity"
+  },
+  introduction: {
+    heading: "Where It All Began",
+    text: "The Cornell University chapter represents the foundation of Voices of Equity's mission. As our founding chapter, it set the standard for how student organizations can drive meaningful change in healthcare equity.",
+    stats: [
+      {
+        number: "100+",
+        label: "Active Members",
+        description: "Dedicated students driving change"
+      },
+      {
+        number: "20+",
+        label: "Events Hosted",
+        description: "Engaging the Cornell community"
+      },
+      {
+        number: "5",
+        label: "Partner Organizations",
+        description: "Building strong local connections"
+      }
+    ]
+  },
+  initiatives: {
+    heading: "Our Key Initiatives",
+    description: "Leading the way in health equity advocacy and education",
+    items: [
+      {
+        title: "Health Equity Symposium",
+        description: "Annual conference bringing together healthcare leaders, researchers, and students",
+        image: "/symposium.jpg",
+        date: "Spring 2025"
+      },
+      {
+        title: "Community Health Workshop Series",
+        description: "Monthly workshops addressing local health disparities",
+        image: "/workshop.jpg",
+        date: "Ongoing"
+      },
+      {
+        title: "Research Mentorship Program",
+        description: "Connecting students with faculty for health equity research",
+        image: "/research.jpg",
+        date: "Fall 2025"
+      }
+    ]
+  },
+  leadership: {
+    heading: "Executive Board",
+    description: "Meet the team leading our founding chapter",
+    members: [
+      {
+        name: "Caleb T. Suh",
+        role: "Co-Founder & Co-Director",
+        image: "/caleb-suh.jpg",
+        bio: "Dedicated to advancing equity in healthcare through leadership and research",
+        link: "/who-we-are/team/caleb-suh"
+      },
+      {
+        name: "Zaid Al-Shoha",
+        role: "Co-Founder & Co-Director",
+        image: "/zaid.jpg",
+        bio: "Passionate about medical research and driving positive change",
+        link: "/who-we-are/team/zaid-al-shoha"
+      }
+    ]
+  },
+  impact: {
+    heading: "Our Impact at Cornell",
+    metrics: [
+      {
+        category: "Education",
+        achievements: [
+          "Hosted 12 educational workshops",
+          "Reached 500+ students through events",
+          "Partnered with 3 academic departments"
+        ]
+      },
+      {
+        category: "Community Outreach",
+        achievements: [
+          "Established partnerships with local clinics",
+          "Conducted health literacy programs",
+          "Organized volunteer programs"
+        ]
+      },
+      {
+        category: "Research",
+        achievements: [
+          "Published 2 research papers",
+          "Presented at 3 conferences",
+          "Launched student research initiative"
+        ]
+      }
+    ]
+  },
+  getInvolved: {
+    heading: "Join the Cornell Chapter",
+    description: "Be part of our mission to create lasting change",
+    applicationInfo: {
+      nextDeadline: "February 1, 2025",
+      requirements: [
+        "Current Cornell University student",
+        "Passion for health equity",
+        "Commitment to community service"
+      ],
+      applicationLink: "/get-involved/cornell-application"
+    },
+    upcomingEvents: [
+      {
+        name: "Spring Information Session",
+        date: "January 25, 2025",
+        location: "Warren Hall B45",
+        time: "5:00 PM EST",
+        registrationLink: "/events/spring-info-session"
+      }
+    ]
+  },
+  contact: {
+    email: "cornell@voicesofequity.org",
+    socialMedia: {
+      instagram: "@voecornell",
+      linkedin: "/company/voe-cornell"
+    },
+    location: "Cornell University, Ithaca, NY 14853"
+  }
+};
+
+export const callToAction = {
+  primary: {
+    text: 'Join Our Movement',
+    href: '/get-involved/chapters'
+  },
+  secondary: {
+    text: 'Learn More',
+    href: '/who-we-are/mission'
+  }
+};
+
+export const footer = {
+  tagline: "Building a more equitable future together",
+  newsletter: {
+    title: "Stay Updated",
+    description: "Join our newsletter to receive updates about our work and impact.",
+    buttonText: "Subscribe"
+  },
+  bottomText: "© 2024 Voices of Equity. All rights reserved."
+};
+
+export const errorPages = {
+  404: {
+    title: "Page Not Found",
+    message: "The page you're looking for doesn't exist or has been moved.",
+    buttonText: "Go Home"
+  },
+  500: {
+    title: "Server Error",
+    message: "Something went wrong on our end. Please try again later.",
+    buttonText: "Try Again"
+  }
 }; 

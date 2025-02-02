@@ -1,28 +1,31 @@
 interface PageLayoutProps {
-  children: React.ReactNode;
-  title: string;
+  title?: string;
   subtitle?: string;
-  className?: string;
+  children: React.ReactNode;
 }
 
-const PageLayout = ({ children, title, subtitle, className = '' }: PageLayoutProps) => {
+export default function PageLayout({ title, subtitle, children }: PageLayoutProps) {
   return (
-    <div className={`min-h-screen pt-16 ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-            {title}
-          </h1>
-          {subtitle && (
-            <p className="mt-3 text-xl text-gray-500">
-              {subtitle}
-            </p>
-          )}
-        </div>
+    <div className="w-screen overflow-x-hidden">
+      {(title || subtitle) && (
+        <header className="w-full bg-white pt-24 pb-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {title && (
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                {title}
+              </h1>
+            )}
+            {subtitle && (
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                {subtitle}
+              </p>
+            )}
+          </div>
+        </header>
+      )}
+      <main className="w-full min-h-screen">
         {children}
-      </div>
+      </main>
     </div>
   );
-};
-
-export default PageLayout; 
+} 

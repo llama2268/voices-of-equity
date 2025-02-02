@@ -21,11 +21,16 @@ const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
         <div className="max-w-7xl mx-auto w-full flex justify-between items-end">
           {/* Left side content */}
           <div className="max-w-2xl">
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               {title}
             </h1>
+            {subtitle && (
+              <p className="font-serif text-2xl md:text-3xl text-white/90 mb-4 italic">
+                {subtitle}
+              </p>
+            )}
             {description && (
-              <p className="text-lg text-white/90 max-w-xl">
+              <p className="text-lg text-white/80">
                 {description}
               </p>
             )}

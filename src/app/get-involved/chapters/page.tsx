@@ -1,41 +1,41 @@
 import PageLayout from '../../../components/Layout/PageLayout';
+import { Section } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
 import { getInvolved } from '@/content/content';
 
 export default function ChaptersPage() {
-  const { title, subtitle, content } = getInvolved.chapters;
+  const { chapters } = getInvolved;
   
   return (
-    <PageLayout
-      title={title}
-      subtitle={subtitle}
-    >
-      <div className=" mb-8 p-6 bg-gray-30 border-l-4 border-indigo-300 
-                     leading-relaxed shadow-sm">
-        {content}
-      </div>
-        <div className="py-10 px-4">
-        <h1
-          className="text-3xl md:text-5xl font-extrabold text-center mb-8"
-        >
-          Meet the Chapters
-        </h1>
-        <div
-          className="max-w-lg mx-auto rounded-xl border border-gray-200 
-                     p-6 shadow-sm hover:shadow-md 
-                     transition-shadow duration-300 bg-white/80 text-center"
-        >
-          <img
-          src="/cornell.png"
-          className="max-w-xs max-h-40 object-contain mx-auto pb-4">
-          </img>
-          <h2 className="text-xl md:text-2xl font-semibold mb-2 text-gray-800">
-            Cornell University
-          </h2>
-          <p className="text-gray-600">
-            Chapter Description
-          </p>
+    <PageLayout title={chapters.title} subtitle={chapters.subtitle}>
+      <Section>
+        <div className="space-y-16">
+          {/* Introduction */}
+          <div>
+            <div className="text-center mb-12">
+              <p className="font-serif text-lg text-primary-600 mb-3 italic">
+                Our Network
+              </p>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                {chapters.content}
+              </p>
+            </div>
+          </div>
+
+          {/* Active Chapters */}
+          <div>
+            <div className="text-center mb-12">
+              <p className="font-serif text-lg text-primary-600 mb-3 italic">
+                Active Chapters
+              </p>
+              <h2 className="text-3xl font-bold mb-4">Find a Chapter Near You</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8">
+              {/* Chapter cards */}
+            </div>
+          </div>
         </div>
-      </div>
+      </Section>
     </PageLayout>
   );
 }
