@@ -94,8 +94,8 @@ export default function StartChapterPage() {
           </section>
 
           <section className="flex flex-col items-center">
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfw6ja_StdJ9zTihJpC_wZkCXxZUj46jrtEYqhRen7vIXjOMw/viewform">
-            <button
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfw6ja_StdJ9zTihJpC_wZkCXxZUj46jrtEYqhRen7vIXjOMw/viewform">
+          <button
               className="
                 bg-gradient-to-r from-cyan-500 to-violet-500 
                 text-white font-semibold 
