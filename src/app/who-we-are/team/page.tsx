@@ -4,7 +4,7 @@ import { whoWeAre } from '@/content/content';
 import { Section } from '@/components/ui/Section';
 
 export default function TeamPage() {
-  const { title, subtitle, members } = whoWeAre.team;
+  const { title, subtitle, members, engineers } = whoWeAre.team;
   
   return (
     <PageLayout title="Our Team" subtitle="Meet the people driving our mission forward">
@@ -29,10 +29,12 @@ export default function TeamPage() {
               <p className="font-serif text-lg text-primary-600 mb-3 italic">
                 Advisory
               </p>
-              <h2 className="text-3xl font-bold mb-4">Board Members</h2>
+              <h2 className="text-3xl font-bold mb-4">Engineering Team</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8">
-              {/* Board member cards */}
+              {engineers?.map((engineer) => (
+                <TeamMember key={engineer.name} {...engineer} />
+              ))}
             </div>
           </div>
 

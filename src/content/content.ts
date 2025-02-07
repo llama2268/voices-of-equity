@@ -275,8 +275,34 @@ export const whoWeAre = {
         local communities.`,
         email: "zaid@voicesofequity.org"
       }
+    ],
+    engineers: [
+      {
+        id: "tyler-kerr",
+        name: "Tyler Kerr",
+        role: "Co-Founder & Co-Director",
+        image: "/tyler.jpg",
+        shortBio: "Tyler is dedicated to addressing systemic health disparities...",
+        fullBio: `Tyler Kerr is an undergraduate student at Cornell University, studying Computer Science. Passionate about medical research and leveraging leadership to drive positive change, Tyler is dedicated to addressing systemic health disparities and empowering future healthcare leaders through education and advocacy. As the Co-Founder of Voices of Equity, Tyler combines his interest in academic 
+        
+        medicine and surgery with his commitment to fostering health equity. He plays a pivotal role in developing impactful educational content, mobilizing campus chapters across the U.S., and building partnerships with influential public health leaders. Through social media engagement and community-based initiatives, Zaid inspires university students to take action and create meaningful change in their 
+        
+        local communities.`,
+      }, 
+      {
+        id: "tyler-kerr",
+        name: "Tyler Kerr",
+        role: "Co-Founder & Co-Director",
+        image: "/tyler.jpg",
+        shortBio: "Tyler is dedicated to addressing systemic health disparities...",
+        fullBio: `Tyler Kerr is an undergraduate student at Cornell University, studying Computer Science. Passionate about medical research and leveraging leadership to drive positive change, Tyler is dedicated to addressing systemic health disparities and empowering future healthcare leaders through education and advocacy. As the Co-Founder of Voices of Equity, Tyler combines his interest in academic 
+        
+        medicine and surgery with his commitment to fostering health equity. He plays a pivotal role in developing impactful educational content, mobilizing campus chapters across the U.S., and building partnerships with influential public health leaders. Through social media engagement and community-based initiatives, Zaid inspires university students to take action and create meaningful change in their 
+        
+        local communities.`,
+      }
     ]
-  }
+  }, 
 };
 
 export const whatWeDo = {
