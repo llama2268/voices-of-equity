@@ -278,7 +278,9 @@ export const whoWeAre = {
       {
         id: "eliza-dow",
         name: "Eliza Dow",
-        role: "National Director of Education"
+        role: "National Director of Education",
+        shortBio: "coming soon",
+        fullBio: "coming soon"
       },
       {
         id: "adam-jac",
@@ -302,7 +304,7 @@ export const whoWeAre = {
         name: "Jennifer Zhu",
         role: "National Director of Media",
         shortBio: "Jennifer's experience in healthcare, media, and leadership...",
-        image:"/jennier.jpg",
+        image:"/jennifer.jpg",
         fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
         to spread and empower discussions about health equity through social media platforms.
         Jennifer has substantial experience in the fields of art and digital design, in addition to managing
@@ -318,7 +320,7 @@ export const whoWeAre = {
         Firefighting certification more than one year ago, which consisted of countless hours of training
         as well as exceptional mental and physical learning opportunities.
 
-        
+
         As a volunteer at the Northport Veterans Affairs Hospital on Long Island, Jennifer has
         encountered many patients of various backgrounds and health conditions, which has inspired
         her to become an advocate for health equity and awareness. Stories from numerous patient
