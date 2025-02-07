@@ -274,7 +274,77 @@ export const whoWeAre = {
         
         local communities.`,
         email: "zaid@voicesofequity.org"
-      }
+      },
+      {
+        id: "eliza-dow",
+        name: "Eliza Dow",
+        role: "National Director of Education"
+      },
+      {
+        id: "adam-jac",
+        name: "Adam Jac",
+        role: "National Director of Philanthropy",
+        shortBio: "Adam is committed to leverage philanthropy, research...",
+        fullBio:`Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master’s in Biomedical Engineering before pursuing medical school.
+        
+        Passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical experience to drive meaningful change in healthcare access and outcomes.
+        As the Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives that align with the organization’s mission to address systemic health disparities. He designs and oversees 
+
+        large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with chapters to execute impactful philanthropic events. Additionally, he plays a key role in developing 
+        partnerships with organizations that support Voices of Equity’s philanthropic goals, ensuring sustainable funding for health equity initiatives.
+
+        Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary care settings, gaining first hand exposure to the challenges patients face in accessing 
+        care. He conducts clinical research with the Department of Plastic Surgery at Beth Israel Deaconess Medical Center and has started a project at the DeLisa Research Group at Cornell, where he has received two grants to continue 
+        testing ubiquibodies in cancer research. His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.`
+      },
+      {
+        id: "jennifer-zhu",
+        name: "Jennifer Zhu",
+        role: "National Director of Media",
+        shortBio: "Jennifer's experience in healthcare, media, and leadership...",
+        image:"/jennier.jpg",
+        fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
+        to spread and empower discussions about health equity through social media platforms.
+        Jennifer has substantial experience in the fields of art and digital design, in addition to managing
+        social media content. She collaborates with the organization to integrate graphic design with the
+        advancement of educational topics as well as personal stories related to health equity.
+
+
+        Jennifer is currently a junior undergraduate majoring in biology on the pre-med track in the
+        College of Arts and Sciences. She holds the position of recruitment co-chair at the Varna
+        Volunteer Fire Company, an all-volunteer based fire department in Tompkins County mostly
+        comprising students. Her experience as a certified EMT-B since senior year of high school has
+        developed her ability to lead and work well under pressure. Jennifer also earned her Interior
+        Firefighting certification more than one year ago, which consisted of countless hours of training
+        as well as exceptional mental and physical learning opportunities.
+
+        
+        As a volunteer at the Northport Veterans Affairs Hospital on Long Island, Jennifer has
+        encountered many patients of various backgrounds and health conditions, which has inspired
+        her to become an advocate for health equity and awareness. Stories from numerous patient
+        interactions have truly shaped her perspective on healthcare issues and driven her to support
+        an initiative where these topics can be discussed on a larger scale. At Cornell, Jennifer is part of
+        Kappa Phi Lambda Sorority, Incorporated, an organization centered around service,
+        philanthropy, and leadership. She has held the positions of public relations and philanthropy
+        chair, which have developed her skills in design, publicity, and fundraising. Well trained in CPR
+        and basic life support, Jennifer also works as a lifeguard both on campus and back home.
+        Jennifer’s experience in healthcare, media, and leadership has prepared her well to address
+        healthcare disparities by supporting the missions and goals for Voices of Equity`
+      },
+      {
+        id: "grace-chen",
+        name: "Grace Chen",
+        role: "National Director of Outreach",
+        image: "/grace.jpg",
+        shortBio:"Grace works to create lasting positive change..",
+        fullBio: `Grace Chen serves as the Director of Outreach for Voices of Equity, where she leads expansion initiatives focused on establishing new undergraduate chapters across the country. As a Biometry and Statistics major at Cornell University who is also pursuing medicine, she brings a unique perspective that combines data-driven analysis with a commitment to improving healthcare equity. She develops comprehensive outreach materials, and implements engagement strategies to empower future chapter leaders to advance health equity in their communities. Through strategic partnerships with student organizations and academic institutions, she aims to build a robust network of future healthcare leaders committed to improving healthcare accessibility and outcomes.
+ 
+        Grace’s dedication to STEM outreach is further demonstrated by her role as a Policy and Practices Member for Cornell iGEM, conducting interviews and organizing educational and outreach-based events based on synthetic biology. Her leadership extends to coaching and mentorship, including guiding students to a national Science Olympiad victory and leading a competitive team to an overall second-place national finish.
+
+        Combining her expertise in project management and inclusive leadership with a passionate commitment to fostering health equity, Grace works to create lasting positive change through educational outreach and community-based initiatives. Her leadership helps Voices of Equity fulfill its mission of educating, inspiring, and empowering communities through impactful content, storytelling, and actionable solutions that address healthcare disparities.`
+      },
+
+      
     ]
   }
 };
