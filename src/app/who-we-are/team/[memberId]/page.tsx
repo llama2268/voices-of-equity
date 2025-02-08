@@ -2,13 +2,17 @@ import PageLayout from '../../../../components/Layout/PageLayout';
 import { whoWeAre } from '@/content/content';
 
 export async function generateStaticParams() {
-  return whoWeAre.team.members.map((member) => ({
+  const allMembers = [...whoWeAre.team.members, ...whoWeAre.team.engineers];
+  return allMembers.map((member) => ({
     memberId: member.id,
   }));
 }
 
 export default async function TeamMemberPage({ params }: { params: { memberId: string } }) {
-  const member = whoWeAre.team.members.find(m => m.id === params.memberId);
+  const allMembers = [...whoWeAre.team.members, ...whoWeAre.team.engineers];
+  // @ts-ignore
+  const memberId = (params as { memberId: string }).memberId;
+  const member = allMembers.find(m => m.id === memberId);
 
   if (!member) {
     return <div>Member not found</div>;

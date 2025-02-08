@@ -279,8 +279,16 @@ export const whoWeAre = {
         id: "eliza-dow",
         name: "Eliza Dow",
         role: "National Director of Education",
-        shortBio: "coming soon",
-        fullBio: "coming soon"
+        image:"/eliza.jpg",
+        shortBio: "Eliza is deeply passionate about health equity, particularly...",
+        fullBio: `Eliza Dow is a junior at Cornell University, studying Biology and Society in the College of Arts and Sciences. She is deeply passionate about health equity, particularly in the context of inclusive clinical trial practices and policies that improve healthcare outcomes for historically disadvantaged populations. Eliza hopes to use her passion to educate others on equitable practices within and beyond 
+        healthcare. She aims to teach future healthcare professionals to recognize how policies and practices can either help or harm their patients, empower patients to understand and advocate for their rights, and drive meaningful change in medicine by highlighting critical perspectives on healthcare and health equity.
+
+        At Voices of Equity, Eliza serves as the National Director of Education and the Director of Education for the Cornell chapter. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its 
+        relevance not only in healthcare but in all aspects of life.
+
+        Beyond her work with Voices of Equity, Eliza is a certified EMT and has volunteered in hospital settings. She is also an editor for The Healthcare Review at Cornell University, a member of the pre-medical fraternity Phi Delta Epsilon, and plays for Cornell Women’s Club Lacrosse. Additionally, she previously served as the Vice President of Member Education for Cornell’s Delta Gamma sorority. With extensive experience in
+        developing educational materials and teaching about diverse communities, she brings invaluable expertise to Voices of Equity’s mission.`
       },
       {
         id: "adam-jac",
@@ -290,9 +298,9 @@ export const whoWeAre = {
         fullBio:`Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master’s in Biomedical Engineering before pursuing medical school.
         
         Passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical experience to drive meaningful change in healthcare access and outcomes.
-        As the Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives that align with the organization’s mission to address systemic health disparities. He designs and oversees 
-
-        large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with chapters to execute impactful philanthropic events. Additionally, he plays a key role in developing 
+        As the Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives that align with the organization’s mission to address systemic health disparities. 
+        
+        He designs and oversees large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with chapters to execute impactful philanthropic events. Additionally, he plays a key role in developing 
         partnerships with organizations that support Voices of Equity’s philanthropic goals, ensuring sustainable funding for health equity initiatives.
 
         Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary care settings, gaining first hand exposure to the challenges patients face in accessing 
@@ -350,28 +358,22 @@ export const whoWeAre = {
     ],
     engineers: [
       {
-        id: "tyler-kerr",
-        name: "Tyler Kerr",
-        role: "Co-Founder & Co-Director",
+        id: "tyler-yang",
+        name: "Tyler Yang",
+        role: "Software Developer",
         image: "/tyler.jpg",
-        shortBio: "Tyler is dedicated to addressing systemic health disparities...",
-        fullBio: `Tyler Kerr is an undergraduate student at Cornell University, studying Computer Science. Passionate about medical research and leveraging leadership to drive positive change, Tyler is dedicated to addressing systemic health disparities and empowering future healthcare leaders through education and advocacy. As the Co-Founder of Voices of Equity, Tyler combines his interest in academic 
-        
-        medicine and surgery with his commitment to fostering health equity. He plays a pivotal role in developing impactful educational content, mobilizing campus chapters across the U.S., and building partnerships with influential public health leaders. Through social media engagement and community-based initiatives, Zaid inspires university students to take action and create meaningful change in their 
-        
-        local communities.`,
+        shortBio: "",
+        fullBio: `Coming Soon`,
+        email:""
       }, 
       {
-        id: "tyler-kerr",
-        name: "Tyler Kerr",
-        role: "Co-Founder & Co-Director",
+        id: "arnab-ghosh",
+        name: "Arnab Ghosh",
+        role: "Software Developer",
         image: "/tyler.jpg",
-        shortBio: "Tyler is dedicated to addressing systemic health disparities...",
-        fullBio: `Tyler Kerr is an undergraduate student at Cornell University, studying Computer Science. Passionate about medical research and leveraging leadership to drive positive change, Tyler is dedicated to addressing systemic health disparities and empowering future healthcare leaders through education and advocacy. As the Co-Founder of Voices of Equity, Tyler combines his interest in academic 
-        
-        medicine and surgery with his commitment to fostering health equity. He plays a pivotal role in developing impactful educational content, mobilizing campus chapters across the U.S., and building partnerships with influential public health leaders. Through social media engagement and community-based initiatives, Zaid inspires university students to take action and create meaningful change in their 
-        
-        local communities.`,
+        shortBio: "",
+        fullBio: `Coming Soon`,
+        email:""
       }
     ]
   }, 
