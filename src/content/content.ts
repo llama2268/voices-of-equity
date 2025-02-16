@@ -251,7 +251,7 @@ export const whoWeAre = {
         id: "caleb-suh",
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/caleb-suh.jpg",
+        image: "/caleb.jpg",
         shortBio: "Caleb has dedicated his career to advancing equity in healthcare...",
         fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
@@ -321,7 +321,7 @@ export const whoWeAre = {
         name: "Jennifer Zhu",
         role: "National Director of Media",
         shortBio: "Jennifer's experience in healthcare, media, and leadership...",
-        image:"/jennifer.jpg",
+        image:"/jennifer-zhu.jpg",
         fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
         to spread and empower discussions about health equity through social media platforms.
         Jennifer has substantial experience in the fields of art and digital design, in addition to managing
