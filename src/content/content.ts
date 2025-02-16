@@ -268,11 +268,19 @@ export const whoWeAre = {
         role: "Co-Founder and Co-Director",
         image: "/zaid.jpg",
         shortBio: "Zaid is dedicated to addressing systemic health disparities...",
-        fullBio: `Zaid Al-Shoha is an undergraduate student at Cornell University, studying Biological Sciences. Passionate about medical research and leveraging leadership to drive positive change, Zaid is dedicated to addressing systemic health disparities and empowering future healthcare leaders through education and advocacy. As the Co-Founder of Voices of Equity, Zaid combines his interest in academic 
-        
-        medicine and surgery with his commitment to fostering health equity. He plays a pivotal role in developing impactful educational content, mobilizing campus chapters across the U.S., and building partnerships with influential public health leaders. Through social media engagement and community-based initiatives, Zaid inspires university students to take action and create meaningful change in their 
-        
-        local communities.`,
+        fullBio: `As the Co-Founder and Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
+
+ 
+
+        Zaid is an undergraduate student at Cornell University, studying Biological Sciences on the premedical track. With aspirations in academic medicine, he is particularly passionate about surgery and leveraging leadership to foster systemic change in healthcare. Through his work, he strives to bridge gaps in access to quality care, inspire future healthcare leaders, and develop innovative solutions to address inequities within the medical field.
+
+ 
+
+        Beyond his role at Voices of Equity, his commitment to global health equity is evident in his leadership of multiple campaigns with the Red Crescent, where he has worked to improve healthcare accessibility and provide humanitarian relief. At Cornell, he works on the education subteam of Cornell Assistive Technologies, where he takes part in workshops teaching families how to modify toys for children with disabilities and contributes to the development of assistive solutions. His dedication to scientific advancement is reflected in his neuroregeneration research in the Lin Lab, where he explores the underlying mechanisms of peripheral nervous system regeneration in efforts to develop interventions for neurological disorders and trauma.
+
+ 
+
+        Zaid's extensive experiences in leadership, healthcare, and research guide his work at Voices of Equity, driving initiatives that foster long-term, structural improvements in healthcare accessibility and equity.`,
         email: "zaid@voicesofequity.org"
       },
       {
@@ -294,6 +302,7 @@ export const whoWeAre = {
         id: "adam-jac",
         name: "Adam Jac",
         role: "National Director of Philanthropy",
+        image:"/adam.jpg",
         shortBio: "Adam is committed to leverage philanthropy, research...",
         fullBio:`Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master’s in Biomedical Engineering before pursuing medical school.
         
