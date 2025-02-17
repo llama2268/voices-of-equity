@@ -257,7 +257,7 @@ export const whoWeAre = {
         id: "caleb-suh",
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/caleb.jpg",
+        image: "/caleb-new-pic.jpg",
         shortBio: "Caleb has dedicated his career to advancing equity in healthcare...",
         fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
@@ -308,7 +308,7 @@ export const whoWeAre = {
         id: "adam-jac",
         name: "Adam Jac",
         role: "National Director of Philanthropy",
-        image:"/adam.jpg",
+        image:"/adam-new.jpg",
         shortBio: "Adam is committed to leverage philanthropy, research...",
         fullBio:`Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master’s in Biomedical Engineering before pursuing medical school.
         
@@ -327,7 +327,7 @@ export const whoWeAre = {
         name: "Jennifer Zhu",
         role: "National Director of Media",
         shortBio: "Jennifer's experience in healthcare, media, and leadership...",
-        image:"/jennifer-zhu.jpg",
+        image:"/jennifer-zhu-new.jpg",
         fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
         to spread and empower discussions about health equity through social media platforms.
         Jennifer has substantial experience in the fields of art and digital design, in addition to managing
@@ -360,7 +360,7 @@ export const whoWeAre = {
         id: "grace-chen",
         name: "Grace Chen",
         role: "National Director of Outreach",
-        image: "/grace.jpg",
+        image: "/grace-new.jpg",
         shortBio:"Grace works to create lasting positive change..",
         fullBio: `Grace Chen serves as the Director of Outreach for Voices of Equity, where she leads expansion initiatives focused on establishing new undergraduate chapters across the country. As a Biometry and Statistics major at Cornell University who is also pursuing medicine, she brings a unique perspective that combines data-driven analysis with a commitment to improving healthcare equity. She develops comprehensive outreach materials, and implements engagement strategies to empower future chapter leaders to advance health equity in their communities. Through strategic partnerships with student organizations and academic institutions, she aims to build a robust network of future healthcare leaders committed to improving healthcare accessibility and outcomes.
  
@@ -782,7 +782,7 @@ export const cornellChapter = {
       {
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/caleb.jpg",
+        image: "/caleb-new-pic.jpg",
         bio: "Dedicated to advancing equity in healthcare through leadership and research",
         link: "/who-we-are/team/caleb-suh"
       },
@@ -803,21 +803,21 @@ export const cornellChapter = {
       {
         name: "Adam Jac",
         role: "Director of Philanthropy",
-        image: "/adam.jpg",
+        image: "/adam-new.jpg",
         bio: "Leveraging philanthropy to drive change in healthcare access",
         link: "/who-we-are/team/adam-jac"
       },
       {
         name: "Jennifer Zhu",
         role: "Director of Media",
-        image: "/jennifer-zhu.jpg",
+        image: "/jennifer-zhu-new.jpg",
         bio: "Advocating for health equity through media and storytelling",
         link: "/who-we-are/team/jennifer-zhu"
       },
       {
         name: "Grace Chen",
         role: "Director of Outreach",
-        image: "/grace.jpg",
+        image: "/grace-new.jpg",
         bio: "Creating lasting positive change through community engagement",
         link: "/who-we-are/team/grace-chen"
       }
