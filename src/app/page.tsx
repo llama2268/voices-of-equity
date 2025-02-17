@@ -21,7 +21,7 @@ export default function HomePage() {
           </p>
           <blockquote className="mb-12">
             <p className="font-serif text-2xl md:text-3xl text-gray-800 italic leading-relaxed">
-            To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives            </p>
+            To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives</p>
             <div className="mt-4 h-1 w-24 mx-auto bg-gradient-to-r from-primary-500 to-secondary-500" />
           </blockquote>
         </div>

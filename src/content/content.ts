@@ -24,7 +24,8 @@ export const navigation = {
     {
       title: 'WHAT WE DO',
       submenu: [
-        { title: 'Voices & Impact', href: '/what-we-do/news' },
+        //WILL USE LATER UNCOMMENT WHEN THEY WANT IT
+        // { title: 'Voices & Impact', href: '/what-we-do/news' },
         { title: 'Our Resources', href: '/what-we-do/resources' },
       ],
     },
@@ -36,10 +37,11 @@ export const navigation = {
         { title: 'Start a Chapter', href: '/get-involved/start' },
       ],
     },
-    {
-      title: 'THE CORNELL CHAPTER',
-      href: '/cornell',
-    },
+    //WILL ADD BACK LATER NOT ENOUGH INFORMATION CALEB WANTS REMOVED RIGHT NOW
+    // {
+    //   title: 'THE CORNELL CHAPTER',
+    //   href: '/cornell',
+    // },
   ],
   footerNav: {
     about: [
@@ -643,18 +645,18 @@ export const whatWeDo = {
       ],
       researchPapers: [
         {
-          title: "Health Equity in Urban Communities",
+          title: "Social Determinant of Health-The Future of Nursing",
           authors: "Smith, J., et al.",
           year: "2023",
-          description: "A comprehensive study of health disparities in urban settings.",
-          link: "/papers/health-equity-urban.pdf"
+          description: "As a nurse, we have the opportunity to heal the heart, mind, soul and body of our patients, their families and ourselves.",
+          link: "https://www.ncbi.nlm.nih.gov/books/NBK573923/"
         },
         {
-          title: "Social Determinants of Health Access",
-          authors: "Johnson, M., et al.",
-          year: "2023",
-          description: "Analysis of social factors affecting healthcare access.",
-          link: "/papers/social-determinants.pdf"
+          title: "Defining Health Equity",
+          authors: "Paula Braveman",
+          year: "2022",
+          description: "The term “health equity” has become widely used in health and health care arenas over the past few years.",
+          link: "https://www.sciencedirect.com/science/article/pii/S0027968422001432"
         }
       ],
       guides: [

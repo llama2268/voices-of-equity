@@ -118,7 +118,7 @@ export default function ResourcesPage() {
         </Section>
 
         {/* Guides Section */}
-        <Section>
+        {/* <Section>
           <div className="text-center mb-12">
             <p className="font-serif text-lg text-primary-600 mb-3 italic">
               Practical Tools
@@ -149,7 +149,7 @@ export default function ResourcesPage() {
               </Link>
             ))}
           </div>
-        </Section>
+        </Section> */}
 
         {/* Call to Action */}
         <Section variant="highlight" className="text-center">

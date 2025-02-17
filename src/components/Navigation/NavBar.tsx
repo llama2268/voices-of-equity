@@ -90,7 +90,7 @@ const NavBar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 relative -left-11">
             {menuItems.map((item) => (
               <div key={item.title} className="h-20 flex items-center">
                 {item.submenu ? (
