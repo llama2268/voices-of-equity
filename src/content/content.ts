@@ -66,9 +66,9 @@ export const navigation = {
 
 export const homePage = {
   hero: {
-    title: "Amplifying Voices for Change",
-    subtitle: "Building a more equitable future, one voice at a time",
-    description: "We're a non-profit organization dedicated to promoting equity and inclusion through education, advocacy, and community engagement.",
+    title: "Building a More Equitiable Future, One Voice at a Time",
+    subtitle: "",
+    description: "Voices of Equity is a nationwide movement empowering students, healthcare professionals, and communit bvy leaders to raise awareness, take action, and drive meaningful change in the fight for health equity.",
     ctaButtons: [
       {
         text: 'Join Our Movement',
@@ -106,18 +106,18 @@ export const homePage = {
   ],
   initiatives: [
     {
-      title: "Education Access",
-      description: "Breaking down barriers to quality education through mentorship and resources.",
+      title: "Educate Communities",
+      description: "We focus on educating communities about health equity issues to raise awareness and understanding.",
       icon: "🎓"
     },
     {
-      title: "Community Outreach",
-      description: "Building stronger communities through local engagement and support programs.",
+      title: "Inspire Healthcare Leaders",
+      description: "Our goal is to inspire future healthcare leaders to prioritize health equity in their careers and initiatives.",
       icon: "🤝"
     },
     {
-      title: "Advocacy",
-      description: "Amplifying voices and driving policy changes for a more equitable society.",
+      title: "Empower Action",
+      description: "We implement community-based initiatives that empower students, community leaders, and healthcare professionals to improve health equity among diverse populations.",
       icon: "📢"
     }
   ],
@@ -140,18 +140,18 @@ export const whoWeAre = {
         text: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives.",
         keyPoints: [
           {
-            title: "Education",
-            description: "Providing comprehensive education on health equity issues and their systemic causes",
+            title: "Educate",
+            description: "We equip students, healthcare professionals, and communities with accessible resources, engaging workshops, and thought-provoking discussions to raise awareness about systemic health disparities and the social determinants of health.",
             icon: "📚"
           },
           {
-            title: "Advocacy",
-            description: "Amplifying voices and stories from affected communities",
+            title: "Inspire",
+            description: "Through storytelling, lived experiences, and expert insights, we spark passion and motivation in the next generation of changemakers, encouraging them to prioritize health equity in their careers and communities.",
             icon: "📢"
           },
           {
-            title: "Action",
-            description: "Creating tangible initiatives that drive real change in communities",
+            title: "Empower",
+            description: "By providing leadership opportunities, establishing campus chapters, and fostering advocacy initiatives, we empower individuals with the tools, network, and support they need to take tangible action in addressing health inequities nationwide.",
             icon: "✨"
           }
         ]
@@ -181,20 +181,24 @@ export const whoWeAre = {
         heading: "OUR CORE VALUES",
         items: [
           {
-            title: "Equity",
-            description: "Ensuring fair access to healthcare resources and opportunities"
+            title: "Vision",
+            description: "Stay focused on long-term impact and health equity outcomes"
           },
           {
-            title: "Education",
-            description: "Empowering through knowledge and understanding"
+            title: "Ownership",
+            description: "Take responsibility for actions, decisions, and growth"
           },
           {
-            title: "Community",
-            description: "Building strong networks for lasting change"
+            title: "Integrity",
+            description: "Uphold honesty and ethical leadership in all endeavors"
           },
           {
-            title: "Action",
-            description: "Converting awareness into meaningful initiatives"
+            title: "Collaboration",
+            description: "Work together with respect, valuing diverse perspectives"
+          },
+          {
+            title: "Empowerment",
+            description: "Inspire and enable others to lead and create change"
           }
         ]
       },
@@ -217,29 +221,29 @@ export const whoWeAre = {
     ],
     timeline: [
       {
-        year: 2020,
-        title: "Foundation",
-        description: "Established at Cornell University in response to healthcare disparities highlighted by COVID-19"
-      },
-      {
-        year: 2021,
-        title: "Initial Expansion",
-        description: "Launched first five university chapters and developed core educational programs"
-      },
-      {
-        year: 2022,
-        title: "Growing Impact",
-        description: "Established partnerships with major healthcare organizations and community clinics"
-      },
-      {
-        year: 2023,
-        title: "National Reach",
-        description: "Expanded to 50+ chapters nationwide and launched mentorship program"
-      },
-      {
         year: 2024,
-        title: "Innovation",
-        description: "Launched comprehensive healthcare equity curriculum and digital storytelling platform"
+        title: "VOE Founded",
+        description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action"
+      },
+      {
+        year: 'JAN',
+        title: "Cornell Chapter Established",
+        description: "The first undergraduate chapter is launched at Cornell University, serving as a model for future chapters and student-led initiatives"
+      },
+      {
+        year: 'FEB',
+        title: "Curriculum & Educational Development Begins",
+        description: "Voices of Equity begins developing a structured health equity curriculum, creating accessible educational materials to guide discussions and empower student leaders"
+      },
+      {
+        year: 'MAR',
+        title: "National Expansion Begins",
+        description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country."
+      },
+      {
+        year: 2025,
+        title: "",
+        description: ""
       }
     ]
   },
@@ -266,7 +270,7 @@ export const whoWeAre = {
         id:"zaid-al-shoha",
         name:"Zaid Al-Shoha",
         role: "Co-Founder and Co-Director",
-        image: "/zaid.jpg",
+        image: "/zaid-headshot.png",
         shortBio: "Zaid is dedicated to addressing systemic health disparities...",
         fullBio: `As the Co-Founder and Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
 
@@ -776,7 +780,7 @@ export const cornellChapter = {
       {
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/caleb-suh.jpg",
+        image: "/caleb.jpg",
         bio: "Dedicated to advancing equity in healthcare through leadership and research",
         link: "/who-we-are/team/caleb-suh"
       },
@@ -786,6 +790,34 @@ export const cornellChapter = {
         image: "/zaid.jpg",
         bio: "Passionate about medical research and driving positive change",
         link: "/who-we-are/team/zaid-al-shoha"
+      },
+      {
+        name: "Eliza Dow",
+        role: "Director of Education",
+        image: "/eliza.jpg",
+        bio: "Committed to educating future healthcare leaders on health equity",
+        link: "/who-we-are/team/eliza-dow"
+      },
+      {
+        name: "Adam Jac",
+        role: "Director of Philanthropy",
+        image: "/adam.jpg",
+        bio: "Leveraging philanthropy to drive change in healthcare access",
+        link: "/who-we-are/team/adam-jac"
+      },
+      {
+        name: "Jennifer Zhu",
+        role: "Director of Media",
+        image: "/jennifer-zhu.jpg",
+        bio: "Advocating for health equity through media and storytelling",
+        link: "/who-we-are/team/jennifer-zhu"
+      },
+      {
+        name: "Grace Chen",
+        role: "Director of Outreach",
+        image: "/grace.jpg",
+        bio: "Creating lasting positive change through community engagement",
+        link: "/who-we-are/team/grace-chen"
       }
     ]
   },

@@ -11,7 +11,7 @@ interface HeroProps {
 
 const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
   return (
-    <div className={` relative h-screen`}>
+    <div className={` relative h-auto pt-60`}>
       <div className="absolute inset-0 bg-[url('/hero-bg.jpeg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/30" />
       </div>

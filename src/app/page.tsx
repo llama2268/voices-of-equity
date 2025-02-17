@@ -9,28 +9,26 @@ export default function HomePage() {
   return (
     <PageLayout fullWidth>
       <Hero
-        title="Amplifying Voices for Change"
-        subtitle="Building a more equitable future, one voice at a time"
-        description="We're a non-profit organization dedicated to promoting equity and inclusion through education, advocacy, and community engagement."
+        title="Building a More Equitiable Future, One Voice at a Time"
+        description="Voices of Equity is a nationwide movement empowering students, healthcare professionals, and community by leaders to raise awareness, take action, and drive meaningful change in the fight for health equity."
       />
 
       {/* Mission Statement */}
       <Section>
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-serif text-lg text-primary-600 mb-3 italic">
-            Our Purpose
+            Our Mission
           </p>
           <blockquote className="mb-12">
             <p className="font-serif text-2xl md:text-3xl text-gray-800 italic leading-relaxed">
-              "We believe in creating a world where every voice is heard, every story matters, and every individual has the opportunity to thrive."
-            </p>
+            To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives            </p>
             <div className="mt-4 h-1 w-24 mx-auto bg-gradient-to-r from-primary-500 to-secondary-500" />
           </blockquote>
         </div>
       </Section>
 
       {/* Stats Section */}
-      <Section variant="alternate">
+      {/* <Section variant="alternate">
         <div className="text-center mb-12">
           <p className="font-serif text-lg text-primary-600 mb-3 italic">
             Our Impact
@@ -42,28 +40,29 @@ export default function HomePage() {
             <StatCard key={index} {...stat} />
           ))}
         </div>
-      </Section>
+      </Section> */}
+      {/* WILL USE LATER */}
 
       {/* Callouts */}
       <Section>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Callout
-            eyebrow="Latest Impact"
-            title="Healthcare Access Initiative"
-            description="See how our chapters are breaking down barriers to healthcare access across communities."
+            eyebrow="Meet Our Team"
+            title="Executive Leadership"
+            description="Get to know the passionate leaders behind Voices of Equity and learn how they’re driving change in health equity nationwide."
             link={{
-              text: "View Impact Stories",
-              href: "/what-we-do/impact"
+              text: "View Our Team",
+              href: "/who-we-are/team"
             }}
             variant="impact"
           />
           <Callout
-            eyebrow="Featured Resource"
-            title="Health Equity Toolkit"
-            description="Access our comprehensive guide for understanding and addressing health disparities."
+            eyebrow="Start A Chapter"
+            title="Join the Movement"
+            description="Join the movement, start a Voices of Equity chapter at your school and take action to advance health equity in your community."
             link={{
-              text: "Browse Resources",
-              href: "/what-we-do/resources"
+              text: "Get Started",
+              href: "/get-involved/start"
             }}
             variant="resources"
           />

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { navigation } from '@/content/content';
+import Image from 'next/image';
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -27,10 +28,10 @@ const NavBar = () => {
   if (!mounted) {
     return (
       <nav className="w-full fixed top-0 z-50 transition-all duration-300 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="px-3">
           <div className="flex justify-between items-center h-20">
             <Link href="/" className="font-bold text-2xl text-white">
-              Voices of Equity
+              <Image src="/logo.jpg" alt="Voices of Equity" width={80} height={80}/>
             </Link>
 
             {/* Desktop Navigation */}
@@ -78,15 +79,14 @@ const NavBar = () => {
   }
 
   return (
-    <nav className={`w-full fixed top-0 z-50 transition-all duration-300 group ${
-      isScrolled ? 'bg-white shadow-md' : 'bg-transparent hover:bg-white'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4">
+    <nav className={`w-full fixed top-0 z-50 transition-all duration-300 group bg-white`}>
+      <div className="px-3">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className={`font-bold text-2xl transition-colors ${
-            isScrolled || !isHomePage ? 'text-[#607AD4]' : 'text-white group-hover:text-[#607AD4]'
+            !isHomePage ? 'text-[#607AD4]' : 'text-[#607AD4] group-hover:text-[#607AD4]'
           }`}>
-            Voices of Equity
+          <Image src="/logo.jpg" alt="Voices of Equity" width={80} height={80}/>
+
           </Link>
 
           {/* Desktop Navigation */}
@@ -96,7 +96,7 @@ const NavBar = () => {
                 {item.submenu ? (
                   <div className="relative group/item h-full flex items-center">
                     <button className={`h-full px-2 font-medium text-sm transition-colors ${
-                      isScrolled || !isHomePage ? 'text-[#607AD4]' : 'text-white group-hover:text-[#607AD4]'
+                      !isHomePage ? 'text-[#607AD4]' : 'text-[#607AD4] group-hover:text-[#607AD4]'
                     }`}>
                       {item.title}
                     </button>
@@ -116,7 +116,7 @@ const NavBar = () => {
                   <Link 
                     href={item.href!}
                     className={`h-full px-2 flex items-center font-medium text-sm transition-colors ${
-                      isScrolled || !isHomePage ? 'text-[#607AD4]' : 'text-white group-hover:text-[#607AD4]'
+                      isScrolled || !isHomePage ? 'text-[#607AD4]' : 'text-[#607AD4] group-hover:text-[#607AD4]'
                     }`}
                   >
                     {item.title}
