@@ -223,9 +223,14 @@ export const whoWeAre = {
     ],
     timeline: [
       {
-        year: 2024,
+        year: 'DEC',
         title: "VOE Founded",
         description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action"
+      },
+      {
+        year: 2024,
+        title: "",
+        description: ""
       },
       {
         year: 'JAN',
@@ -242,11 +247,6 @@ export const whoWeAre = {
         title: "National Expansion Begins",
         description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country."
       },
-      {
-        year: 2025,
-        title: "",
-        description: ""
-      }
     ]
   },
   team: {
@@ -257,7 +257,7 @@ export const whoWeAre = {
         id: "caleb-suh",
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/caleb-new-pic.jpg",
+        image: "/caleb-new-3.png",
         shortBio: "Caleb has dedicated his career to advancing equity in healthcare...",
         fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
@@ -645,7 +645,7 @@ export const whatWeDo = {
       ],
       researchPapers: [
         {
-          title: "Social Determinant of Health-The Future of Nursing",
+          title: "Social Determinant of Health and Health Equity",
           authors: "Smith, J., et al.",
           year: "2023",
           description: "As a nurse, we have the opportunity to heal the heart, mind, soul and body of our patients, their families and ourselves.",
@@ -782,7 +782,7 @@ export const cornellChapter = {
       {
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/caleb-new-pic.jpg",
+        image: "/caleb-new-3.png",
         bio: "Dedicated to advancing equity in healthcare through leadership and research",
         link: "/who-we-are/team/caleb-suh"
       },

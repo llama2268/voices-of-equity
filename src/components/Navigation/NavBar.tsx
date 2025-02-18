@@ -31,7 +31,7 @@ const NavBar = () => {
         <div className="px-3">
           <div className="flex justify-between items-center h-20">
             <Link href="/" className="font-bold text-2xl text-white">
-              <Image src="/logo.jpg" alt="Voices of Equity" width={80} height={80}/>
+              <Image src="/logo.png" alt="Voices of Equity" width={250} height={100} priority placeholder="empty"/>
             </Link>
 
             {/* Desktop Navigation */}
@@ -85,8 +85,9 @@ const NavBar = () => {
           <Link href="/" className={`font-bold text-2xl transition-colors ${
             !isHomePage ? 'text-[#607AD4]' : 'text-[#607AD4] group-hover:text-[#607AD4]'
           }`}>
-          <Image src="/logo.jpg" alt="Voices of Equity" width={80} height={80}/>
-
+            <div className="bg-white p-1 rounded">
+          <Image src="/logo.png" alt="Voices of Equity" width={250} height={100} priority/>
+          </div>
           </Link>
 
           {/* Desktop Navigation */}
