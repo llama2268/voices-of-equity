@@ -225,7 +225,8 @@ export const whoWeAre = {
       {
         year: 'DEC',
         title: "VOE Founded",
-        description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action"
+        description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action",
+        side: 'left'
       },
       {
         year: 2024,
@@ -235,17 +236,20 @@ export const whoWeAre = {
       {
         year: 'JAN',
         title: "Cornell Chapter Established",
-        description: "The first undergraduate chapter is launched at Cornell University, serving as a model for future chapters and student-led initiatives"
+        description: "The first undergraduate chapter is launched at Cornell University, serving as a model for future chapters and student-led initiatives",
+        side: 'right'
       },
       {
         year: 'FEB',
         title: "Curriculum & Educational Development Begins",
-        description: "Voices of Equity begins developing a structured health equity curriculum, creating accessible educational materials to guide discussions and empower student leaders"
+        description: "Voices of Equity begins developing a structured health equity curriculum, creating accessible educational materials to guide discussions and empower student leaders",
+        side: 'left'
       },
       {
         year: 'MAR',
         title: "National Expansion Begins",
-        description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country."
+        description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country.",
+        side: 'right'
       },
     ]
   },
