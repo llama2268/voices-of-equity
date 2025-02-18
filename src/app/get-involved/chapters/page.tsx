@@ -101,12 +101,12 @@ export default function ChaptersPage() {
                   
                   <div className="flex items-center justify-between pt-6 mt-8">
                     <span className="text-gray-600">45 active members</span>
-                    <Link
+                    {/* <Link
                       href="/cornell"
                       className="px-6 py-2 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg transition-colors"
                     >
                       Visit Chapter
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -165,6 +165,7 @@ export default function ChaptersPage() {
             link={{
               text: "Read Impact Stories",
               href: "/what-we-do/impact"
+              // href: "/what-we-do/impact"
             }}
             variant="impact"
           />
