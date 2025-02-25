@@ -14,10 +14,10 @@ const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
   const [firstHalf, secondHalf] = title.split(',').map(part => part.trim());
 
   return (
-    <div className="relative min-h-screen flex items-center">
+    <div className="relative pt-16 items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/hero-bg.jpeg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('/hero-new.jpeg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/50" />
       </div>
 

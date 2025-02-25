@@ -26,14 +26,13 @@ const NavBar = () => {
     }
   }, [isHomePage]);
 
-  const isTransparent = isHomePage && !isScrolled;
+  // const isTransparent = isHomePage && !isScrolled;
 
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isTransparent
-          ? 'bg-transparent' 
-          : 'bg-white shadow-sm rounded-b-xl'
+        // isTransparent
+          'bg-white shadow-sm rounded-b-xl'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +43,7 @@ const NavBar = () => {
               <Link 
                 href="/" 
                 className={`text-xl font-bold ${
-                  isTransparent ? 'text-white' : 'text-gray-900'
+                'text-gray-900'
                 }`}
               >
                 Voices of Equity
@@ -59,9 +58,7 @@ const NavBar = () => {
                     <div className="relative group">
                       <button
                         className={`inline-flex items-center text-sm font-medium ${
-                          isTransparent
-                            ? 'text-white hover:text-white/80'
-                            : 'text-gray-900 hover:text-[#498B86]'
+                        'text-gray-900 hover:text-[#498B86]'
                         }`}
                       >
                         {item.title}
@@ -87,9 +84,7 @@ const NavBar = () => {
                     <Link
                       href={item.href || '/'}
                       className={`inline-flex items-center text-sm font-medium ${
-                        isTransparent
-                          ? 'text-white hover:text-white/80'
-                          : 'text-gray-900 hover:text-[#498B86]'
+                          'text-gray-900 hover:text-[#498B86]'
                       }`}
                     >
                       {item.title}
@@ -105,9 +100,7 @@ const NavBar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-lg ${
-                isTransparent
-                  ? 'text-white hover:text-white/80'
-                  : 'text-gray-400 hover:text-gray-500 hover:bg-gray-50'
+                  'text-gray-400 hover:text-gray-500 hover:bg-gray-50'
               }`}
             >
               <span className="sr-only">Open main menu</span>
