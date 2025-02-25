@@ -140,7 +140,7 @@ export default function StartChapterPage() {
       >
         <div className="max-w-4xl mx-auto">
           <GoogleFormEmbed
-            formUrl="YOUR_GOOGLE_FORM_URL"
+            formUrl="https://docs.google.com/forms/d/e/1FAIpQLSfw6ja_StdJ9zTihJpC_wZkCXxZUj46jrtEYqhRen7vIXjOMw/closedform"
             title="Chapter Application Form"
           />
         </div>
