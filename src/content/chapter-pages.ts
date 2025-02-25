@@ -154,6 +154,24 @@ export const chapterPagesContent = {
           description: "Access tools and guides for chapter success",
           href: "/what-we-do/resources",
           icon: "📚"
+        },
+        {
+          title: "Review Requirements",
+          icon: "guide",
+          description: "Learn about chapter requirements and responsibilities",
+          href: "/get-involved/requirements"
+        },
+        {
+          title: "Start Application",
+          icon: "start",
+          description: "Begin your chapter application process",
+          href: "/get-involved/start"
+        },
+        {
+          title: "Connect With Us",
+          icon: "connect",
+          description: "Get in touch with our chapter development team",
+          href: "/contact"
         }
       ]
     }

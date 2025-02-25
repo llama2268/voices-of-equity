@@ -5,11 +5,31 @@ import Link from 'next/link';
 import { RelatedContent } from '@/components/RelatedContent';
 import { chapterPagesContent } from '@/content/chapter-pages';
 import { Callout } from '@/components/ui/Callout';
+import { SocialCallout } from '@/components/ui/SocialCallout';
+import { ResourceIcon, AwardIcon, LeadershipIcon } from '@/components/icons/ChapterIcons';
 
 export default function ChaptersPage() {
   const { page, benefits, stats, cta } = chaptersContent;
   const { chapters } = chapterPagesContent;
   
+  const updatedBenefits = [
+    {
+      title: 'Resources & Support',
+      description: 'Access our comprehensive resource library, receive mentorship from experienced leaders, and get support for event planning and community outreach initiatives.',
+      icon: <ResourceIcon />
+    },
+    {
+      title: 'National Recognition',
+      description: 'Join a network of recognized changemakers, get featured in our national publications, and receive opportunities to present at conferences and symposiums.',
+      icon: <AwardIcon />
+    },
+    {
+      title: 'Leadership Development',
+      description: 'Develop crucial leadership skills through structured training programs, workshops, and hands-on experience managing impactful community projects.',
+      icon: <LeadershipIcon />
+    }
+  ];
+
   return (
     <PageLayout
       title={page.title}
@@ -26,12 +46,12 @@ export default function ChaptersPage() {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {benefits.map((benefit) => (
+          {updatedBenefits.map((benefit) => (
             <div 
               key={benefit.title}
-              className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-red-500"
+              className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-[#498B86]"
             >
-              <div className="text-3xl mb-4">{benefit.icon}</div>
+              <div className="text-[#498B86] mb-4">{benefit.icon}</div>
               <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
               <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
             </div>
@@ -54,11 +74,11 @@ export default function ChaptersPage() {
               </div>
               <div className="p-8 md:p-12">
                 <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="px-3 py-1 bg-red-50 text-red-600 rounded-full text-sm font-medium">
+                  <span className="px-3 py-1 bg-secondary-50 text-secondary-600 rounded-full text-sm font-medium">
                     Featured Chapter
                   </span>
                   <span className="px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium">
-                    Est. 2023
+                    Est. 2024
                   </span>
                 </div>
                 <h2 className="text-3xl font-bold mb-4">Cornell University Chapter</h2>
@@ -141,10 +161,10 @@ export default function ChaptersPage() {
           <p className="text-lg text-gray-700 mb-8">{cta.description}</p>
           <div className="flex gap-4 justify-center">
             <Link
-              href={cta.primaryButton.href}
-              className="px-8 py-4 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg font-semibold transition-colors"
+              href="/get-involved/start"
+              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
             >
-              {cta.primaryButton.text}
+              Start a Chapter
             </Link>
             <Link
               href={cta.secondaryButton.href}
@@ -169,6 +189,17 @@ export default function ChaptersPage() {
             }}
             variant="impact"
           />
+        </div>
+      </Section>
+
+      {/* Social Media Integration */}
+      <Section 
+        title="Connect With Chapters"
+        subtitle="Follow Our Journey"
+        description="Stay connected with our chapters across the country"
+      >
+        <div className="max-w-4xl mx-auto">
+          <SocialCallout />
         </div>
       </Section>
     </PageLayout>

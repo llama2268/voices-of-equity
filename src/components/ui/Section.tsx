@@ -9,6 +9,7 @@ interface SectionProps {
   title: string;
   subtitle: string;
   description?: string;
+  centered?: boolean;
 }
 
 export function Section({ 
@@ -18,7 +19,8 @@ export function Section({
   className,
   title,
   subtitle,
-  description
+  description,
+  centered = false
 }: SectionProps) {
   return (
     <section className={cn(
@@ -26,7 +28,7 @@ export function Section({
       {
         'bg-white': variant === 'default',
         'bg-gray-50': variant === 'alternate',
-        'bg-gradient-to-br from-white to-gray-50': variant === 'highlight', // Updated gradient
+        'bg-[#607AD4]/10': variant === 'highlight',
       },
       {
         'py-8': spacing === 'sm',
@@ -36,7 +38,7 @@ export function Section({
       className
     )}>
       <Container>
-        <div className="text-center mb-12">
+        <div className={cn("text-center mb-12", centered && "max-w-4xl mx-auto")}>
           <p className="font-serif text-lg text-secondary-600 mb-3 italic">
             {subtitle}
           </p>

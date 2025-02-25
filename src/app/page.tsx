@@ -4,6 +4,7 @@ import PageLayout from '../components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import { homePage } from '@/content/content';
 import { Callout } from '@/components/ui/Callout';
+import { SocialCallout } from '@/components/ui/SocialCallout';
 
 export default function HomePage() {
   return (
@@ -49,7 +50,7 @@ export default function HomePage() {
           <Callout
             eyebrow="Meet Our Team"
             title="Executive Leadership"
-            description="Get to know the passionate leaders behind Voices of Equity and learn how they’re driving change in health equity nationwide."
+            description="Get to know the passionate leaders behind Voices of Equity and learn how they're driving change in health equity nationwide."
             link={{
               text: "View Our Team",
               href: "/who-we-are/team"
@@ -96,6 +97,16 @@ export default function HomePage() {
         </div>
       </Section>
 
+      <Section 
+        title="Join Our Community"
+        subtitle="Stay Connected"
+        description="Follow our journey and be part of the conversation"
+      >
+        <div className="max-w-4xl mx-auto">
+          <SocialCallout />
+        </div>
+      </Section>
+
       {/* Call to Action Section */}
       <section className="py-20 bg-[#607AD4] text-white">
         <div className="max-w-7xl mx-auto px-8 text-center">
@@ -106,9 +117,9 @@ export default function HomePage() {
           <div className="flex gap-4 justify-center">
             <a
               href="/get-involved/chapters"
-              className="px-8 py-4 bg-[#E4826D] hover:bg-[#d97661] text-white font-semibold rounded-lg transition-colors"
+              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
             >
-              Join a Chapter
+              Join Our Movement
             </a>
             <a
               href="/who-we-are/mission"

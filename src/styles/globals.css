@@ -172,3 +172,17 @@ input, select, textarea {
     @apply max-w-4xl mx-auto;
   }
 }
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#498B86] hover:bg-[#3A6F6B] text-white;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-[#498B86] text-[#498B86] hover:bg-[#498B86]/10;
+  }
+  
+  .link-hover {
+    @apply hover:text-[#498B86] transition-colors;
+  }
+}

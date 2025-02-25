@@ -66,8 +66,8 @@ export const chapters = {
     {
       name: "Cornell University",
       location: "Ithaca, NY",
-      established: "2023",
-      members: 45,
+      established: "Est. 2024",
+      members: 25,
       image: "/chapters/cornell.jpg",
       achievements: [
         "Launched student mentorship program",
@@ -80,7 +80,13 @@ export const chapters = {
         contact: "cornell@voicesofequity.org"
       },
       featured: true,
-      slug: "cornell"
+      slug: "cornell",
+      stats: [
+        { label: 'Active Members', value: '25+' },
+        { label: 'Community Partners', value: '5' },
+        { label: 'Research Projects', value: '3' }
+      ],
+      link: "/cornell"
     }
   ]
 };

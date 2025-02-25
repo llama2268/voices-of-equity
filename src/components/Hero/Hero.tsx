@@ -10,50 +10,61 @@ interface HeroProps {
 }
 
 const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
-  return (
-    <div className={` relative h-auto pt-60`}>
-      <div className="absolute inset-0 bg-[url('/hero-bg.jpeg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
-      
-      {/* Content Container */}
-      <div className="relative h-full flex flex-col justify-end pb-20 px-8 lg:px-16">
-        <div className="max-w-7xl mx-auto w-full flex justify-between items-end">
-          {/* Left side content */}
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              {title}
-            </h1>
-            {subtitle && (
-              <p className="font-serif text-2xl md:text-3xl text-white/90 mb-4 italic">
-                {subtitle}
-              </p>
-            )}
-            {description && (
-              <p className="text-lg text-white/80">
-                {description}
-              </p>
-            )}
-          </div>
+  // Split the title into two parts at the comma
+  const [firstHalf, secondHalf] = title.split(',').map(part => part.trim());
 
-          {/* Right side CTA */}
-          <div className="hidden lg:block">
-            <div className="flex gap-4 justify-center">
-              <a
-                href="/get-involved/chapters"
-                className="px-8 py-4 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg font-semibold transition-colors"
-              >
-                Join Our Movement
-              </a>
-              <a
-                href="/who-we-are/mission"
-                className="px-8 py-4 bg-white hover:bg-gray-50 text-primary-600 font-semibold rounded-lg transition-colors border-2 border-primary-100"
-              >
-                Learn More
-              </a>
-            </div>
+  return (
+    <div className="relative min-h-screen flex items-center">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[url('/hero-bg.jpeg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      {/* Content */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <span className="font-display block mb-2">{firstHalf}</span>
+            <span className="font-serif font-normal italic">{secondHalf}</span>
+          </h1>
+          {description && (
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+              {description}
+            </p>
+          )}
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/get-involved/chapters"
+              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white font-semibold rounded-lg transition-colors"
+            >
+              Join Our Movement
+            </a>
+            <a
+              href="/who-we-are/mission"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors backdrop-blur-sm"
+            >
+              Learn More
+            </a>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg 
+          className="w-6 h-6 text-white" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+          />
+        </svg>
       </div>
     </div>
   );

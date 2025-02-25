@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { chapterPagesContent } from '@/content/chapter-pages';
 import { RelatedContent } from '@/components/RelatedContent';
 import { Callout } from '@/components/ui/Callout';
+import { GoogleFormEmbed } from '@/components/ui/GoogleFormEmbed';
+import { SocialCallout } from '@/components/ui/SocialCallout';
 
 export default function StartChapterPage() {
   const { start } = chapterPagesContent;
@@ -86,18 +88,14 @@ export default function StartChapterPage() {
           <h2 className="text-3xl font-bold text-center mb-12">{process.title}</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {chapters.requirements.process.steps.map((step) => (
-              <div key={step.number} className="relative">
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#E4826D] text-white rounded-full flex items-center justify-center font-bold">
-                    {step.number}
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mt-4 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {step.description}
-                  </p>
+              <div key={step.number} className="text-center">
+                <div 
+                  className="w-12 h-12 rounded-full bg-[#498B86] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4"
+                >
+                  {step.number}
                 </div>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
           </div>
@@ -108,20 +106,18 @@ export default function StartChapterPage() {
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">{cta.title}</h2>
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-            <p className="text-lg text-gray-600 mb-8">
-              {cta.description}
-            </p>
+          <div className="bg-[#498B86] text-white rounded-lg p-12">
+            <p className="text-xl mb-8">{cta.description}</p>
             <div className="flex gap-4 justify-center">
               <Link
                 href={cta.buttons.primary.href}
-                className="px-8 py-4 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg font-semibold transition-colors"
+                className="px-8 py-4 bg-white text-[#498B86] font-semibold rounded-lg hover:bg-gray-50 transition-colors"
               >
                 {cta.buttons.primary.text}
               </Link>
               <a
                 href={cta.buttons.secondary.href}
-                className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 rounded-lg font-semibold transition-colors border-2 border-gray-200"
+                className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
               >
                 {cta.buttons.secondary.text}
               </a>
@@ -133,6 +129,27 @@ export default function StartChapterPage() {
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
           <RelatedContent {...chapterPagesContent.start.relatedContent} />
+        </div>
+      </Section>
+
+      {/* Application Form */}
+      <Section 
+        title="Start Your Chapter"
+        subtitle="Application Form"
+        description="Complete the form below to begin your chapter application process"
+      >
+        <div className="max-w-4xl mx-auto">
+          <GoogleFormEmbed
+            formUrl="YOUR_GOOGLE_FORM_URL"
+            title="Chapter Application Form"
+          />
+        </div>
+      </Section>
+
+      {/* Social Media Callout */}
+      <Section spacing="sm">
+        <div className="max-w-4xl mx-auto">
+          <SocialCallout />
         </div>
       </Section>
     </PageLayout>

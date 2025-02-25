@@ -6,10 +6,30 @@ import { Button } from '@/components/ui/Button';
 import { whoWeAre } from '@/content/content';
 import Link from 'next/link';
 import Image from 'next/image'
+import { SocialCallout } from '@/components/ui/SocialCallout';
+import { EducateIcon, InspireIcon, EmpowerIcon } from '@/components/icons/MissionIcons';
 
 export default function MissionPage() {
   const { introduction, mission, vision, values, callToAction } = whoWeAre.mission.content;
   
+  const missionPoints = [
+    { 
+      title: "Educate",
+      icon: <EducateIcon />,
+      description: mission.keyPoints[0].description 
+    },
+    { 
+      title: "Inspire",
+      icon: <InspireIcon />,
+      description: mission.keyPoints[1].description 
+    },
+    { 
+      title: "Empower",
+      icon: <EmpowerIcon />,
+      description: mission.keyPoints[2].description 
+    }
+  ];
+
   return (
     <PageLayout>
       <div className="pt-20"></div>
@@ -50,9 +70,9 @@ export default function MissionPage() {
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {mission.keyPoints.map((point, index) => (
+          {missionPoints.map((point, index) => (
             <Card key={index} className="text-center">
-              <span className="text-3xl mb-4 block">{point.icon}</span>
+              <div className="text-primary-500 mb-4 flex justify-center">{point.icon}</div>
               <h3 className="text-xl font-bold mb-3">{point.title}</h3>
               <p className="text-gray-600">{point.description}</p>
             </Card>
@@ -85,36 +105,49 @@ export default function MissionPage() {
       </Section>
 
       {/* Values */}
-      <Section variant="alternate" className="py-12 bg-[#607AD4]">
-  <Heading
-    level={2}
-    className="text-center text-white mb-8 uppercase tracking-wider"
-  >
-    {values.heading}
-  </Heading>
-  <div className="grid md:grid-cols-5 gap-12 max-w-6xl mx-auto">
-    {values.items.map((value, index) => (
-      <Card
-        key={index}
-        className="relative p-6 bg-white rounded-lg shadow-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 group"
+      <Section 
+        variant="alternate" 
+        className="py-12 bg-[#498B86]"
       >
-        {/* Front layer: show each letter to collectively spell "V O I C E" */}
-        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-          <h2 className="text-6xl font-bold text-primary-500">
-            {['V', 'O', 'I', 'C', 'E'][index]}
-          </h2>
+        <Heading
+          level={2}
+          className="text-center text-white mb-8 uppercase tracking-wider"
+        >
+          {values.heading}
+        </Heading>
+        <div className="grid md:grid-cols-5 gap-12 max-w-6xl mx-auto">
+          {values.items.map((value, index) => (
+            <Card
+              key={index}
+              className="relative p-6 bg-white rounded-lg shadow-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 group"
+            >
+              {/* Front layer: show each letter to collectively spell "V O I C E" */}
+              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                <h2 className="text-6xl font-bold text-primary-500">
+                  {['V', 'O', 'I', 'C', 'E'][index]}
+                </h2>
+              </div>
+              {/* Back layer: card content revealed on hover */}
+              <div className="relative opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="mb-2 text-primary-500 uppercase tracking-wide text-sm text-center font-bold">
+                  {value.title}
+                </div>
+                <p className="text-gray-600 group-hover:text-[#498B86] transition-colors">{value.description}</p>
+              </div>
+            </Card>
+          ))}
         </div>
-        {/* Back layer: card content revealed on hover */}
-        <div className="relative opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="mb-2 text-primary-500 uppercase tracking-wide text-sm text-center font-bold">
-            {value.title}
-          </div>
-          <p className="text-gray-600">{value.description}</p>
+      </Section>
+
+      <Section 
+        title="Share Our Mission"
+        subtitle="Join the Conversation"
+        description="Help spread awareness about health equity"
+      >
+        <div className="max-w-4xl mx-auto">
+          <SocialCallout />
         </div>
-      </Card>
-    ))}
-  </div>
-</Section>
+      </Section>
 
       {/* Call to Action */}
       <Section variant="highlight" className="text-center">

@@ -24,9 +24,9 @@ export const navigation = {
     {
       title: 'WHAT WE DO',
       submenu: [
+        { title: 'Our Resources', href: '/what-we-do/resources' },
         //WILL USE LATER UNCOMMENT WHEN THEY WANT IT
         // { title: 'Voices & Impact', href: '/what-we-do/news' },
-        { title: 'Our Resources', href: '/what-we-do/resources' },
       ],
     },
     {
@@ -35,6 +35,7 @@ export const navigation = {
         { title: 'Our Chapters', href: '/get-involved/chapters' },
         { title: 'Chapter Requirements', href: '/get-involved/requirements' },
         { title: 'Start a Chapter', href: '/get-involved/start' },
+        { title: 'Contact Us', href: '/contact' }
       ],
     },
     //WILL ADD BACK LATER NOT ENOUGH INFORMATION CALEB WANTS REMOVED RIGHT NOW
@@ -214,7 +215,7 @@ export const whoWeAre = {
   },
   history: {
     title: "Our History",
-    subtitle: "A Legacy of Health Equity Advocacy",
+    subtitle: "The journey of Voices of Equity",
     content: [
       "Our journey began with firsthand experiences in hospitals, community clinics, and underserved neighborhoods — both locally and globally — where the stark realities of health disparities were impossible to ignore. Whether it was witnessing patients struggle to access quality care or hearing stories of systemic barriers from healthcare professionals, the message was clear: the time for change is now.",
       "Driven by a blend of personal and professional experiences, the Voices of Equity team understood the urgency of this issue. They realized that addressing these disparities required both awareness and meaningful action—bridging the gaps between education, inspiration, and empowerment.",
@@ -223,15 +224,14 @@ export const whoWeAre = {
     ],
     timeline: [
       {
-        year: 'DEC',
-        title: "VOE Founded",
-        description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action",
-        side: 'left'
+        year: "2023",
+        title: "Foundation",
+        description: "Voices of Equity was founded at Cornell University"
       },
       {
-        year: 2024,
-        title: "",
-        description: ""
+        year: "2024",
+        title: "First Chapter",
+        description: "Launched our first official chapter"
       },
       {
         year: 'JAN',
@@ -262,7 +262,7 @@ export const whoWeAre = {
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
         image: "/caleb-new-3.png",
-        shortBio: "Caleb has dedicated his career to advancing equity in healthcare...",
+        shortBio: "Caleb leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities",
         fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
         Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations.  Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges. 
@@ -277,10 +277,10 @@ export const whoWeAre = {
         name:"Zaid Al-Shoha",
         role: "Co-Founder and Co-Director",
         image: "/zaid-headshot.png",
-        shortBio: "Zaid is dedicated to addressing systemic health disparities...",
+        shortBio: "Zaid is responsible for shaping the organization's strategic direction,",
         fullBio: `As the Co-Founder and Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
 
- 
+        
 
         Zaid is an undergraduate student at Cornell University, studying Biological Sciences on the premedical track. With aspirations in academic medicine, he is particularly passionate about surgery and leveraging leadership to foster systemic change in healthcare. Through his work, he strives to bridge gaps in access to quality care, inspire future healthcare leaders, and develop innovative solutions to address inequities within the medical field.
 
@@ -298,15 +298,15 @@ export const whoWeAre = {
         name: "Eliza Dow",
         role: "National Director of Education",
         image:"/eliza.jpg",
-        shortBio: "Eliza is deeply passionate about health equity, particularly...",
+        shortBio: "aims to teach future healthcare professionals to recognize how policies and practices can either help or harm",
         fullBio: `Eliza Dow is a junior at Cornell University, studying Biology and Society in the College of Arts and Sciences. She is deeply passionate about health equity, particularly in the context of inclusive clinical trial practices and policies that improve healthcare outcomes for historically disadvantaged populations. Eliza hopes to use her passion to educate others on equitable practices within and beyond 
         healthcare. She aims to teach future healthcare professionals to recognize how policies and practices can either help or harm their patients, empower patients to understand and advocate for their rights, and drive meaningful change in medicine by highlighting critical perspectives on healthcare and health equity.
 
         At Voices of Equity, Eliza serves as the National Director of Education and the Director of Education for the Cornell chapter. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its 
         relevance not only in healthcare but in all aspects of life.
 
-        Beyond her work with Voices of Equity, Eliza is a certified EMT and has volunteered in hospital settings. She is also an editor for The Healthcare Review at Cornell University, a member of the pre-medical fraternity Phi Delta Epsilon, and plays for Cornell Women’s Club Lacrosse. Additionally, she previously served as the Vice President of Member Education for Cornell’s Delta Gamma sorority. With extensive experience in
-        developing educational materials and teaching about diverse communities, she brings invaluable expertise to Voices of Equity’s mission.`
+        Beyond her work with Voices of Equity, Eliza is a certified EMT and has volunteered in hospital settings. She is also an editor for The Healthcare Review at Cornell University, a member of the pre-medical fraternity Phi Delta Epsilon, and plays for Cornell Women's Club Lacrosse. Additionally, she previously served as the Vice President of Member Education for Cornell's Delta Gamma sorority. With extensive experience in
+        developing educational materials and teaching about diverse communities, she brings invaluable expertise to Voices of Equity's mission.`
       },
       {
         id: "adam-jac",
@@ -314,13 +314,13 @@ export const whoWeAre = {
         role: "National Director of Philanthropy",
         image:"/adam-new.jpg",
         shortBio: "Adam is committed to leverage philanthropy, research...",
-        fullBio:`Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master’s in Biomedical Engineering before pursuing medical school.
+        fullBio:`Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master's in Biomedical Engineering before pursuing medical school.
         
         Passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical experience to drive meaningful change in healthcare access and outcomes.
-        As the Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives that align with the organization’s mission to address systemic health disparities. 
+        As the Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives that align with the organization's mission to address systemic health disparities. 
         
         He designs and oversees large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with chapters to execute impactful philanthropic events. Additionally, he plays a key role in developing 
-        partnerships with organizations that support Voices of Equity’s philanthropic goals, ensuring sustainable funding for health equity initiatives.
+        partnerships with organizations that support Voices of Equity's philanthropic goals, ensuring sustainable funding for health equity initiatives.
 
         Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary care settings, gaining first hand exposure to the challenges patients face in accessing 
         care. He conducts clinical research with the Department of Plastic Surgery at Beth Israel Deaconess Medical Center and has started a project at the DeLisa Research Group at Cornell, where he has received two grants to continue 
@@ -357,7 +357,7 @@ export const whoWeAre = {
         philanthropy, and leadership. She has held the positions of public relations and philanthropy
         chair, which have developed her skills in design, publicity, and fundraising. Well trained in CPR
         and basic life support, Jennifer also works as a lifeguard both on campus and back home.
-        Jennifer’s experience in healthcare, media, and leadership has prepared her well to address
+        Jennifer's experience in healthcare, media, and leadership has prepared her well to address
         healthcare disparities by supporting the missions and goals for Voices of Equity`
       },
       {
@@ -368,7 +368,7 @@ export const whoWeAre = {
         shortBio:"Grace works to create lasting positive change..",
         fullBio: `Grace Chen serves as the Director of Outreach for Voices of Equity, where she leads expansion initiatives focused on establishing new undergraduate chapters across the country. As a Biometry and Statistics major at Cornell University who is also pursuing medicine, she brings a unique perspective that combines data-driven analysis with a commitment to improving healthcare equity. She develops comprehensive outreach materials, and implements engagement strategies to empower future chapter leaders to advance health equity in their communities. Through strategic partnerships with student organizations and academic institutions, she aims to build a robust network of future healthcare leaders committed to improving healthcare accessibility and outcomes.
  
-        Grace’s dedication to STEM outreach is further demonstrated by her role as a Policy and Practices Member for Cornell iGEM, conducting interviews and organizing educational and outreach-based events based on synthetic biology. Her leadership extends to coaching and mentorship, including guiding students to a national Science Olympiad victory and leading a competitive team to an overall second-place national finish.
+        Grace's dedication to STEM outreach is further demonstrated by her role as a Policy and Practices Member for Cornell iGEM, conducting interviews and organizing educational and outreach-based events based on synthetic biology. Her leadership extends to coaching and mentorship, including guiding students to a national Science Olympiad victory and leading a competitive team to an overall second-place national finish.
 
         Combining her expertise in project management and inclusive leadership with a passionate commitment to fostering health equity, Grace works to create lasting positive change through educational outreach and community-based initiatives. Her leadership helps Voices of Equity fulfill its mission of educating, inspiring, and empowering communities through impactful content, storytelling, and actionable solutions that address healthcare disparities.`
       },
@@ -637,15 +637,10 @@ export const whatWeDo = {
     content: {
       videos: [
         {
-          videoId: "your_video_id_here",
+          videoId: "PJEX8nYyXBU",
           title: "Understanding Health Equity",
           description: "An introduction to health equity and why it matters in today's healthcare landscape."
         },
-        {
-          videoId: "another_video_id",
-          title: "Healthcare Disparities in Practice",
-          description: "Real-world examples of healthcare disparities and their impact on communities."
-        }
       ],
       researchPapers: [
         {
@@ -659,7 +654,7 @@ export const whatWeDo = {
           title: "Defining Health Equity",
           authors: "Paula Braveman",
           year: "2022",
-          description: "The term “health equity” has become widely used in health and health care arenas over the past few years.",
+          description: "The term 'health equity' has become widely used in health and health care arenas over the past few years.",
           link: "https://www.sciencedirect.com/science/article/pii/S0027968422001432"
         }
       ],
@@ -675,6 +670,89 @@ export const whatWeDo = {
           description: "Resources and strategies for effective advocacy.",
           icon: "🔧",
           link: "/guides/advocacy-toolkit.pdf"
+        }
+      ]
+    }
+  },
+  summary: {
+    metrics: [
+      {
+        value: "Coming",
+        label: "Soon"
+      },
+      {
+        value: "Coming",
+        label: "Soon"
+      },
+      {
+        value: "Coming",
+        label: "Soon"
+      },
+      {
+        value: "Coming",
+        label: "Soon"
+      }
+    ],
+    pillars: [
+      {
+        title: "Coming Soon",
+        description: "Content coming soon",
+        points: [
+          "Coming soon",
+          "Coming soon",
+          "Coming soon"
+        ]
+      },
+      {
+        title: "Coming Soon",
+        description: "Content coming soon",
+        points: [
+          "Coming soon",
+          "Coming soon",
+          "Coming soon"
+        ]
+      },
+      {
+        title: "Coming Soon",
+        description: "Content coming soon",
+        points: [
+          "Coming soon",
+          "Coming soon",
+          "Coming soon"
+        ]
+      }
+    ],
+    report: {
+      sections: [
+        {
+          title: "Coming Soon",
+          content: "Content coming soon",
+          stats: [
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" }
+          ]
+        },
+        {
+          title: "Coming Soon",
+          content: "Content coming soon",
+          stats: [
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" }
+          ]
+        },
+        {
+          title: "Coming Soon",
+          content: "Content coming soon",
+          stats: [
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" },
+            { value: "Coming", label: "Soon" }
+          ]
         }
       ]
     }

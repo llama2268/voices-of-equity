@@ -1,9 +1,9 @@
 export const theme = {
   colors: {
     primary: {
-      main: '#607AD4',
-      light: '#7C92E6',
-      dark: '#4C62AA',
+      main: '#607AD4', // Equity blue
+      light: '#8A9DE0',
+      dark: '#4A62AA',
       50: '#F5F7FE',
       100: '#E8ECFC',
       200: '#C5D0F7',
@@ -16,9 +16,12 @@ export const theme = {
       900: '#13192B'
     },
     secondary: {
-      main: '#E4826D',
-      light: '#F2A08C',
-      dark: '#B66857'
+      main: '#498B86', // Equity green
+      light: '#5AABA5',
+      dark: '#3A6F6B',
+      50: '#F2F8F7',
+      100: '#F2A08C',
+      200: '#B66857'
     },
     accent: {
       main: '#498B86',
@@ -61,13 +64,13 @@ export const theme = {
   },
   gradients: {
     primary: 'linear-gradient(to right, #4C62AA, #607AD4)',
-    secondary: 'linear-gradient(to right, #B66857, #E4826D)',
+    secondary: 'linear-gradient(to right, #3A6F6B, #498B86)',
     accent: 'linear-gradient(to right, #498B86, #5AABA5)',
     light: 'linear-gradient(to right, #F5F7FE, #E8ECFC)',
     dark: 'linear-gradient(to right, #374151, #4B5563)',
     text: {
       primary: 'linear-gradient(to right, #4C62AA, #607AD4)',
-      accent: 'linear-gradient(to right, #B66857, #E4826D)',
+      accent: 'linear-gradient(to right, #3A6F6B, #498B86)',
       subtle: 'linear-gradient(to right, #4B5563, #6B7280)',
     }
   },

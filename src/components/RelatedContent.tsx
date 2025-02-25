@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GuideIcon, StartIcon, ConnectIcon } from '@/components/icons/JourneyIcons';
 
 interface RelatedContentProps {
   title: string;
@@ -10,26 +11,32 @@ interface RelatedContentProps {
   }>;
 }
 
-export function RelatedContent({ title, items }: RelatedContentProps) {
+export function RelatedContent({ title = "Continue Your Journey", items }: RelatedContentProps) {
+  const iconMap = {
+    "guide": <GuideIcon />,
+    "start": <StartIcon />,
+    "connect": <ConnectIcon />
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-sm p-8">
-      <h3 className="text-2xl font-bold text-center mb-8">{title}</h3>
-      <div className="grid md:grid-cols-2 gap-6">
+      <h2 className="text-2xl font-bold text-center mb-8">{title}</h2>
+      <div className="grid md:grid-cols-3 gap-6">
         {items.map((item) => (
           <Link
-            key={item.href}
+            key={item.title}
             href={item.href}
-            className="group p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            className="group p-4 rounded-lg hover:bg-gray-50 transition-colors"
           >
-            <div className="flex items-start gap-4">
-              <span className="text-3xl">{item.icon}</span>
-              <div>
-                <h4 className="font-semibold text-lg mb-1 group-hover:text-[#E4826D] transition-colors">
-                  {item.title}
-                </h4>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
+            <div className="text-[#498B86] mb-3">
+              {iconMap[item.icon]}
             </div>
+            <h3 className="font-bold mb-2 group-hover:text-[#498B86] transition-colors">
+              {item.title}
+            </h3>
+            <p className="text-gray-600 text-sm">
+              {item.description}
+            </p>
           </Link>
         ))}
       </div>

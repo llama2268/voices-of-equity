@@ -16,7 +16,7 @@ export function Callout({ eyebrow, title, description, link, variant = 'impact' 
   return (
     <div className={cn(
       "p-8 rounded-lg border-l-4",
-      variant === 'impact' ? "bg-primary-50/50 border-primary-500" : "bg-secondary-50/50 border-[#E4826D]"
+      variant === 'impact' ? "bg-primary-50/50 border-primary-500" : "bg-secondary-50/50 border-[#498B86]"
     )}>
       <p className="text-sm font-medium uppercase tracking-wide mb-2 text-gray-600">
         {eyebrow}
@@ -25,7 +25,7 @@ export function Callout({ eyebrow, title, description, link, variant = 'impact' 
       <p className="text-gray-600 mb-6">{description}</p>
       <Link
         href={link.href}
-        className="group inline-flex items-center font-semibold text-gray-900 hover:text-[#E4826D] transition-colors"
+        className="group inline-flex items-center font-semibold text-gray-900 hover:text-[#498B86] transition-colors"
       >
         {link.text}
         <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>

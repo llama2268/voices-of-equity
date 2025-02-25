@@ -2,6 +2,7 @@ import PageLayout from '../../../components/Layout/PageLayout';
 import TeamMember from '../../../components/Team/TeamMember';
 import { whoWeAre } from '@/content/content';
 import { Section } from '@/components/ui/Section';
+import { SocialCallout } from '@/components/ui/SocialCallout';
 
 export default function TeamPage() {
   const { title, subtitle, members, engineers } = whoWeAre.team;
@@ -49,6 +50,16 @@ export default function TeamPage() {
               {/* Chapter leader cards */}
             </div>
           </div>
+        </div>
+      </Section>
+
+      <Section 
+        title="Connect With Our Team"
+        subtitle="Behind the Scenes"
+        description="Follow our journey and daily updates"
+      >
+        <div className="max-w-4xl mx-auto">
+          <SocialCallout />
         </div>
       </Section>
     </PageLayout>
