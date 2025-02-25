@@ -46,7 +46,8 @@ const NavBar = () => {
                 'text-gray-900'
                 }`}
               >
-                Voices of Equity
+                {/* Move the logo to the left*/}
+              <Image src="/logo-new.png" alt="Voices of Equity" width={110} height={100} priority placeholder="empty"/>
               </Link>
             </div>
 

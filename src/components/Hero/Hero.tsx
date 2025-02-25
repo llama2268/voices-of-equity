@@ -25,8 +25,7 @@ const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            <span className="font-display block mb-2">{firstHalf}</span>
-            <span className="font-serif font-normal italic">{secondHalf}</span>
+            <span className="font-display block mb-2">{title}</span>
           </h1>
           {description && (
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
