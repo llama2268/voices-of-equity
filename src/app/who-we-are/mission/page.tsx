@@ -35,12 +35,12 @@ export default function MissionPage() {
       <div className="pt-20"></div>
       <div className="relative h-80 w-full">
         <Image
-          src="/team.jpg"
+          src="/team-picture.jpg"
           alt="Our Mission"
           layout="fill"
           objectFit="cover"
           objectPosition="50% 60%"
-          className="filter brightness-125"
+          className="filter brightness-100"
         />
         <div className="absolute inset-0 bg-black opacity-40" />
       </div>
@@ -81,15 +81,27 @@ export default function MissionPage() {
       </Section>
 
       {/* Vision */}
-      <Section>
-        <div className="text-center mb-12">
-          <p className="font-serif text-lg text-primary-600 mb-3 italic">
-          </p>
-          <h2 className="text-3xl font-bold mb-6">{vision.heading}</h2>
-          <p className="font-serif text-xl text-gray-800 max-w-3xl mx-auto mb-12">
-            {vision.text}
-          </p>
-        </div>
+      <Section className="bg-white">
+  <div className="flex flex-col lg:flex-row items-center gap-10">
+    <div className="w-full lg:w-1/2">
+        <img
+        src="/our-vision-2.png" // Replace with your image URL
+        alt="Vision Image"
+        className="w-auto h-auto object-cover rounded-lg shadow-md"
+      />    </div>
+
+    {/* Right side for text */}
+    <div className="w-full lg:w-1/2 flex flex-col items-center justify-center text-center p-3">
+  <p className="font-serif text-lg text-primary-600 mb-3 italic">
+    {/* Optional tagline or subtitle */}
+  </p>
+  <h2 className="text-3xl font-bold mb-6 text-black">{vision.heading}</h2>
+  <p className="font-serif text-xl text-black max-w-3xl mb-12">
+    {vision.text}
+  </p>
+</div>
+  </div>
+</Section>
         {/* THESE ARE THE CARDS WHICH WE WILL USE LATER COMMENTED OUT FOR NOW */}
         {/* <div className="grid md:grid-cols-3 gap-8">
           {vision.stats.map((stat, index) => (
@@ -102,67 +114,62 @@ export default function MissionPage() {
             </Card>
           ))}
         </div> */}
-      </Section>
-
+        
       {/* Values */}
-      <Section 
-        variant="alternate" 
-        className="py-12 bg-[#498B86]"
-      >
-        <Heading
+      <Section>
+      <Heading
           level={2}
-          className="text-center text-white mb-8 uppercase tracking-wider"
+          className="text-center text-[#587FDA] mb-8 uppercase tracking-wider bg-white"
         >
           {values.heading}
         </Heading>
-        <div className="grid md:grid-cols-5 gap-12 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {values.items.map((value, index) => (
             <Card
               key={index}
-              className="relative p-6 bg-white rounded-lg shadow-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 group"
+              className="relative p-6 bg-[#587FDA] rounded-lg shadow-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 group"
             >
               {/* Front layer: show each letter to collectively spell "V O I C E" */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                <h2 className="text-6xl font-bold text-primary-500">
+                <h2 className="text-6xl font-bold text-white">
                   {['V', 'O', 'I', 'C', 'E'][index]}
                 </h2>
               </div>
               {/* Back layer: card content revealed on hover */}
               <div className="relative opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="mb-2 text-primary-500 uppercase tracking-wide text-sm text-center font-bold">
+                <div className="mb-2 text-white uppercase tracking-wide text-sm text-center font-bold">
                   {value.title}
                 </div>
-                <p className="text-gray-600 group-hover:text-[#498B86] transition-colors">{value.description}</p>
+                <p className="text-gray-600 group-hover:text-white transition-colors">{value.description}</p>
               </div>
             </Card>
           ))}
         </div>
       </Section>
 
-      <Section 
-        title="Share Our Mission"
-        subtitle="Join the Conversation"
-        description="Help spread awareness about health equity"
-      >
-        <div className="max-w-4xl mx-auto">
-          <SocialCallout />
+      <section className="py-20 bg-[#607AD4] text-white">
+        <div className="max-w-7xl mx-auto px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
+          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+            Join our community of changemakers and help build a more equitable future for all.
+          </p>
+          <div className="flex gap-4 justify-center">
+            {/* <a
+              href="/get-involved/chapters"
+              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
+            >
+              Join Our Movement
+            </a>
+            <a
+              href="/who-we-are/mission"
+              className="px-8 py-4 bg-white hover:bg-gray-100 text-[#607AD4] font-semibold rounded-lg transition-colors"
+            >
+              Learn More
+            </a> */}
+            <SocialCallout/>
+          </div>
         </div>
-      </Section>
-
-      {/* Call to Action */}
-      <Section variant="highlight" className="text-center">
-        <Heading level={2} className="mb-4">
-          {callToAction.heading}
-        </Heading>
-        <p className="text-xl text-gray-700 mb-8">
-          {callToAction.text}
-        </p>
-        <Link href={callToAction.buttonLink}>
-          <Button size="lg" variant="primary">
-            {callToAction.buttonText}
-          </Button>
-        </Link>
-      </Section>
+      </section>
     </PageLayout>
   );
 } 

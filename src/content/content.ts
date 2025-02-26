@@ -33,7 +33,7 @@ export const navigation = {
       title: 'GET INVOLVED',
       submenu: [
         { title: 'Our Chapters', href: '/get-involved/chapters' },
-        { title: 'Chapter Requirements', href: '/get-involved/requirements' },
+        // { title: 'Chapter Requirements', href: '/get-involved/requirements' },
         { title: 'Start a Chapter', href: '/get-involved/start' },
         { title: 'Contact Us', href: '/contact' }
       ],
@@ -224,32 +224,31 @@ export const whoWeAre = {
     ],
     timeline: [
       {
-        year: "2023",
-        title: "Foundation",
-        description: "Voices of Equity was founded at Cornell University"
+        year: 'DEC',
+        title: "VOE Founded",
+        description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action",
+        side: 'right'
       },
       {
-        year: "2024",
-        title: "First Chapter",
-        description: "Launched our first official chapter"
+        year: 2024
       },
       {
         year: 'JAN',
         title: "Cornell Chapter Established",
         description: "The first undergraduate chapter is launched at Cornell University, serving as a model for future chapters and student-led initiatives",
-        side: 'right'
+        side: 'left'
       },
       {
         year: 'FEB',
         title: "Curriculum & Educational Development Begins",
         description: "Voices of Equity begins developing a structured health equity curriculum, creating accessible educational materials to guide discussions and empower student leaders",
-        side: 'left'
+        side: 'right'
       },
       {
         year: 'MAR',
         title: "National Expansion Begins",
         description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country.",
-        side: 'right'
+        side: 'left'
       },
     ]
   },
@@ -261,8 +260,8 @@ export const whoWeAre = {
         id: "caleb-suh",
         name: "Caleb T. Suh",
         role: "Co-Founder & Co-Director",
-        image: "/caleb-new-3.png",
-        shortBio: "Caleb leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities",
+        image: "/caleb-new-4.jpg",
+        shortBio: "Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity..",
         fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
         Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations.  Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges. 
@@ -277,7 +276,7 @@ export const whoWeAre = {
         name:"Zaid Al-Shoha",
         role: "Co-Founder and Co-Director",
         image: "/zaid-headshot.png",
-        shortBio: "Zaid is responsible for shaping the organization's strategic direction,",
+        shortBio: "Zaid Al-Shoha leads efforts to drive impactful change..",
         fullBio: `As the Co-Founder and Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
 
         
@@ -298,7 +297,7 @@ export const whoWeAre = {
         name: "Eliza Dow",
         role: "National Director of Education",
         image:"/eliza.jpg",
-        shortBio: "aims to teach future healthcare professionals to recognize how policies and practices can either help or harm",
+        shortBio: "Eliza Dow is a junior at Cornell University, studying Biology and Society..",
         fullBio: `Eliza Dow is a junior at Cornell University, studying Biology and Society in the College of Arts and Sciences. She is deeply passionate about health equity, particularly in the context of inclusive clinical trial practices and policies that improve healthcare outcomes for historically disadvantaged populations. Eliza hopes to use her passion to educate others on equitable practices within and beyond 
         healthcare. She aims to teach future healthcare professionals to recognize how policies and practices can either help or harm their patients, empower patients to understand and advocate for their rights, and drive meaningful change in medicine by highlighting critical perspectives on healthcare and health equity.
 
@@ -949,8 +948,8 @@ export const cornellChapter = {
     upcomingEvents: [
       {
         name: "Spring Information Session",
-        date: "January 25, 2025",
-        location: "Warren Hall B45",
+        date: "March 12, 2025",
+        location: "MBR",
         time: "5:00 PM EST",
         registrationLink: "/events/spring-info-session"
       }
@@ -960,9 +959,9 @@ export const cornellChapter = {
     email: "cornell@voicesofequity.org",
     socialMedia: {
       instagram: "@voecornell",
-      linkedin: "/company/voe-cornell"
+      // linkedin: "/company/voe-cornell"
     },
-    location: "Cornell University, Ithaca, NY 14853"
+    // location: "Cornell University, Ithaca, NY 14853"
   }
 };
 

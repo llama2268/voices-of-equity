@@ -16,10 +16,20 @@ export default function ContactPage() {
             Have questions about starting a chapter, joining our team, or collaborating with us? We'd love to hear from you.
           </p>
         </div>
+        <div className="max-w-4xl mx-auto text-center mb-12">
+  </div>
+  <div className="text-center">
+    <a
+      href="mailto:admin@thevoicesof.org"  // Replace with your contact email
+      className="inline-block px-6 py-3 bg-[#607AD4] text-white font-semibold rounded hover:bg-[#5068BD] transition-colors"
+    >
+      Email Us
+    </a>
+  </div>
       </Section>
 
       {/* Contact Form Section */}
-      <Section>
+      {/* <Section>
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
             <iframe
@@ -34,10 +44,10 @@ export default function ContactPage() {
             </iframe>
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       {/* Alternative Contact Methods */}
-      <Section variant="alternate">
+      {/* <Section variant="alternate">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
@@ -85,18 +95,32 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       {/* Social Media Section */}
-      <Section 
-        title="Connect With Us"
-        subtitle="Follow Our Journey"
-        description="Stay connected with us on social media"
-      >
-        <div className="max-w-4xl mx-auto">
-          <SocialCallout />
+      <section className="py-16 bg-[#607AD4] text-white">
+        <div className="max-w-7xl mx-auto px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
+          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+            Join our community of changemakers and help build a more equitable future for all.
+          </p>
+          <div className="flex gap-4 justify-center">
+            {/* <a
+              href="/get-involved/chapters"
+              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
+            >
+              Join Our Movement
+            </a>
+            <a
+              href="/who-we-are/mission"
+              className="px-8 py-4 bg-white hover:bg-gray-100 text-[#607AD4] font-semibold rounded-lg transition-colors"
+            >
+              Learn More
+            </a> */}
+            <SocialCallout/>
+          </div>
         </div>
-      </Section>
+      </section>
     </PageLayout>
   );
 } 

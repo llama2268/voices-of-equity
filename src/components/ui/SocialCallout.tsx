@@ -2,9 +2,7 @@ import { socialLinks } from '@/content/social';
 
 export function SocialCallout() {
   return (
-    <div className="bg-[#607AD4] text-white rounded-lg p-8">
-      <h3 className="text-2xl font-bold mb-4 text-center">Join the Conversation</h3>
-      <p className="text-center mb-6">Follow us on social media for updates, stories, and opportunities</p>
+    <div className="bg-[#607AD4] text-white rounded-lg p-3">
       <div className="flex justify-center space-x-6">
         {socialLinks.map((link) => (
           <a
@@ -19,7 +17,7 @@ export function SocialCallout() {
             <img 
               src={`/icons/social/${link.platform}.png`} 
               alt={link.platform}
-              className="w-6 h-6"
+              className="w-8 h-8"
             />
           </a>
         ))}

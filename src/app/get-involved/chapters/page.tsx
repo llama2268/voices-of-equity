@@ -14,18 +14,18 @@ export default function ChaptersPage() {
   
   const updatedBenefits = [
     {
-      title: 'Resources & Support',
-      description: 'Access our comprehensive resource library, receive mentorship from experienced leaders, and get support for event planning and community outreach initiatives.',
+      title: 'Real-World Impact',
+      description: 'Lead community-based initiatives that address health disparities, from educational outreach to philanthropic projects, empowering your campus to drive meaningful change locally and nationally.',
       icon: <ResourceIcon />
     },
     {
-      title: 'National Recognition',
-      description: 'Join a network of recognized changemakers, get featured in our national publications, and receive opportunities to present at conferences and symposiums.',
+      title: 'Exclusive Resources and Networking',
+      description: 'Access comprehensive health equity curricula, workshops, and mentorship opportunities while connecting with healthcare professionals, community leaders, and other chapter leaders across the country.',
       icon: <AwardIcon />
     },
     {
       title: 'Leadership Development',
-      description: 'Develop crucial leadership skills through structured training programs, workshops, and hands-on experience managing impactful community projects.',
+      description: 'Gain hands-on leadership experience by organizing impactful initiatives, leading educational events, and collaborating with peers nationwide to advance health equity on your campus and in your community.',
       icon: <LeadershipIcon />
     }
   ];
@@ -109,24 +109,20 @@ export default function ChaptersPage() {
                     <h3 className="font-semibold text-gray-900 mb-3">Leadership</h3>
                     <div className="grid md:grid-cols-2 gap-6 py-3">
                       <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="font-medium text-gray-900">Caleb T. Suh</p>
-                        <p className="text-sm text-gray-600">Co-Founder & President</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="font-medium text-gray-900">Zaid Al-Shoha</p>
-                        <p className="text-sm text-gray-600">Co-Founder & Vice President</p>
+                        <p className="font-medium text-gray-900">Jimmy Quinlan</p>
+                        <p className="text-sm text-gray-600">President</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="flex items-center justify-between pt-6 mt-8">
                     <span className="text-gray-600">45 active members</span>
-                    {/* <Link
+                    <Link
                       href="/cornell"
                       className="px-6 py-2 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg transition-colors"
                     >
                       Visit Chapter
-                    </Link> */}
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -136,7 +132,7 @@ export default function ChaptersPage() {
       </Section>
 
       {/* Impact Stats */}
-      <Section spacing="sm">
+      {/* <Section spacing="sm">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
@@ -145,7 +141,7 @@ export default function ChaptersPage() {
             </div>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       {/* Related Content */}
       <Section spacing="sm">
@@ -176,7 +172,7 @@ export default function ChaptersPage() {
         </div>
       </Section>
 
-      <Section spacing="sm">
+      {/* <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
           <Callout
             eyebrow="Chapter Success Stories"
@@ -190,18 +186,32 @@ export default function ChaptersPage() {
             variant="impact"
           />
         </div>
-      </Section>
+      </Section> */}
 
       {/* Social Media Integration */}
-      <Section 
-        title="Connect With Chapters"
-        subtitle="Follow Our Journey"
-        description="Stay connected with our chapters across the country"
-      >
-        <div className="max-w-4xl mx-auto">
-          <SocialCallout />
+      <section className="py-20 bg-[#607AD4] text-white">
+        <div className="max-w-7xl mx-auto px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
+          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+            Join our community of changemakers and help build a more equitable future for all.
+          </p>
+          <div className="flex gap-4 justify-center">
+            {/* <a
+              href="/get-involved/chapters"
+              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
+            >
+              Join Our Movement
+            </a>
+            <a
+              href="/who-we-are/mission"
+              className="px-8 py-4 bg-white hover:bg-gray-100 text-[#607AD4] font-semibold rounded-lg transition-colors"
+            >
+              Learn More
+            </a> */}
+            <SocialCallout/>
+          </div>
         </div>
-      </Section>
+      </section>
     </PageLayout>
   );
 }

@@ -95,7 +95,7 @@ export const chaptersContent = {
   page: {
     title: "Our Chapters",
     subtitle: "Join a community of changemakers across the nation",
-    introduction: "Starting a Voices of Equity chapter is more than just founding a student organization—it's about creating lasting change in your community and developing invaluable leadership skills."
+    introduction: "Starting a Voices of Equity chapter is more than just founding a student organization—it's about creating lasting change in your community while developing leadership skills."
   },
   benefits: [
     {

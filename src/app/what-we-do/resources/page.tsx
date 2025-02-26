@@ -155,14 +155,14 @@ export default function ResourcesPage() {
         </Section>
 
         {/* Stay Connected Section */}
-        <Section 
+        {/* <Section 
           title="Stay Connected"
           subtitle="Follow Our Updates"
         >
           <div className="max-w-4xl mx-auto">
             <SocialCallout />
           </div>
-        </Section>
+        </Section> */}
 
         {/* Call to Action */}
         <Section 
