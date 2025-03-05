@@ -640,6 +640,11 @@ export const whatWeDo = {
           title: "Understanding Health Equity",
           description: "An introduction to health equity and why it matters in today's healthcare landscape."
         },
+        {
+          videoId: "Mfc-dMTQHbQ",
+          title: "Social Determinants of Health Explained - The Hidden Forces Shaping Your Health",
+          description: "The social determinants of health—economic stability, education, neighborhood environment, healthcare access, and social support—shape our well-being long before we ever set foot in a doctor’s office. In this video, we break down how these factors impact health outcomes and why addressing them is crucial for achieving health equity."
+        },
       ],
       researchPapers: [
         {
