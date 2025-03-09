@@ -184,24 +184,28 @@ export const whoWeAre = {
         heading: "OUR CORE VALUES",
         items: [
           {
-            title: "Vision",
-            description: "Stay focused on long-term impact and health equity outcomes"
+            title: "Value Every Person",
+            description: "We believe everyone deserves access to healthcare and the opportunity to live a healthy life—no matter their background, income, or zip code"
           },
           {
-            title: "Ownership",
-            description: "Take responsibility for actions, decisions, and growth"
+            title: "Opportunity for Better Health",
+            description: "Health isn’t just about doctors and hospitals—it’s about the opportunities people have to stay healthy. We fight to remove barriers like lack of insurance, food insecurity, and unequal access to care"
           },
           {
-            title: "Integrity",
-            description: "Uphold honesty and ethical leadership in all endeavors"
+            title: "Impact Over Words",
+            description: "Raising awareness isn’t enough. We focus on real, tangible solutions that improve health outcomes—whether that’s connecting someone to free medical care or giving them the resources they need to advocate for themselves"
           },
           {
-            title: "Collaboration",
-            description: "Work together with respect, valuing diverse perspectives"
+            title: "Community First",
+            description: "Health starts where we live, work, and gather. We listen to communities, support grassroots efforts, and ensure that solutions are created with the people they serve"
           },
           {
-            title: "Empowerment",
-            description: "Inspire and enable others to lead and create change"
+            title: "Equity in Action",
+            description: "We don’t just talk about health equity—we act on it. From mobile clinics to patient advocacy, we take meaningful steps toward a future where quality healthcare is a right, not a privilege"
+          },
+          {
+            title: "Sustainable Change",
+            description: "Real change doesn’t happen overnight. We work to create lasting systems of support—so communities don’t just receive temporary relief but have ongoing access to healthcare, education, and resources"
           }
         ]
       },
