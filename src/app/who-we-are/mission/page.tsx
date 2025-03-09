@@ -48,7 +48,7 @@ export default function MissionPage() {
   return (
     <PageLayout>
       <div className="pt-20"></div>
-      <div className="relative h-80 w-full">
+      <div className="relative h-[40vh] w-full">
         <Image
           src="/team-picture.jpg"
           alt="Our Mission"
