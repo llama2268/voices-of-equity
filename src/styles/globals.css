@@ -186,3 +186,11 @@ input, select, textarea {
     @apply hover:text-[#498B86] transition-colors;
   }
 }
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

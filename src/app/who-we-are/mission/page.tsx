@@ -1,3 +1,4 @@
+"use client"
 import PageLayout from '../../../components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import { Heading } from '@/components/ui/Heading';
@@ -8,6 +9,8 @@ import Link from 'next/link';
 import Image from 'next/image'
 import { SocialCallout } from '@/components/ui/SocialCallout';
 import { EducateIcon, InspireIcon, EmpowerIcon } from '@/components/icons/MissionIcons';
+import { useRef } from 'react';
+
 
 export default function MissionPage() {
   const { introduction, mission, vision, values, callToAction } = whoWeAre.mission.content;
@@ -29,6 +32,18 @@ export default function MissionPage() {
       description: mission.keyPoints[2].description 
     }
   ];
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft -= 200;
+    }
+  };
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft += 200;
+    }
+  };
 
   return (
     <PageLayout>
@@ -116,23 +131,25 @@ export default function MissionPage() {
         </div> */}
         
       {/* Values */}
-      <Section>
+      <Section className = "w-screen">
       <Heading
           level={2}
           className="text-center text-[#587FDA] mb-8 uppercase tracking-wider bg-white"
         >
           {values.heading}
         </Heading>
-      <div className="grid md:grid-cols-5 gap-12 max-w-6xl mx-auto">
+      <div className="relative">
+      <div ref = {scrollRef} className="overflow-x-auto scrollbar-hide w-screen h-96 pt-8 ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] pr-56">
+      <div className="grid md:grid-cols-6 gap-52 p-2 max-w-full">
           {values.items.map((value, index) => (
             <Card
               key={index}
-              className="relative p-6 bg-[#587FDA] rounded-lg shadow-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 group"
+              className="relative w-full p-6 bg-[#587FDA] rounded-lg shadow-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 group min-w-[220px]"
             >
               {/* Front layer: show each letter to collectively spell "V O I C E" */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <h2 className="text-6xl font-bold text-white">
-                  {['V', 'O', 'I', 'C', 'E'][index]}
+                  {['V', 'O', 'I', 'C', 'E', 'S'][index]}
                 </h2>
               </div>
               {/* Back layer: card content revealed on hover */}
@@ -140,10 +157,12 @@ export default function MissionPage() {
                 <div className="mb-2 text-white uppercase tracking-wide text-sm text-center font-bold">
                   {value.title}
                 </div>
-                <p className="text-gray-600 group-hover:text-white transition-colors">{value.description}</p>
+                <p className="text-gray-600 group-hover:text-white transition-colors text-sm">{value.description}</p>
               </div>
             </Card>
           ))}
+        </div>
+        </div>
         </div>
       </Section>
 
