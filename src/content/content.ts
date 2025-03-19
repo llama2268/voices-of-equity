@@ -649,6 +649,11 @@ export const whatWeDo = {
           title: "Social Determinants of Health Explained - The Hidden Forces Shaping Your Health",
           description: "The social determinants of health—economic stability, education, neighborhood environment, healthcare access, and social support—shape our well-being long before we ever set foot in a doctor’s office. In this video, we break down how these factors impact health outcomes and why addressing them is crucial for achieving health equity."
         },
+        {
+          videoId: "sHLq3ECOB4Q",
+          title: "Food Deserts: The Silent Crisis Driving Health Inequity",
+          description: "Millions of Americans live in food deserts—neighborhoods where grocery stores are scarce, and healthy food is hard to find. Without access to fresh fruits and vegetables, communities face higher rates of obesity, diabetes, and heart disease. In this video, we explore how food deserts fuel health inequities and what can be done to ensure everyone has access to the nutrition they need to thrive."
+        },
       ],
       researchPapers: [
         {

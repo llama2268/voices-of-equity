@@ -177,7 +177,7 @@ export default function ResourcesPage() {
             </p>
           </blockquote>
           <a 
-            href="mailto:resources@voicesofequity.org"
+            href="mailto:admin@thevoicesof.org"
             className="inline-block bg-[#498B86] text-white px-8 py-4 rounded-xl hover:bg-[#3A6F6B] transition-colors font-semibold"
           >
             Request Resources

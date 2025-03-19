@@ -24,7 +24,7 @@ export const resourcesContent = {
     quote: "Knowledge is the first step toward change. These resources are your gateway to understanding and action.",
     button: {
       text: "Request Resources",
-      href: "mailto:resources@voicesofequity.org"
+      href: "mailto:admin@thevoicesof.org"
     }
   }
 }; 
