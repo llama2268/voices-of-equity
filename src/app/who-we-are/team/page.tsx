@@ -27,10 +27,7 @@ export default function TeamPage() {
 
           <div>
             <div className="text-center mb-12">
-              <p className="font-serif text-lg text-primary-600 mb-3 italic">
-                Advisory
-              </p>
-              <h2 className="text-3xl font-bold mb-4">Engineering Team</h2>
+              <h2 className="text-3xl font-bold mb-4">Software Development Team</h2>
             </div>
             {/* <div className = "flex justify-center"> */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
