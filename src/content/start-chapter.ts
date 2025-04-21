@@ -30,7 +30,7 @@ export const startChapterContent = {
   },
   cta: {
     title: "Ready to Begin?",
-    description: "Review our chapter requirements and start your application process today. We're here to support you every step of the way.",
+    description: "Contact us to start your application process today. We're here to support you every step of the way.",
     buttons: {
       primary: {
         text: "View Requirements",

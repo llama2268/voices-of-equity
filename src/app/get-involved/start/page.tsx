@@ -27,7 +27,29 @@ export default function StartChapterPage() {
             {start.page.introduction}
           </p>
         </div>
-        
+        <Section spacing="sm">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-12">{cta.title}</h2>
+          <div className="bg-[#498B86] text-white rounded-lg p-12">
+            <p className="text-xl mb-8">{cta.description}</p>
+            <div className="flex gap-4 justify-center">
+              {/* <Link
+                href={cta.buttons.primary.href}
+                className="px-8 py-4 bg-white text-[#498B86] font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                {cta.buttons.primary.text}
+              </Link> */}
+              <a
+                href={cta.buttons.secondary.href}
+                className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
+              >
+                {cta.buttons.secondary.text}
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
+
         {/* Vision Section */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-sm p-8 md:p-12">
@@ -66,6 +88,7 @@ export default function StartChapterPage() {
           </div>
         </div>
       </Section>
+      
 
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
@@ -83,7 +106,7 @@ export default function StartChapterPage() {
       </Section>
 
       {/* Process Steps */}
-      <Section variant="alternate" spacing="sm">
+      {/* <Section variant="alternate" spacing="sm">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">{process.title}</h2>
           <div className="grid md:grid-cols-4 gap-8">
@@ -100,31 +123,8 @@ export default function StartChapterPage() {
             ))}
           </div>
         </div>
-      </Section>
+      </Section> */}
 
-      {/* Requirements Preview */}
-      <Section spacing="sm">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">{cta.title}</h2>
-          <div className="bg-[#498B86] text-white rounded-lg p-12">
-            <p className="text-xl mb-8">{cta.description}</p>
-            <div className="flex gap-4 justify-center">
-              <Link
-                href={cta.buttons.primary.href}
-                className="px-8 py-4 bg-white text-[#498B86] font-semibold rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                {cta.buttons.primary.text}
-              </Link>
-              <a
-                href={cta.buttons.secondary.href}
-                className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
-              >
-                {cta.buttons.secondary.text}
-              </a>
-            </div>
-          </div>
-        </div>
-      </Section>
 
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
@@ -133,7 +133,7 @@ export default function StartChapterPage() {
       </Section>
 
       {/* Application Form */}
-      <Section 
+      {/* <Section 
         title="Start Your Chapter"
         subtitle="Application Form"
         description="Complete the form below to begin your chapter application process"
@@ -144,7 +144,7 @@ export default function StartChapterPage() {
             title="Chapter Application Form"
           />
         </div>
-      </Section>
+      </Section> */}
 
       {/* Social Media Callout */}
       <Section spacing="sm">
