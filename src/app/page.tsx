@@ -29,7 +29,7 @@ export default function HomePage() {
   return (
     <PageLayout fullWidth>
       <Hero
-        title="Building a More Equitiable Future, One Voice at a Time"
+        title="Building a More Equitable Future, One Voice at a Time"
         description="Voices of Equity is a nationwide movement empowering students, healthcare professionals, and community leaders to raise awareness, take action, and drive meaningful change in the fight for health equity"
       />
 

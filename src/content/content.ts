@@ -69,7 +69,7 @@ export const navigation = {
 
 export const homePage = {
   hero: {
-    title: "Building a More Equitiable Future, One Voice at a Time",
+    title: "Building a More Equitable Future, One Voice at a Time",
     subtitle: "",
     description: "Voices of Equity is a nationwide movement empowering students, healthcare professionals, and communit bvy leaders to raise awareness, take action, and drive meaningful change in the fight for health equity.",
     ctaButtons: [
