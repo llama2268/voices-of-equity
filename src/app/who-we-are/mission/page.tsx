@@ -130,42 +130,6 @@ export default function MissionPage() {
           ))}
         </div> */}
         
-      {/* Values */}
-      <Section className = "w-screen">
-      <Heading
-          level={2}
-          className="text-center text-[#587FDA] mb-8 uppercase tracking-wider bg-white"
-        >
-          {values.heading}
-        </Heading>
-      <div className="relative">
-      <div ref = {scrollRef} className="overflow-x-auto scrollbar-hide w-screen h-96 pt-8 ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] pr-56">
-      <div className="grid md:grid-cols-6 gap-52 p-2 max-w-full">
-          {values.items.map((value, index) => (
-            <Card
-              key={index}
-              className="relative w-full p-6 bg-[#587FDA] rounded-lg shadow-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 group min-w-[220px]"
-            >
-              {/* Front layer: show each letter to collectively spell "V O I C E" */}
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                <h2 className="text-6xl font-bold text-white">
-                  {['V', 'O', 'I', 'C', 'E', 'S'][index]}
-                </h2>
-              </div>
-              {/* Back layer: card content revealed on hover */}
-              <div className="relative opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="mb-2 text-white uppercase tracking-wide text-sm text-center font-bold">
-                  {value.title}
-                </div>
-                <p className="text-gray-600 group-hover:text-white transition-colors text-sm">{value.description}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
-        </div>
-        </div>
-      </Section>
-
       <section className="py-20 bg-[#607AD4] text-white">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>

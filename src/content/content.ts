@@ -116,7 +116,7 @@ export const homePage = {
     {
       title: "Inspire Healthcare Leaders",
       description: "Our goal is to inspire future healthcare leaders to prioritize health equity in their careers and initiatives.",
-      icon: "🤝"
+      icon: "💡"
     },
     {
       title: "Empower Action",
@@ -219,12 +219,12 @@ export const whoWeAre = {
   },
   history: {
     title: "Our History",
-    subtitle: "The journey of Voices of Equity",
+    subtitle: "The Journey of Voices of Equity",
     content: [
       "Our journey began with firsthand experiences in hospitals, community clinics, and underserved neighborhoods — both locally and globally — where the stark realities of health disparities were impossible to ignore. Whether it was witnessing patients struggle to access quality care or hearing stories of systemic barriers from healthcare professionals, the message was clear: the time for change is now.",
       "Driven by a blend of personal and professional experiences, the Voices of Equity team understood the urgency of this issue. They realized that addressing these disparities required both awareness and meaningful action—bridging the gaps between education, inspiration, and empowerment.",
       "In response, Voices of Equity was established to amplify the call for systemic change. By bringing together students, healthcare professionals, and community leaders, we created a platform to educate the next generation, share powerful stories, and equip communities with the tools to fight for equity. What started as a grassroots initiative has grown into a nationwide movement, uniting diverse voices around a shared mission: to dismantle barriers to health and create a world where everyone has the opportunity to thrive.",
-      "Today, Voices of Equity stands as a testament to the power of collective action. Together, we're building awareness, inspiring change, and empowering communities—one story, one initiative, and one step at a time."
+      "Today, Voices of Equity stands as a testament to the power of collective action. Together, we're building awareness, inspiring change, and empowering communities—one story, one initiative, and one VOICE at a time."
     ],
     timeline: [
       {
@@ -254,7 +254,14 @@ export const whoWeAre = {
         description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country.",
         side: 'left'
       },
-    ]
+      {
+        year: 'JUN',
+        title: "Foundations Solidified, Future in Motion",
+        description: "As VOE closes out its founding year, over 30 active chapters are established nationwide, a national leadership model is fully implemented, and VOE’s boots-on-the-ground communities based initiatives begin shaping the future of student-led health equity",
+        side: 'right'
+      },
+    ],
+    conclusion: "What began with a small team and a big vision has grown into a national movement. But the work is only just beginning. As we expand to new communities, launch new initiatives, and develop the next generation of health equity leaders, Voices of Equity is deepening its impact. Through our fellowship program, national campaigns, digital education platforms, and community-based initiatives, we remain committed to dismantling barriers to health"
   },
   team: {
     title: "Our Team",
