@@ -9,6 +9,7 @@ import { SocialCallout } from '@/components/ui/SocialCallout';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FormEvent } from 'react';
+import Image from 'next/image'
 
 export default function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -103,16 +104,25 @@ export default function HomePage() {
             Driving change through focused action and community engagement
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
           {homePage.initiatives.map((initiative, index) => (
             <div 
               key={initiative.title} 
               className="p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-t-4 border-transparent hover:border-secondary-500"
             >
-              <div className="text-4xl mb-4">{initiative.icon}</div>
-              <h3 className="text-xl font-bold text-primary-600 mb-4 group-hover:text-secondary-600 transition-colors">
+              <h3 className="text-center text-xl font-bold text-primary-600 mb-4 group-hover:text-secondary-600 transition-colors">
                 {initiative.title}
               </h3>
+                            <div className="mb-4 flex justify-center">
+                <Image
+                  src={initiative.image}
+                  alt={initiative.title}
+                  width={300}
+                  height={300}
+                  objectFit="cover"
+                  className="rounded"
+                />
+                </div>
               <p className="text-gray-700">{initiative.description}</p>
             </div>
           ))}

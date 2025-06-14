@@ -25,6 +25,10 @@ export const navigation = {
       title: 'WHAT WE DO',
       submenu: [
         { title: 'Our Resources', href: '/what-we-do/resources' },
+        { title: 'Our Impact', href: '/what-we-do/impact'},
+        { title: 'National Initiatives', href: '/what-we-do/national'},
+        { title: 'Local Initiatives', href: '/what-we-do/local'}
+
         //WILL USE LATER UNCOMMENT WHEN THEY WANT IT
         // { title: 'Voices & Impact', href: '/what-we-do/news' },
       ],
@@ -111,17 +115,20 @@ export const homePage = {
     {
       title: "Educate Communities",
       description: "We focus on educating communities about health equity issues to raise awareness and understanding.",
-      icon: "🎓"
+      icon: "🎓",
+      image:"/educate.jpg"
     },
     {
       title: "Inspire Healthcare Leaders",
       description: "Our goal is to inspire future healthcare leaders to prioritize health equity in their careers and initiatives.",
-      icon: "💡"
+      icon: "💡",
+      image:"/inspire.jpg"
     },
     {
       title: "Empower Action",
       description: "We implement community-based initiatives that empower students, community leaders, and healthcare professionals to improve health equity among diverse populations.",
-      icon: "📢"
+      icon: "📢",
+      image:"/empower.jpg"
     }
   ],
   mission: {
