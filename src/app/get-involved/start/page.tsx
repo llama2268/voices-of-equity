@@ -23,12 +23,9 @@ export default function StartChapterPage() {
       {/* Introduction */}
       <Section spacing="sm">
         <div className="mx-auto mb-12 max-w-4xl text-center">
-          <p className="text-lg leading-relaxed text-gray-600">
+          <p className="text-lg leading-relaxed text-gray-600 mb-10">
             {start.page.introduction}
           </p>
-        </div>
-        <Section spacing="sm">
-        <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <a
               href="mailto:gyc23@cornell.edu" // Replace with your contact email
@@ -38,7 +35,7 @@ export default function StartChapterPage() {
             </a>
           </div>
         </div>
-      </Section>
+        
         {/* Vision Section */}
         <div className="mx-auto max-w-4xl">
           <div className="rounded-lg bg-white p-8 shadow-sm md:p-12">
