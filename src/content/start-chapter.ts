@@ -38,7 +38,7 @@ export const startChapterContent = {
       },
       secondary: {
         text: "Contact Us",
-        href: "mailto:chapters@voicesofequity.org"
+        href: "mailto:gyc23@cornell.edu"
       }
     }
   }

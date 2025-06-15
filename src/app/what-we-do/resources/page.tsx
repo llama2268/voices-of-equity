@@ -4,6 +4,7 @@ import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import VideoPlayer from '../../../components/Video/VideoPlayer';
 import { whatWeDo } from '@/content/content';
+import { archiveResources } from '@/content/resources';
 import Link from 'next/link';
 import { useState } from 'react';
 import {SocialCallout} from '@/components/ui/SocialCallout';
@@ -12,6 +13,7 @@ import { GuideIcon, ToolkitIcon } from '@/components/icons/ExploreIcons';
 export default function ResourcesPage() {
   const { title, subtitle, content } = whatWeDo.resources;
   const [selectedVideo, setSelectedVideo] = useState(content.videos[0]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
   
   const guides = [
     {
@@ -27,6 +29,12 @@ export default function ResourcesPage() {
       link: "/guides/advocacy-toolkit.pdf"
     }
   ];
+
+
+
+  const filteredResources = selectedCategory === 'All' 
+    ? archiveResources 
+    : archiveResources.filter(resource => resource.category === selectedCategory);
 
   return (
     <PageLayout title={title} subtitle={subtitle}>
@@ -94,6 +102,64 @@ export default function ResourcesPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </Section>
+
+        {/* Equity Archive Section */}
+        <Section
+          title="Equity Archive"
+          subtitle="Comprehensive Resource Library"
+        >
+          <div className="text-center mb-12">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore our comprehensive collection of resources spanning research, articles, videos, reports, and tools 
+              to advance your understanding and advocacy of health equity
+            </p>
+          </div>
+
+          {/* Filter/Category Navigation */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {['All', 'Article', 'Research', 'Video', 'Report', 'Tool', 'Podcast'].map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  selectedCategory === category 
+                    ? 'bg-[#498B86] text-white' 
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {category === 'Article' ? 'Articles' : 
+                 category === 'Video' ? 'Videos' : 
+                 category === 'Report' ? 'Reports' : 
+                 category === 'Tool' ? 'Tools' : 
+                 category === 'Podcast' ? 'Podcasts' : category}
+              </button>
+            ))}
+          </div>
+
+          {/* Resource Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredResources.map((resource, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all border border-gray-100 hover:border-[#498B86]/20">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className={`px-3 py-1 text-xs font-medium rounded-full ${resource.tagColor}`}>
+                    {resource.category}
+                  </span>
+                  <span className="text-gray-400 text-xs">• {resource.metadata}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                  {resource.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {resource.description}
+                </p>
+                <div className="flex items-center justify-between text-sm text-gray-500">
+                  <span>{resource.author}</span>
+                  <span>{resource.date}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </Section>
 

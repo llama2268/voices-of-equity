@@ -13,6 +13,7 @@ import Image from 'next/image'
 
 export default function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleModal = () => setModalOpen(!modalOpen);
 
@@ -51,6 +52,228 @@ export default function HomePage() {
          >
           Learn More
         </Link>
+        </div>
+      </Section>
+
+      {/* Full-Width Carousel Section */}
+      <Section title="Explore Our Impact" subtitle="Discover how we're making a difference across communities">
+        <div className="relative w-full">
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+                             {/* Instagram Slide */}
+               <div className="w-full flex-shrink-0">
+                 <div className="relative h-96 md:h-[500px]">
+                   <Image
+                     src="/team-picture.jpg"
+                     alt="Follow our Instagram"
+                     fill
+                     className="object-cover"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 opacity-20"></div>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <div className="text-center text-white max-w-4xl mx-auto px-8">
+                       <div className="mb-4">
+                         <span className="px-4 py-2 bg-pink-500 text-white rounded-full text-sm font-medium">
+                           Instagram
+                         </span>
+                       </div>
+                       <h3 className="text-4xl md:text-6xl font-bold mb-6">Follow Our Journey</h3>
+                       <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
+                         Stay connected with our latest updates and community stories as we build a more equitable future together
+                       </p>
+                       <Link href="https://www.instagram.com/voices.of.equity/" className="inline-block px-8 py-3 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                         Follow Us →
+                       </Link>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+                             {/* National Initiatives Slide */}
+               <div className="w-full flex-shrink-0">
+                 <div className="relative h-96 md:h-[500px]">
+                   <Image
+                     src="/paintingtry.jpg"
+                     alt="National Initiatives"
+                     fill
+                     className="object-cover"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-blue-600 opacity-20"></div>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <div className="text-center text-white max-w-4xl mx-auto px-8">
+                       <div className="mb-4">
+                         <span className="px-4 py-2 bg-primary-500 text-white rounded-full text-sm font-medium">
+                           Programs
+                         </span>
+                       </div>
+                       <h3 className="text-4xl md:text-6xl font-bold mb-6">National Initiatives</h3>
+                       <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
+                         Nationwide programs advancing health equity across communities and transforming healthcare access
+                       </p>
+                       <Link href="/what-we-do/national" className="inline-block px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                         Learn More →
+                       </Link>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+                                            {/* Local Initiatives Slide */}
+               <div className="w-full flex-shrink-0">
+                 <div className="relative h-96 md:h-[500px]">
+                   <Image
+                     src="/hero-image-new.png"
+                     alt="Local Initiatives"
+                     fill
+                     className="object-cover"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-500 opacity-20"></div>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <div className="text-center text-white max-w-4xl mx-auto px-8">
+                       <div className="mb-4">
+                         <span className="px-4 py-2 bg-emerald-500 text-white rounded-full text-sm font-medium">
+                           Community
+                         </span>
+                       </div>
+                       <h3 className="text-4xl md:text-6xl font-bold mb-6">Local Initiatives</h3>
+                       <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
+                         Community-based programs creating meaningful local impact and driving change from the ground up
+                       </p>
+                       <Link href="/what-we-do/local" className="inline-block px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                         Explore →
+                       </Link>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+              {/* Impact Stories Slide */}
+              <div className="w-full flex-shrink-0">
+                <Link href="/what-we-do/impact" className="block">
+                                     <div className="relative h-96 md:h-[500px]">
+                     <Image
+                       src="/educate.jpg"
+                       alt="Impact Stories"
+                       fill
+                       className="object-cover"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center text-white max-w-4xl mx-auto px-8">
+                        <div className="mb-4">
+                          <span className="px-4 py-2 bg-purple-500 text-white rounded-full text-sm font-medium">
+                            Stories
+                          </span>
+                        </div>
+                        <h3 className="text-4xl md:text-6xl font-bold mb-6">Impact Stories</h3>
+                        <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
+                          Real stories of change and transformation in our communities, showcasing the power of collective action
+                        </p>
+                        <div className="inline-block px-8 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                          Read Stories →
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Our Chapters Slide */}
+              <div className="w-full flex-shrink-0">
+                <Link href="/get-involved/chapters" className="block">
+                  <div className="relative h-96 md:h-[500px] bg-gradient-to-r from-red-500 to-pink-600">
+                    <Image
+                      src="/cornell-chapter.jpg"
+                      alt="Our Chapters"
+                      fill
+                      className="object-cover opacity-40"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center text-white max-w-4xl mx-auto px-8">
+                        <div className="mb-4">
+                          <span className="px-4 py-2 bg-red-500 text-white rounded-full text-sm font-medium">
+                            Chapters
+                          </span>
+                        </div>
+                        <h3 className="text-4xl md:text-6xl font-bold mb-6">Our Chapters</h3>
+                        <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
+                          Student-led chapters driving change across universities, empowering the next generation of leaders
+                        </p>
+                        <div className="inline-block px-8 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                          Join Us →
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Resources Slide */}
+              <div className="w-full flex-shrink-0">
+                <Link href="/what-we-do/resources" className="block">
+                  <div className="relative h-96 md:h-[500px] bg-gradient-to-r from-yellow-500 to-orange-600">
+                    <Image
+                      src="/empower.jpg"
+                      alt="Our Resources"
+                      fill
+                      className="object-cover opacity-40"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center text-white max-w-4xl mx-auto px-8">
+                        <div className="mb-4">
+                          <span className="px-4 py-2 bg-yellow-500 text-white rounded-full text-sm font-medium">
+                            Education
+                          </span>
+                        </div>
+                        <h3 className="text-4xl md:text-6xl font-bold mb-6">Resources</h3>
+                        <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
+                          Educational materials and tools for health equity advocacy, empowering you to make a difference
+                        </p>
+                        <div className="inline-block px-8 py-3 bg-white text-yellow-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                          Access Resources →
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => setCurrentSlide(currentSlide === 0 ? 5 : currentSlide - 1)}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors z-10"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setCurrentSlide(currentSlide === 5 ? 0 : currentSlide + 1)}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors z-10"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+                     {/* Dots Navigation */}
+           <div className="flex justify-center mt-8 space-x-2">
+             {[0, 1, 2, 3, 4, 5].map((slide) => (
+               <button
+                 key={slide}
+                 onClick={() => setCurrentSlide(slide)}
+                 className={`w-2 h-2 rounded-full transition-colors ${
+                   currentSlide === slide ? 'bg-primary-500' : 'bg-gray-300'
+                 }`}
+               />
+             ))}
+           </div>
         </div>
       </Section>
 

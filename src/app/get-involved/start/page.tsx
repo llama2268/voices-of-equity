@@ -1,17 +1,17 @@
-import PageLayout from '@/components/Layout/PageLayout';
-import { Section } from '@/components/ui/Section';
-import { chapters } from '@/content/chapters';
-import { startChapterContent } from '@/content/start-chapter';
-import Link from 'next/link';
-import { chapterPagesContent } from '@/content/chapter-pages';
-import { RelatedContent } from '@/components/RelatedContent';
-import { Callout } from '@/components/ui/Callout';
-import { GoogleFormEmbed } from '@/components/ui/GoogleFormEmbed';
-import { SocialCallout } from '@/components/ui/SocialCallout';
+import PageLayout from "@/components/Layout/PageLayout";
+import { Section } from "@/components/ui/Section";
+import { chapters } from "@/content/chapters";
+import { startChapterContent } from "@/content/start-chapter";
+import Link from "next/link";
+import { chapterPagesContent } from "@/content/chapter-pages";
+import { RelatedContent } from "@/components/RelatedContent";
+import { Callout } from "@/components/ui/Callout";
+import { GoogleFormEmbed } from "@/components/ui/GoogleFormEmbed";
+import { SocialCallout } from "@/components/ui/SocialCallout";
 
 export default function StartChapterPage() {
   const { start } = chapterPagesContent;
-  const { vision, process, cta } = startChapterContent;
+  const { vision, process } = startChapterContent;
 
   return (
     <PageLayout
@@ -22,62 +22,55 @@ export default function StartChapterPage() {
     >
       {/* Introduction */}
       <Section spacing="sm">
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <p className="text-lg text-gray-600 leading-relaxed">
+        <div className="mx-auto mb-12 max-w-4xl text-center">
+          <p className="text-lg leading-relaxed text-gray-600">
             {start.page.introduction}
           </p>
         </div>
         <Section spacing="sm">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">{cta.title}</h2>
-          <div className="bg-[#498B86] text-white rounded-lg p-12">
-            <p className="text-xl mb-8">{cta.description}</p>
-            <div className="flex gap-4 justify-center">
-              {/* <Link
-                href={cta.buttons.primary.href}
-                className="px-8 py-4 bg-white text-[#498B86] font-semibold rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                {cta.buttons.primary.text}
-              </Link> */}
-              <a
-                href={cta.buttons.secondary.href}
-                className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
-              >
-                {cta.buttons.secondary.text}
-              </a>
-            </div>
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center">
+            <a
+              href="mailto:gyc23@cornell.edu" // Replace with your contact email
+              className="inline-block rounded bg-[#607AD4] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#5068BD]"
+            >
+              Email Us
+            </a>
           </div>
         </div>
       </Section>
-
         {/* Vision Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-lg bg-white p-8 shadow-sm md:p-12">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="mb-6 text-center text-2xl font-bold md:text-3xl">
                 {vision.title}
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              <p className="mb-8 text-lg leading-relaxed text-gray-600">
                 {vision.description}
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="font-semibold text-lg mb-4">{vision.impact.title}</h3>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="rounded-lg bg-gray-50 p-6">
+                  <h3 className="mb-4 text-lg font-semibold">
+                    {vision.impact.title}
+                  </h3>
                   <ul className="space-y-3">
                     {vision.impact.items.map((item) => (
                       <li key={item} className="flex items-start">
-                        <span className="text-[#E4826D] mr-2">•</span>
+                        <span className="mr-2 text-[#E4826D]">•</span>
                         <span className="text-gray-600">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="font-semibold text-lg mb-4">{vision.growth.title}</h3>
+                <div className="rounded-lg bg-gray-50 p-6">
+                  <h3 className="mb-4 text-lg font-semibold">
+                    {vision.growth.title}
+                  </h3>
                   <ul className="space-y-3">
                     {vision.growth.items.map((item) => (
                       <li key={item} className="flex items-start">
-                        <span className="text-[#E4826D] mr-2">•</span>
+                        <span className="mr-2 text-[#E4826D]">•</span>
                         <span className="text-gray-600">{item}</span>
                       </li>
                     ))}
@@ -86,22 +79,6 @@ export default function StartChapterPage() {
               </div>
             </div>
           </div>
-        </div>
-      </Section>
-      
-
-      <Section spacing="sm">
-        <div className="max-w-4xl mx-auto">
-          <Callout
-            eyebrow="Chapter Resources"
-            title="Tools for Success"
-            description="Access our comprehensive collection of guides, templates, and best practices for running a successful chapter."
-            link={{
-              text: "Explore Resources",
-              href: "/what-we-do/resources"
-            }}
-            variant="resources"
-          />
         </div>
       </Section>
 
@@ -125,13 +102,6 @@ export default function StartChapterPage() {
         </div>
       </Section> */}
 
-
-      <Section spacing="sm">
-        <div className="max-w-4xl mx-auto">
-          <RelatedContent {...chapterPagesContent.start.relatedContent} />
-        </div>
-      </Section>
-
       {/* Application Form */}
       {/* <Section 
         title="Start Your Chapter"
@@ -145,13 +115,6 @@ export default function StartChapterPage() {
           />
         </div>
       </Section> */}
-
-      {/* Social Media Callout */}
-      <Section spacing="sm">
-        <div className="max-w-4xl mx-auto">
-          <SocialCallout />
-        </div>
-      </Section>
     </PageLayout>
   );
 }

@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 export default async function TeamMemberPage({ params }: { params: { memberId: string } }) {
   const allMembers = [...whoWeAre.team.members, ...whoWeAre.team.engineers];
   // @ts-ignore
-  const memberId = (params as { memberId: string }).memberId;
+  const memberId = ((await params) as { memberId: string }).memberId;
   const member = allMembers.find(m => m.id === memberId);
 
   if (!member) {

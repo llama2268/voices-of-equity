@@ -287,7 +287,8 @@ export const whoWeAre = {
         As an Emergency Department Volunteer Team Lead at Cayuga Medical Center and a certified EMT, he gained firsthand experience supporting patients in critical moments and collaborating with healthcare teams. He has authored peer-reviewed research analyzing U.S. supply chain vulnerabilities and currently conducts addiction neuroscience research at the Konova Addiction Lab, where he studies the neurobehavioral mechanisms of addiction. These experiences provided him with a unique perspective on how systemic gaps in care affect vulnerable populations, reinforcing his dedication to advancing equity in healthcare and the importance of creating community-driven solutions to address disparities in access and outcomes.
 
         Caleb's diverse experiences in leadership, healthcare, and research inform his work at Voices of Equity, where he remains committed to creating sustainable, community-driven solutions that address systemic inequities.`,
-        email: "caleb@voicesofequity.org"
+        email: "caleb@voicesofequity.org",
+        linkedin: "https://www.linkedin.com/in/caleb-suh-028a956a/"
       },
       {
         id:"zaid-al-shoha",
@@ -308,7 +309,8 @@ export const whoWeAre = {
  
 
         Zaid's extensive experiences in leadership, healthcare, and research guide his work at Voices of Equity, driving initiatives that foster long-term, structural improvements in healthcare accessibility and equity.`,
-        email: "zaid@voicesofequity.org"
+        email: "zaid@voicesofequity.org",
+        linkedin: "https://www.linkedin.com/in/zaid-al-shoha/"
       },
       {
         id: "eliza-dow",

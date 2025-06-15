@@ -142,6 +142,88 @@ export default function ChaptersPage() {
           ))}
         </div>
       </Section> */}
+      <Section spacing="sm" title="Chapters" subtitle="Our Active Chapters">
+        <div className="mx-auto max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/partners/cornell.png" alt="Cornell University" width={50} className="object-contain" />
+                <h3 className="text-xl font-semibold">Cornell University</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Leading initiatives in health equity research and community health literacy workshops across Ithaca.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-500">President: Jimmy Quinlan</span>
+                <Link href="/chapters/cornell" className="text-[#607AD4] hover:text-[#5068BD] font-medium">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/partners/harvard.png" alt="Harvard University" width={50} className="object-contain" />
+                <h3 className="text-xl font-semibold">Harvard University</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Focusing on healthcare accessibility and medical education outreach in Boston communities.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-500">President: Sarah Chen</span>
+                <Link href="/chapters/harvard" className="text-[#607AD4] hover:text-[#5068BD] font-medium">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+              <div className="flex items-center gap-4 mb-4">
+                <img src="/partners/upenn.png" alt="University of Pennsylvania" width={50} className="object-contain" />
+                <h3 className="text-xl font-semibold">UPenn</h3>
+              </div>
+              <p className="text-gray-600 mb-4">Driving change through health advocacy and community engagement in Philadelphia.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-500">President: Michael Park</span>
+                <Link href="/chapters/upenn" className="text-[#607AD4] hover:text-[#5068BD] font-medium">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section spacing="sm" title="Partner Institutions">
+        <div className="mx-auto max-w-4xl">
+          <div className="flex flex-row gap-10 justify-between flex-wrap">
+            <div className="flex p-3 flex-col gap-4 items-center">
+              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
+              <p>Cornell University</p>
+            </div>
+            <div className="flex p-3 flex-col gap-4 items-center">
+              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
+              <p>Cornell University</p>
+            </div>
+            <div className="flex p-3 flex-col gap-4 items-center">
+              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
+              <p>Cornell University</p>
+            </div>
+            <div className="flex p-3 flex-col gap-4 items-center">
+              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
+              <p>Cornell University</p>
+            </div>
+            <div className="flex p-3 flex-col gap-4 items-center">
+              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
+              <p>Cornell University</p>
+            </div>
+            <div className="flex p-3 flex-col gap-4 items-center">
+              <img src="/partners/harvard.png" alt="Harvard University"  width={100} className="object-contain"/>
+              <p>Harvard University</p>
+            </div>
+            <div className="flex p-3 flex-col gap-4 items-center">
+              <img src="/partners/upenn.png" alt="University of Pennsylvania" width={100} className="object-contain"/>
+              <p>University of Pennsylvania</p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* Related Content */}
       <Section spacing="sm">
@@ -151,26 +233,6 @@ export default function ChaptersPage() {
       </Section>
 
       {/* Call to Action */}
-      <Section variant="highlight" spacing="sm">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">{cta.title}</h2>
-          <p className="text-lg text-gray-700 mb-8">{cta.description}</p>
-          <div className="flex gap-4 justify-center">
-            <Link
-              href="/get-involved/start"
-              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
-            >
-              Start a Chapter
-            </Link>
-            <Link
-              href={cta.secondaryButton.href}
-              className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 rounded-lg font-semibold transition-colors border-2 border-gray-200"
-            >
-              {cta.secondaryButton.text}
-            </Link>
-          </div>
-        </div>
-      </Section>
 
       {/* <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
