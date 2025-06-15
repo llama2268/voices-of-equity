@@ -17,7 +17,7 @@ const localInitiatives: LocalInitiative[] = [
     eventLocation: "YMCA National Children’s Day - Cornell VOE",
     description:
       "Cornell's VOE leaders hosted a community art table at the Tompkins County local YMCA Children’s Day where children decorated rocks while parents received health equity info packets and resource flyers. VOE volunteers also built connections with local CBOs around health equity support.",
-    image: ["/educate.jpg", "/painting.jpg", "/hero-image-3.png"]
+    image: ["/educate.jpg", "/paintingtry.jpg", "/hero-image-3.png"]
   },
   // Add more events here as needed.
 ];
