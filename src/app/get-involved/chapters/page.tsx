@@ -198,22 +198,6 @@ export default function ChaptersPage() {
               <p>Cornell University</p>
             </div>
             <div className="flex p-3 flex-col gap-4 items-center">
-              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
-              <p>Cornell University</p>
-            </div>
-            <div className="flex p-3 flex-col gap-4 items-center">
-              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
-              <p>Cornell University</p>
-            </div>
-            <div className="flex p-3 flex-col gap-4 items-center">
-              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
-              <p>Cornell University</p>
-            </div>
-            <div className="flex p-3 flex-col gap-4 items-center">
-              <img src="/partners/cornell.png" alt="Cornell University"  width={100} className="object-contain"/>
-              <p>Cornell University</p>
-            </div>
-            <div className="flex p-3 flex-col gap-4 items-center">
               <img src="/partners/harvard.png" alt="Harvard University"  width={100} className="object-contain"/>
               <p>Harvard University</p>
             </div>

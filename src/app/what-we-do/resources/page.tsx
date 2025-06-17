@@ -106,7 +106,7 @@ export default function ResourcesPage() {
         </Section>
 
         {/* Equity Archive Section */}
-        <Section
+        {/* <Section
           title="Equity Archive"
           subtitle="Comprehensive Resource Library"
         >
@@ -115,10 +115,10 @@ export default function ResourcesPage() {
               Explore our comprehensive collection of resources spanning research, articles, videos, reports, and tools 
               to advance your understanding and advocacy of health equity
             </p>
-          </div>
+          </div> */}
 
           {/* Filter/Category Navigation */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
             {['All', 'Article', 'Research', 'Video', 'Report', 'Tool', 'Podcast'].map((category) => (
               <button
                 key={category}
@@ -136,10 +136,10 @@ export default function ResourcesPage() {
                  category === 'Podcast' ? 'Podcasts' : category}
               </button>
             ))}
-          </div>
+          </div> */}
 
           {/* Resource Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredResources.map((resource, index) => (
               <div key={index} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all border border-gray-100 hover:border-[#498B86]/20">
                 <div className="flex items-center gap-2 mb-3">
@@ -161,7 +161,7 @@ export default function ResourcesPage() {
               </div>
             ))}
           </div>
-        </Section>
+        </Section> */}
 
         {/* Research Papers Section */}
         <Section
