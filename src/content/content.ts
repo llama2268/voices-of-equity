@@ -27,7 +27,10 @@ export const navigation = {
         { title: 'Our Resources', href: '/what-we-do/resources' },
         { title: 'Our Impact', href: '/what-we-do/impact'},
         { title: 'National Initiatives', href: '/what-we-do/national'},
-        { title: 'Local Initiatives', href: '/what-we-do/local'}
+        { title: 'Local Initiatives', href: '/what-we-do/local'},
+        { title: 'Equity Archive', href: '/what-we-do/archive'}
+
+
 
         //WILL USE LATER UNCOMMENT WHEN THEY WANT IT
         // { title: 'Voices & Impact', href: '/what-we-do/news' },
