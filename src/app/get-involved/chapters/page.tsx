@@ -1,43 +1,51 @@
 import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
-import { chapters, chaptersContent } from '@/content/chapters';
-import Link from 'next/link';
-import { RelatedContent } from '@/components/RelatedContent';
-import { chapterPagesContent } from '@/content/chapter-pages';
-import { Callout } from '@/components/ui/Callout';
-import { SocialCallout } from '@/components/ui/SocialCallout';
-import { ResourceIcon, AwardIcon, LeadershipIcon } from '@/components/icons/ChapterIcons';
+// import { chapters, chaptersContent } from '@/content/chapters';
+// import Link from 'next/link';
+// import { RelatedContent } from '@/components/RelatedContent';
+// import { chapterPagesContent } from '@/content/chapter-pages';
+// import { Callout } from '@/components/ui/Callout';
+// import { SocialCallout } from '@/components/ui/SocialCallout';
+// import { ResourceIcon, AwardIcon, LeadershipIcon } from '@/components/icons/ChapterIcons';
 
 export default function ChaptersPage() {
-  const { page, benefits, stats, cta } = chaptersContent;
-  const { chapters } = chapterPagesContent;
+  // const { page, benefits, stats, cta } = chaptersContent;
+  // const { chapters } = chapterPagesContent;
   
-  const updatedBenefits = [
-    {
-      title: 'Real-World Impact',
-      description: 'Lead community-based initiatives that address health disparities, from educational outreach to philanthropic projects, empowering your campus to drive meaningful change locally and nationally.',
-      icon: <ResourceIcon />
-    },
-    {
-      title: 'Exclusive Resources and Networking',
-      description: 'Access comprehensive health equity curricula, workshops, and mentorship opportunities while connecting with healthcare professionals, community leaders, and other chapter leaders across the country.',
-      icon: <AwardIcon />
-    },
-    {
-      title: 'Leadership Development',
-      description: 'Gain hands-on leadership experience by organizing impactful initiatives, leading educational events, and collaborating with peers nationwide to advance health equity on your campus and in your community.',
-      icon: <LeadershipIcon />
-    }
-  ];
+  // const updatedBenefits = [
+  //   {
+  //     title: 'Real-World Impact',
+  //     description: 'Lead community-based initiatives that address health disparities, from educational outreach to philanthropic projects, empowering your campus to drive meaningful change locally and nationally.',
+  //     icon: <ResourceIcon />
+  //   },
+  //   {
+  //     title: 'Exclusive Resources and Networking',
+  //     description: 'Access comprehensive health equity curricula, workshops, and mentorship opportunities while connecting with healthcare professionals, community leaders, and other chapter leaders across the country.',
+  //     icon: <AwardIcon />
+  //   },
+  //   {
+  //     title: 'Leadership Development',
+  //     description: 'Gain hands-on leadership experience by organizing impactful initiatives, leading educational events, and collaborating with peers nationwide to advance health equity on your campus and in your community.',
+  //     icon: <LeadershipIcon />
+  //   }
+  // ];
 
   return (
     <PageLayout
-      title={page.title}
-      subtitle={page.subtitle}
+      title="Chapters"
+      subtitle="Coming Soon"
       hero
       reduced
     >
+            {/* Coming Soon Message */}
+      <Section title="Chapters" subtitle="Coming Soon">
+        <div></div>
+      </Section>
+
+      {/* ARCHIVED CONTENT - Original chapters page content */}
+      {/*
       {/* Introduction & Benefits */}
+      {/*
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -60,6 +68,7 @@ export default function ChaptersPage() {
       </Section>
 
       {/* Featured Chapter - Cornell */}
+      {/*
       <Section variant="alternate" spacing="sm">
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-lg overflow-hidden shadow-lg">
@@ -132,7 +141,8 @@ export default function ChaptersPage() {
       </Section>
 
       {/* Impact Stats */}
-      {/* <Section spacing="sm">
+      {/*
+      <Section spacing="sm">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
@@ -141,7 +151,9 @@ export default function ChaptersPage() {
             </div>
           ))}
         </div>
-      </Section> */}
+      </Section>
+      */}
+      {/*
       <Section spacing="sm" title="Chapters" subtitle="Our Active Chapters">
         <div className="mx-auto max-w-4xl">
           <div className="grid md:grid-cols-2 gap-8">
@@ -226,6 +238,7 @@ export default function ChaptersPage() {
       </Section>
 
       {/* Related Content */}
+      {/*
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
           <RelatedContent {...chapters.relatedContent} />
@@ -233,8 +246,8 @@ export default function ChaptersPage() {
       </Section>
 
       {/* Call to Action */}
-
-      {/* <Section spacing="sm">
+      {/*
+      <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
           <Callout
             eyebrow="Chapter Success Stories"
@@ -248,9 +261,11 @@ export default function ChaptersPage() {
             variant="impact"
           />
         </div>
-      </Section> */}
+      </Section>
+      */}
 
       {/* Social Media Integration */}
+      {/*
       <section className="py-20 bg-[#607AD4] text-white">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
@@ -258,22 +273,12 @@ export default function ChaptersPage() {
             Join our community of changemakers and help build a more equitable future for all.
           </p>
           <div className="flex gap-4 justify-center">
-            {/* <a
-              href="/get-involved/chapters"
-              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
-            >
-              Join Our Movement
-            </a>
-            <a
-              href="/who-we-are/mission"
-              className="px-8 py-4 bg-white hover:bg-gray-100 text-[#607AD4] font-semibold rounded-lg transition-colors"
-            >
-              Learn More
-            </a> */}
             <SocialCallout/>
           </div>
         </div>
       </section>
+      */}
+      {/* END ARCHIVED CONTENT */}
     </PageLayout>
   );
 }
