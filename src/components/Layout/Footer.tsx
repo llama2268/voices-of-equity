@@ -16,7 +16,8 @@ export function Footer() {
               </h2>
             </Link>
             <p className="text-gray-400 mb-6">
-            Empowering future healthcare leaders and communities to drive health equity through transformative education, impactful storytelling, and community-centered initiatives            </p>
+              VOICES OF EQUITY - advancing health equity through education, inspiration, and community-driven change.
+            </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">LinkedIn</span>

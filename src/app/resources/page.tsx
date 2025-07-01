@@ -2,7 +2,7 @@
 
 import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
-import VideoPlayer from '../../../components/Video/VideoPlayer';
+import VideoPlayer from '@/components/Video/VideoPlayer';
 import { whatWeDo } from '@/content/content';
 import { archiveResources } from '@/content/resources';
 import Link from 'next/link';
@@ -14,6 +14,7 @@ export default function ResourcesPage() {
   const { title, subtitle, content } = whatWeDo.resources;
   const [selectedVideo, setSelectedVideo] = useState(content.videos[0]);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [currentPaperSlide, setCurrentPaperSlide] = useState(0);
   
   const guides = [
     {
@@ -163,7 +164,7 @@ export default function ResourcesPage() {
           </div>
         </Section> */}
 
-        {/* Research Papers Section */}
+        {/* Research Papers Section - Carousel */}
         <Section
           variant="alternate"
           title="Evidence-Based Insights"
@@ -174,51 +175,86 @@ export default function ResourcesPage() {
               Discover peer-reviewed research and analysis on health equity challenges and solutions
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {content.researchPapers.map((paper, index) => (
-              <Link 
-                href={paper.link} 
-                key={index}
-                className="block bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all border border-gray-100 hover:border-[#498B86]/20"
+          
+          {/* Papers Carousel */}
+          <div className="relative w-full">
+            <div className="relative overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentPaperSlide * 100}%)` }}
               >
-                <h3 className="text-xl font-semibold text-[#498B86] mb-2">
-                  {paper.title}
-                </h3>
-                <p className="text-sm text-gray-500 mb-3">
-                  {paper.authors} • {paper.year}
-                </p>
-                <p className="text-gray-600">
-                  {paper.description}
-                </p>
-              </Link>
-            ))}
+                {content.researchPapers.map((paper, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-4">
+                    <Link 
+                      href={paper.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-white rounded-xl shadow-sm p-8 hover:shadow-lg transition-all border border-gray-100 hover:border-[#498B86]/20 max-w-4xl mx-auto min-h-[300px] flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="mb-4">
+                          <span className="px-3 py-1 bg-[#498B86]/10 text-[#498B86] rounded-full text-sm font-medium">
+                            Research Paper
+                          </span>
+                        </div>
+                        <h3 className="text-2xl font-bold text-[#498B86] mb-4 leading-tight">
+                          {paper.title}
+                        </h3>
+                        <p className="text-sm text-gray-500 mb-4 font-medium">
+                          {paper.authors} • {paper.year}
+                        </p>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          {paper.description}
+                        </p>
+                      </div>
+                      <div className="mt-6 pt-4 border-t border-gray-100">
+                        <span className="inline-flex items-center text-[#498B86] font-semibold">
+                          Read Full Paper
+                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentPaperSlide(currentPaperSlide === 0 ? content.researchPapers.length - 1 : currentPaperSlide - 1)}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full transition-colors shadow-lg z-10"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setCurrentPaperSlide(currentPaperSlide === content.researchPapers.length - 1 ? 0 : currentPaperSlide + 1)}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full transition-colors shadow-lg z-10"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Dots Navigation */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {content.researchPapers.map((_, slide) => (
+                <button
+                  key={slide}
+                  onClick={() => setCurrentPaperSlide(slide)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    currentPaperSlide === slide ? 'bg-[#498B86]' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </Section>
 
         {/* Guides Section */}
-        <Section
-          title="Implementation Guides"
-          subtitle="Practical Tools"
-        >
-          <div className="text-center mb-12">
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Step-by-step resources to help you make a difference in your community
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {guides.map((guide) => (
-              <Link
-                key={guide.title}
-                href={guide.link}
-                className="block p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-100 hover:border-[#498B86]/20"
-              >
-                <div className="text-[#498B86] mb-4 transform transition-transform hover:scale-105">{guide.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900">{guide.title}</h3>
-                <p className="text-gray-600">{guide.description}</p>
-              </Link>
-            ))}
-          </div>
-        </Section>
 
         {/* Stay Connected Section */}
         {/* <Section 
@@ -242,12 +278,12 @@ export default function ResourcesPage() {
               "Knowledge is the first step toward change. These resources are your gateway to understanding and action."
             </p>
           </blockquote>
-          <a 
-            href="mailto:admin@thevoicesof.org"
+          <Link 
+            href="/contact"
             className="inline-block bg-[#498B86] text-white px-8 py-4 rounded-xl hover:bg-[#3A6F6B] transition-colors font-semibold"
           >
-            Request Resources
-          </a>
+            Contact Us
+          </Link>
         </Section>
         <div className="my-10"></div>
       </div>

@@ -152,7 +152,7 @@ export const chapterPagesContent = {
         {
           title: "Browse Resources",
           description: "Access tools and guides for chapter success",
-          href: "/what-we-do/resources",
+          href: "/resources",
           icon: "📚"
         },
         {

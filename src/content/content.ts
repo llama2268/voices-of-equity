@@ -24,11 +24,9 @@ export const navigation = {
     {
       title: 'WHAT WE DO',
       submenu: [
-        { title: 'Our Resources', href: '/what-we-do/resources' },
         { title: 'Our Impact', href: '/what-we-do/impact'},
         { title: 'National Initiatives', href: '/what-we-do/national'},
         { title: 'Local Initiatives', href: '/what-we-do/local'},
-        { title: 'Equity Archive', href: '/what-we-do/archive'}
 
 
 
@@ -37,11 +35,19 @@ export const navigation = {
       ],
     },
     {
+      title: 'RESOURCES',
+      submenu: [
+        { title: 'Our Resources', href: '/resources' },
+        { title: 'Equity Archive', href: '/resources/archive' },
+      ],
+    },
+    {
       title: 'GET INVOLVED',
       submenu: [
         { title: 'Our Chapters', href: '/get-involved/chapters' },
         // { title: 'Chapter Requirements', href: '/get-involved/requirements' },
         { title: 'Start a Chapter', href: '/get-involved/start' },
+        { title: 'Support Our Mission', href: '/get-involved/support' },
         { title: 'Contact Us', href: '/contact' }
       ],
     },
@@ -58,7 +64,7 @@ export const navigation = {
       { title: 'History', href: '/who-we-are/history' }
     ],
     resources: [
-      { title: 'Educational Content', href: '/what-we-do/resources' },
+      { title: 'Educational Content', href: '/resources' },
       { title: 'Research', href: '/what-we-do/research' },
       { title: 'Impact Reports', href: '/what-we-do/impact' }
     ],
@@ -117,19 +123,19 @@ export const homePage = {
   initiatives: [
     {
       title: "Educate Communities",
-      description: "We focus on educating communities about health equity issues to raise awareness and understanding.",
+      description: "We equip communities with accessible, relevant education on the root causes of health inequities — from systemic barriers to local challenges — through online content, our VoE curriculum, and interactive discussions.",
       icon: "🎓",
       image:"/educate.jpg"
     },
     {
-      title: "Inspire Healthcare Leaders",
-      description: "Our goal is to inspire future healthcare leaders to prioritize health equity in their careers and initiatives.",
+      title: "Inspire Action",
+      description: "We motivate individuals — from student leaders to future healthcare professionals — to take meaningful steps toward equity. Through storytelling, collaboration, and leadership development, we turn awareness into collective action.",
       icon: "💡",
       image:"/inspire.jpg"
     },
     {
-      title: "Empower Action",
-      description: "We implement community-based initiatives that empower students, community leaders, and healthcare professionals to improve health equity among diverse populations.",
+      title: "Empower Impact",
+      description: "We implement student-led, community-based initiatives tailored to the needs of underserved populations, in partnership with healthcare professionals and local organizations across the country.",
       icon: "📢",
       image:"/empower.jpg"
     }
@@ -677,10 +683,31 @@ export const whatWeDo = {
       researchPapers: [
         {
           title: "Social Determinant of Health and Health Equity",
-          authors: "Smith, J., et al.",
+          authors: "National Academies of Sciences, Engineering, and Medicine; National Academy of Medicine; Committee on the Future of Nursing 2020–2030; Flaubert JL, Le Menestrel S, Williams DR, et al., editors. ",
           year: "2023",
           description: "As a nurse, we have the opportunity to heal the heart, mind, soul and body of our patients, their families and ourselves.",
           link: "https://www.ncbi.nlm.nih.gov/books/NBK573923/"
+        },
+        {
+          title: "Defining Health Equity: A Modern US Perspective",
+          authors: "Kristen R Prentice, Marie Beitelshees, Andrew Hill, Charles H Jones,∗",
+          year: "2024",
+          description: "Health equity is a concept that has gained increasing attention and relevance in the context of the COVID-19 pandemic, which has exposed and exacerbated the health disparities and inequities among different population groups in the United States. ",
+          link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11617406/"
+        },
+        {
+          title: "Barriers to Health Equity in the United States of America: Can They Be Overcome?",
+          authors: "Allen M. Chen",
+          year: "2025",
+          description: " In 1948, the inaugural Constitution of the newly founded World Health Organization clearly stated that “the enjoyment of the highest attainable standard of health is one of the fundamental rights of every human being without distinction of race, religion, political belief, economic or social condition.” Yet nearly a century later, it is arguable how much progress society has made in achieving health equity",
+          link: "https://equityhealthj.biomedcentral.com/articles/10.1186/s12939-025-02401-w"
+        },
+        {
+          title: "Addressing Health Equity and Social Determinants of Health Through Healthy People 2030",
+          authors: "Gómez, Cynthia A. PhD; Kleinman, Dushanka V. DDS, MScD; Pronk, Nico PhD, MA, FASCM, FAWHP; Wrenn Gordon, Glenda L. MD, MSHP, FAPA; Ochiai, Emmeline MPH; Blakey, Carter BS; Johnson, Ayanna MSPH; Brewer, Karen H. MPH Academies of Sciences, Engineering, and Medicine; National Academy of Medicine; Committee on the Future of Nursing 2020–2030; Flaubert JL, Le Menestrel S, Williams DR, et al., editors. ",
+          year: "2021",
+          description: "The evolution of Healthy People reflects growing awareness of health inequities over the life course. Each decade, the initiative has gained understanding of how the nation can achieve health and well-being. ",
+          link: "https://journals.lww.com/jphmp/fulltext/2021/11001/addressing_health_equity_and_social_determinants.9.aspx"
         },
         {
           title: "Defining Health Equity",

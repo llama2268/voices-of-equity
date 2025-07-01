@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 interface TeamMemberProps {
@@ -29,8 +30,14 @@ const TeamMember = ({
       onClick={() => router.push(`/who-we-are/team/${id}`)}
       className="flex cursor-pointer flex-col items-center space-y-4 rounded-lg bg-white/60 p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-lg"
     >
-      <div className="h-32 w-32 overflow-hidden rounded-full">
-        <img src={image} alt={name} className="h-full w-full object-cover" />
+      <div className="h-32 w-32 overflow-hidden rounded-full relative">
+        <Image 
+          src={image} 
+          alt={name} 
+          fill
+          className="object-cover" 
+          sizes="128px"
+        />
       </div>
       <div className="text-center">
         <h3 className="text-xl font-semibold text-gray-900">{name}</h3>

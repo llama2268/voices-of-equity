@@ -44,7 +44,7 @@ export default function HomePage() {
           <blockquote className="mb-12">
             <p className="font-serif text-2xl md:text-3xl text-gray-800 italic leading-relaxed">
             To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives</p>
-            <div className="mt-4 h-1 w-24 mx-auto bg-gradient-to-r from-primary-500 to-secondary-500" />
+            <div className="mt-4 h-1 w-24 mx-auto" />
           </blockquote>
           <Link
           href="/who-we-are/mission"
@@ -73,7 +73,7 @@ export default function HomePage() {
                      fill
                      className="object-cover"
                    />
-                   <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 opacity-20"></div>
+                   <div className="absolute inset-0"></div>
                    <div className="absolute inset-0 flex items-center justify-center">
                      <div className="text-center text-white max-w-4xl mx-auto px-8">
                        <div className="mb-4">
@@ -102,7 +102,7 @@ export default function HomePage() {
                      fill
                      className="object-cover"
                    />
-                   <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-blue-600 opacity-20"></div>
+                   <div className="absolute inset-0"></div>
                    <div className="absolute inset-0 flex items-center justify-center">
                      <div className="text-center text-white max-w-4xl mx-auto px-8">
                        <div className="mb-4">
@@ -131,7 +131,7 @@ export default function HomePage() {
                      fill
                      className="object-cover"
                    />
-                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-500 opacity-20"></div>
+                   <div className="absolute inset-0"></div>
                    <div className="absolute inset-0 flex items-center justify-center">
                      <div className="text-center text-white max-w-4xl mx-auto px-8">
                        <div className="mb-4">
@@ -161,7 +161,7 @@ export default function HomePage() {
                        fill
                        className="object-cover"
                      />
-                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"></div>
+                     <div className="absolute inset-0"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
                         <div className="mb-4">
@@ -185,12 +185,12 @@ export default function HomePage() {
               {/* Our Chapters Slide */}
               <div className="w-full flex-shrink-0">
                 <Link href="/get-involved/chapters" className="block">
-                  <div className="relative h-96 md:h-[500px] bg-gradient-to-r from-red-500 to-pink-600">
+                  <div className="relative h-96 md:h-[500px]">
                     <Image
                       src="/cornell-chapter.jpg"
                       alt="Our Chapters"
                       fill
-                      className="object-cover opacity-40"
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
@@ -214,13 +214,13 @@ export default function HomePage() {
 
               {/* Resources Slide */}
               <div className="w-full flex-shrink-0">
-                <Link href="/what-we-do/resources" className="block">
-                  <div className="relative h-96 md:h-[500px] bg-gradient-to-r from-yellow-500 to-orange-600">
+                <Link href="/resources" className="block">
+                  <div className="relative h-96 md:h-[500px]">
                     <Image
                       src="/empower.jpg"
                       alt="Our Resources"
                       fill
-                      className="object-cover opacity-40"
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
@@ -324,7 +324,7 @@ export default function HomePage() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Key Initiatives</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Driving change through focused action and community engagement
+          Building health equity through education, activation, and community-driven change.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">

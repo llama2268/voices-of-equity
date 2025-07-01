@@ -20,7 +20,7 @@ export default function ContactPage() {
   </div>
   <div className="text-center">
     <a
-      href="mailto:admin@thevoicesof.org"  // Replace with your contact email
+      href="mailto:gyc23@cornell.edu"
       className="inline-block px-6 py-3 bg-[#607AD4] text-white font-semibold rounded hover:bg-[#5068BD] transition-colors"
     >
       Email Us

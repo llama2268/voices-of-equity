@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface HeroProps {
   title: string;
   subtitle?: string;
@@ -33,18 +35,18 @@ const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
             </p>
           )}
           <div className="flex flex-wrap gap-4">
-            <a
+            <Link
               href="/get-involved/chapters"
               className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white font-semibold rounded-lg transition-colors"
             >
               Join Our Movement
-            </a>
-            <a
+            </Link>
+            <Link
               href="/who-we-are/mission"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors backdrop-blur-sm"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </div>
