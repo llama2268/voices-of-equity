@@ -286,10 +286,10 @@ export const whoWeAre = {
       {
         id: "caleb-suh",
         name: "Caleb T. Suh",
-        role: "Co-Founder & Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/caleb-new-4.jpg",
-        shortBio: "Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity..",
-        fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
+        shortBio: "Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity..",
+        fullBio: `Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
         Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations.  Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges. 
 
@@ -302,10 +302,10 @@ export const whoWeAre = {
       {
         id:"zaid-al-shoha",
         name:"Zaid Al-Shoha",
-        role: "Co-Founder and Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/zaid-headshot.png",
         shortBio: "Zaid Al-Shoha leads efforts to drive impactful change..",
-        fullBio: `As the Co-Founder and Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
+        fullBio: `As the Co-Founder & Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
 
         
 
@@ -952,14 +952,14 @@ export const cornellChapter = {
     members: [
       {
         name: "Caleb T. Suh",
-        role: "Co-Founder & Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/caleb-new-3.png",
         bio: "Dedicated to advancing equity in healthcare through leadership and research",
         link: "/who-we-are/team/caleb-suh"
       },
       {
         name: "Zaid Al-Shoha",
-        role: "Co-Founder & Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/zaid.jpg",
         bio: "Passionate about medical research and driving positive change",
         link: "/who-we-are/team/zaid-al-shoha"
