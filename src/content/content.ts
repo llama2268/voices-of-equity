@@ -400,6 +400,36 @@ export const whoWeAre = {
 
         Combining her expertise in project management and inclusive leadership with a passionate commitment to fostering health equity, Grace works to create lasting positive change through educational outreach and community-based initiatives. Her leadership helps Voices of Equity fulfill its mission of educating, inspiring, and empowering communities through impactful content, storytelling, and actionable solutions that address healthcare disparities.`
       },
+      {
+        id: "angie-ayoubi",
+        name: "Angie Ayoubi",
+        role: "Think Tank Director",
+        image: "/angie.PNG",
+        shortBio:"Angie believes healthcare and medicine....",
+        fullBio: `Angie Ayoubi is a biological engineer and premed at MIT. She is motivated by the
+        challenges we face today in research and equity and is committed to making health and scientific information accessible. As a part of VoE’s national initiative, Angie is excited and determined to work with other dedicated leaders and seek out this goal as she pursues a career in medicine.
+        
+
+        In addition to her study of bioengineering and responsibilities as a student-researcher, she is an active member of MIT’s Biotech Group and Undergraduate Research Journal.
+        She is also a member of the Martin Trust Center’s Engineering Entrepreneurship
+        program, and the New Engineering Education Transformation (the NEET program). In
+        the NEET Living Machines track, she applies engineering principles and concepts to
+        problems in the life and medical sciences through biotechnological innovation. Outside of campus, she volunteers and trains in the lab at Mass General Brigham in
+        Boston, Massachusetts, and continues to support high school science research
+        students back home in New York’s Hudson River Valley by both coaching them in
+        effective communication as well as judging at competitive fairs.
+
+
+        In the past, Angie has won grand awards at Regeneron Pharmaceutical’s international
+        science research fair (ISEF) and the International GENIUS Olympiad. She made Arab
+        America’s 2025 pick for the nation’s top 20 Under 20.
+
+
+        Angie believes healthcare and medicine are where our progress in mathematics,
+        physics, the sciences, and engineering come together for practical application in our
+        society by promoting our health and well-being—fighting against humanity’s biggest
+        threats and for its best interests.`
+      }
 
       
     ],
@@ -1016,9 +1046,9 @@ export const cornellChapter = {
     ]
   },
   contact: {
-    email: "cornell@voicesofequity.org",
+    email: "cornellvoe@gmail.com",
     socialMedia: {
-      instagram: "@voecornell",
+      instagram: "@cornellvoe",
       // linkedin: "/company/voe-cornell"
     },
     // location: "Cornell University, Ithaca, NY 14853"
