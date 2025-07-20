@@ -130,7 +130,7 @@ export default function ImpactPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Nathan Choi</p>
-                    <p className="text-sm text-gray-600">Undergradate Director of Outreach - Cornell University</p>
+                    <p className="text-sm text-gray-600">Undergraduate Director of Outreach - Cornell University</p>
                   </div>
                 </div>
               </div>
