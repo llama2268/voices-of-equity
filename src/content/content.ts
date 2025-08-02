@@ -449,8 +449,8 @@ export const whoWeAre = {
         image: "/tyler.jpg",
         shortBio: "",
         fullBio: `Coming Soon`,
-        email: "",
-        linkedin: "https://www.linkedin.com/in/PLACEHOLDER-ADD-REAL-LINKEDIN-FOR-TYLER-YANG/"
+        email: "tyleryang2268@gmail.com",
+        linkedin: "https://www.linkedin.com/in/tyler-yang-88841b289/"
       }, 
       {
         id: "arnab-ghosh",
@@ -459,8 +459,8 @@ export const whoWeAre = {
         image: "/tyler.jpg",
         shortBio: "",
         fullBio: `Coming Soon`,
-        email: "",
-        linkedin: "https://www.linkedin.com/in/PLACEHOLDER-ADD-REAL-LINKEDIN-FOR-ARNAB-GHOSH/"
+        email: "arnabcare21@gmail.com",
+        linkedin: "https://www.linkedin.com/in/arnab-ghosh819/"
       }
     ]
   }, 
