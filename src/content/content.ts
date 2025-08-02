@@ -286,10 +286,10 @@ export const whoWeAre = {
       {
         id: "caleb-suh",
         name: "Caleb T. Suh",
-        role: "Co-Founder & Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/caleb-new-4.jpg",
-        shortBio: "Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity..",
-        fullBio: `Caleb T. Suh serves as the Co-Founder and Co-Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
+        shortBio: "Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity..",
+        fullBio: `Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
         Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations.  Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges. 
 
@@ -302,10 +302,10 @@ export const whoWeAre = {
       {
         id:"zaid-al-shoha",
         name:"Zaid Al-Shoha",
-        role: "Co-Founder and Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/zaid-headshot.png",
         shortBio: "Zaid Al-Shoha leads efforts to drive impactful change..",
-        fullBio: `As the Co-Founder and Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
+        fullBio: `As the Co-Founder & Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
 
         
 
@@ -408,6 +408,38 @@ export const whoWeAre = {
         email: "Gyc23@cornell.edu",
         linkedin: "https://www.linkedin.com/in/grace-chen-192024245/"
       },
+      {
+        id: "angie-ayoubi",
+        name: "Angie Ayoubi",
+        role: "Think Tank Director",
+        image: "/angie.PNG",
+        shortBio:"Angie believes healthcare and medicine....",
+        fullBio: `Angie Ayoubi is a biological engineer and premed at MIT. She is motivated by the
+        challenges we face today in research and equity and is committed to making health and scientific information accessible. As a part of VoE’s national initiative, Angie is excited and determined to work with other dedicated leaders and seek out this goal as she pursues a career in medicine.
+        
+
+        In addition to her study of bioengineering and responsibilities as a student-researcher, she is an active member of MIT’s Biotech Group and Undergraduate Research Journal.
+        She is also a member of the Martin Trust Center’s Engineering Entrepreneurship
+        program, and the New Engineering Education Transformation (the NEET program). In
+        the NEET Living Machines track, she applies engineering principles and concepts to
+        problems in the life and medical sciences through biotechnological innovation. Outside of campus, she volunteers and trains in the lab at Mass General Brigham in
+        Boston, Massachusetts, and continues to support high school science research
+        students back home in New York’s Hudson River Valley by both coaching them in
+        effective communication as well as judging at competitive fairs.
+
+
+        In the past, Angie has won grand awards at Regeneron Pharmaceutical’s international
+        science research fair (ISEF) and the International GENIUS Olympiad. She made Arab
+        America’s 2025 pick for the nation’s top 20 Under 20.
+
+
+        Angie believes healthcare and medicine are where our progress in mathematics,
+        physics, the sciences, and engineering come together for practical application in our
+        society by promoting our health and well-being—fighting against humanity’s biggest
+        threats and for its best interests.`, 
+        email: "Angie_ai@mit.edu",
+        linkedin: "https://www.linkedin.com/in/angie-ayoubi-67876a245/"
+      }
     ],
     engineers: [
       {
@@ -930,14 +962,14 @@ export const cornellChapter = {
     members: [
       {
         name: "Caleb T. Suh",
-        role: "Co-Founder & Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/caleb-new-3.png",
         bio: "Dedicated to advancing equity in healthcare through leadership and research",
         link: "/who-we-are/team/caleb-suh"
       },
       {
         name: "Zaid Al-Shoha",
-        role: "Co-Founder & Co-Director",
+        role: "Co-Founder & Executive Director",
         image: "/zaid.jpg",
         bio: "Passionate about medical research and driving positive change",
         link: "/who-we-are/team/zaid-al-shoha"
@@ -1024,9 +1056,9 @@ export const cornellChapter = {
     ]
   },
   contact: {
-    email: "cornell@voicesofequity.org",
+    email: "cornellvoe@gmail.com",
     socialMedia: {
-      instagram: "@voecornell",
+      instagram: "@cornellvoe",
       // linkedin: "/company/voe-cornell"
     },
     // location: "Cornell University, Ithaca, NY 14853"

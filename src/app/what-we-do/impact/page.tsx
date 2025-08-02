@@ -105,6 +105,38 @@ export default function ImpactPage() {
             </div>
           </div>
         </div>
+          <div className="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
+        <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 bg-[#607AD4] rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                  </svg>
+                </div>
+              </div>
+              <div className="flex-1">
+                <blockquote className="text-lg italic text-gray-700 mb-4">
+                "Being part of Voices of Equity has been one of the most meaningful parts of my college experience. As Co-Director of Outreach, I’ve been able to connect with local organizations, collaborate with students, and lead real efforts that address health disparities in our own community. It’s shown me what student-led change can actually look like."
+                </blockquote>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 relative rounded-full overflow-hidden">
+                    <Image
+                      src="/nathan-choi.png"
+                      alt="Nathan Choi"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Nathan Choi</p>
+                    <p className="text-sm text-gray-600">Undergraduate Director of Outreach - Cornell University</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      </div>
       </Section>
 
       {/* Partner Organizations */}
@@ -122,6 +154,12 @@ export default function ImpactPage() {
             </div>
             <div className="relative w-48 h-32 flex-shrink-0">
               <Image src="/ymca-logo.png" alt="YMCA" fill className="object-contain" />
+            </div>
+            <div className="relative w-48 h-32">
+              <Image src="/thephoenix.jpg" alt="The Phoenix" fill className="object-contain"/>
+            </div>
+            <div className="relative w-48 h-32">
+              <Image src="/operationgoldenshield.jpg" alt="The Phoenix" fill className="object-contain"/>
             </div>
           </div>
         </div>

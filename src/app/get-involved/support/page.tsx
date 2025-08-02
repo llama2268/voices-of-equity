@@ -215,7 +215,7 @@ export default function SupportPage() {
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <div className="relative h-64">
                 <Image
-                  src="/research.jpg"
+                  src="/boston.jpg"
                   alt="Research and advocacy work"
                   fill
                   className="object-cover"
