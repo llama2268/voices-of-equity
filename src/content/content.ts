@@ -296,7 +296,7 @@ export const whoWeAre = {
         As an Emergency Department Volunteer Team Lead at Cayuga Medical Center and a certified EMT, he gained firsthand experience supporting patients in critical moments and collaborating with healthcare teams. He has authored peer-reviewed research analyzing U.S. supply chain vulnerabilities and currently conducts addiction neuroscience research at the Konova Addiction Lab, where he studies the neurobehavioral mechanisms of addiction. These experiences provided him with a unique perspective on how systemic gaps in care affect vulnerable populations, reinforcing his dedication to advancing equity in healthcare and the importance of creating community-driven solutions to address disparities in access and outcomes.
 
         Caleb's diverse experiences in leadership, healthcare, and research inform his work at Voices of Equity, where he remains committed to creating sustainable, community-driven solutions that address systemic inequities.`,
-        email: "caleb@voicesofequity.org",
+        email: "Suh.t.caleb@outlook.com",
         linkedin: "https://www.linkedin.com/in/caleb-suh-028a956a/"
       },
       {
@@ -334,7 +334,9 @@ export const whoWeAre = {
         relevance not only in healthcare but in all aspects of life.
 
         Beyond her work with Voices of Equity, Eliza is a certified EMT and has volunteered in hospital settings. She is also an editor for The Healthcare Review at Cornell University, a member of the pre-medical fraternity Phi Delta Epsilon, and plays for Cornell Women's Club Lacrosse. Additionally, she previously served as the Vice President of Member Education for Cornell's Delta Gamma sorority. With extensive experience in
-        developing educational materials and teaching about diverse communities, she brings invaluable expertise to Voices of Equity's mission.`
+        developing educational materials and teaching about diverse communities, she brings invaluable expertise to Voices of Equity's mission.`,
+        email: "Ed497@cornell.edu",
+        linkedin: "https://www.linkedin.com/in/eliza-dow-44815324a/"
       },
       {
         id: "adam-jac",
@@ -352,7 +354,9 @@ export const whoWeAre = {
 
         Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary care settings, gaining first hand exposure to the challenges patients face in accessing 
         care. He conducts clinical research with the Department of Plastic Surgery at Beth Israel Deaconess Medical Center and has started a project at the DeLisa Research Group at Cornell, where he has received two grants to continue 
-        testing ubiquibodies in cancer research. His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.`
+        testing ubiquibodies in cancer research. His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.`,
+        email: "Aj439@cornell.edu",
+        linkedin: "https://www.linkedin.com/in/adam-jac-41a833299/"
       },
       {
         id: "jennifer-zhu",
@@ -386,7 +390,9 @@ export const whoWeAre = {
         chair, which have developed her skills in design, publicity, and fundraising. Well trained in CPR
         and basic life support, Jennifer also works as a lifeguard both on campus and back home.
         Jennifer's experience in healthcare, media, and leadership has prepared her well to address
-        healthcare disparities by supporting the missions and goals for Voices of Equity`
+        healthcare disparities by supporting the missions and goals for Voices of Equity`,
+        email: "Jjz57@cornell.edu",
+        linkedin: "https://www.linkedin.com/in/jennifer-zhu-a741221a8/"
       },
       {
         id: "grace-chen",
@@ -398,10 +404,10 @@ export const whoWeAre = {
  
         Grace's dedication to STEM outreach is further demonstrated by her role as a Policy and Practices Member for Cornell iGEM, conducting interviews and organizing educational and outreach-based events based on synthetic biology. Her leadership extends to coaching and mentorship, including guiding students to a national Science Olympiad victory and leading a competitive team to an overall second-place national finish.
 
-        Combining her expertise in project management and inclusive leadership with a passionate commitment to fostering health equity, Grace works to create lasting positive change through educational outreach and community-based initiatives. Her leadership helps Voices of Equity fulfill its mission of educating, inspiring, and empowering communities through impactful content, storytelling, and actionable solutions that address healthcare disparities.`
+        Combining her expertise in project management and inclusive leadership with a passionate commitment to fostering health equity, Grace works to create lasting positive change through educational outreach and community-based initiatives. Her leadership helps Voices of Equity fulfill its mission of educating, inspiring, and empowering communities through impactful content, storytelling, and actionable solutions that address healthcare disparities.`,
+        email: "Gyc23@cornell.edu",
+        linkedin: "https://www.linkedin.com/in/grace-chen-192024245/"
       },
-
-      
     ],
     engineers: [
       {
@@ -411,7 +417,8 @@ export const whoWeAre = {
         image: "/tyler.jpg",
         shortBio: "",
         fullBio: `Coming Soon`,
-        email:""
+        email: "",
+        linkedin: "https://www.linkedin.com/in/PLACEHOLDER-ADD-REAL-LINKEDIN-FOR-TYLER-YANG/"
       }, 
       {
         id: "arnab-ghosh",
@@ -420,7 +427,8 @@ export const whoWeAre = {
         image: "/tyler.jpg",
         shortBio: "",
         fullBio: `Coming Soon`,
-        email:""
+        email: "",
+        linkedin: "https://www.linkedin.com/in/PLACEHOLDER-ADD-REAL-LINKEDIN-FOR-ARNAB-GHOSH/"
       }
     ]
   }, 
