@@ -40,6 +40,12 @@ export const cornellChapter = {
     description: "Meet the team leading our founding chapter",
     members: [
       {
+        name: "Jimmy Quinlan",
+        role: "Chapter President",
+        image: "/jimmy-quinlan.jpg",
+        bio: "Leading the Cornell chapter with passion for health equity and community engagement"
+      },
+      {
         name: "Caleb T. Suh",
         role: "Co-Founder & Executive Director",
         image: "/caleb-new-3.png",
