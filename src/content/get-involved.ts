@@ -60,8 +60,8 @@ export const getInvolvedPage = {
           "Published research on healthcare accessibility"
         ],
         leadership: {
-          president: "Caleb T. Suh",
-          vicePresident: "Zaid Al-Shoha",
+          president: "Jimmy Quinlan",
+          vicePresident: "Coming Soon",
           contact: "cornell@voicesofequity.org"
         },
         featured: true,

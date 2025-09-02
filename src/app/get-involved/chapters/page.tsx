@@ -143,10 +143,6 @@ export default function ChaptersPage() {
                           <p className="font-medium text-gray-900">{chapter.leadership.president}</p>
                           <p className="text-sm text-gray-600">President</p>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <p className="font-medium text-gray-900">{chapter.leadership.vicePresident}</p>
-                          <p className="text-sm text-gray-600">Vice President</p>
-                        </div>
                       </div>
                     </div>
                     
