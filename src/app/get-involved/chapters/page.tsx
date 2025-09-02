@@ -138,7 +138,7 @@ export default function ChaptersPage() {
                     
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-3">Leadership</h3>
-                      <div className="grid md:grid-cols-2 gap-6 py-3">
+                      <div className="grid gap-6 py-3">
                         <div className="bg-gray-50 p-4 rounded-lg">
                           <p className="font-medium text-gray-900">{chapter.leadership.president}</p>
                           <p className="text-sm text-gray-600">President</p>
