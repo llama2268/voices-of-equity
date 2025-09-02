@@ -84,7 +84,7 @@ export default function ImpactPage() {
                 </div>
                 <div className="flex-1">
                   <blockquote className="text-lg italic text-gray-700 mb-4">
-                    "Voices of Equity has provided me with the opportunity to facilitate real change in health equity by empowering me to share impactful stories and foster discussion on important topics. I have learned how to transform awareness into active engagement, which has allowed me to foster authentic relationships with real people all over the country."
+                    &quot;Voices of Equity has provided me with the opportunity to facilitate real change in health equity by empowering me to share impactful stories and foster discussion on important topics. I have learned how to transform awareness into active engagement, which has allowed me to foster authentic relationships with real people all over the country.&quot;
                   </blockquote>
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 relative rounded-full overflow-hidden">
@@ -117,7 +117,7 @@ export default function ImpactPage() {
               </div>
               <div className="flex-1">
                 <blockquote className="text-lg italic text-gray-700 mb-4">
-                "Being part of Voices of Equity has been one of the most meaningful parts of my college experience. As Co-Director of Outreach, I’ve been able to connect with local organizations, collaborate with students, and lead real efforts that address health disparities in our own community. It’s shown me what student-led change can actually look like."
+                &quot;Being part of Voices of Equity has been one of the most meaningful parts of my college experience. As Co-Director of Outreach, I&apos;ve been able to connect with local organizations, collaborate with students, and lead real efforts that address health disparities in our own community. It&apos;s shown me what student-led change can actually look like.&quot;
                 </blockquote>
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 relative rounded-full overflow-hidden">

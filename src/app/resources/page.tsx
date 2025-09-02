@@ -3,42 +3,17 @@
 import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import VideoPlayer from '@/components/Video/VideoPlayer';
-import { whatWeDo } from '@/content/content';
-import { archiveResources } from '@/content/resources';
+import { resourcesPage } from '@/content';
 import Link from 'next/link';
 import { useState } from 'react';
-import {SocialCallout} from '@/components/ui/SocialCallout';
-import { GuideIcon, ToolkitIcon } from '@/components/icons/ExploreIcons';
 
 export default function ResourcesPage() {
-  const { title, subtitle, content } = whatWeDo.resources;
-  const [selectedVideo, setSelectedVideo] = useState(content.videos[0]);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const { main } = resourcesPage;
+  const [selectedVideo, setSelectedVideo] = useState(main.content.videos[0]);
   const [currentPaperSlide, setCurrentPaperSlide] = useState(0);
-  
-  const guides = [
-    {
-      title: "Chapter Leadership Guide",
-      description: "Complete guide for running a successful VoE chapter.",
-      icon: <GuideIcon />,
-      link: "/guides/chapter-leadership.pdf"
-    },
-    {
-      title: "Health Equity Advocacy Toolkit",
-      description: "Resources and strategies for effective advocacy.",
-      icon: <ToolkitIcon />,
-      link: "/guides/advocacy-toolkit.pdf"
-    }
-  ];
-
-
-
-  const filteredResources = selectedCategory === 'All' 
-    ? archiveResources 
-    : archiveResources.filter(resource => resource.category === selectedCategory);
 
   return (
-    <PageLayout title={title} subtitle={subtitle}>
+    <PageLayout title={main.title} subtitle={main.subtitle}>
       <div className="max-w-6xl mx-auto px-4 space-y-16">
         {/* Videos Section */}
         <Section
@@ -56,13 +31,13 @@ export default function ResourcesPage() {
               <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100">
                 <div className="aspect-w-16 aspect-h-9 h-[500px]">
                   <VideoPlayer 
-                    videoId={selectedVideo?.videoId || ''}
-                    title={selectedVideo?.title || ''}
+                    videoId={selectedVideo?.videoId ?? ''}
+                    title={selectedVideo?.title ?? ''}
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold mb-3 text-gray-900">{selectedVideo?.title || ''}</h3>
-                  <p className="text-gray-600 text-lg">{selectedVideo?.description || ''}</p>
+                  <h3 className="text-2xl font-semibold mb-3 text-gray-900">{selectedVideo?.title ?? ''}</h3>
+                  <p className="text-gray-600 text-lg">{selectedVideo?.description ?? ''}</p>
                 </div>
               </div>
             </div>
@@ -72,7 +47,7 @@ export default function ResourcesPage() {
               <div className="bg-gray-50/50 rounded-xl p-4 sticky top-24 border border-gray-100">
                 <h3 className="text-lg font-semibold mb-4 text-gray-900">More Videos</h3>
                 <div className="space-y-3 max-h-[600px] overflow-y-auto">
-                  {content.videos.map((video, index) => (
+                  {main.content.videos.map((video, index) => (
                     <button
                       key={index}
                       onClick={() => setSelectedVideo(video)}
@@ -183,7 +158,7 @@ export default function ResourcesPage() {
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentPaperSlide * 100}%)` }}
               >
-                {content.researchPapers.map((paper, index) => (
+                {main.content.researchPapers.map((paper, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-4">
                     <Link 
                       href={paper.link}
@@ -223,7 +198,7 @@ export default function ResourcesPage() {
             
             {/* Navigation Arrows */}
             <button
-              onClick={() => setCurrentPaperSlide(currentPaperSlide === 0 ? content.researchPapers.length - 1 : currentPaperSlide - 1)}
+              onClick={() => setCurrentPaperSlide(currentPaperSlide === 0 ? main.content.researchPapers.length - 1 : currentPaperSlide - 1)}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full transition-colors shadow-lg z-10"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -231,7 +206,7 @@ export default function ResourcesPage() {
               </svg>
             </button>
             <button
-              onClick={() => setCurrentPaperSlide(currentPaperSlide === content.researchPapers.length - 1 ? 0 : currentPaperSlide + 1)}
+              onClick={() => setCurrentPaperSlide(currentPaperSlide === main.content.researchPapers.length - 1 ? 0 : currentPaperSlide + 1)}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full transition-colors shadow-lg z-10"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -241,7 +216,7 @@ export default function ResourcesPage() {
 
             {/* Dots Navigation */}
             <div className="flex justify-center mt-8 space-x-2">
-              {content.researchPapers.map((_, slide) => (
+              {main.content.researchPapers.map((_, slide) => (
                 <button
                   key={slide}
                   onClick={() => setCurrentPaperSlide(slide)}
@@ -275,7 +250,7 @@ export default function ResourcesPage() {
         >
           <blockquote className="max-w-3xl mx-auto mb-8">
             <p className="text-2xl text-gray-800 leading-relaxed">
-              "Knowledge is the first step toward change. These resources are your gateway to understanding and action."
+              &quot;{main.quote.text}&quot;
             </p>
           </blockquote>
           <Link 

@@ -1,24 +1,22 @@
-import PageLayout from '../../../components/Layout/PageLayout';
+import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
-import { SocialCallout } from '@/components/ui/SocialCallout';
+import { whatWeDoPage } from '@/content';
 
 export default function NationalPage() {
+  const { national } = whatWeDoPage;
+  
   return (
-    <PageLayout title="National Initiatives" subtitle="Making change across the nation">
-      <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-center text-gray-700">
-          Coming Soon
-        </h1>
-      </div>
-
-      {/* Social Media Integration */}
-      <Section 
-        title="Share Your Story"
-        subtitle="Join the Conversation"
-        description="Connect with us on social media to share your impact stories and stay updated"
-      >
-        <div className="max-w-4xl mx-auto">
-          <SocialCallout />
+    <PageLayout title={national.title} subtitle={national.subtitle}>
+      <Section>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-6xl md:text-8xl font-bold text-primary-600 mb-4">
+              {national.content}
+            </h1>
+            <p className="text-xl text-gray-500">
+              National initiatives coming soon.
+            </p>
+          </div>
         </div>
       </Section>
     </PageLayout>

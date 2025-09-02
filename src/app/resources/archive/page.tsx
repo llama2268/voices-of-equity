@@ -1,136 +1,197 @@
-import { whatWeDo } from '@/content/content';
 import { Section } from '@/components/ui/Section';
-import { FeaturedArticle } from '@/components/Article/FeaturedArticle';
-import { ArticleCard } from '@/components/Article/ArticleCard';
 import PageLayout from '@/components/Layout/PageLayout';
+import { resourcesPage } from '@/content';
+import type { ArchiveItem } from '@/content/types';
+import Image from 'next/image';
 
-export default function ArchivePage() {
-  const { featured, articles } = whatWeDo.news;
-  
-  // Separate memos and news items
-  const memos = articles.filter(article => article.type === 'memo');
-  const newsItems = articles.filter(article => article.type === 'news');
-  
-  // For the equity archive, we assume that articles of type 'equity'
-  // (or a new property) represent the stories, editorial content, etc.
-  const equityContent = articles.filter(article => article.type === 'equity');
-  
-  // Sort all articles by date (newest first)
-  const allArticles = articles.sort((a, b) => 
-    new Date(b.date).getTime() - new Date(a.date).getTime()
+interface ArchiveCardProps {
+  item: ArchiveItem;
+}
+
+function ArchiveCard({ item }: ArchiveCardProps) {
+  const typeColors = {
+    article: 'bg-blue-100 text-blue-800',
+    video: 'bg-red-100 text-red-800', 
+    training: 'bg-green-100 text-green-800',
+    interview: 'bg-purple-100 text-purple-800',
+    module: 'bg-yellow-100 text-yellow-800',
+    'op-ed': 'bg-orange-100 text-orange-800',
+    resource: 'bg-gray-100 text-gray-800'
+  };
+
+  const CardContent = () => (
+    <>
+      <div className="flex justify-between items-start mb-3">
+        <span className={`px-3 py-1 rounded-full text-sm font-medium ${typeColors[item.type]}`}>
+          {item.type}
+        </span>
+        <span className="text-sm text-gray-500">{item.date}</span>
+      </div>
+      
+      {/* Image support */}
+      {item.image && (
+        <div className="relative w-full h-48 mb-4">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      )}
+
+      {/* YouTube iframe for videos */}
+      {item.type === 'video' && item.videoId && (
+        <div className="relative w-full h-48 mb-4">
+          <iframe
+            src={`https://www.youtube.com/embed/${item.videoId}`}
+            title={item.title}
+            className="w-full h-full rounded-lg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      )}
+      
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+      {item.author && (
+        <p className="text-sm text-gray-600 mb-2">by {item.author}</p>
+      )}
+      <p className="text-gray-600 mb-4">{item.description}</p>
+      
+      <div className="flex flex-wrap gap-2">
+        {item.tags.map((tag: string, index: number) => (
+          <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </>
   );
 
+  // Wrap articles with links
+  if (item.type === 'article' && item.url) {
+    return (
+      <a 
+        href={item.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow hover:border-primary-300"
+      >
+        <CardContent />
+        <div className="mt-4 text-primary-600 text-sm font-medium">
+          Read Article →
+        </div>
+      </a>
+    );
+  }
+
   return (
-    <PageLayout title="Equity Archive" subtitle="Making real change in communities">
+    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <CardContent />
+    </div>
+  );
+}
+
+function FeaturedArchiveCard({ item }: ArchiveCardProps) {
+  const FeaturedContent = () => (
+    <>
+      <div className="flex justify-between items-start mb-4">
+        <span className="px-4 py-2 bg-primary-600 text-white rounded-full text-sm font-medium">
+          Featured
+        </span>
+        <span className="text-sm text-gray-600">{item.date}</span>
+      </div>
+
+      {/* Image support for featured */}
+      {item.image && (
+        <div className="relative w-full h-64 mb-6">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      )}
+
+      {/* YouTube iframe for featured videos */}
+      {item.type === 'video' && item.videoId && (
+        <div className="relative w-full h-64 mb-6">
+          <iframe
+            src={`https://www.youtube.com/embed/${item.videoId}`}
+            title={item.title}
+            className="w-full h-full rounded-lg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      )}
+      
+      <h2 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h2>
+      {item.author && (
+        <p className="text-sm text-gray-600 mb-3">by {item.author}</p>
+      )}
+      <p className="text-gray-700 mb-6 text-lg">{item.description}</p>
+      
+      <div className="flex flex-wrap gap-2">
+        {item.tags.map((tag: string, index: number) => (
+          <span key={index} className="px-3 py-1 bg-white text-primary-600 rounded-full text-sm font-medium">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </>
+  );
+
+  // Wrap featured articles with links
+  if (item.type === 'article' && item.url) {
+    return (
+      <a 
+        href={item.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-gradient-to-r from-primary-50 to-secondary-50 border-2 border-primary-200 rounded-lg p-8 hover:shadow-lg transition-shadow"
+      >
+        <FeaturedContent />
+        <div className="mt-4 text-primary-600 font-medium">
+          Read Featured Article →
+        </div>
+      </a>
+    );
+  }
+
+  return (
+    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 border-2 border-primary-200 rounded-lg p-8">
+      <FeaturedContent />
+    </div>
+  );
+}
+
+export default function ArchivePage() {
+  const { archive } = resourcesPage;
+
+  return (
+    <PageLayout title={archive.title} subtitle={archive.subtitle}>
       <Section>
-        <div className="min-h-screen flex flex-col items-center justify-start pt-20">
-          <h1 className="text-6xl md:text-8xl font-bold text-center text-primary-600">
-            Coming Soon
-          </h1>
-          <p className="mt-4 text-xl text-gray-500">
-            Stay tuned for our archive.
-          </p>
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Featured Item */}
+          <div className="mb-12">
+            <FeaturedArchiveCard item={archive.featured} />
+          </div>
+
+          {/* All Archive Items */}
+          <div>
+            <h2 className="text-3xl font-bold text-center mb-8">Archive Collection</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {archive.items.map((item: any) => (
+                <ArchiveCard key={item.id} item={item} />
+              ))}
+            </div>
+          </div>
+
         </div>
       </Section>
     </PageLayout>
-    // <PageLayout 
-    //   title="Equity Archive" 
-    //   subtitle="Deep dives into health equity issues and updates from our community"
-    // >
-    //   {/* Featured Article */}
-    //   <Section spacing="sm">
-    //     <FeaturedArticle {...featured} />
-    //   </Section>
-
-    //   {/* Latest Articles */}
-    //   <Section>
-    //     <div className="space-y-16">
-    //       {/* Deep Dives */}
-    //       <div>
-    //         <div className="text-center mb-12">
-    //           <p className="font-serif text-lg text-primary-600 mb-3 italic">
-    //             Deep Dives
-    //           </p>
-    //           <h2 className="text-3xl font-bold mb-4">Health Equity Analysis</h2>
-    //           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-    //             In-depth explorations of critical healthcare accessibility issues
-    //           </p>
-    //         </div>
-    //         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8">
-    //           {memos.slice(0, 3).map((memo) => (
-    //             <ArticleCard
-    //               key={memo.slug}
-    //               {...memo}
-    //               variant="memo"
-    //             />
-    //           ))}
-    //         </div>
-    //       </div>
-
-    //       {/* Latest Updates */}
-    //       <div>
-    //         <div className="text-center mb-12">
-    //           <p className="font-serif text-lg text-primary-600 mb-3 italic">
-    //             Latest Updates
-    //           </p>
-    //           <h2 className="text-3xl font-bold mb-4">Community Impact</h2>
-    //           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-    //             Recent developments and success stories from our chapters
-    //           </p>
-    //         </div>
-    //         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8">
-    //           {newsItems.slice(0, 3).map((item) => (
-    //             <ArticleCard
-    //               key={item.slug}
-    //               {...item}
-    //               variant="news"
-    //             />
-    //           ))}
-    //         </div>
-    //       </div>
-
-    //       {/* Equity Archive */}
-    //       <div>
-    //         <div className="text-center mb-12">
-    //           <p className="font-serif text-lg text-primary-600 mb-3 italic">
-    //             Equity Archive
-    //           </p>
-    //           <h2 className="text-3xl font-bold mb-4">Editorials & Stories</h2>
-    //           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-    //             Humanize the issue and inspire action through stories—be it video interviews, written journals, or other firsthand accounts.
-    //           </p>
-    //         </div>
-    //         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8">
-    //           {equityContent.slice(0, 6).map((article) => (
-    //             <ArticleCard
-    //               key={article.slug}
-    //               {...article}
-    //               variant="equity"
-    //             />
-    //           ))}
-    //         </div>
-    //       </div>
-
-    //       {/* All Articles */}
-    //       <div>
-    //         <div className="text-center mb-12">
-    //           <p className="font-serif text-lg text-primary-600 mb-3 italic">
-    //             Archive
-    //           </p>
-    //           <h2 className="text-3xl font-bold mb-4">All Articles</h2>
-    //         </div>
-    //         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8">
-    //           {allArticles.slice(0, 6).map((article) => (
-    //             <ArticleCard
-    //               key={article.slug}
-    //               {...article}
-    //               variant={article.type}
-    //             />
-    //           ))}
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </Section>
-    // </PageLayout>
   );
 }

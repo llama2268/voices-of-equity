@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { navigation } from '@/content/content';
+import { navigation } from '@/content';
 import Image from 'next/image';
 
 const NavBar = () => {

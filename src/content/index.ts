@@ -1,21 +1,20 @@
-export * from './site';
-export * from './home';
-export * from './who-we-are';
-export * from './articles';
-export * from './chapters';
+// Central content export - all content should be imported from here
+export * from './site'
+export * from './pages'
+export * from './types'
+export * from './who-we-are'
+export * from './what-we-do'
+export * from './get-involved'
+export * from './resources'
+export * from './contact'
+export * from './cornell'
 
-// Type definitions for content
-export type Article = {
-  title: string;
-  excerpt: string;
-  content: string;
-  // ... other article properties
-};
-
-export type Chapter = {
-  name: string;
-  location: string;
-  // ... other chapter properties
-};
-
-// ... other type definitions 
+// Re-export everything for convenience
+export { siteConfig, navigation } from './site'
+export { homePage } from './pages'
+export { whoWeArePage } from './who-we-are'
+export { whatWeDoPage } from './what-we-do'
+export { getInvolvedPage } from './get-involved'
+export { resourcesPage } from './resources'
+export { contactPage } from './contact'
+export { cornellChapter } from './cornell'

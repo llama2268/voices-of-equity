@@ -1,29 +1,57 @@
-# Create T3 App
+# Voices of Equity Website
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Next.js 15 website for Voices of Equity, a nationwide organization advancing health equity through education, advocacy, and community engagement.
 
-## What's next? How do I make an app with this?
+## Development
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+```bash
+npm run dev              # Start development server
+npm run build           # Build for production
+npm run lint            # Run ESLint
+npm run typecheck       # TypeScript type checking
+```
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Content Management
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+All website content is centralized in `src/content/` with TypeScript exports. This makes content easy to edit and maintain.
 
-## Learn More
+### Adding Content to Equity Archive
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+To add new items to the Equity Archive (`/resources/archive`):
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+1. Open `src/content/pages.ts`
+2. Find the `resourcesPage.archive.items` array
+3. Add a new `ArchiveItem` object with the following structure:
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+```typescript
+{
+  id: "unique-id",
+  title: "Your Content Title",
+  description: "Brief description of the content",
+  type: "article" | "video" | "training" | "interview" | "module" | "op-ed" | "resource",
+  date: "YYYY-MM-DD",
+  author: "Author Name" (optional),
+  tags: ["tag1", "tag2", "tag3"],
+  url: "https://link-to-content.com" (optional),
+  image: "/path-to-image.jpg" (optional),
+  featured: true (optional, for highlighting content)
+}
+```
 
-## How do I deploy this?
+### Content Types Available
+- **article**: Research papers, blog posts, written content
+- **video**: YouTube videos, interviews, educational content
+- **training**: Onboarding materials, leadership resources
+- **interview**: Patient stories, community interviews
+- **module**: Educational modules, interactive content
+- **op-ed**: Opinion pieces, editorial content
+- **resource**: General resources, tools, guides
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Architecture
+
+- **Framework**: Next.js 15 with App Router and TypeScript
+- **Styling**: Tailwind CSS with custom theme
+- **Content**: Centralized in `src/content/` with TypeScript types
+- **Components**: Organized by feature, fully content-driven
+
+See `CLAUDE.md` for detailed development guidance.

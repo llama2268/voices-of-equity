@@ -1,10 +1,8 @@
 "use client"
 import PageLayout from '../../../components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
-import { Heading } from '@/components/ui/Heading';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
-import { whoWeAre } from '@/content/content';
+import { whoWeArePage } from '@/content';
 import Link from 'next/link';
 import Image from 'next/image'
 import { SocialCallout } from '@/components/ui/SocialCallout';
@@ -13,7 +11,7 @@ import { useRef } from 'react';
 
 
 export default function MissionPage() {
-  const { introduction, mission, vision, values, callToAction } = whoWeAre.mission.content;
+  const { introduction, mission, vision, values, callToAction } = whoWeArePage.mission;
   
   const missionPoints = [
     { 

@@ -1,33 +1,24 @@
-import { whatWeDo } from '@/content/content';
-
+// Placeholder functions - content not available yet
 export function getMemoBySlug(slug: string) {
-  return whatWeDo.voices.memos.find(memo => memo.slug === slug);
+  return null;
 }
 
 export function getNewsItemBySlug(slug: string) {
-  return whatWeDo.impact.news.find(news => news.slug === slug);
+  return null;
 }
 
 export function getAllMemoSlugs() {
-  return whatWeDo.voices.memos.map(memo => ({
-    params: { slug: memo.slug }
-  }));
+  return [];
 }
 
 export function getAllNewsSlugs() {
-  return whatWeDo.impact.news.map(news => ({
-    params: { slug: news.slug }
-  }));
+  return [];
 }
 
 export function getRelatedMemos(currentSlug: string, limit = 3) {
-  return whatWeDo.voices.memos
-    .filter(memo => memo.slug !== currentSlug)
-    .slice(0, limit);
+  return [];
 }
 
 export function getRelatedNews(currentSlug: string, limit = 3) {
-  return whatWeDo.impact.news
-    .filter(news => news.slug !== currentSlug)
-    .slice(0, limit);
+  return [];
 } 

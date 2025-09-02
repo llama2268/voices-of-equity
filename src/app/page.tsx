@@ -1,38 +1,22 @@
 'use client'
-import Hero from '../components/Hero/Hero';
-import StatCard from '../components/Stats/StatCard';
-import PageLayout from '../components/Layout/PageLayout';
-import { Section } from '@/components/ui/Section';
-import { homePage } from '@/content/content';
-import { Callout } from '@/components/ui/Callout';
-import { SocialCallout } from '@/components/ui/SocialCallout';
-import Link from 'next/link';
-import { useState } from 'react';
-import { FormEvent } from 'react';
+import Hero from '../components/Hero/Hero'
+import PageLayout from '../components/Layout/PageLayout'
+import { Section } from '@/components/ui/Section'
+import { homePage } from '@/content'
+import { Callout } from '@/components/ui/Callout'
+import { SocialCallout } from '@/components/ui/SocialCallout'
+import Link from 'next/link'
+import { useState } from 'react'
 import Image from 'next/image'
 
 export default function HomePage() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const toggleModal = () => setModalOpen(!modalOpen);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Process the form submission (e.g., call an API endpoint)
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    // For now, just log the values, then close the modal
-    console.log({ name, email });
-    setModalOpen(false);
-  };
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
     <PageLayout fullWidth>
       <Hero
-        title="Building a More Equitable Future, One Voice at a Time"
-        description="Voices of Equity is a nationwide movement empowering students, healthcare professionals, and community leaders to raise awareness, take action, and drive meaningful change in the fight for health equity"
+        title={homePage.hero.title}
+        description={homePage.hero.description}
       />
 
       {/* Mission Statement */}
@@ -43,7 +27,7 @@ export default function HomePage() {
           </p>
           <blockquote className="mb-12">
             <p className="font-serif text-2xl md:text-3xl text-gray-800 italic leading-relaxed">
-            To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives</p>
+            {homePage.mission.quote}</p>
             <div className="mt-4 h-1 w-24 mx-auto" />
           </blockquote>
           <Link
@@ -328,7 +312,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
-          {homePage.initiatives.map((initiative, index) => (
+          {homePage.initiatives.map((initiative) => (
             <div 
               key={initiative.title} 
               className="p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-t-4 border-transparent hover:border-secondary-500"

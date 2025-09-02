@@ -1,11 +1,10 @@
 import PageLayout from '../../../components/Layout/PageLayout';
 import TeamMember from '../../../components/Team/TeamMember';
-import { whoWeAre } from '@/content/content';
+import { whoWeArePage } from '@/content';
 import { Section } from '@/components/ui/Section';
-import { SocialCallout } from '@/components/ui/SocialCallout';
 
 export default function TeamPage() {
-  const { title, subtitle, members, engineers } = whoWeAre.team;
+  const { title, subtitle, members, engineers } = whoWeArePage.team;
   
   return (
     <PageLayout>

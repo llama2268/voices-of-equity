@@ -1,35 +1,19 @@
 import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
-import { chapters, chaptersContent } from '@/content/chapters';
+import { getInvolvedPage } from '@/content';
 import Link from 'next/link';
 import Image from 'next/image';
-import { RelatedContent } from '@/components/RelatedContent';
-import { chapterPagesContent } from '@/content/chapter-pages';
 import { Callout } from '@/components/ui/Callout';
 import { SocialCallout } from '@/components/ui/SocialCallout';
 import { ResourceIcon, AwardIcon, LeadershipIcon } from '@/components/icons/ChapterIcons';
 
 export default function ChaptersPage() {
-  const { page, benefits, stats, cta } = chaptersContent;
-  const { chapters } = chapterPagesContent;
+  const { title, subtitle, content, benefits, cta, activeChapters } = getInvolvedPage.chapters;
   
-  const updatedBenefits = [
-    {
-      title: 'Real-World Impact',
-      description: 'Lead community-based initiatives that address health disparities, from educational outreach to philanthropic projects, empowering your campus to drive meaningful change locally and nationally.',
-      icon: <ResourceIcon />
-    },
-    {
-      title: 'Exclusive Resources and Networking',
-      description: 'Access comprehensive health equity curricula, workshops, and mentorship opportunities while connecting with healthcare professionals, community leaders, and other chapter leaders across the country.',
-      icon: <AwardIcon />
-    },
-    {
-      title: 'Leadership Development',
-      description: 'Gain hands-on leadership experience by organizing impactful initiatives, leading educational events, and collaborating with peers nationwide to advance health equity on your campus and in your community.',
-      icon: <LeadershipIcon />
-    }
-  ];
+  const benefitsWithIcons = benefits.map((benefit, index) => ({
+    ...benefit,
+    icon: index === 0 ? <ResourceIcon /> : index === 1 ? <AwardIcon /> : <LeadershipIcon />
+  }));
 
   // University chapters data
   const universities = [
@@ -83,8 +67,8 @@ export default function ChaptersPage() {
 
   return (
     <PageLayout
-      title={page.title}
-      subtitle={page.subtitle}
+      title={title}
+      subtitle={subtitle}
       hero
       reduced
     >
@@ -92,12 +76,12 @@ export default function ChaptersPage() {
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <p className="text-lg text-gray-600 leading-relaxed">
-            {page.introduction}
+            {content}
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {updatedBenefits.map((benefit) => (
+          {benefitsWithIcons.map((benefit) => (
             <div 
               key={benefit.title}
               className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-[#498B86]"
@@ -111,77 +95,77 @@ export default function ChaptersPage() {
       </Section>
 
       {/* Featured Chapter - Cornell */}
-      <Section variant="alternate" spacing="sm">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-            <div className="md:grid md:grid-cols-2">
-              <div className="relative h-64 md:h-full">
-                <Image
-                  src="/chapters/cornell.jpg"
-                  alt="Cornell Chapter"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent md:hidden" />
-              </div>
-              <div className="p-8 md:p-12">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="px-3 py-1 bg-secondary-50 text-secondary-600 rounded-full text-sm font-medium">
-                    Featured Chapter
-                  </span>
-                  <span className="px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium">
-                    Est. 2024
-                  </span>
+      {activeChapters.filter(chapter => chapter.featured).map(chapter => (
+        <Section key={chapter.slug} variant="alternate" spacing="sm">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <div className="md:grid md:grid-cols-2">
+                <div className="relative h-64 md:h-full">
+                  <Image
+                    src={chapter.image}
+                    alt={`${chapter.name} Chapter`}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent md:hidden" />
                 </div>
-                <h2 className="text-3xl font-bold mb-4">Cornell University Chapter</h2>
-                <p className="text-gray-600 mb-8 leading-relaxed">
-                  Our founding chapter at Cornell University has set the standard for what a Voices of Equity chapter can achieve. Through innovative programs and dedicated leadership, they've created lasting impact in healthcare accessibility and equity awareness.
-                </p>
-                
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Key Initiatives</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        <span className="text-gray-600">Student-led health equity research program</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        <span className="text-gray-600">Community health literacy workshops</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-red-500 mr-2">•</span>
-                        <span className="text-gray-600">Healthcare accessibility advocacy</span>
-                      </li>
-                    </ul>
+                <div className="p-8 md:p-12">
+                  <div className="flex flex-wrap items-center gap-3 mb-6">
+                    <span className="px-3 py-1 bg-secondary-50 text-secondary-600 rounded-full text-sm font-medium">
+                      Featured Chapter
+                    </span>
+                    <span className="px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium">
+                      {chapter.established}
+                    </span>
                   </div>
+                  <h2 className="text-3xl font-bold mb-4">{chapter.name} Chapter</h2>
+                  <p className="text-gray-600 mb-8 leading-relaxed">
+                    Our founding chapter at {chapter.name} has set the standard for what a Voices of Equity chapter can achieve. Through innovative programs and dedicated leadership, they&apos;ve created lasting impact in healthcare accessibility and equity awareness.
+                  </p>
                   
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Leadership</h3>
-                    <div className="grid md:grid-cols-2 gap-6 py-3">
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="font-medium text-gray-900">Jimmy Quinlan</p>
-                        <p className="text-sm text-gray-600">President</p>
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-3">Key Achievements</h3>
+                      <ul className="space-y-2">
+                        {chapter.achievements.map((achievement, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-red-500 mr-2">•</span>
+                            <span className="text-gray-600">{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-3">Leadership</h3>
+                      <div className="grid md:grid-cols-2 gap-6 py-3">
+                        <div className="bg-gray-50 p-4 rounded-lg">
+                          <p className="font-medium text-gray-900">{chapter.leadership.president}</p>
+                          <p className="text-sm text-gray-600">President</p>
+                        </div>
+                        <div className="bg-gray-50 p-4 rounded-lg">
+                          <p className="font-medium text-gray-900">{chapter.leadership.vicePresident}</p>
+                          <p className="text-sm text-gray-600">Vice President</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between pt-6 mt-8">
-                    <span className="text-gray-600">45 active members</span>
-                    <Link
-                      href="/cornell"
-                      className="px-6 py-2 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg transition-colors"
-                    >
-                      Visit Chapter
-                    </Link>
+                    
+                    <div className="flex items-center justify-between pt-6 mt-8">
+                      <span className="text-gray-600">{chapter.members}+ active members</span>
+                      <Link
+                        href={chapter.link}
+                        className="px-6 py-2 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg transition-colors"
+                      >
+                        Visit Chapter
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      ))}
 
       {/* All University Chapters */}
       <Section spacing="sm" title="Our Chapters" subtitle="Universities Leading Change">
@@ -207,23 +191,17 @@ export default function ChaptersPage() {
         </div>
       </Section>
 
-      {/* Related Content */}
-      <Section spacing="sm">
-        <div className="max-w-4xl mx-auto">
-          <RelatedContent {...chapters.relatedContent} />
-        </div>
-      </Section>
 
       {/* Call to Action */}
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto">
           <Callout
-            eyebrow="Chapter Success Stories"
-            title="Making Real Change"
-            description="Discover how our chapters are creating lasting impact in their communities through innovative programs and dedicated leadership."
+            eyebrow="Ready to Get Started?"
+            title={cta.title}
+            description={cta.description}
             link={{
-              text: "Read Impact Stories",
-              href: "/what-we-do/impact"
+              text: cta.primaryButton.text,
+              href: cta.primaryButton.href
             }}
             variant="impact"
           />

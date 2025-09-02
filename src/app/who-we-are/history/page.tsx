@@ -1,11 +1,11 @@
 import PageLayout from '../../../components/Layout/PageLayout';
 import Timeline from '../../../components/Timeline/Timeline';
-import { whoWeAre } from '@/content/content';
+import { whoWeArePage } from '@/content';
 import { Section } from '@/components/ui/Section';
 import Image from 'next/image'
 
 export default function HistoryPage() {
-  const { title, subtitle, content, timeline } = whoWeAre.history;
+  const { title, subtitle, content, timeline, conclusion } = whoWeArePage.history;
   
   return (
     <PageLayout
@@ -44,7 +44,7 @@ export default function HistoryPage() {
       <Section>
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <p className="mb-6 text-lg text-gray-700 leading-relaxed">
-        {whoWeAre.history.conclusion}
+        {conclusion}
         </p>
 
         </div>

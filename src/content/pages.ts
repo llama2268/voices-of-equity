@@ -1,3 +1,4 @@
+// Home page content only
 import type { Initiative } from './types'
 
 // HOME PAGE

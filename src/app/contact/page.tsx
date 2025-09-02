@@ -1,26 +1,27 @@
 import PageLayout from '@/components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import { SocialCallout } from '@/components/ui/SocialCallout';
+import { contactPage, siteConfig } from '@/content';
 
 export default function ContactPage() {
   return (
     <PageLayout
-      title="Contact Us"
-      subtitle="Get in touch with our team"
+      title={contactPage.title}
+      subtitle={contactPage.subtitle}
       hero
       reduced
     >
       <Section spacing="sm">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <p className="text-lg text-gray-600 leading-relaxed">
-            Have questions about starting a chapter, joining our team, or collaborating with us? We'd love to hear from you.
+            Have questions about starting a chapter, joining our team, or collaborating with us? We&apos;d love to hear from you.
           </p>
         </div>
         <div className="max-w-4xl mx-auto text-center mb-12">
   </div>
   <div className="text-center">
     <a
-      href="mailto:gyc23@cornell.edu"
+      href={siteConfig.links.contact}
       className="inline-block px-6 py-3 bg-[#607AD4] text-white font-semibold rounded hover:bg-[#5068BD] transition-colors"
     >
       Email Us

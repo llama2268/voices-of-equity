@@ -5,7 +5,7 @@ import { Section } from '@/components/ui/Section';
 import { Heading } from '@/components/ui/Heading';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { cornellChapter } from '@/content/content';
+import { cornellChapter } from '@/content';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Callout } from '@/components/ui/Callout';
@@ -23,7 +23,7 @@ import { Callout } from '@/components/ui/Callout';
 // }
 
 export default function CornellChapterPage() {
-  const { title, subtitle, hero, introduction, initiatives, leadership, impact, getInvolved, contact } = cornellChapter;
+  const { title, hero, introduction, getInvolved, contact } = cornellChapter;
   
   return (
     <PageLayout>

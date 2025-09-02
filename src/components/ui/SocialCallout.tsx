@@ -1,6 +1,17 @@
-import { socialLinks } from '@/content/social';
+import { siteConfig } from '@/content';
 
 export function SocialCallout() {
+  const socialLinks = [
+    {
+      platform: 'instagram',
+      url: siteConfig.links.social.instagram
+    },
+    {
+      platform: 'linkedin',
+      url: siteConfig.links.social.linkedin
+    }
+  ];
+
   return (
     <div className="bg-[#607AD4] text-white rounded-lg p-3">
       <div className="flex justify-center space-x-6">
@@ -12,7 +23,6 @@ export function SocialCallout() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* Replace with your B&W icons */}
             <span className="sr-only">{link.platform}</span>
             <img 
               src={`/icons/social/${link.platform}.png`} 
