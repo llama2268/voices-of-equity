@@ -91,7 +91,7 @@ export default function SupportPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Partner with Us</h3>
                 <p className="text-gray-600 mb-6">
-                  If you represent an organization, foundation, or university, let's work together to amplify health equity through collaboration.
+                  If you represent an organization, foundation, or university, let's work together to amplify health equity.
                 </p>
               </div>
               <div className="text-center">

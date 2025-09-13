@@ -128,13 +128,34 @@ const NavBar = () => {
         <div className="sm:hidden bg-white border-t border-gray-200 rounded-b-xl">
           <div className="pt-2 pb-3 space-y-1">
             {menuItems.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href || '/'}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#498B86] hover:bg-gray-50 mx-2 rounded-lg"
-              >
-                {item.title}
-              </Link>
+              <div key={item.title}>
+                {item.submenu ? (
+                  <div className="space-y-1">
+                    <div className="px-3 py-2 text-base font-semibold text-gray-900 mx-2">
+                      {item.title}
+                    </div>
+                    {item.submenu.map((subItem) => (
+                      <Link
+                        key={subItem.href}
+                        href={subItem.href}
+                        className="block px-6 py-2 text-sm text-gray-700 hover:text-[#498B86] hover:bg-gray-50 mx-2 rounded-lg"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {subItem.title}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.title}
+                    href={item.href || '/'}
+                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#498B86] hover:bg-gray-50 mx-2 rounded-lg"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
         </div>

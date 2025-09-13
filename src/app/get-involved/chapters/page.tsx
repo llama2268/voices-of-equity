@@ -20,49 +20,23 @@ export default function ChaptersPage() {
     { name: 'Cornell University', logo: '/partners/cornell.png' },
     { name: 'University of Illinois - Urbana Champaign', logo: '/icons/chapters/University of Illinois at Urbana-Champaign.png' },
     { name: 'University of Michigan - Ann Arbor', logo: '/icons/chapters/University of Michigan-Ann Arbor.png' },
-    { name: 'Virginia Commonwealth University', logo: '/icons/chapters/Virginia Commonwealth University.png' },
-    { name: 'University of South Carolina', logo: '/icons/chapters/University of South Carolina - Columbia.png' },
-    { name: 'Brown University', logo: '/icons/chapters/Brown University.png' },
     { name: 'Carleton College', logo: '/icons/chapters/simplified-carleton-symbol.png' },
     { name: 'Carnegie Mellon University', logo: '/icons/chapters/Carnegie Mellon University.png' },
     { name: 'Franklin & Marshall University', logo: '/icons/chapters/franklinmashall.png' },
-    { name: 'Arizona State University', logo: '/icons/chapters/Arizona State University.png' },
-    { name: 'Georgia Institute of Technology', logo: '/icons/chapters/Georgia Institute of Technology.png' },
     { name: 'Howard University', logo: '/icons/chapters/Howard_University_seal.svg.png' },
     { name: 'Ithaca College', logo: '/icons/chapters/Formal_Seal_of_Ithaca_College,_Ithaca,_NY,_USA.svg.png' },
     { name: 'Northeastern University', logo: '/icons/chapters/Northeastern University (Boston).png' },
     { name: 'Massachusetts Institute of Technology', logo: '/icons/chapters/Massachusetts Institute of Technology (MIT).png' },
-    { name: 'McGill University', logo: '/icons/chapters/McGill University.png' },
-    { name: 'Miami University - Oxford', logo: '/icons/chapters/Miami University Oxford.png' },
     { name: 'New York University', logo: '/icons/chapters/New York University.png' },
-    { name: 'Rutgers University', logo: '/icons/chapters/Rutgers, The State University of New Jersey - New Brunswick.png' },
-    { name: 'Syracuse University', logo: '/icons/chapters/Syracuse University.png' },
     { name: 'The Ohio State University', logo: '/icons/chapters/The Ohio State University - Columbus.png' },
-    { name: 'Cleveland State University', logo: '/icons/chapters/Cleveland_State_University_logo.png' },
-    { name: 'Tulane University', logo: '/icons/chapters/Tulane University.png' },
     { name: 'University of California Los Angeles', logo: '/icons/chapters/University of California, Los Angeles.png' },
-    { name: 'University of California Riverside', logo: '/icons/chapters/University of California, Riverside.png' },
     { name: 'Ohio University', logo: '/icons/chapters/Ohio University.png' },
-    { name: 'Livingstone College', logo: '/icons/chapters/Livingstone_College_Logo.png' },
-    { name: 'University of Chicago', logo: '/icons/chapters/University_of_Chicago_shield.svg.png' },
-    { name: 'Emory University', logo: '/icons/chapters/Emory University.png' },
-    { name: 'Princeton University', logo: '/icons/chapters/Princeton University.png' },
-    { name: 'George Washington University', logo: '/icons/chapters/The George Washington University.png' },
-    { name: 'University of Colorado Boulder', logo: '/icons/chapters/University of Colorado at Boulder.png' },
     { name: 'Purdue University', logo: '/icons/chapters/Purdue University - West Lafayette.png' },
-    { name: 'Texas A&M University', logo: '/icons/chapters/Texas A&M University.png' },
-    { name: 'The University of Utah', logo: '/icons/chapters/University of Utah.png' },
-    { name: 'University of California San Diego', logo: '/icons/chapters/University of California, San Diego.png' },
     { name: 'University of Florida', logo: '/icons/chapters/University of Florida.png' },
     { name: 'University of Connecticut', logo: '/icons/chapters/University of Connecticut.png' },
-    { name: 'Wellesley College', logo: '/icons/chapters/Formal_Logo_of_Wellesley_College,_Wellesley,_MA,_USA.svg.png' },
-    { name: 'University of Illinois Chicago', logo: '/icons/chapters/University_of_Illinois_at_Chicago_circle_logo.svg.png' },
     { name: 'University of Pittsburgh', logo: '/icons/chapters/University of Pittsburgh.png' },
     { name: 'University of Texas at Austin', logo: '/icons/chapters/The University of Texas at Austin.png' },
-    { name: 'University of Southern California', logo: '/icons/chapters/University of Southern California.png' },
-    { name: 'University of Pennsylvania', logo: '/icons/chapters/University of Pennsylvania.png' },
     { name: 'University of North Carolina', logo: '/icons/chapters/University of North Carolina at Chapel Hill.png' },
-    { name: 'University of California Santa Barbara', logo: '/icons/chapters/UC_Santa_Barbara_Seal.png' },
   ];
 
   return (
@@ -169,13 +143,13 @@ export default function ChaptersPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {universities.map((university) => (
               <div key={university.name} className="flex p-4 flex-col gap-4 items-center bg-white rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100">
-                <div className="w-16 h-16 relative flex items-center justify-center">
+                <div className="w-16 h-16 relative flex items-center justify-center overflow-hidden">
                   <Image 
                     src={university.logo} 
                     alt={university.name}
                     width={64}
                     height={64}
-                    className="object-contain"
+                    className="object-contain max-w-full max-h-full"
                   />
                 </div>
                 <p className="text-sm font-medium text-gray-900 text-center leading-tight">
