@@ -56,11 +56,43 @@ export default function NationalPage() {
                     {org.description && (
                       <p className="text-sm text-gray-600 mt-2">{org.description}</p>
                     )}
+                    {org.name === 'Young People in Recovery' && (
+                        <div className="mt-4">
+                          <Image
+                            src={org.handoutPreview}
+                            alt="Young People in Recovery — page 1"
+                            width={600}
+                            height={800}
+                            className="mx-auto rounded shadow-sm"
+                          />
+                        </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
+          {national.secondContent && national.secondContent.length > 0 && (
+          <Section>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid gap-8 md:grid-cols-2">
+                {national.secondContent.map((block, idx) => (
+                  <article
+                    key={idx}
+                    className="p-6 bg-white rounded-lg shadow-sm border border-gray-100"
+                  >
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {block.heading}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {block.text}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </Section>
+        )}
         </div>
       </Section>
     </PageLayout>

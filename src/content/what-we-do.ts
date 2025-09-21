@@ -8,24 +8,35 @@ export const whatWeDoPage = {
   national: {
     title: "National Initiatives",
     subtitle: "Advancing health equity across communities",
-    intro: "Voices of Equity unites our chapters under a national initiative to spotlight a prevalent issue in health equity. For Fall 2025, our focus is on addiction through the lens of health equity.",
+    intro: "Each semester, Voices of Equity unites chapters nationwide under a shared initiative that spotlights a pressing health equity issue. These campaigns align education, advocacy, and community action across our 40+ chapters to create measurable impact.",
     content: [
       {
         type: "paragraph",
-        text: "Addiction is not only a medical condition, but also a deeply rooted equity issue. Substance use and abuse is shaped by disparities in access to care, stigma, systemic bias, and socioeconomic barriers. Systemic and institutional effects shape differences in education regarding substance use, physical access to successful treatments, financial support for rehabilitation services, and more. Understanding these unique effects and differences is essential to comprehending the occurrence and prevalence of addiction, and how to help those who need it. Through this initiative, we aim to educate, advocate, and take action to support individuals and communities impacted by addiction."
+        text: `Addiction is more than a medical condition — it is a deeply rooted equity issue. Substance use is shaped by disparities in access to care, stigma, systemic bias, and socioeconomic barriers. Structural inequities affect education about substance use, the availability of treatment services, financial support for recovery, and more.
+        By examining addiction through the lens of health equity, we aim to highlight not only the science of addiction, but also the lived realities of those impacted. Through this initiative, our network is committed to educating, advocating, and acting in support of individuals and communities most affected.`
       },
       {
         type: "paragraph", 
-        text: "As part of this initiative, all chapters will participate in Health Equity Week (October 20–26, 2025), a coordinated effort across more than 40 universities. This week will include:"
+        text: "This semester’s initiative will culminate in National Health Equity Week, a coordinated effort across 40+ universities. Programming will include:"
       },
       {
         type: "list",
         items: [
-          "Fundraising efforts to support national and local partners advancing equity in addiction care.",
-          "Advocacy campaigns that raise awareness and push for systemic change.",
-          "Educational modules to ground members in the science, policies, and lived realities of addiction.",
-          "Panels and guest speakers featuring professionals, advocates, and those with lived experience who inspire us to take meaningful action."
+          "Fundraising campaigns supporting national and local partners advancing equity in addiction care.",
+          "Advocacy initiatives designed to raise awareness and push for systemic change.",
+          "Educational modules grounding students in the science, policies, and lived experiences of addiction.",
+          "Panels and guest speakers featuring healthcare professionals, advocates, and individuals with lived experience."
         ]
+      }
+    ],
+    secondContent: [
+      {
+        heading: "Young People In Recovery",
+        text: `Together with our partners, we are building a future where equitable access to addiction treatment and recovery services is the norm, not the exception.`
+      },
+      {
+        heading: "Looking Forward",
+        text: `Voices of Equity’s national initiatives are designed to unify our chapters, scale our collective impact, and elevate student voices in the fight for health equity. As we expand into more institutions and communities, these campaigns will remain central to how we educate, mobilize, and drive change.`
       }
     ],
     partners: {
@@ -34,7 +45,8 @@ export const whatWeDoPage = {
         {
           name: "Young People in Recovery",
           logo: "/ypr-logo.png",
-          description: ""
+          description: "",
+          handoutPreview: "/national_image.png"
         }
       ]
     }
