@@ -30,7 +30,7 @@ const NavBar = () => {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         // isTransparent
           'bg-white shadow-sm rounded-b-xl'
       }`}
@@ -125,8 +125,8 @@ const NavBar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="sm:hidden bg-white border-t border-gray-200 rounded-b-xl">
-          <div className="pt-2 pb-3 space-y-1">
+       <div className="sm:hidden fixed inset-x-0 top-16 bottom-0 bg-white border-t border-gray-200 overflow-y-auto z-50">
+          <div className="pt-4 pb-6 space-y-1">
             {menuItems.map((item) => (
               <div key={item.title}>
                 {item.submenu ? (
