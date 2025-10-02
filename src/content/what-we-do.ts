@@ -8,6 +8,10 @@ export const whatWeDoPage = {
   national: {
     title: "National Initiatives",
     subtitle: "Advancing health equity across communities",
+    poster: {
+      src: "/health-equity-week-2025-poster.jpg",
+      alt: "National Health Equity Week 2025 - Addiction in Health Equity"
+    },
     intro: "Voices of Equity unites our chapters under a national initiative to spotlight a prevalent issue in health equity. For Fall 2025, our focus is on addiction through the lens of health equity.",
     content: [
       {
@@ -28,6 +32,10 @@ export const whatWeDoPage = {
         ]
       }
     ],
+    speakerPoster: {
+      src: "/ryan-leaf-speaker-event.jpg",
+      alt: "Ryan Leaf Virtual Guest Speaker Event - October 21, 2025"
+    },
     partners: {
       title: "2025 National Initiative Partners",
       organizations: [
@@ -35,6 +43,11 @@ export const whatWeDoPage = {
           name: "Young People in Recovery",
           logo: "/ypr-logo.png",
           description: ""
+        },
+        {
+          name: "The Phoenix",
+          logo: "/thephoenixlogo.png",
+          description: "",
         }
       ]
     }

@@ -28,9 +28,7 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
     {
       title: 'WHAT WE DO',
       submenu: [
-        { title: 'Our Impact', href: '/what-we-do/impact'},
         { title: 'National Initiatives', href: '/what-we-do/national'},
-        { title: 'Local Initiatives', href: '/what-we-do/local'},
       ],
     },
     {
@@ -44,8 +42,6 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
       title: 'GET INVOLVED',
       submenu: [
         { title: 'Our Chapters', href: '/get-involved/chapters' },
-        { title: 'Start a Chapter', href: '/get-involved/start' },
-        { title: 'Support Our Mission', href: '/get-involved/support' },
         { title: 'Contact Us', href: '/contact' }
       ],
     },
@@ -61,7 +57,6 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
       { title: 'Equity Archive', href: '/resources/archive' }
     ],
     getInvolved: [
-      { title: 'Start a Chapter', href: '/get-involved/start' },
       { title: 'Requirements', href: '/get-involved/requirements' },
       { title: 'Apply', href: '/get-involved/chapters' }
     ]

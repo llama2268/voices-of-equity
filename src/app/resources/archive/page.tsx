@@ -69,26 +69,30 @@ function ArchiveCard({ item }: ArchiveCardProps) {
     </>
   );
 
-  // Wrap articles with links
-  if (item.type === 'article' && item.url) {
+  // Wrap items with URLs with links
+  if (item.url) {
     return (
-      <a 
-        href={item.url} 
-        target="_blank" 
+      <a
+        href={item.url}
+        target="_blank"
         rel="noopener noreferrer"
-        className="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow hover:border-primary-300"
+        className="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow hover:border-primary-300 h-full max-h-[400px] flex flex-col"
       >
-        <CardContent />
+        <div className="flex-1 overflow-hidden">
+          <CardContent />
+        </div>
         <div className="mt-4 text-primary-600 text-sm font-medium">
-          Read Article →
+          {item.type === 'article' ? 'Read Article' : item.type === 'module' ? 'View Module' : 'View Content'} →
         </div>
       </a>
     );
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-      <CardContent />
+    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow h-full max-h-[400px] flex flex-col">
+      <div className="flex-1 overflow-hidden">
+        <CardContent />
+      </div>
     </div>
   );
 }
@@ -172,26 +176,37 @@ export default function ArchivePage() {
   const { archive } = resourcesPage;
 
   return (
-    <PageLayout title={archive.title} subtitle={archive.subtitle}>
-      <Section>
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Featured Item */}
-          <div className="mb-12">
-            <FeaturedArchiveCard item={archive.featured} />
-          </div>
-
-          {/* All Archive Items */}
-          <div>
-            <h2 className="text-3xl font-bold text-center mb-8">Archive Collection</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {archive.items.map((item: any) => (
-                <ArchiveCard key={item.id} item={item} />
-              ))}
-            </div>
-          </div>
-
+    <div className="relative">
+      {/* Background Banner Image */}
+      {archive.banner && (
+        <div className="absolute top-0 left-0 w-full h-[600px] -z-10">
+          <Image
+            src={archive.banner}
+            alt="Equity Archive Banner"
+            fill
+            className="object-contain"
+            priority
+          />
+          <div className="absolute inset-0 bg-white/70" />
         </div>
-      </Section>
-    </PageLayout>
+      )}
+
+      <PageLayout title={archive.title} subtitle={archive.subtitle}>
+        <Section>
+          <div className="max-w-6xl mx-auto px-4">
+            {/* All Archive Items */}
+            <div>
+              <h2 className="text-3xl font-bold text-center mb-8">Archive Collection</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {archive.items.map((item: any) => (
+                  <ArchiveCard key={item.id} item={item} />
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </Section>
+      </PageLayout>
+    </div>
   );
 }

@@ -100,17 +100,37 @@ export const resourcesPage = {
   },
   archive: {
     title: "Equity Archive",
-    subtitle: "Comprehensive collection of health equity resources",
-    featured: {
-      id: "featured-1",
-      title: "Coming Soon - Featured Content",
-      description: "Featured articles, videos, and resources will be highlighted here.",
-      type: "article" as const,
-      date: "2025-01-01",
-      tags: ["featured"],
-      featured: true
-    },
+    subtitle: "A living library of stories, research, and resources advancing health equity. The Equity Archive is Voices of Equity's national hub for powerful storytelling, student-led initiatives, and accessible tools to understand and fight health disparities. Explore firsthand narratives, community case studies, health equity explainers, and multimedia content—all curated to educate, inspire, and drive change.",
+    banner: "/equitybanner.png",
     items: [
+      {
+        id: "module-1",
+        title: "General Body Meeting 1: Understanding Health Equity",
+        description: "Educational module from our first general body meeting covering the fundamentals of health equity",
+        type: "module" as const,
+        date: "2025-10-02",
+        tags: ["education", "module", "general body"],
+        url: "/resources/GBody 1 - Understanding Health Equity.pdf"
+      },
+      {
+        id: "module-2",
+        title: "General Body Meeting 2: Stigmas",
+        description: "Educational module from our second general body meeting on stigmas in healthcare and health equity",
+        type: "module" as const,
+        date: "2025-10-02",
+        tags: ["education", "module", "stigma", "general body"],
+        url: "/resources/GBody 2 - Stigmas.pdf"
+      },
+      {
+        id: "video-2",
+        title: "Social Determinants of Health Explained - The Hidden Forces Shaping Your Health",
+        description: "The social determinants of health—economic stability, education, neighborhood environment, healthcare access, and social support—shape our well-being long before we ever set foot in a doctor's office. In this video, we break down how these factors impact health outcomes and why addressing them is crucial for achieving health equity.",
+        type: "video" as const,
+        date: "2024-02-01",
+        tags: ["social determinants", "education", "healthcare"],
+        url: "https://www.youtube.com/watch?v=Mfc-dMTQHbQ",
+        videoId: "Mfc-dMTQHbQ"
+      },
       {
         id: "video-1",
         title: "Understanding Health Equity",
@@ -120,26 +140,6 @@ export const resourcesPage = {
         tags: ["education", "introduction", "healthcare"],
         url: "https://www.youtube.com/watch?v=PJEX8nYyXBU",
         videoId: "PJEX8nYyXBU"
-      },
-      {
-        id: "video-2",
-        title: "Social Determinants of Health Explained - The Hidden Forces Shaping Your Health", 
-        description: "The social determinants of health—economic stability, education, neighborhood environment, healthcare access, and social support—shape our well-being long before we ever set foot in a doctor's office. In this video, we break down how these factors impact health outcomes and why addressing them is crucial for achieving health equity.",
-        type: "video" as const,
-        date: "2024-02-01",
-        tags: ["social determinants", "education", "healthcare"],
-        url: "https://www.youtube.com/watch?v=Mfc-dMTQHbQ",
-        videoId: "Mfc-dMTQHbQ"
-      },
-      {
-        id: "article-1",
-        title: "Addressing Health Equity and Social Determinants of Health Through Healthy People 2030",
-        description: "The evolution of Healthy People reflects growing awareness of health inequities over the life course. Each decade, the initiative has gained understanding of how the nation can achieve health and well-being.",
-        type: "article" as const,
-        date: "2021-11-01",
-        author: "Gómez, Cynthia A. PhD; Kleinman, Dushanka V. DDS, MScD; Pronk, Nico PhD, MA, FASCM, FAWHP; et al.",
-        tags: ["research", "healthy people 2030", "policy"],
-        url: "https://journals.lww.com/jphmp/fulltext/2021/11001/addressing_health_equity_and_social_determinants.9.aspx"
       },
       {
         id: "article-2",
@@ -152,36 +152,14 @@ export const resourcesPage = {
         url: "https://www.sciencedirect.com/science/article/pii/S0027968422001432"
       },
       {
-        id: "placeholder-1",
-        title: "Educational Modules - Coming Soon",
-        description: "Interactive educational content on health equity topics",
-        type: "module" as const,
-        date: "2025-01-01",
-        tags: ["education", "module"]
-      },
-      {
-        id: "placeholder-2", 
-        title: "Patient Interviews - Coming Soon",
-        description: "Personal stories and experiences from patients navigating healthcare inequities",
-        type: "interview" as const,
-        date: "2025-01-01",
-        tags: ["interview", "patient stories"]
-      },
-      {
-        id: "placeholder-3",
-        title: "Onboarding Training Materials - Coming Soon", 
-        description: "Resources for chapter leaders and new members",
-        type: "training" as const,
-        date: "2025-01-01",
-        tags: ["training", "leadership"]
-      },
-      {
-        id: "placeholder-4",
-        title: "Op-Ed Articles - Coming Soon",
-        description: "Opinion pieces and editorial content on health equity issues",
-        type: "op-ed" as const,
-        date: "2025-01-01",
-        tags: ["opinion", "editorial"]
+        id: "article-1",
+        title: "Addressing Health Equity and Social Determinants of Health Through Healthy People 2030",
+        description: "The evolution of Healthy People reflects growing awareness of health inequities over the life course. Each decade, the initiative has gained understanding of how the nation can achieve health and well-being.",
+        type: "article" as const,
+        date: "2021-11-01",
+        author: "Gómez, Cynthia A. PhD; Kleinman, Dushanka V. DDS, MScD; Pronk, Nico PhD, MA, FASCM, FAWHP; et al.",
+        tags: ["research", "healthy people 2030", "policy"],
+        url: "https://journals.lww.com/jphmp/fulltext/2021/11001/addressing_health_equity_and_social_determinants.9.aspx"
       }
     ]
   }

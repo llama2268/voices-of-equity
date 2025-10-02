@@ -72,6 +72,62 @@ export const getInvolvedPage = {
           { label: 'Research Projects', value: '3' }
         ],
         link: "/cornell"
+      },
+      {
+        name: "Amherst College",
+        location: "Amherst, MA",
+        established: "Est. 2025",
+        image: "/icons/chapters/amherst.png",
+        slug: "amherst"
+      },
+      {
+        name: "Washington University in St. Louis",
+        location: "St. Louis, MO",
+        established: "Est. 2025",
+        image: "/icons/chapters/washu.png",
+        slug: "washu"
+      },
+      {
+        name: "University of Arkansas",
+        location: "Fayetteville, AR",
+        established: "Est. 2025",
+        image: "/icons/chapters/arkansas.png",
+        slug: "arkansas"
+      },
+      {
+        name: "University of South Carolina",
+        location: "Columbia, SC",
+        established: "Est. 2025",
+        image: "/icons/chapters/south-carolina.png",
+        slug: "south-carolina"
+      },
+      {
+        name: "Vassar College",
+        location: "Poughkeepsie, NY",
+        established: "Est. 2025",
+        image: "/icons/chapters/vassar.png",
+        slug: "vassar"
+      },
+      {
+        name: "University of San Diego",
+        location: "San Diego, CA",
+        established: "Est. 2025",
+        image: "/icons/chapters/san-diego.png",
+        slug: "san-diego"
+      },
+      {
+        name: "Binghamton University",
+        location: "Binghamton, NY",
+        established: "Est. 2025",
+        image: "/icons/chapters/binghamton.png",
+        slug: "binghamton"
+      },
+      {
+        name: "Brown University",
+        location: "Providence, RI",
+        established: "Est. 2025",
+        image: "/icons/chapters/brown.png",
+        slug: "brown"
       }
     ] satisfies Chapter[]
   },

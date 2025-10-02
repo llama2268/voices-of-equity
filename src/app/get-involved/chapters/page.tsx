@@ -37,6 +37,14 @@ export default function ChaptersPage() {
     { name: 'University of Pittsburgh', logo: '/icons/chapters/University of Pittsburgh.png' },
     { name: 'University of Texas at Austin', logo: '/icons/chapters/The University of Texas at Austin.png' },
     { name: 'University of North Carolina', logo: '/icons/chapters/University of North Carolina at Chapel Hill.png' },
+    { name: 'Amherst College', logo: '/icons/chapters/amherst.png' },
+    { name: 'Washington University in St. Louis', logo: '/icons/chapters/washu.png' },
+    { name: 'University of Arkansas', logo: '/icons/chapters/arkansas.png' },
+    { name: 'University of South Carolina', logo: '/icons/chapters/south-carolina.png' },
+    { name: 'Vassar College', logo: '/icons/chapters/vassar.png' },
+    { name: 'University of San Diego', logo: '/icons/chapters/san-diego.png' },
+    { name: 'Binghamton University', logo: '/icons/chapters/binghamton.png' },
+    { name: 'Brown University', logo: '/icons/chapters/brown.png' },
   ];
 
   return (
