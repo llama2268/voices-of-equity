@@ -19,7 +19,7 @@ export const whatWeDoPage = {
         text: "Addiction is not only a medical condition, but also a deeply rooted equity issue. Substance use and abuse is shaped by disparities in access to care, stigma, systemic bias, and socioeconomic barriers. Systemic and institutional effects shape differences in education regarding substance use, physical access to successful treatments, financial support for rehabilitation services, and more. Understanding these unique effects and differences is essential to comprehending the occurrence and prevalence of addiction, and how to help those who need it. Through this initiative, we aim to educate, advocate, and take action to support individuals and communities impacted by addiction."
       },
       {
-        type: "paragraph", 
+        type: "paragraph",
         text: "As part of this initiative, all chapters will participate in Health Equity Week (October 20–26, 2025), a coordinated effort across more than 40 universities. This week will include:"
       },
       {
@@ -48,12 +48,13 @@ export const whatWeDoPage = {
           name: "The Phoenix",
           logo: "/thephoenixlogo.png",
           description: "",
+          handout: "/phoenix-handout.pdf"
         }
       ]
     }
   },
   local: {
-    title: "Local Initiatives", 
+    title: "Local Initiatives",
     subtitle: "Community-based programs creating meaningful impact",
     content: "Coming Soon"
   },

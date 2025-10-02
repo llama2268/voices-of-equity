@@ -130,12 +130,12 @@ export default function ChaptersPage() {
                     
                     <div className="flex items-center justify-between pt-6 mt-8">
                       <span className="text-gray-600">{chapter.members}+ active members</span>
-                      <Link
+                      {/* <Link
                         href={chapter.link}
                         className="px-6 py-2 bg-[#E4826D] hover:bg-[#d97661] text-white rounded-lg transition-colors"
                       >
                         Visit Chapter
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 </div>

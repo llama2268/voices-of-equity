@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function NationalPage() {
   const { national } = whatWeDoPage;
-  
+
   return (
     <PageLayout title={national.title} subtitle={national.subtitle}>
       <Section>
