@@ -52,16 +52,16 @@ export default function HomePage() {
                <div className="w-full flex-shrink-0">
                  <div className="relative h-96 md:h-[500px]">
                    <Image
-                     src="/team-picture.jpg"
+                     src="/voe-journey.jpeg"
                      alt="Follow our Instagram"
                      fill
                      className="object-cover"
                    />
-                   <div className="absolute inset-0"></div>
+                   <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
                    <div className="absolute inset-0 flex items-center justify-center">
                      <div className="text-center text-white max-w-4xl mx-auto px-8">
                        <div className="mb-4">
-                         <span className="px-4 py-2 bg-pink-500 text-white rounded-full text-sm font-medium">
+                         <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
                            Instagram
                          </span>
                        </div>
@@ -69,7 +69,7 @@ export default function HomePage() {
                        <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                          Stay connected with our latest updates and community stories as we build a more equitable future together
                        </p>
-                       <Link href="https://www.instagram.com/voices.of.equity/" className="inline-block px-8 py-3 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                       <Link href="https://www.instagram.com/voices.of.equity/" className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                          Follow Us →
                        </Link>
                      </div>
@@ -86,11 +86,11 @@ export default function HomePage() {
                      fill
                      className="object-cover"
                    />
-                   <div className="absolute inset-0"></div>
+                   <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
                    <div className="absolute inset-0 flex items-center justify-center">
                      <div className="text-center text-white max-w-4xl mx-auto px-8">
                        <div className="mb-4">
-                         <span className="px-4 py-2 bg-primary-500 text-white rounded-full text-sm font-medium">
+                         <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
                            Programs
                          </span>
                        </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
                        <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                          Nationwide programs advancing health equity across communities and transforming healthcare access
                        </p>
-                       <Link href="/what-we-do/national" className="inline-block px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                       <Link href="/what-we-do/national" className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                          Learn More →
                        </Link>
                      </div>
@@ -110,16 +110,16 @@ export default function HomePage() {
                <div className="w-full flex-shrink-0">
                  <div className="relative h-96 md:h-[500px]">
                    <Image
-                     src="/hero-image-new.png"
+                     src="/local-initiatives.jpeg"
                      alt="Local Initiatives"
                      fill
                      className="object-cover"
                    />
-                   <div className="absolute inset-0"></div>
+                   <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
                    <div className="absolute inset-0 flex items-center justify-center">
                      <div className="text-center text-white max-w-4xl mx-auto px-8">
                        <div className="mb-4">
-                         <span className="px-4 py-2 bg-emerald-500 text-white rounded-full text-sm font-medium">
+                         <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
                            Community
                          </span>
                        </div>
@@ -127,7 +127,7 @@ export default function HomePage() {
                        <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                          Community-based programs creating meaningful local impact and driving change from the ground up
                        </p>
-                       <Link href="/what-we-do/local" className="inline-block px-8 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                       <Link href="/what-we-do/local" className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                          Explore →
                        </Link>
                      </div>
@@ -140,16 +140,16 @@ export default function HomePage() {
                 <Link href="/what-we-do/impact" className="block">
                                      <div className="relative h-96 md:h-[500px]">
                      <Image
-                       src="/educate.jpg"
+                       src="/impact-stories.jpeg"
                        alt="Impact Stories"
                        fill
                        className="object-cover"
                      />
-                     <div className="absolute inset-0"></div>
+                     <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
                         <div className="mb-4">
-                          <span className="px-4 py-2 bg-purple-500 text-white rounded-full text-sm font-medium">
+                          <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
                             Stories
                           </span>
                         </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
                         <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                           Real stories of change and transformation in our communities, showcasing the power of collective action
                         </p>
-                        <div className="inline-block px-8 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                        <div className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                           Read Stories →
                         </div>
                       </div>
@@ -176,10 +176,11 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                     />
+                    <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
                         <div className="mb-4">
-                          <span className="px-4 py-2 bg-red-500 text-white rounded-full text-sm font-medium">
+                          <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
                             Chapters
                           </span>
                         </div>
@@ -187,7 +188,7 @@ export default function HomePage() {
                         <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                           Student-led chapters driving change across universities, empowering the next generation of leaders
                         </p>
-                        <div className="inline-block px-8 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                        <div className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                           Join Us →
                         </div>
                       </div>
@@ -201,15 +202,16 @@ export default function HomePage() {
                 <Link href="/resources" className="block">
                   <div className="relative h-96 md:h-[500px]">
                     <Image
-                      src="/empower.jpg"
+                      src="/home-resources.jpg"
                       alt="Our Resources"
                       fill
                       className="object-cover"
                     />
+                    <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
                         <div className="mb-4">
-                          <span className="px-4 py-2 bg-yellow-500 text-white rounded-full text-sm font-medium">
+                          <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
                             Education
                           </span>
                         </div>
@@ -217,7 +219,7 @@ export default function HomePage() {
                         <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                           Educational materials and tools for health equity advocacy, empowering you to make a difference
                         </p>
-                        <div className="inline-block px-8 py-3 bg-white text-yellow-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                        <div className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                           Access Resources →
                         </div>
                       </div>
