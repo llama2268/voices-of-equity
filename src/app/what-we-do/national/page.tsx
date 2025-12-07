@@ -7,9 +7,9 @@ export default function NationalPage() {
   const { national } = whatWeDoPage;
 
   return (
-    <PageLayout title={national.title} subtitle={national.subtitle}>
-      <Section>
-        <div className="max-w-4xl mx-auto space-y-8">
+    <PageLayout title={national.title} subtitle={national.subtitle} reduced>
+      <Section spacing="sm" className="pt-6">
+        <div className="max-w-4xl mx-auto space-y-4">
           {/* Intro */}
           <div className="text-lg text-gray-700">
             <p>{national.intro}</p>
@@ -17,7 +17,7 @@ export default function NationalPage() {
 
           {/* Poster */}
           {national.poster && (
-            <div className="flex justify-center my-12">
+            <div className="flex justify-center my-6">
               <Image
                 src={national.poster.src}
                 alt={national.poster.alt}
@@ -51,7 +51,7 @@ export default function NationalPage() {
 
           {/* Speaker Event Poster */}
           {national.speakerPoster && (
-            <div className="flex justify-center my-12">
+            <div className="flex justify-center my-6">
               <Image
                 src={national.speakerPoster.src}
                 alt={national.speakerPoster.alt}
@@ -71,13 +71,15 @@ export default function NationalPage() {
               {national.partners.organizations.map((org, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                    <Image
-                      src={org.logo}
-                      alt={org.name}
-                      width={200}
-                      height={200}
-                      className="mx-auto mb-4"
-                    />
+                    <div className="mx-auto mb-4 w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
+                      <Image
+                        src={org.logo}
+                        alt={org.name}
+                        width={160}
+                        height={160}
+                        className="object-contain"
+                      />
+                    </div>
                     <h3 className="font-semibold text-gray-900">{org.name}</h3>
                     {org.description && (
                       <p className="text-sm text-gray-600 mt-2">{org.description}</p>

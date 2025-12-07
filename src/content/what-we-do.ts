@@ -12,7 +12,7 @@ export const whatWeDoPage = {
       src: "/health-equity-week-2025-poster.jpg",
       alt: "National Health Equity Week 2025 - Addiction in Health Equity"
     },
-    intro: "Voices of Equity unites our chapters under a national initiative to spotlight a prevalent issue in health equity. For Fall 2025, our focus is on addiction through the lens of health equity.",
+    intro: "Voices of Equity unites our chapters under a national initiative to spotlight a prevalent issue in health equity. For Fall 2025, our focus is on health equity through the lens of addiction.",
     content: [
       {
         type: "paragraph",
@@ -42,13 +42,14 @@ export const whatWeDoPage = {
         {
           name: "Young People in Recovery",
           logo: "/ypr-logo.png",
-          description: ""
+          description: "",
+          handout: "/ypr-handout.png"
         },
         {
           name: "The Phoenix",
           logo: "/thephoenixlogo.png",
           description: "",
-          handout: "/phoenix-handout.pdf"
+          handout: "/phoenixhandout.pdf"
         }
       ]
     }
