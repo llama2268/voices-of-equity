@@ -78,12 +78,12 @@ export default function HomePage() {
               {/* Instagram Slide */}
               <div className="w-full flex-shrink-0">
                 <div className="relative h-96 md:h-[500px]">
-                  <Image
-                    src="/voe-journey.jpeg"
-                    alt="Follow our Instagram"
-                    fill
-                    className="object-cover"
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-cover bg-no-repeat"
+                    style={{ backgroundImage: "url('/voe-journey.jpeg')", backgroundPosition: 'center 40%' }}
                   />
+                  <span className="sr-only">Follow our Instagram</span>
                   <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white max-w-4xl mx-auto px-8">
@@ -107,12 +107,8 @@ export default function HomePage() {
               {/* National Initiatives Slide */}
               <div className="w-full flex-shrink-0">
                 <div className="relative h-96 md:h-[500px]">
-                  <Image
-                    src="/paintingtry.jpg"
-                    alt="National Initiatives"
-                    fill
-                    className="object-cover"
-                  />
+                  <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/paintingtry.jpg')", backgroundPosition: 'center 45%' }} />
+                  <span className="sr-only">National Initiatives</span>
                   <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white max-w-4xl mx-auto px-8">
@@ -136,12 +132,8 @@ export default function HomePage() {
               {/* Local Initiatives Slide */}
               <div className="w-full flex-shrink-0">
                 <div className="relative h-96 md:h-[500px]">
-                  <Image
-                    src="/local-initiatives.jpeg"
-                    alt="Local Initiatives"
-                    fill
-                    className="object-cover"
-                  />
+                  <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/local-initiatives.jpeg')", backgroundPosition: 'center 30%' }} />
+                  <span className="sr-only">Local Initiatives</span>
                   <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white max-w-4xl mx-auto px-8">
@@ -166,12 +158,8 @@ export default function HomePage() {
               <div className="w-full flex-shrink-0">
                 <Link href="/what-we-do/impact" className="block">
                   <div className="relative h-96 md:h-[500px]">
-                    <Image
-                      src="/impact-stories.jpeg"
-                      alt="Impact Stories"
-                      fill
-                      className="object-cover"
-                    />
+                    <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/impact-stories.jpeg')", backgroundPosition: 'center 45%' }} />
+                    <span className="sr-only">Impact Stories</span>
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
@@ -197,12 +185,8 @@ export default function HomePage() {
               <div className="w-full flex-shrink-0">
                 <Link href="/get-involved/chapters" className="block">
                   <div className="relative h-96 md:h-[500px]">
-                    <Image
-                      src="/cornell-chapter.jpg"
-                      alt="Our Chapters"
-                      fill
-                      className="object-cover"
-                    />
+                    <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/cornell-chapter.jpg')", backgroundPosition: 'center 30%' }} />
+                    <span className="sr-only">Our Chapters</span>
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
@@ -228,12 +212,8 @@ export default function HomePage() {
               <div className="w-full flex-shrink-0">
                 <Link href="/resources" className="block">
                   <div className="relative h-96 md:h-[500px]">
-                    <Image
-                      src="/home-resources.jpg"
-                      alt="Our Resources"
-                      fill
-                      className="object-cover"
-                    />
+                    <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/home-resources.jpg')", backgroundPosition: 'center 30%' }} />
+                    <span className="sr-only">Our Resources</span>
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
