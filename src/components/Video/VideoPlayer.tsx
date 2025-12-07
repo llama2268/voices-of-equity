@@ -7,13 +7,13 @@ interface VideoPlayerProps {
 
 const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
   return (
-    <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+    <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg relative">
       <iframe
         src={`https://www.youtube.com/embed/${videoId}`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        className="w-full h-full"
+        className="w-full h-full absolute inset-0"
       />
     </div>
   );

@@ -17,13 +17,20 @@ body {
 }
 
 /* Mobile-first responsive text sizing */
+@layer base {
+
   /* Base typography */
   body {
     @apply font-sans text-base text-gray-900 leading-normal;
   }
 
   /* Headers */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-bold tracking-tight;
   }
 
@@ -32,24 +39,18 @@ body {
     @apply font-serif text-lg md:text-xl italic text-gray-700;
   }
 
-  /* Utility for depth */
-  .depth-shadow {
-    @apply shadow-lg shadow-gray-200/50;
-  }
-  
-  .card-depth {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100;
-  }
-
   h1 {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6;
   }
+
   h2 {
     @apply text-2xl sm:text-3xl md:text-4xl mb-4;
   }
+
   h3 {
     @apply text-xl sm:text-2xl md:text-3xl mb-3;
   }
+
   h4 {
     @apply text-lg sm:text-xl md:text-2xl mb-2;
   }
@@ -66,7 +67,8 @@ img {
 }
 
 /* Touch-friendly tap targets */
-button, a {
+button,
+a {
   @apply min-h-[44px] min-w-[44px];
 }
 
@@ -76,7 +78,9 @@ table {
 }
 
 /* Better form elements on mobile */
-input, select, textarea {
+input,
+select,
+textarea {
   @apply text-base md:text-sm;
   @apply px-4 py-2;
   @apply w-full;
@@ -117,7 +121,7 @@ input, select, textarea {
   .text-gradient-primary {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-500;
   }
-  
+
   .text-gradient-accent {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-secondary-dark to-secondary-main;
   }
@@ -137,7 +141,7 @@ input, select, textarea {
   .section-description {
     @apply text-lg text-gray-600 max-w-2xl mx-auto;
   }
-  
+
   .meta-text {
     @apply font-serif text-sm text-gray-500 italic;
   }
@@ -173,20 +177,40 @@ input, select, textarea {
   .btn-primary {
     @apply bg-[#498B86] hover:bg-[#3A6F6B] text-white;
   }
-  
+
   .btn-secondary {
     @apply border-2 border-[#498B86] text-[#498B86] hover:bg-[#498B86]/10;
   }
-  
+
   .link-hover {
     @apply hover:text-[#498B86] transition-colors;
   }
 }
 
-.scrollbar-hide::-webkit-scrollbar{
+.scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* 3D Transform Utilities for Flip Cards */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
 }

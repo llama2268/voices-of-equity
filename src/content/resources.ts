@@ -35,14 +35,19 @@ export const resourcesPage = {
         },
         {
           videoId: "Mfc-dMTQHbQ",
-          title: "Social Determinants of Health Explained - The Hidden Forces Shaping Your Health",
-          description: "The social determinants of health—economic stability, education, neighborhood environment, healthcare access, and social support—shape our well-being long before we ever set foot in a doctor's office. In this video, we break down how these factors impact health outcomes and why addressing them is crucial for achieving health equity."
+          title: "Social Determinants of Health Explained",
+          description: "The social determinants of health—economic stability, education, neighborhood environment, and more—shape our well-being."
         },
         {
-          videoId: "sHLq3ECOB4Q",
-          title: "Food Deserts: The Silent Crisis Driving Health Inequity",
-          description: "Millions of Americans live in food deserts—neighborhoods where grocery stores are scarce, and healthy food is hard to find. Without access to fresh fruits and vegetables, communities face higher rates of obesity, diabetes, and heart disease. In this video, we explore how food deserts fuel health inequities and what can be done to ensure everyone has access to the nutrition they need to thrive."
+          videoId: "Ohyu3BhhqqA",
+          title: "The Science and Stigma Behind Addiction",
+          description: "Explore the biological mechanisms of addiction and the social stigmas that prevent effective treatment and recovery."
         },
+        {
+          videoId: "_OO9w5bXJIU",
+          title: "Addiction & Health Equity",
+          description: "Why understanding the root causes of addiction is essential for achieving health equity."
+        }
       ] satisfies Video[],
       researchPapers: [
         {
@@ -100,7 +105,7 @@ export const resourcesPage = {
   },
   archive: {
     title: "Equity Archive",
-    subtitle: "A living library of stories, research, and resources advancing health equity. The Equity Archive is Voices of Equity's national hub for powerful storytelling, student-led initiatives, and accessible tools to understand and fight health disparities. Explore firsthand narratives, community case studies, health equity explainers, and multimedia content—all curated to educate, inspire, and drive change.",
+    subtitle: "A living library of stories, research, and resources advancing health equity.\n\nThe Equity Archive is Voices of Equity’s national hub for powerful storytelling, student-led initiatives, and accessible tools to understand and fight health disparities.\n\nExplore firsthand narratives, community case studies, health equity explainers, and multimedia content—all curated to educate, inspire, and drive change.",
     banner: "/equitybanner.png",
     items: [
       {
@@ -117,49 +122,66 @@ export const resourcesPage = {
         title: "General Body Meeting 2: Stigmas",
         description: "Educational module from our second general body meeting on stigmas in healthcare and health equity",
         type: "module" as const,
-        date: "2025-10-02",
+        date: "2025-10-09",
         tags: ["education", "module", "stigma", "general body"],
         url: "/resources/GBody 2 - Stigmas.pdf"
       },
       {
-        id: "video-2",
-        title: "Social Determinants of Health Explained - The Hidden Forces Shaping Your Health",
-        description: "The social determinants of health—economic stability, education, neighborhood environment, healthcare access, and social support—shape our well-being long before we ever set foot in a doctor's office. In this video, we break down how these factors impact health outcomes and why addressing them is crucial for achieving health equity.",
+        id: "module-3",
+        title: "General Body Meeting 3: Socioeconomic Status",
+        description: "Educational module exploring the impact of socioeconomic status on health outcomes.",
+        type: "module" as const,
+        date: "2025-10-16",
+        tags: ["education", "module", "Socioeconomic Status"],
+        url: "/resources/GBody 3 - Socioeconomic Status.pdf"
+      },
+      {
+        id: "module-4",
+        title: "General Body Meeting 4: Location",
+        description: "Analyzing how geographic location and built environments influence community health.",
+        type: "module" as const,
+        date: "2025-10-23",
+        tags: ["education", "module", "Location", "Social Determinants"],
+        url: "/resources/GBody 4 - Location.pdf"
+      },
+      {
+        id: "video-addiction-science",
+        title: "The Science and Stigma Behind Addiction | Voices of Equity",
+        description: "Explore the biological mechanisms of addiction and the social stigmas that prevent effective treatment and recovery.",
         type: "video" as const,
-        date: "2024-02-01",
-        tags: ["social determinants", "education", "healthcare"],
-        url: "https://www.youtube.com/watch?v=Mfc-dMTQHbQ",
-        videoId: "Mfc-dMTQHbQ"
+        date: "2025-11-01",
+        tags: ["addiction", "stigma", "science"],
+        url: "https://www.youtube.com/watch?v=Ohyu3BhhqqA",
+        videoId: "Ohyu3BhhqqA"
       },
       {
-        id: "video-1",
-        title: "Understanding Health Equity",
-        description: "An introduction to health equity and why it matters in today's healthcare landscape.",
+        id: "video-addiction-equity",
+        title: "Addiction & Health Equity – Why Recovery Starts with Understanding",
+        description: "Why understanding the root causes of addiction is essential for achieving health equity.",
         type: "video" as const,
-        date: "2024-01-01",
-        tags: ["education", "introduction", "healthcare"],
-        url: "https://www.youtube.com/watch?v=PJEX8nYyXBU",
-        videoId: "PJEX8nYyXBU"
+        date: "2025-11-05",
+        tags: ["addiction", "health equity", "recovery"],
+        url: "https://www.youtube.com/watch?v=_OO9w5bXJIU",
+        videoId: "_OO9w5bXJIU"
       },
       {
-        id: "article-2",
-        title: "Defining Health Equity",
-        description: "The term 'health equity' has become widely used in health and health care arenas over the past few years.",
-        type: "article" as const,
-        date: "2022-01-01",
-        author: "Paula Braveman",
-        tags: ["research", "definition", "healthcare policy"],
-        url: "https://www.sciencedirect.com/science/article/pii/S0027968422001432"
+        id: "keynote-ryan-leaf",
+        title: "Keynote Speaker: Ryan Leaf - Addiction and Recovery",
+        description: "National Health Equity Week 2025 Keynote addressing addiction, mental health, and the journey to recovery.",
+        type: "video" as const,
+        date: "2025-10-01",
+        tags: ["keynote", "addiction", "recovery", "Ryan Leaf"],
+        // Placeholder for file/video link if hosted on YouTube, otherwise generic link
+        url: "https://drive.google.com/file/d/1VJRe2yQHI8pql4rekjaf3SbSsfKeTyVm/view?usp=drive_link"
       },
       {
-        id: "article-1",
-        title: "Addressing Health Equity and Social Determinants of Health Through Healthy People 2030",
-        description: "The evolution of Healthy People reflects growing awareness of health inequities over the life course. Each decade, the initiative has gained understanding of how the nation can achieve health and well-being.",
-        type: "article" as const,
-        date: "2021-11-01",
-        author: "Gómez, Cynthia A. PhD; Kleinman, Dushanka V. DDS, MScD; Pronk, Nico PhD, MA, FASCM, FAWHP; et al.",
-        tags: ["research", "healthy people 2030", "policy"],
-        url: "https://journals.lww.com/jphmp/fulltext/2021/11001/addressing_health_equity_and_social_determinants.9.aspx"
+        id: "panel-addiction",
+        title: "National Health Equity Week 2025: Addiction and Health Equity Speaker Panel",
+        description: "Expert panel discussion on the intersection of addiction and health equity.",
+        type: "video" as const,
+        date: "2025-10-02",
+        tags: ["panel", "addiction", "health equity"],
+        url: "#" // Placeholder until link is confirmed
       }
     ]
   }

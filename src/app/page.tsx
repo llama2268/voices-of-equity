@@ -28,7 +28,7 @@ export default function HomePage() {
           </p>
           <blockquote className="mb-12">
             <p className="font-serif text-2xl md:text-3xl text-gray-800 italic leading-relaxed">
-              "Integral to the mission of Voices of Equity is education and outreach. Through our chapters across undergraduate institutions we empower students to gain hands-on experience in the fight against health disparities. All of our chapters are led by undergraduates and managed by the Voices of Equity National Chapter Leader. Chapters are dedicated to on the ground work, combating health disparities through educational, philanthropic, and outreach efforts."
+              &quot;{homePage.mission.body}&quot;
             </p>
             <div className="mt-4 h-1 w-24 mx-auto" />
           </blockquote>
@@ -374,6 +374,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </PageLayout>
+    </PageLayout >
   );
 }

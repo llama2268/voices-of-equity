@@ -29,8 +29,8 @@ export default function ResourcesPage() {
             {/* Main Video Player */}
             <div className="lg:w-2/3">
               <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100">
-                <div className="aspect-w-16 aspect-h-9 h-[500px]">
-                  <VideoPlayer 
+                <div className="w-full">
+                  <VideoPlayer
                     videoId={selectedVideo?.videoId ?? ''}
                     title={selectedVideo?.title ?? ''}
                   />
@@ -51,11 +51,10 @@ export default function ResourcesPage() {
                     <button
                       key={index}
                       onClick={() => setSelectedVideo(video)}
-                      className={`w-full text-left p-3 rounded-xl transition-all ${
-                        selectedVideo === video 
-                          ? 'bg-white shadow-sm border-l-4 border-[#498B86]' 
+                      className={`w-full text-left p-3 rounded-xl transition-all ${selectedVideo === video
+                          ? 'bg-white shadow-sm border-l-4 border-[#498B86]'
                           : 'hover:bg-white hover:shadow-sm'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start space-x-3">
                         <div className="flex-shrink-0 w-24 h-16 bg-gray-200 rounded overflow-hidden">
@@ -66,9 +65,8 @@ export default function ResourcesPage() {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className={`font-medium line-clamp-2 ${
-                            selectedVideo === video ? 'text-[#607AD4]' : 'text-gray-900'
-                          }`}>
+                          <h4 className={`font-medium line-clamp-2 ${selectedVideo === video ? 'text-[#607AD4]' : 'text-gray-900'
+                            }`}>
                             {video.title}
                           </h4>
                         </div>
@@ -93,8 +91,8 @@ export default function ResourcesPage() {
             </p>
           </div> */}
 
-          {/* Filter/Category Navigation */}
-          {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Filter/Category Navigation */}
+        {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
             {['All', 'Article', 'Research', 'Video', 'Report', 'Tool', 'Podcast'].map((category) => (
               <button
                 key={category}
@@ -114,8 +112,8 @@ export default function ResourcesPage() {
             ))}
           </div> */}
 
-          {/* Resource Grid */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Resource Grid */}
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredResources.map((resource, index) => (
               <div key={index} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all border border-gray-100 hover:border-[#498B86]/20">
                 <div className="flex items-center gap-2 mb-3">
@@ -150,17 +148,17 @@ export default function ResourcesPage() {
               Discover peer-reviewed research and analysis on health equity challenges and solutions
             </p>
           </div>
-          
+
           {/* Papers Carousel */}
           <div className="relative w-full">
             <div className="relative overflow-hidden">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentPaperSlide * 100}%)` }}
               >
                 {main.content.researchPapers.map((paper, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-4">
-                    <Link 
+                    <Link
                       href={paper.link}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -195,7 +193,7 @@ export default function ResourcesPage() {
                 ))}
               </div>
             </div>
-            
+
             {/* Navigation Arrows */}
             <button
               onClick={() => setCurrentPaperSlide(currentPaperSlide === 0 ? main.content.researchPapers.length - 1 : currentPaperSlide - 1)}
@@ -220,9 +218,8 @@ export default function ResourcesPage() {
                 <button
                   key={slide}
                   onClick={() => setCurrentPaperSlide(slide)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    currentPaperSlide === slide ? 'bg-[#498B86]' : 'bg-gray-300'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-colors ${currentPaperSlide === slide ? 'bg-[#498B86]' : 'bg-gray-300'
+                    }`}
                 />
               ))}
             </div>
@@ -242,7 +239,7 @@ export default function ResourcesPage() {
         </Section> */}
 
         {/* Call to Action */}
-        <Section 
+        <Section
           variant="highlight"
           title="Get Involved"
           subtitle="Take the Next Step"
@@ -253,7 +250,7 @@ export default function ResourcesPage() {
               &quot;{main.quote.text}&quot;
             </p>
           </blockquote>
-          <Link 
+          <Link
             href="/contact"
             className="inline-block bg-[#498B86] text-white px-8 py-4 rounded-xl hover:bg-[#3A6F6B] transition-colors font-semibold"
           >

@@ -28,7 +28,8 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
     {
       title: 'WHAT WE DO',
       submenu: [
-        { title: 'National Initiatives', href: '/what-we-do/national'},
+        { title: 'National Initiatives', href: '/what-we-do/national' },
+        { title: 'Our Impact', href: '/what-we-do/impact' },
       ],
     },
     {

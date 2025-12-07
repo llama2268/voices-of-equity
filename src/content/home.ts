@@ -19,26 +19,27 @@ export const homePage = {
     ]
   },
   mission: {
-    quote: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives"
+    quote: "To educate, inspire, and empower communities and future healthcare leaders on health equity issues through impactful content, storytelling, and actionable community-based initiatives",
+    body: "Integral to the mission of Voices of Equity is education and outreach. Through our chapters across undergraduate institutions we empower students to gain hands-on experience in the fight against health disparities. All of our chapters are led by undergraduates and managed by the Voices of Equity National Chapter Leader. Chapters are dedicated to on the ground work, combating health disparities through educational, philanthropic, and outreach efforts."
   },
   initiatives: [
     {
       title: "Educate Communities",
       description: "We equip communities with accessible, relevant education on the root causes of health inequities — from systemic barriers to local challenges — through online content, our VoE curriculum, and interactive discussions.",
       icon: "🎓",
-      image: "/educate.jpg"
+      image: "/media/3.jpg" // Educate
     },
     {
       title: "Inspire Action",
       description: "We motivate individuals — from student leaders to future healthcare professionals — to take meaningful steps toward equity. Through storytelling, collaboration, and leadership development, we turn awareness into collective action.",
       icon: "💡",
-      image: "/inspire.jpg"
+      image: "/media/10.jpeg" // Inspire (Tabling/Action)
     },
     {
       title: "Empower Impact",
       description: "We implement student-led, community-based initiatives tailored to the needs of underserved populations, in partnership with healthcare professionals and local organizations across the country.",
       icon: "📢",
-      image: "/empower.jpg"
+      image: "/media/17.jpeg" // Empower
     }
   ] satisfies Initiative[],
   // Stats section commented out until real data is available

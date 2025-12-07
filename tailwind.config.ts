@@ -30,13 +30,13 @@ export default {
       },
       fontFamily: {
         display: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        serif: ['var(--font-montserrat)', 'system-ui', 'sans-serif'], // Enforce single font style (AHA)
+        sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
   ],
 } satisfies Config;

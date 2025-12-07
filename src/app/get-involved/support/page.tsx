@@ -24,8 +24,8 @@ export default function SupportPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Make a Donation */}
-            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 hover:shadow-md transition-all">
-              <div className="text-center mb-6">
+            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 hover:shadow-md transition-all flex flex-col h-full">
+              <div className="text-center mb-6 flex-grow">
                 <div className="w-16 h-16 bg-[#607AD4] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
@@ -36,7 +36,7 @@ export default function SupportPage() {
                   Contribute to our national campaign fund and help us fuel direct impact across 50+ campuses.
                 </p>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-3 mt-auto">
                 <a
                   href="https://venmo.com/VoicesofEquity"
                   target="_blank"
@@ -45,22 +45,12 @@ export default function SupportPage() {
                 >
                   Donate via Venmo
                 </a>
-                {/* PayPal button - commented out for future activation
-                <a
-                  href="https://paypal.me/voicesofequity"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full px-6 py-3 bg-[#0070BA] text-white font-semibold rounded-lg hover:bg-[#005A94] transition-colors text-center"
-                >
-                  Donate via PayPal
-                </a>
-                */}
               </div>
             </div>
 
             {/* Fund a Chapter */}
-            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 hover:shadow-md transition-all">
-              <div className="text-center mb-6">
+            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 hover:shadow-md transition-all flex flex-col h-full">
+              <div className="text-center mb-6 flex-grow">
                 <div className="w-16 h-16 bg-[#498B86] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -71,10 +61,10 @@ export default function SupportPage() {
                   Sponsor a specific chapter or project — whether it's supplies for outreach, guest speaker honoraria, or event materials.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="text-center mt-auto">
                 <a
                   href="mailto:gyc23@cornell.edu?subject=Chapter Sponsorship Inquiry"
-                  className="inline-block px-6 py-3 bg-[#498B86] text-white font-semibold rounded-lg hover:bg-[#3A6F6B] transition-colors"
+                  className="block w-full px-6 py-3 bg-[#498B86] text-white font-semibold rounded-lg hover:bg-[#3A6F6B] transition-colors"
                 >
                   Contact Us to Sponsor
                 </a>
@@ -82,8 +72,8 @@ export default function SupportPage() {
             </div>
 
             {/* Partner with Us */}
-            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 hover:shadow-md transition-all">
-              <div className="text-center mb-6">
+            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 hover:shadow-md transition-all flex flex-col h-full">
+              <div className="text-center mb-6 flex-grow">
                 <div className="w-16 h-16 bg-[#E4826D] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -94,10 +84,10 @@ export default function SupportPage() {
                   If you represent an organization, foundation, or university, let's work together to amplify health equity.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="text-center mt-auto">
                 <a
                   href="mailto:gyc23@cornell.edu?subject=Partnership Inquiry"
-                  className="inline-block px-6 py-3 bg-[#E4826D] text-white font-semibold rounded-lg hover:bg-[#D97661] transition-colors"
+                  className="block w-full px-6 py-3 bg-[#E4826D] text-white font-semibold rounded-lg hover:bg-[#D97661] transition-colors"
                 >
                   Get in Touch
                 </a>
@@ -117,8 +107,6 @@ export default function SupportPage() {
                 <Image
                   src="/team-picture.jpg"
                   alt="Our team working together"
-                  fill
-                  className="object-cover"
                 />
               </div>
               <div className="p-6">
@@ -137,8 +125,6 @@ export default function SupportPage() {
                 <Image
                   src="/cornell-chapter.jpg"
                   alt="Cornell chapter activities"
-                  fill
-                  className="object-cover"
                 />
               </div>
               <div className="p-6">
@@ -157,7 +143,6 @@ export default function SupportPage() {
                 <Image
                   src="/educate.jpg"
                   alt="Educational initiatives"
-                  fill
                   className="object-cover"
                 />
               </div>
@@ -177,8 +162,6 @@ export default function SupportPage() {
                 <Image
                   src="/inspire.jpg"
                   alt="Inspiring change in communities"
-                  fill
-                  className="object-cover"
                 />
               </div>
               <div className="p-6">
@@ -197,7 +180,6 @@ export default function SupportPage() {
                 <Image
                   src="/empower.jpg"
                   alt="Empowering communities"
-                  fill
                   className="object-cover"
                 />
               </div>
@@ -217,8 +199,6 @@ export default function SupportPage() {
                 <Image
                   src="/boston.jpg"
                   alt="Research and advocacy work"
-                  fill
-                  className="object-cover"
                 />
               </div>
               <div className="p-6">

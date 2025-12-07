@@ -159,9 +159,11 @@ export const whoWeArePage = {
         role: "Co-Founder & Executive Director",
         image: "/caleb-new-4.jpg",
         shortBio: "Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity..",
-        fullBio: `Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
+        fullBio: `Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity, where he oversees strategic direction, internal operations, and national chapter development. He leads national operations, oversees organizational growth strategy, and directs internal systems that support long-term scale and execution. His work focuses on clear execution, measurable outcomes, and long-term capacity building.
 
-        Under his leadership, Voices of Equity has grown into a national movement, mobilizing students and leaders across the country to dismantle barriers to care. Caleb's work is grounded in a commitment to education, advocacy, and the belief that health equity is a fundamental human right. Through his vision, he continues to shape the organization's impact, ensuring that marginalized communities are heard, supported, and empowered.`,
+        Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations. Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges.
+
+        His leadership extends across academic, nonprofit, and operational domains. He has led national service initiatives, authored peer-reviewed research, and managed large-scale, cross-institutional projects within data coordination and translational science. At Voices of Equity, he applies these experiences to grow a mission-driven team focused on building practical, scalable solutions to systemic challenges.`,
         email: "Suh.t.caleb@outlook.com",
         linkedin: "https://www.linkedin.com/in/caleb-suh-028a956a/"
       },
