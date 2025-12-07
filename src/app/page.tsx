@@ -3,15 +3,37 @@ import Hero from '../components/Hero/Hero'
 import PageLayout from '../components/Layout/PageLayout'
 import { Section } from '@/components/ui/Section'
 import ImpactTracker from '@/components/Stats/ImpactTracker'
+import { whoWeArePage } from '@/content';
 import { homePage } from '@/content'
 import { Callout } from '@/components/ui/Callout'
 import { SocialCallout } from '@/components/ui/SocialCallout'
+import { Card } from '@/components/ui/Card';
+import { EducateIcon, InspireIcon, EmpowerIcon } from '@/components/icons/MissionIcons';
 import Link from 'next/link'
 import { useState } from 'react'
 import Image from 'next/image'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const { introduction, mission, vision, values, callToAction } = whoWeArePage.mission;
+
+  const missionPoints = [
+    { 
+      title: "Educate",
+      icon: <EducateIcon />,
+      description: mission.keyPoints[0].description 
+    },
+    { 
+      title: "Inspire",
+      icon: <InspireIcon />,
+      description: mission.keyPoints[1].description 
+    },
+    { 
+      title: "Empower",
+      icon: <EmpowerIcon />,
+      description: mission.keyPoints[2].description 
+    }
+  ];
 
   return (
     <PageLayout fullWidth>
@@ -20,33 +42,32 @@ export default function HomePage() {
         description={homePage.hero.description}
       />
 
-      {/* Mission Statement */}
-      <Section>
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="font-serif text-lg text-primary-600 mb-3 italic">
-            Our Mission
+      <Section variant="alternate">
+        <div className="text-center mb-12">
+          {/* <p className="font-serif text-lg text-primary-600 mb-3 italic">
+            Our Purpose
+          </p> */}
+          <h2 className="text-3xl font-bold mb-6">{mission.heading}</h2>
+          <p className="font-serif text-xl md:text-2xl text-gray-800 italic leading-relaxed max-w-3xl mx-auto mb-12">
+            {mission.text}
           </p>
-          <blockquote className="mb-12">
-            <p className="font-serif text-2xl md:text-3xl text-gray-800 italic leading-relaxed">
-              &quot;{homePage.mission.body}&quot;
-            </p>
-            <div className="mt-4 h-1 w-24 mx-auto" />
-          </blockquote>
-          <Link
-            href="/whoweare/mission"
-            className="inline-block px-6 py-3 bg-primary-500 text-white font-semibold rounded-md hover:bg-primary-600 transition-colors"
-          >
-            Learn More
-          </Link>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {missionPoints.map((point, index) => (
+            <Card key={index} className="text-center">
+              <div className="text-primary-500 mb-4 flex justify-center">{point.icon}</div>
+              <h3 className="text-xl font-bold mb-3">{point.title}</h3>
+              <p className="text-gray-600">{point.description}</p>
+            </Card>
+          ))}
         </div>
       </Section>
 
-      {/* Impact Tracker */}
-      <Section title="Explore Our Impact">
-        <div className="mb-12">
+      {/* Carousel Section */}
+      <Section title="Explore Our Impact" className="bg-white">
+                <div className="mb-12">
           <ImpactTracker />
         </div>
-
         <div className="relative w-full">
           {/* Carousel Container */}
           <div className="relative overflow-hidden">
@@ -63,11 +84,11 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                   />
-                  <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                  <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white max-w-4xl mx-auto px-8">
                       <div className="mb-4">
-                        <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
+                        <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                           Instagram
                         </span>
                       </div>
@@ -75,7 +96,7 @@ export default function HomePage() {
                       <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                         Stay connected with our latest updates and community stories as we build a more equitable future together
                       </p>
-                      <Link href="https://www.instagram.com/voices.of.equity/" className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                      <Link href="https://www.instagram.com/voices.of.equity/" className="inline-block px-8 py-3 bg-white text-[#607AD4] font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                         Follow Us →
                       </Link>
                     </div>
@@ -92,11 +113,11 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                   />
-                  <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                  <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white max-w-4xl mx-auto px-8">
                       <div className="mb-4">
-                        <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
+                        <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                           Programs
                         </span>
                       </div>
@@ -104,7 +125,7 @@ export default function HomePage() {
                       <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                         Nationwide programs advancing health equity across communities and transforming healthcare access
                       </p>
-                      <Link href="/what-we-do/national" className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                      <Link href="/what-we-do/national" className="inline-block px-8 py-3 bg-white text-[#498B86] font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                         Learn More →
                       </Link>
                     </div>
@@ -121,11 +142,11 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                   />
-                  <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                  <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white max-w-4xl mx-auto px-8">
                       <div className="mb-4">
-                        <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
+                        <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                           Community
                         </span>
                       </div>
@@ -133,7 +154,7 @@ export default function HomePage() {
                       <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                         Community-based programs creating meaningful local impact and driving change from the ground up
                       </p>
-                      <Link href="/what-we-do/impact" className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                      <Link href="/what-we-do/impact" className="inline-block px-8 py-3 bg-white text-[#607AD4] font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                         Explore →
                       </Link>
                     </div>
@@ -151,11 +172,11 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                     />
-                    <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                    <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
                         <div className="mb-4">
-                          <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
+                          <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                             Stories
                           </span>
                         </div>
@@ -163,7 +184,7 @@ export default function HomePage() {
                         <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                           Real stories of change and transformation in our communities, showcasing the power of collective action
                         </p>
-                        <div className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                        <div className="inline-block px-8 py-3 bg-white text-[#498B86] font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                           Read Stories →
                         </div>
                       </div>
@@ -182,11 +203,11 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                     />
-                    <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                    <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
                         <div className="mb-4">
-                          <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
+                          <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                             Chapters
                           </span>
                         </div>
@@ -194,7 +215,7 @@ export default function HomePage() {
                         <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                           Student-led chapters driving change across universities, empowering the next generation of leaders
                         </p>
-                        <div className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                        <div className="inline-block px-8 py-3 bg-white text-[#607AD4] font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                           Join Us →
                         </div>
                       </div>
@@ -213,11 +234,11 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                     />
-                    <div aria-hidden className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                    <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white max-w-4xl mx-auto px-8">
                         <div className="mb-4">
-                          <span className="px-4 py-2 bg-[#587FDA] text-white rounded-full text-sm font-medium">
+                          <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                             Education
                           </span>
                         </div>
@@ -225,7 +246,7 @@ export default function HomePage() {
                         <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                           Educational materials and tools for health equity advocacy, empowering you to make a difference
                         </p>
-                        <div className="inline-block px-8 py-3 bg-white text-[#587FDA] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                        <div className="inline-block px-8 py-3 bg-white text-[#498B86] font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                           Access Resources →
                         </div>
                       </div>
@@ -239,7 +260,7 @@ export default function HomePage() {
           {/* Navigation Arrows */}
           <button
             onClick={() => setCurrentSlide(currentSlide === 0 ? 5 : currentSlide - 1)}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors z-10"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#607AD4]/80 hover:bg-[#607AD4] text-white p-3 rounded-full transition-colors z-10 shadow-lg"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -247,7 +268,7 @@ export default function HomePage() {
           </button>
           <button
             onClick={() => setCurrentSlide(currentSlide === 5 ? 0 : currentSlide + 1)}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors z-10"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#607AD4]/80 hover:bg-[#607AD4] text-white p-3 rounded-full transition-colors z-10 shadow-lg"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -260,32 +281,17 @@ export default function HomePage() {
               <button
                 key={slide}
                 onClick={() => setCurrentSlide(slide)}
-                className={`w-2 h-2 rounded-full transition-colors ${currentSlide === slide ? 'bg-primary-500' : 'bg-gray-300'
-                  }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentSlide === slide ? 'bg-[#607AD4] w-8' : 'bg-gray-300 hover:bg-[#498B86]'
+                }`}
               />
             ))}
           </div>
         </div>
       </Section>
 
-      {/* Stats Section */}
-      {/* <Section variant="alternate">
-        <div className="text-center mb-12">
-          <p className="font-serif text-lg text-primary-600 mb-3 italic">
-            Our Impact
-          </p>
-          <h2 className="text-3xl font-bold mb-4">Making Real Change</h2>
-        </div>
-        <div className="grid md:grid-cols-4 gap-8">
-          {homePage.stats.map((stat, index) => (
-            <StatCard key={index} {...stat} />
-          ))}
-        </div>
-      </Section> */}
-      {/* WILL USE LATER */}
-
-      {/* Callouts */}
-      <Section>
+      {/* Callouts with accent background */}
+      <Section className="bg-gradient-to-r from-[#607AD4]/10 to-[#498B86]/10">
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Callout
             eyebrow="Meet Our Team"
@@ -296,6 +302,7 @@ export default function HomePage() {
               href: "/who-we-are/team"
             }}
             variant="impact"
+            className="bg-white text-gray-900"
           />
           <Callout
             eyebrow="Start A Chapter"
@@ -306,25 +313,32 @@ export default function HomePage() {
               href: "/get-involved/start"
             }}
             variant="resources"
+            className="bg-white text-gray-900"
           />
         </div>
       </Section>
 
-      {/* Initiatives */}
-      <Section>
+      {/* Initiatives with alternating accent colors */}
+      <Section className="bg-white">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Key Initiatives</h2>
+          <h2 className="text-3xl font-bold mb-4 text-[#607AD4]">Key Initiatives</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Building health equity through education, activation, and community-driven change.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
-          {homePage.initiatives.map((initiative) => (
-            <div
-              key={initiative.title}
-              className="p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-t-4 border-transparent hover:border-secondary-500"
+          {homePage.initiatives.map((initiative, index) => (
+            <div 
+              key={initiative.title} 
+              className="p-8 bg-white rounded-lg shadow-2xl transform transition-all duration-300 border-t-4 hover:shadow-[0_20px_50px_rgba(96,122,212,0.3)]"
+              style={{ 
+                borderTopColor: index % 2 === 0 ? '#607AD4' : '#498B86'
+              }}
             >
-              <h3 className="text-center text-xl font-bold text-primary-600 mb-4 group-hover:text-secondary-600 transition-colors">
+              <h3 className="text-center text-xl font-bold mb-4 transition-colors"
+                  style={{ 
+                    color: index % 2 === 0 ? '#607AD4' : '#498B86'
+                  }}>
                 {initiative.title}
               </h3>
               <div className="mb-4 flex justify-center">
@@ -334,7 +348,7 @@ export default function HomePage() {
                   width={300}
                   height={300}
                   objectFit="cover"
-                  className="rounded"
+                  className="rounded shadow-md"
                 />
               </div>
               <p className="text-gray-700">{initiative.description}</p>
@@ -343,33 +357,20 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* <Section 
-      >
-        <div className="max-w-4xl mx-auto">
-          <SocialCallout />
+      {/* Call to Action Section with gradient */}
+      <section className="py-20 bg-[#607AD4] text-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
         </div>
-      </Section> */}
-
-      {/* Call to Action Section */}
-      <section className="py-20 bg-[#607AD4] text-white">
-        <div className="max-w-7xl mx-auto px-8 text-center">
+        
+        <div className="max-w-7xl mx-auto px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
-          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-white/95 max-w-2xl mx-auto">
             Join our community of changemakers and help build a more equitable future for all.
           </p>
           <div className="flex gap-4 justify-center">
-            {/* <a
-              href="/get-involved/chapters"
-              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white rounded-lg font-semibold transition-colors"
-            >
-              Join Our Movement
-            </a>
-            <a
-              href="/who-we-are/mission"
-              className="px-8 py-4 bg-white hover:bg-gray-100 text-[#607AD4] font-semibold rounded-lg transition-colors"
-            >
-              Learn More
-            </a> */}
             <SocialCallout />
           </div>
         </div>

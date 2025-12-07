@@ -39,7 +39,7 @@ export const homePage = {
       title: "Empower Impact",
       description: "We implement student-led, community-based initiatives tailored to the needs of underserved populations, in partnership with healthcare professionals and local organizations across the country.",
       icon: "📢",
-      image: "/media/17.jpeg" // Empower
+      image: "/media/17.png" // Empower
     }
   ] satisfies Initiative[],
   // Stats section commented out until real data is available
