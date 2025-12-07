@@ -9,7 +9,7 @@ import Image from 'next/image';
 const NavBar = () => {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
-  
+
   const menuItems = navigation.mainNav;
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,25 +29,24 @@ const NavBar = () => {
   // const isTransparent = isHomePage && !isScrolled;
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         // isTransparent
-          'bg-white shadow-sm rounded-b-xl'
-      }`}
+        'bg-white shadow-sm rounded-b-xl'
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16">
           <div className="flex items-center w-full">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link 
-                href="/" 
-                className={`text-xl font-bold ${
-                'text-gray-900'
-                }`}
+              <Link
+                href="/"
+                className={`text-xl font-bold ${'text-gray-900'
+                  }`}
               >
                 {/* Move the logo to the left*/}
-              <Image src="/logo-new.png" alt="Voices of Equity" width={110} height={100} priority placeholder="empty"/>
+                <Image src="/logo-new.png" alt="Voices of Equity" width={110} height={100} priority placeholder="empty" />
               </Link>
             </div>
 
@@ -58,9 +57,8 @@ const NavBar = () => {
                   {item.submenu ? (
                     <div className="relative group">
                       <button
-                        className={`inline-flex items-center text-sm font-medium ${
-                        'text-gray-900 hover:text-[#498B86]'
-                        }`}
+                        className={`inline-flex items-center text-sm font-medium ${'text-gray-900 hover:text-[#498B86]'
+                          }`}
                       >
                         {item.title}
                         <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,9 +82,8 @@ const NavBar = () => {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className={`inline-flex items-center text-sm font-medium ${
-                          'text-gray-900 hover:text-[#498B86]'
-                      }`}
+                      className={`inline-flex items-center text-sm font-medium ${'text-gray-900 hover:text-[#498B86]'
+                        }`}
                     >
                       {item.title}
                     </Link>
@@ -100,9 +97,8 @@ const NavBar = () => {
           <div className="flex items-center sm:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-lg ${
-                  'text-gray-400 hover:text-gray-500 hover:bg-gray-50'
-              }`}
+              className={`inline-flex items-center justify-center p-2 rounded-lg ${'text-gray-400 hover:text-gray-500 hover:bg-gray-50'
+                }`}
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -125,25 +121,36 @@ const NavBar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-       <div className="sm:hidden fixed inset-x-0 top-16 bottom-0 bg-white border-t border-gray-200 overflow-y-auto z-50">
+        <div className="sm:hidden fixed inset-x-0 top-16 bottom-0 bg-white border-t border-gray-200 overflow-y-auto z-50">
           <div className="pt-4 pb-6 space-y-1">
             {menuItems.map((item) => (
               <div key={item.title}>
                 {item.submenu ? (
                   <div className="space-y-1">
-                    <div className="px-3 py-2 text-base font-semibold text-gray-900 mx-2">
+                    <button
+                      onClick={() => {
+                        // Toggle submenu logic handled by local state if needed, 
+                        // but for now keeping it simple: just show them.
+                        // Or better, let's make it collapsible? 
+                        // For simplicity and "dropdown menus are working correctly", 
+                        // I will ensure they are visible and clicking links closes the main menu.
+                      }}
+                      className="w-full flex justify-between items-center px-3 py-2 text-base font-semibold text-gray-900 mx-2"
+                    >
                       {item.title}
+                    </button>
+                    <div className="pl-4">
+                      {item.submenu.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          className="block px-3 py-2 text-sm text-gray-700 hover:text-[#498B86] hover:bg-gray-50 rounded-lg"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {subItem.title}
+                        </Link>
+                      ))}
                     </div>
-                    {item.submenu.map((subItem) => (
-                      <Link
-                        key={subItem.href}
-                        href={subItem.href}
-                        className="block px-6 py-2 text-sm text-gray-700 hover:text-[#498B86] hover:bg-gray-50 mx-2 rounded-lg"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {subItem.title}
-                      </Link>
-                    ))}
                   </div>
                 ) : (
                   <Link

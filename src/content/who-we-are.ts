@@ -100,7 +100,7 @@ export const whoWeArePage = {
     timeline: [
       {
         year: 'DEC',
-        title: "VOE Founded",
+        title: "VoE Founded",
         description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action",
         side: 'right'
       },
@@ -128,7 +128,7 @@ export const whoWeArePage = {
       {
         year: 'JUN',
         title: "Foundations Solidified, Future in Motion",
-        description: "As VOE closes out its founding year, over 30 active chapters are established nationwide, a national leadership model is fully implemented, and VOE's boots-on-the-ground communities based initiatives begin shaping the future of student-led health equity",
+        description: "As VoE closes out its founding year, over 30 active chapters are established nationwide, a national leadership model is fully implemented, and VoE's boots-on-the-ground communities based initiatives begin shaping the future of student-led health equity",
         side: 'right'
       },
       {
@@ -137,8 +137,14 @@ export const whoWeArePage = {
       {
         year: 'AUG',
         title: "Leadership Onboarding Intensive",
-        description: "In August 2025, Voices of Equity hosted its first national onboarding intensive, bringing together over 100 student leaders from 40+ undergraduate institutions. Across two days of training, presidents and committee directors were equipped with the resources, expectations, and networks needed to lead their chapters effectively. This milestone marked the formal launch of a unified national structure and the next stage of VOE's growth.",
+        description: "In August 2025, Voices of Equity hosted its first national onboarding intensive, bringing together over 100 student leaders from 40+ undergraduate institutions. Across two days of training, presidents and committee directors were equipped with the resources, expectations, and networks needed to lead their chapters effectively. This milestone marked the formal launch of a unified national structure and the next stage of VoE's growth.",
         side: 'left'
+      },
+      {
+        year: 'OCT',
+        title: "National Health Equity Week",
+        description: "Our first major nationwide initiative launched with incredible momentum. Over the course of the week, we raised over $2,000, distributed $1,000+ in grants, engaged 30+ campuses, and mobilized 200+ members to take action in their communities.",
+        side: 'right'
       },
     ] satisfies TimelineEvent[],
     conclusion: "What began with a small team and a bold vision has now grown into a national movement. With chapters active across the country and a growing network of student leaders, Voices of Equity is building the infrastructure for long-term impact. As we expand into new communities, launch innovative initiatives, and develop the next generation of health equity leaders, our commitment remains the same: dismantling barriers to health through education, advocacy, and community-based action."
@@ -155,17 +161,13 @@ export const whoWeArePage = {
         shortBio: "Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity..",
         fullBio: `Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity, where he leads initiatives to inspire meaningful action, amplify underrepresented voices, and empower communities to address inequities in healthcare. Caleb oversees the organization's strategic operations, fostering collaborative partnerships and driving community-based solutions to advance health equity.
 
-        Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations.  Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges. 
-
-        As an Emergency Department Volunteer Team Lead at Cayuga Medical Center and a certified EMT, he gained firsthand experience supporting patients in critical moments and collaborating with healthcare teams. He has authored peer-reviewed research analyzing U.S. supply chain vulnerabilities and currently conducts addiction neuroscience research at the Konova Addiction Lab, where he studies the neurobehavioral mechanisms of addiction. These experiences provided him with a unique perspective on how systemic gaps in care affect vulnerable populations, reinforcing his dedication to advancing equity in healthcare and the importance of creating community-driven solutions to address disparities in access and outcomes.
-
-        Caleb's diverse experiences in leadership, healthcare, and research inform his work at Voices of Equity, where he remains committed to creating sustainable, community-driven solutions that address systemic inequities.`,
+        Under his leadership, Voices of Equity has grown into a national movement, mobilizing students and leaders across the country to dismantle barriers to care. Caleb's work is grounded in a commitment to education, advocacy, and the belief that health equity is a fundamental human right. Through his vision, he continues to shape the organization's impact, ensuring that marginalized communities are heard, supported, and empowered.`,
         email: "Suh.t.caleb@outlook.com",
         linkedin: "https://www.linkedin.com/in/caleb-suh-028a956a/"
       },
       {
-        id:"zaid-al-shoha",
-        name:"Zaid Al-Shoha",
+        id: "zaid-al-shoha",
+        name: "Zaid Al-Shoha",
         role: "Co-Founder & Executive Director",
         image: "/zaid-headshot.png",
         shortBio: "Zaid Al-Shoha leads efforts to drive impactful change..",
@@ -189,7 +191,7 @@ export const whoWeArePage = {
         id: "eliza-dow",
         name: "Eliza Dow",
         role: "National Director of Education",
-        image:"/eliza.jpg",
+        image: "/eliza.jpg",
         shortBio: "Eliza Dow is a junior at Cornell University, studying Biology and Society..",
         fullBio: `Eliza Dow is a junior at Cornell University, studying Biology and Society in the College of Arts and Sciences. She is deeply passionate about health equity, particularly in the context of inclusive clinical trial practices and policies that improve healthcare outcomes for historically disadvantaged populations. Eliza hopes to use her passion to educate others on equitable practices within and beyond 
         healthcare. She aims to teach future healthcare professionals to recognize how policies and practices can either help or harm their patients, empower patients to understand and advocate for their rights, and drive meaningful change in medicine by highlighting critical perspectives on healthcare and health equity.
@@ -206,9 +208,9 @@ export const whoWeArePage = {
         id: "adam-jac",
         name: "Adam Jac",
         role: "National Director of Philanthropy",
-        image:"/adam-new.jpg",
+        image: "/adam-new.jpg",
         shortBio: "Adam is committed to leverage philanthropy, research...",
-        fullBio:`Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master's in Biomedical Engineering before pursuing medical school.
+        fullBio: `Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master's in Biomedical Engineering before pursuing medical school.
         
         Passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical experience to drive meaningful change in healthcare access and outcomes.
         As the Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives that align with the organization's mission to address systemic health disparities. 
@@ -227,7 +229,7 @@ export const whoWeArePage = {
         name: "Jennifer Zhu",
         role: "National Director of Media",
         shortBio: "Jennifer's experience in healthcare, media, and leadership...",
-        image:"/jennifer-zhu-new.jpg",
+        image: "/jennifer-zhu-new.jpg",
         fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
         to spread and empower discussions about health equity through social media platforms.
         Jennifer has substantial experience in the fields of art and digital design, in addition to managing
@@ -263,7 +265,7 @@ export const whoWeArePage = {
         name: "Grace Chen",
         role: "National Director of Outreach",
         image: "/grace-new.jpg",
-        shortBio:"Grace works to create lasting positive change..",
+        shortBio: "Grace works to create lasting positive change..",
         fullBio: `Grace Chen serves as the Director of Outreach for Voices of Equity, where she leads expansion initiatives focused on establishing new undergraduate chapters across the country. As a Biometry and Statistics major at Cornell University who is also pursuing medicine, she brings a unique perspective that combines data-driven analysis with a commitment to improving healthcare equity. She develops comprehensive outreach materials, and implements engagement strategies to empower future chapter leaders to advance health equity in their communities. Through strategic partnerships with student organizations and academic institutions, she aims to build a robust network of future healthcare leaders committed to improving healthcare accessibility and outcomes.
  
         Grace's dedication to STEM outreach is further demonstrated by her role as a Policy and Practices Member for Cornell iGEM, conducting interviews and organizing educational and outreach-based events based on synthetic biology. Her leadership extends to coaching and mentorship, including guiding students to a national Science Olympiad victory and leading a competitive team to an overall second-place national finish.
@@ -277,7 +279,7 @@ export const whoWeArePage = {
         name: "Angie Ayoubi",
         role: "Think Tank Director",
         image: "/angie.PNG",
-        shortBio:"Angie believes healthcare and medicine....",
+        shortBio: "Angie believes healthcare and medicine....",
         fullBio: `Angie Ayoubi is a biological engineer and premed at MIT. She is motivated by the
         challenges we face today in research and equity and is committed to making health and scientific information accessible. As a part of VoE's national initiative, Angie is excited and determined to work with other dedicated leaders and seek out this goal as she pursues a career in medicine.
         
@@ -300,7 +302,7 @@ export const whoWeArePage = {
         Angie believes healthcare and medicine are where our progress in mathematics,
         physics, the sciences, and engineering come together for practical application in our
         society by promoting our health and well-being—fighting against humanity's biggest
-        threats and for its best interests.`, 
+        threats and for its best interests.`,
         email: "Angie_ai@mit.edu",
         linkedin: "https://www.linkedin.com/in/angie-ayoubi-67876a245/"
       }
@@ -315,7 +317,7 @@ export const whoWeArePage = {
         fullBio: `Coming Soon`,
         email: "tyleryang2268@gmail.com",
         linkedin: "https://www.linkedin.com/in/tyler-yang-88841b289/"
-      }, 
+      },
       {
         id: "arnab-ghosh",
         name: "Arnab Ghosh",

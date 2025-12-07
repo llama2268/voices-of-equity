@@ -6,14 +6,14 @@ interface SectionProps {
   variant?: 'default' | 'alternate' | 'highlight';
   spacing?: 'sm' | 'default' | 'lg';
   className?: string;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   description?: string;
   centered?: boolean;
 }
 
-export function Section({ 
-  children, 
+export function Section({
+  children,
   variant = 'default',
   spacing = 'default',
   className,
