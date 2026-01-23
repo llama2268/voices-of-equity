@@ -187,7 +187,7 @@ export default function ArchivePage() {
             className="object-contain"
             priority
           />
-          <div className="absolute inset-0 bg-white/70" />
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-md" />
         </div>
       )}
 

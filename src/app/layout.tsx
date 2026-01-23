@@ -1,14 +1,14 @@
 import '../styles/globals.css'
-import { Instrument_Sans, Playfair_Display } from 'next/font/google'
+import { Montserrat, Playfair_Display } from 'next/font/google'
 import NavBar from '../components/Navigation/NavBar'
 import { Footer } from '../components/Layout/Footer'
 import { siteConfig } from '../content'
 
-const instrumentSans = Instrument_Sans({
-	subsets: ['latin'],
-	weight: ['400', '500', '600', '700'],
-	display: 'swap',
-	variable: '--font-montserrat',
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-montserrat',
 })
 
 const playfair = Playfair_Display({
@@ -31,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="h-full">
 			<body className={`
-				${instrumentSans.variable} 
+				${montserrat.variable} 
 				${playfair.variable}
 				min-h-full flex flex-col
 				font-display

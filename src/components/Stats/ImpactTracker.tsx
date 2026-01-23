@@ -1,10 +1,11 @@
 import React from 'react';
+import Link from 'next/link';
 
 const impactStats = [
     { label: 'Amount Raised', value: '$40K+', subtext: 'For Health Equity Initiatives' },
     { label: 'VoE Grant Funding', value: '$1000+', subtext: 'Distributed' },
-    { label: 'Campuses Engaged', value: '30+', subtext: 'Across North America' },
-    { label: 'Members Involved', value: '200+', subtext: 'Active Members' },
+    { label: 'Campuses Engaged', value: '50+', subtext: 'Across North America' },
+    { label: 'Members Involved', value: '400+', subtext: 'Active Members' },
     { label: 'Students Reached', value: '1000+', subtext: 'Through Educational Programming' },
 ];
 
@@ -26,7 +27,17 @@ export default function ImpactTracker() {
                         </div>
                     ))}
                 </div>
+                <div className="mt-8 text-center">
+                        <Link
+                            href="/what-we-do/impact"
+                            className="inline-block px-8 py-3 bg-[#498B86] text-white font-semibold rounded-full hover:bg-[#498B99] transition-colors"
+                            aria-label="View impact details"
+                        >
+                            Learn More About Our Impact →
+                        </Link>
+                    </div>
             </div>
         </div>
+        
     );
 }
