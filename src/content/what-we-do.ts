@@ -1,4 +1,6 @@
 // WHAT WE DO PAGES
+import type { ChapterReflection } from './types'
+
 export const whatWeDoPage = {
   impact: {
     title: "Our Impact",
@@ -10,6 +12,50 @@ export const whatWeDoPage = {
       { label: "200+ members involved", icon: "✓" },
       { label: "1000+ students reached through educational programing", icon: "✓" }
     ],
+    chapterReflections: [
+      {
+        chapterName: "Ithaca College",
+        president: {
+          name: "Aya Oulida",
+          title: "Chapter President",
+          headshot: "/ithacacollege/ayaoulida_headshot.jpg"
+        },
+        quote: "I learned that even a small impact can go a long way. What began as a small medical community at IC ultimately came together to be part of something much bigger. I truly enjoyed working alongside people who were eager to learn more. The collaborative process itself was rewarding, and the encouragement and support from the professor played a significant role in motivating our work. Looking ahead, we hope to collaborate with the Binghamton and Cornell chapters to furthering improve the medical experience for local communities at Guthrie and Cayuga Medical Center- whether through increased transportation access or by empowering patients with a better understanding of what they deserve when receiving medical care.",
+        images: ["/ithacacollege/IC_promo.png"],
+        semester: "Fall 2025",
+        featured: true
+      },
+      {
+        chapterName: "UT Austin",
+        president: {
+          name: "Tracy Vuong",
+          title: "Chapter President"
+        },
+        quote: "This semester, Texas Voices of Equity found Health Equity Week, specifically the fundraiser, to be our most meaningful and successful experience. As a new organization, recruiting and retaining members was one of our greatest struggles. However, with the fundraiser came an opportunity to discuss our chapter's goals and the national initiative to our peers. Most importantly, our team had fun, and we were able to spread joy on campus within the early hours of the day through our matcha, coffee, donuts, and cartwheel performances.",
+        images: [
+          "/utaustin/78507850279__CAD9A087-2246-4F31-A93A-B6C8C06C8FA5.jpg",
+          "/utaustin/IMG_7033.jpg",
+          "/utaustin/IMG_7040.jpg",
+          "/utaustin/IMG_7041.jpg",
+          "/utaustin/IMG_7045.jpg",
+          "/utaustin/IMG_7047.jpg",
+          "/utaustin/IMG_7048.jpg"
+        ],
+        semester: "Fall 2025",
+        featured: true
+      },
+      {
+        chapterName: "UConn",
+        president: {
+          name: "Chiamaka Okafor",
+          title: "Chapter President"
+        },
+        quote: "I think overall having this opportunity to open a chapter was very meaningful. I was always very hesitant about starting my own org and I found VOE as a helpful guiding hand in starting one. I really enjoyed working with my eboard and value all of their unique experiences. I also valued learning about the founding chapters meaning and passion behind this organization that pushed them to allow others to make an impact as well.",
+        images: [],
+        semester: "Fall 2025",
+        featured: false
+      }
+    ] satisfies ChapterReflection[],
     spotlights: [
       { name: "Purdue University", image: "/icons/chapters/Purdue University - West Lafayette.png" },
       { name: "University of Arkansas", image: "/icons/chapters/arkansas.png" },

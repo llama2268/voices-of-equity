@@ -105,3 +105,16 @@ export interface ArchiveItem {
   featured?: boolean
   videoId?: string // For YouTube videos
 }
+
+export interface ChapterReflection {
+  chapterName: string
+  president: {
+    name: string
+    title: string
+    headshot?: string
+  }
+  quote: string
+  images: string[]
+  semester: string
+  featured?: boolean
+}

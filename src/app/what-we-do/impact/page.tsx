@@ -17,6 +17,7 @@ const ChapterMap = dynamic(() => import('@/components/Map/ChapterMap').then(mod 
   )
 });
 import { ImpactGallery } from '@/components/Gallery/ImpactGallery';
+import { ChapterReflections } from '@/components/Chapter/ChapterReflections';
 import { whatWeDoPage } from '@/content/what-we-do';
 
 export default function ImpactPage() {
@@ -30,6 +31,15 @@ export default function ImpactPage() {
         <div className="max-w-7xl mx-auto">
           <ImpactTracker />
         </div>
+      </Section>
+
+      {/* Chapter Reflections - Fall 2025 */}
+      <Section>
+        <ChapterReflections
+          reflections={whatWeDoPage.impact.chapterReflections}
+          title="Chapter Reflections"
+          subtitle="Fall 2025"
+        />
       </Section>
 
       {/* Interactive Map Section */}

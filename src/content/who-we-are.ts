@@ -284,7 +284,7 @@ export const whoWeArePage = {
         shortBio: "Angie believes healthcare and medicine....",
         fullBio: `Angie Ayoubi is a biological engineer and premed at MIT. She is motivated by the
         challenges we face today in research and equity and is committed to making health and scientific information accessible. As a part of VoE's national initiative, Angie is excited and determined to work with other dedicated leaders and seek out this goal as she pursues a career in medicine.
-        
+
 
         In addition to her study of bioengineering and responsibilities as a student-researcher, she is an active member of MIT's Biotech Group and Undergraduate Research Journal.
         She is also a member of the Martin Trust Center's Engineering Entrepreneurship
@@ -307,6 +307,18 @@ export const whoWeArePage = {
         threats and for its best interests.`,
         email: "Angie_ai@mit.edu",
         linkedin: "https://www.linkedin.com/in/angie-ayoubi-67876a245/"
+      },
+      {
+        id: "jimmy-quinlan",
+        name: "Jimmy Quinlan",
+        role: "President, Cornell Chapter",
+        image: "/logo-new.png",
+        shortBio: "Jimmy Quinlan serves as President of the Cornell Chapter.",
+        fullBio: `Jimmy Quinlan serves as President of the Cornell Chapter of Voices of Equity, leading the founding chapter that serves as a model for student-led health equity initiatives nationwide. In his role, he oversees chapter operations, coordinates educational programming, and drives local community engagement efforts.
+
+        As leader of Cornell's chapter, Jimmy works to build meaningful partnerships with local healthcare organizations and community groups while fostering a collaborative environment for students passionate about addressing health disparities. His leadership helps advance Voices of Equity's mission on campus and sets the standard for excellence in chapter operations across the organization.`,
+        email: "voicesofequity.cornell@gmail.com",
+        linkedin: ""
       }
     ] satisfies TeamMember[],
     engineers: [
