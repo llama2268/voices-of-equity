@@ -311,12 +311,12 @@ export const whoWeArePage = {
       {
         id: "jimmy-quinlan",
         name: "Jimmy Quinlan",
-        role: "President, Cornell Chapter",
+        role: "Executive Director",
         image: "/logo-new.png",
-        shortBio: "Jimmy Quinlan serves as President of the Cornell Chapter.",
-        fullBio: `Jimmy Quinlan serves as President of the Cornell Chapter of Voices of Equity, leading the founding chapter that serves as a model for student-led health equity initiatives nationwide. In his role, he oversees chapter operations, coordinates educational programming, and drives local community engagement efforts.
+        shortBio: "Jimmy Quinlan serves as Executive Director of Voices of Equity.",
+        fullBio: `Jimmy Quinlan serves as Executive Director of Voices of Equity, where he plays a key role in advancing the organization's mission to educate, inspire, and empower communities on health equity issues. In his role, he works to coordinate national initiatives, support chapter development, and strengthen partnerships that drive meaningful impact.
 
-        As leader of Cornell's chapter, Jimmy works to build meaningful partnerships with local healthcare organizations and community groups while fostering a collaborative environment for students passionate about addressing health disparities. His leadership helps advance Voices of Equity's mission on campus and sets the standard for excellence in chapter operations across the organization.`,
+        Jimmy is committed to building sustainable systems and fostering collaboration across the organization's growing network of student leaders. His leadership helps advance Voices of Equity's vision of creating a more equitable healthcare system through community-based action and education.`,
         email: "voicesofequity.cornell@gmail.com",
         linkedin: ""
       }
