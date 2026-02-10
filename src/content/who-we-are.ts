@@ -389,7 +389,7 @@ export const whoWeArePage = {
         id: "lucas-santos",
         name: "Lucas Santos",
         role: "Philanthropy Undergraduate Liaison",
-        image: "/lucas.png",
+        image: "/lucas.PNG",
         shortBio: "Lucas currently serves as the National Philanthropy Liaison...",
         fullBio: `
         Lucas Santos is a third-year Biology major with minors in Chemistry and Spanish at Howard University. She is deeply committed to advancing health equity through community-based initiatives, culturally competent care, and public health advocacy.
