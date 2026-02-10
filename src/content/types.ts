@@ -22,6 +22,61 @@ export interface Engineer {
   linkedin: string
 }
 
+export interface Media {
+  id: string
+  name: string
+  role: string
+  image: string
+  shortBio: string
+  fullBio: string
+  email: string
+  linkedin: string
+}
+
+export interface Education {
+  id: string
+  name: string
+  role: string
+  image: string
+  shortBio: string
+  fullBio: string
+  email: string
+  linkedin: string
+}
+
+export interface Outreach {
+  id: string
+  name: string
+  role: string
+  image: string
+  shortBio: string
+  fullBio: string
+  email: string
+  linkedin: string
+}
+
+export interface Philanthrophy {
+  id: string
+  name: string
+  role: string
+  image: string
+  shortBio: string
+  fullBio: string
+  email: string
+  linkedin: string
+}
+
+export interface VOX {
+  id: string
+  name: string
+  role: string
+  image: string
+  shortBio: string
+  fullBio: string
+  email: string
+  linkedin: string
+}
+
 export interface Chapter {
   name: string
   location: string

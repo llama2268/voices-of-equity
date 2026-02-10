@@ -28,7 +28,7 @@ const TeamMember = ({
   return (
     <div
       onClick={() => router.push(`/who-we-are/team/${id}`)}
-      className="flex cursor-pointer flex-col items-center space-y-4 rounded-lg bg-white/60 p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-lg"
+      className="flex w-72 cursor-pointer flex-col items-center space-y-4 rounded-lg bg-white/60 p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-lg gap-x-10"
     >
       <div className="h-32 w-32 overflow-hidden rounded-full relative">
         <Image 

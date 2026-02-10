@@ -64,7 +64,7 @@ export default function HomePage() {
       </Section>
 
       {/* Carousel Section */}
-      <Section title="Explore Our Impact" className="bg-white">
+      <Section title="" className="bg-[#607AD4]">
                 <div className="mb-12">
           <ImpactTracker />
         </div>
@@ -261,8 +261,8 @@ export default function HomePage() {
               <button
                 key={slide}
                 onClick={() => setCurrentSlide(slide)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === slide ? 'bg-[#607AD4] w-8' : 'bg-gray-300 hover:bg-[#498B86]'
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === slide ? 'bg-[#498B86] w-1' : 'bg-white hover:bg-[#498B86]'
                 }`}
               />
             ))}

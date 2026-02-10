@@ -1,4 +1,4 @@
-import type { TeamMember, Engineer, TimelineEvent } from './types'
+import type { TeamMember, Engineer, TimelineEvent, Media, Outreach, Education, Philanthrophy, VOX} from './types'
 
 // WHO WE ARE PAGES
 export const whoWeArePage = {
@@ -190,42 +190,114 @@ export const whoWeArePage = {
         linkedin: "https://www.linkedin.com/in/zaid-al-shoha/"
       },
       {
+        id: "jimmy-quinlan",
+        name: "Jimmy Quinlan",
+        role: "Executive Chief of Staff",
+        image: "/jimmy.jpg",
+        shortBio: "Jimmy Quinlan serves as a student leader, organizer, and builder across...",
+        fullBio: `James R. Quinlan serves as a student leader, organizer, and builder across multiple mission-driven initiatives. He is the Founder and former President of the Voices of Equity undergraduate chapter at Cornell, where he helped in developing the Voices of Equity Undergraduate Framework and expanding Voices of Equity across the Cornell campus. 
+
+        In this role, he focuses on translating mission into action through clear organization, thoughtful outreach, and sustainable systems that allow student leaders to execute meaningful work at scale.
+
+        Outside of Voices of Equity, James is a practicing EMT and Firefighter, serving his community in fast-paced, high-responsibility environments that demand composure, teamwork, and decisive action. Through this work, he has developed a strong sense of accountability, clear communication under pressure, and an ability to translate training into meaningful service during moments of crisis. 
+        These experiences reflect his broader commitment to service, preparedness, and showing up for others when it matters most, qualities that shape both his leadership and his approach to his academic and professional goals.
+        At the core of his work is a commitment to equity, service, and thoughtful execution — using student leadership as a platform to build practical, scalable initiatives that strengthen both campus community and broader social impact.
+        .`,
+        email: "voicesofequity.cornell@gmail.com",
+        linkedin: ""
+      }
+    ] satisfies TeamMember[],
+    engineers: [
+      {
+        id: "tyler-yang",
+        name: "Tyler Yang",
+        role: "Software Developer",
+        image: "/tyler.jpg",
+        shortBio: "Coming Soon",
+        fullBio: `Coming Soon`,
+        email: "tyleryang2268@gmail.com",
+        linkedin: "https://www.linkedin.com/in/tyler-yang-88841b289/"
+      },
+      {
+        id: "arnab-ghosh",
+        name: "Arnab Ghosh",
+        role: "Software Developer",
+        image: "/tyler.jpg",
+        shortBio: "Coming Soon",
+        fullBio: `Coming Soon`,
+        email: "arnabcare21@gmail.com",
+        linkedin: "https://www.linkedin.com/in/arnab-ghosh819/"
+      }
+    ] satisfies Engineer[]
+    ,
+      Outreach: [
+      {
+        id: "grace-chen",
+        name: "Grace Chen",
+        role: "National Director of Outreach",
+        image: "/grace-new.jpg",
+        shortBio: "Grace works to create lasting positive change..",
+        fullBio: `Grace Chen is a sophomore at Cornell University and a Meinig Family Cornell National Scholar. She serves as the National Director of Outreach for Voices of Equity, where she leads national expansion efforts, maintains communication across undergraduate chapters, and works to build sustainable outreach structures that support health equity initiatives at scale.
+
+        Grace is deeply interested in the intersection of science, policy, and health equity. She conducts plant developmental biology research in the Roeder Lab, studying iron and reactive oxygen species (ROS) interactions and their role in mitochondrial dysfunction – mechanisms that parallel those implicated in neurodegenerative diseases such as Alzheimer’s. 
+        
+        In addition, Grace is also a Policy and Practices Subteam Lead for Cornell iGEM, where she conducts interview-based research with policy experts to examine the ethical, regulatory, and societal implications of synthetic biology. Across her research and leadership roles, Grace is motivated by a commitment to equity-driven science and believes that advancing health equity requires both rigorous scientific inquiry and intentional community-centered leadership.`,
+        email: "Gyc23@cornell.edu",
+        linkedin: "https://www.linkedin.com/in/grace-chen-192024245/"
+      },
+      {
+        id: "monique-lavoie",
+        name: "Monique Lavoie",
+        role: "Outreach Undergraduate Liaison",
+        image: "/Monique.jpg",
+        shortBio: "Monique brings extensive experience..",
+        fullBio: `Monique Lavoie is a junior Biology major with double minors in Spanish and Chemistry from Old Lyme, Connecticut. She serves as the Undergraduate Liaison for the Voices of Equity National Outreach Committee.
+
+
+        She brings extensive experience coordinating outreach initiatives, including her role as a Site Coordinator for the largest student-led undergraduate Alternative Spring Break program in the country. In addition, she currently serves as the Outreach Director and President of the Howard University Voices of Equity Chapter. Health equity is central to her commitment to community service, and she is deeply driven by the belief that everyone deserves access to the resources necessary to thrive.
+`,
+        email: "",
+        linkedin: ""
+      },
+    ] satisfies Outreach[],
+    Education: [
+      {
         id: "eliza-dow",
         name: "Eliza Dow",
         role: "National Director of Education",
         image: "/eliza.jpg",
         shortBio: "Eliza Dow is a junior at Cornell University, studying Biology and Society..",
-        fullBio: `Eliza Dow is a junior at Cornell University, studying Biology and Society in the College of Arts and Sciences. She is deeply passionate about health equity, particularly in the context of inclusive clinical trial practices and policies that improve healthcare outcomes for historically disadvantaged populations. Eliza hopes to use her passion to educate others on equitable practices within and beyond 
-        healthcare. She aims to teach future healthcare professionals to recognize how policies and practices can either help or harm their patients, empower patients to understand and advocate for their rights, and drive meaningful change in medicine by highlighting critical perspectives on healthcare and health equity.
+        fullBio: `Eliza Dow serves as the National Director of Education. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. With the Associate Director of Education Vijay, she oversees the Equity Archive. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its relevance not only in healthcare but in all aspects of life.
 
-        At Voices of Equity, Eliza serves as the National Director of Education and the Director of Education for the Cornell chapter. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its 
-        relevance not only in healthcare but in all aspects of life.
 
-        Beyond her work with Voices of Equity, Eliza is a certified EMT and has volunteered in hospital settings. She is also an editor for The Healthcare Review at Cornell University, a member of the pre-medical fraternity Phi Delta Epsilon, and plays for Cornell Women's Club Lacrosse. Additionally, she previously served as the Vice President of Member Education for Cornell's Delta Gamma sorority. With extensive experience in
-        developing educational materials and teaching about diverse communities, she brings invaluable expertise to Voices of Equity's mission.`,
+        She will be graduating from Cornell University in May 2026, and is intending on pursuing a Masters in Health Administration immediately after graduation. She is currently studying Biology and Society in the College of Arts and Sciences. She is deeply passionate about health equity, particularly in the context of inclusive clinical trial practices and policies that improve healthcare outcomes for historically disadvantaged populations. Eliza hopes to use her passion to educate others on equitable practices within and beyond healthcare. She aims to teach future healthcare professionals to recognize how policies and practices can either help or harm their patients, empower patients to understand and advocate for their rights, and drive meaningful change in medicine by highlighting critical perspectives on healthcare and health equity.
+
+
+        Beyond her work with Voices of Equity, she has held many leadership positions, including having been a biochemistry teaching assistant, currently a lead volunteer at the Emergency Department at Cayuga Medical Center, and captain of the Cornell Women’s Club Lacrosse team. At her sorority, the Chi chapter of Delta Gamma at Cornell, she has served as Vice President of Member Education, junior Honor Board member, and director of special events.  She is also a certified EMT, an editor for The Healthcare Review at Cornell University, and a member of the pre-medical fraternity Phi Delta Epsilon. Additionally, she previously served as the. With extensive experience in developing educational materials, teaching about diverse communities, and efficient team management skills, she brings invaluable expertise to Voices of Equity's mission.
+`,
         email: "Ed497@cornell.edu",
         linkedin: "https://www.linkedin.com/in/eliza-dow-44815324a/"
       },
-      {
-        id: "adam-jac",
-        name: "Adam Jac",
-        role: "National Director of Philanthropy",
-        image: "/adam-new.jpg",
-        shortBio: "Adam is committed to leverage philanthropy, research...",
-        fullBio: `Adam Jac is an undergraduate student at Cornell University, studying Biological Sciences with plans to complete a master's in Biomedical Engineering before pursuing medical school.
-        
-        Passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical experience to drive meaningful change in healthcare access and outcomes.
-        As the Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives that align with the organization's mission to address systemic health disparities. 
-        
-        He designs and oversees large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with chapters to execute impactful philanthropic events. Additionally, he plays a key role in developing 
-        partnerships with organizations that support Voices of Equity's philanthropic goals, ensuring sustainable funding for health equity initiatives.
+    {
+      id: "vijay-jagarapu",
+      name: "Vijay Jagarapu",
+      role: "Associate Director of Education",
+      image: "/vijay.png",
+      shortBio: "Vijay is passionate about making healthcare more accessible..",
+      fullBio: `Vijay Jagarapu is an undergraduate at Cornell University studying Biological Sciences on the premedical track, with a concentration in computational biology. He aims to learn more about emerging neurotechnologies to improve care for individuals with psychiatric and neurological disorders.
 
-        Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary care settings, gaining first hand exposure to the challenges patients face in accessing 
-        care. He conducts clinical research with the Department of Plastic Surgery at Beth Israel Deaconess Medical Center and has started a project at the DeLisa Research Group at Cornell, where he has received two grants to continue 
-        testing ubiquibodies in cancer research. His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.`,
-        email: "Aj439@cornell.edu",
-        linkedin: "https://www.linkedin.com/in/adam-jac-41a833299/"
-      },
+
+    Outside of his studies, Vijay volunteers as a firefighter and EMT and works directly with patients with psychiatric disorders in a hospital setting. At the Cornell Life History Lab, he studies how early-life environments, stress, and social nutrition shape brain development and behavior.
+
+
+    Vijay is passionate about making healthcare more accessible. Through Voices of Equity, he serves as the Associate Director of Education and is responsible for building the Equity Archive to expand access to health equity information. Through the integration of medicine and engineering, Vijay aspires to develop innovative solutions that broaden access to care.
+
+`,
+      email: "",
+      linkedin: ""
+    },
+    ] satisfies Education[],
+    Media_team: [
       {
         id: "jennifer-zhu",
         name: "Jennifer Zhu",
@@ -263,19 +335,80 @@ export const whoWeArePage = {
         linkedin: "https://www.linkedin.com/in/jennifer-zhu-a741221a8/"
       },
       {
-        id: "grace-chen",
-        name: "Grace Chen",
-        role: "National Director of Outreach",
-        image: "/grace-new.jpg",
-        shortBio: "Grace works to create lasting positive change..",
-        fullBio: `Grace Chen is a sophomore at Cornell University and a Meinig Family Cornell National Scholar. She serves as the National Director of Outreach for Voices of Equity, where she leads national expansion efforts, maintains communication across undergraduate chapters, and works to build sustainable outreach structures that support health equity initiatives at scale.
-
-        Grace is deeply interested in the intersection of science, policy, and health equity. She conducts plant developmental biology research in the Roeder Lab, studying iron and reactive oxygen species (ROS) interactions and their role in mitochondrial dysfunction – mechanisms that parallel those implicated in neurodegenerative diseases such as Alzheimer’s. 
+        id: "gbemi-soneye",
+        name: "Gbemi Soneye",
+        role: "Media Undergraduate Liaison",
+        shortBio: "Gbemi Soneye is a Karsh STEM Scholar and Honors student..",
+        image: "/gbemi.jpg",
+        fullBio: `Gbemi Soneye is a Karsh STEM Scholar and Honors student at Howard University, where she pursues interdisciplinary training at the intersection of neuroscience, public health, and translational science.
+        As a Karsh Scholar, a distinction awarded to outstanding students demonstrating exceptional promise in science and leadership, Gbemi has cultivated a foundation in research, service, and innovation. She is deeply 
+        committed to understanding the structural determinants of health and translating knowledge into actionable solutions for health disparities.
         
-        In addition, Grace is also a Policy and Practices Subteam Lead for Cornell iGEM, where she conducts interview-based research with policy experts to examine the ethical, regulatory, and societal implications of synthetic biology. Across her research and leadership roles, Grace is motivated by a commitment to equity-driven science and believes that advancing health equity requires both rigorous scientific inquiry and intentional community-centered leadership.`,
-        email: "Gyc23@cornell.edu",
-        linkedin: "https://www.linkedin.com/in/grace-chen-192024245/"
+        
+
+        Gbemi brings extensive experience in research, leadership, and science communication. She has conducted neuroscience and public health research at MD Anderson Cancer Center and Howard University
+        
+        
+
+
+        Across her work, Gbemi strives to integrate research, policy, and community engagement to drive meaningful, equity-focused change in the field of public health. 
+        `,
+        email: "",
+        linkedin: ""
       },
+    ] satisfies Media[],
+    Philanthrophy: [
+      {
+        id: "adam-jac",
+        name: "Adam Jac",
+        role: "National Director of Philanthropy",
+        image: "/adam-new.jpg",
+        shortBio: "Adam is committed to leverage philanthropy, research...",
+        fullBio: `Adam Jac is a masters student at Cornell University in Biomedical Engineering and plans on pursuing medical school. 
+        He is passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical 
+        experience to drive meaningful change in healthcare access and outcomes. 
+        As the National Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives such as National Health 
+        Equity Week and the CARE packet project that align with the organization's mission to address systemic health disparities. 
+        He designs and oversees large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with 
+        chapters to execute impactful philanthropic events. 
+        Additionally, he plays a key role in developing partnerships with organizations that support Voices of Equity's philanthropic goals,
+        ensuring sustainable funding for health equity initiatives.
+
+
+
+        Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary
+         care settings, gaining first hand exposure to the challenges patients face in accessing care. 
+        He conducts clinical research with the Department of Plastic Surgery at Beth Israel Deaconess Medical Center and has started a project at 
+        the DeLisa Research Group at Cornell, where he has received two grants to continue testing ubiquibodies in cancer research. 
+        His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.
+        `,
+        email: "Aj439@cornell.edu",
+        linkedin: "https://www.linkedin.com/in/adam-jac-41a833299/"
+      },
+      {
+        id: "lucas-santos",
+        name: "Lucas Santos",
+        role: "Philanthropy Undergraduate Liaison",
+        image: "/lucas.png",
+        shortBio: "Lucas currently serves as the National Philanthropy Liaison...",
+        fullBio: `
+        Lucas Santos is a third-year Biology major with minors in Chemistry and Spanish at Howard University. She is deeply committed to advancing health equity through community-based initiatives, culturally competent care, and public health advocacy.
+
+
+        Lucas currently serves as the National Philanthropy Liaison and the Director of Philanthropy for her chapter, where she leads fundraising efforts to support local health equity initiatives and acts as a liaison between undergraduate chapters and the national executive board. Her work focuses on mobilizing resources to address structural health disparities and supporting mission-aligned community organizations.
+
+
+        Her academic and experiential background includes global health and medical Spanish training, with experience in patient communication and public health challenges in underserved and rural communities. Lucas has participated in biomedical research, including published work on cardiovascular biomechanics, and remains actively engaged in service through food access programs, science education, and equity-focused student organizations.
+
+
+        Through her interdisciplinary training and leadership, Lucas is dedicated to promoting equitable access to healthcare and improving health outcomes for marginalized populations.
+
+        `,
+        email: "",
+        linkedin: ""
+      }
+    ] satisfies Philanthrophy[],
+      VOX: [
       {
         id: "angie-ayoubi",
         name: "Angie Ayoubi",
@@ -308,40 +441,33 @@ export const whoWeArePage = {
         email: "Angie_ai@mit.edu",
         linkedin: "https://www.linkedin.com/in/angie-ayoubi-67876a245/"
       },
-      {
-        id: "jimmy-quinlan",
-        name: "Jimmy Quinlan",
-        role: "Executive Director",
-        image: "/logo-new.png",
-        shortBio: "Jimmy Quinlan serves as Executive Director of Voices of Equity.",
-        fullBio: `Jimmy Quinlan serves as Executive Director of Voices of Equity, where he plays a key role in advancing the organization's mission to educate, inspire, and empower communities on health equity issues. In his role, he works to coordinate national initiatives, support chapter development, and strengthen partnerships that drive meaningful impact.
-
-        Jimmy is committed to building sustainable systems and fostering collaboration across the organization's growing network of student leaders. His leadership helps advance Voices of Equity's vision of creating a more equitable healthcare system through community-based action and education.`,
-        email: "voicesofequity.cornell@gmail.com",
+            {
+        id: "rhea-saranth",
+        name: "Rhea Saranath",
+        role: "VOX Equity Co-Director",
+        image: "/rhea.jpg",
+        shortBio: "Rhea’s work reflects a consistent commitment to....",
+        fullBio: `Rhea Saranath is a student at Tulane University studying Public Health, on the Pre-Med track. 
+        Her academic and professional interests sit at the intersection of health equity, science, and policy, 
+        shaped by experiences spanning clinical medicine, global community health, neuroscience research, and sustainability-focused business development. 
+        From founding and scaling a nonprofit addressing hygiene poverty to working in sports medicine with Tulane Athletics and conducting neuroimaging research on premature brain injury, Rhea’s work reflects a consistent commitment to translating knowledge into impact.
+         She is particularly drawn to spaces where data, compassion, and systems-level thinking converge—whether in public health, medicine, or global development—and approaches her work with both rigor and humanity. `,
+        email: "",
         linkedin: ""
-      }
-    ] satisfies TeamMember[],
-    engineers: [
-      {
-        id: "tyler-yang",
-        name: "Tyler Yang",
-        role: "Software Developer",
-        image: "/tyler.jpg",
-        shortBio: "Coming Soon",
-        fullBio: `Coming Soon`,
-        email: "tyleryang2268@gmail.com",
-        linkedin: "https://www.linkedin.com/in/tyler-yang-88841b289/"
       },
-      {
-        id: "arnab-ghosh",
-        name: "Arnab Ghosh",
-        role: "Software Developer",
-        image: "/tyler.jpg",
-        shortBio: "Coming Soon",
-        fullBio: `Coming Soon`,
-        email: "arnabcare21@gmail.com",
-        linkedin: "https://www.linkedin.com/in/arnab-ghosh819/"
-      }
-    ] satisfies Engineer[]
+            {
+        id: "conner-entenberg",
+        name: "Conner Entenberg",
+        role: "VOX Equity Co-Director",
+        image: "/conner.jpg",
+        shortBio: "Conner's work centers around translating scientific advances into....",
+        fullBio: `Conner Entenberg is a pre-medical student at Binghamton University with a focus on bridging biomedical research and health equity. 
+        His research experience spans immunology and oncology, and includes his time investigating chemotherapy's effects on thymic function at Albert Einstein College of Medicine, his work researching anti-tuberculosis drugs’ impact on the liver, 
+        and his use of bioprinted tumor models to better understand immuno-oncology. He also works directly with patients as a dental assistant. 
+        Both clinically and in a laboratory, Conner's work centers around translating scientific advances into improved healthcare outcomes for all patients, especially underserved populations. `,
+        email: "",
+        linkedin: ""
+      },
+    ] satisfies VOX[],
   }
 }
