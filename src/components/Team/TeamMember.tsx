@@ -28,7 +28,7 @@ const TeamMember = ({
   return (
     <div
       onClick={() => router.push(`/who-we-are/team/${id}`)}
-      className="flex w-72 cursor-pointer flex-col items-center space-y-4 rounded-lg bg-white/60 p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-lg gap-x-10"
+      className="flex h-full w-72 cursor-pointer flex-col items-center space-y-4 rounded-lg bg-white/60 p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-lg gap-x-10"
     >
       <div className="h-32 w-32 overflow-hidden rounded-full relative">
         <Image 
@@ -43,7 +43,7 @@ const TeamMember = ({
         <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
         <p className="text-[#607AD4]">{role}</p>
       </div>
-      <p className="line-clamp-3 text-center text-gray-600">{shortBio}</p>
+      <p className="min-h-[4.5rem] line-clamp-3 text-center text-gray-600">{shortBio}</p>
       <div className="flex flex-row">
         {email && (
           <div className="flex space-x-4" onClick={(e) => e.stopPropagation()}>

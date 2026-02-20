@@ -412,7 +412,7 @@ export const whoWeArePage = {
       {
         id: "angie-ayoubi",
         name: "Angie Ayoubi",
-        role: "Think Tank Director",
+        role: "Vox Equity Executive Director",
         image: "/angie.PNG",
         shortBio: "Angie believes healthcare and medicine....",
         fullBio: `Angie Ayoubi is a biological engineer and premed at MIT. She is motivated by the
