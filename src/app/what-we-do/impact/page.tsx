@@ -33,7 +33,7 @@ export default function ImpactPage() {
           <div className="lg:col-span-6 text-left">
             <p className="text-xs uppercase tracking-[0.35em] text-[#607AD4] mb-4">Impact</p>
             <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight">
-              55+ chapters. 60,000+ views. 350+ active members.
+              55+ chapters. 60,000+ views. 400+ active members.
             </h1>
             <p className="mt-4 text-base md:text-lg text-gray-600">
               Our impact is measured in moments of learning, care, and connection — and in the
@@ -49,7 +49,7 @@ export default function ImpactPage() {
                 <div className="text-sm text-gray-500">Views</div>
               </div>
               <div className="rounded-xl border border-[#607AD4]/20 bg-white/80 p-4 shadow-sm backdrop-blur">
-                <div className="text-2xl font-semibold text-[#607AD4]">350+</div>
+                <div className="text-2xl font-semibold text-[#607AD4]">400+</div>
                 <div className="text-sm text-gray-500">Active Members</div>
               </div>
             </div>

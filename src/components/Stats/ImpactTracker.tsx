@@ -4,7 +4,7 @@ import Link from 'next/link';
 const impactStats = [
     { label: 'Amount Raised', value: '$40K+', numericValue: 40, unit: 'K+', prefix: '$', subtext: 'For Health Equity Initiatives' },
     { label: 'VoE Grant Funding', value: '$1000+', numericValue: 1000, unit: '+', prefix: '$', subtext: 'Distributed' },
-    { label: 'Campuses Engaged', value: '50+', numericValue: 50, unit: '+', prefix: '', subtext: 'Across North America' },
+    { label: 'Campuses Engaged', value: '55+', numericValue: 55, unit: '+', prefix: '', subtext: 'Across North America' },
     { label: 'Members Involved', value: '400+', numericValue: 400, unit: '+', prefix: '', subtext: 'Active Members' },
     { label: 'Students Reached', value: '1000+', numericValue: 1000, unit: '+', prefix: '', subtext: 'Through Educational Programming' },
 ];

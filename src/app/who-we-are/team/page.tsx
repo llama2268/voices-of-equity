@@ -25,8 +25,10 @@ export default function TeamPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-2">Education Team</h2>
+              <div className="mb-8 flex justify-center">
+                <div className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-6 py-2 shadow-sm">
+                  <h2 className="text-3xl font-bold text-gray-900">Education</h2>
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
                 {Education?.map((education_member) => (
@@ -36,8 +38,10 @@ export default function TeamPage() {
             </div>
 
             <div>
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-2">Philanthropy Team</h2>
+              <div className="mb-8 flex justify-center">
+                <div className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-6 py-2 shadow-sm">
+                  <h2 className="text-3xl font-bold text-gray-900">Philanthropy</h2>
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
                 {Philanthrophy?.map((phil_member) => (
@@ -47,8 +51,10 @@ export default function TeamPage() {
             </div>
 
             <div>
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-2">Outreach Team</h2>
+              <div className="mb-8 flex justify-center">
+                <div className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-6 py-2 shadow-sm">
+                  <h2 className="text-3xl font-bold text-gray-900">Outreach</h2>
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
                 {Outreach?.map((outreach_member) => (
@@ -58,8 +64,10 @@ export default function TeamPage() {
             </div>
 
             <div>
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-2">Media Team</h2>
+              <div className="mb-8 flex justify-center">
+                <div className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-6 py-2 shadow-sm">
+                  <h2 className="text-3xl font-bold text-gray-900">Media</h2>
+                </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
                 {Media_team?.map((Media) => (
@@ -71,7 +79,7 @@ export default function TeamPage() {
 
           <div>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">VOX Equity Team</h2>
+              <h2 className="text-3xl font-bold mb-4">VOX Equity</h2>
             </div>
             {/* <div className = "flex justify-center"> */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center max-w-6xl mx-auto">
