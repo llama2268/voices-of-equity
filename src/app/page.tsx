@@ -293,7 +293,7 @@ export default function HomePage() {
               href: "/get-involved/start"
             }}
             variant="resources"
-            className="bg-white text-gray-900"
+            className="bg-white/80 text-gray-900 border border-white/70 shadow-[0_20px_50px_-35px_rgba(73,139,134,0.35)] backdrop-blur"
           />
         </div>
       </Section>
@@ -344,7 +344,6 @@ export default function HomePage() {
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
         </div>
-        
         <div className="max-w-7xl mx-auto px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
           <p className="text-xl mb-8 text-white/95 max-w-2xl mx-auto">

@@ -12,49 +12,45 @@ interface ChapterReflectionsProps {
 export function ChapterReflections({ reflections, title = "Chapter Reflections", subtitle = "Fall 2025" }: ChapterReflectionsProps) {
   return (
     <div className="w-full">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-3 text-center text-gray-900">{title}</h2>
-        {subtitle && <p className="text-gray-600 text-center text-xl mb-4">{subtitle}</p>}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center text-gray-900">{title}</h2>
+        {subtitle && <p className="text-gray-600 text-center text-base mb-2">{subtitle}</p>}
       </div>
 
       {/* Horizontal scrollable container */}
       <div className="w-full overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-        <div className="flex gap-8 px-4 md:px-8">
+        <div className="flex gap-5 px-4 md:px-8">
           {reflections.map((reflection, index) => (
             <div
               key={index}
-              className="snap-center flex-shrink-0 bg-gray-50 rounded-xl p-8 md:p-12"
-              style={{
-                width: reflection.images.length > 0 ? '1000px' : '700px',
-                maxWidth: '90vw'
-              }}
+              className="snap-center flex-shrink-0 bg-gray-50 rounded-xl p-5 md:p-6 w-[560px] max-w-[86vw] min-h-[300px] border border-gray-100"
             >
               <div className="flex flex-col md:flex-row gap-8 h-full">
                 {/* Text Content */}
                 <div className={`flex flex-col justify-center ${reflection.images.length > 0 ? 'md:w-1/2' : 'w-full'}`}>
                   {/* President Info */}
-                  <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-3 mb-5">
                     {reflection.president.headshot && (
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary-400 shadow-md flex-shrink-0">
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden border border-primary-400/70 shadow-sm flex-shrink-0">
                         <Image
                           src={reflection.president.headshot}
                           alt={reflection.president.name}
                           fill
                           className="object-cover"
-                          sizes="64px"
+                          sizes="48px"
                         />
                       </div>
                     )}
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{reflection.chapterName}</h3>
-                      <p className="text-primary-600 font-semibold">{reflection.president.name}</p>
-                      <p className="text-gray-600 text-sm">{reflection.president.title}</p>
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900">{reflection.chapterName}</h3>
+                      <p className="text-primary-600 font-semibold text-xs md:text-sm">{reflection.president.name}</p>
+                      <p className="text-gray-600 text-xs">{reflection.president.title}</p>
                     </div>
                   </div>
 
                   {/* Quote */}
                   <blockquote className="border-l-4 border-primary-600 pl-6">
-                    <p className="text-lg md:text-xl lg:text-2xl text-gray-800 font-serif italic leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-800 font-serif italic leading-relaxed line-clamp-5">
                       &quot;{reflection.quote}&quot;
                     </p>
                   </blockquote>

@@ -21,7 +21,7 @@ export const whatWeDoPage = {
           headshot: "/ithacacollege/ayaoulida_headshot.jpg"
         },
         quote: "I learned that even a small impact can go a long way. What began as a small medical community at IC ultimately came together to be part of something much bigger. I truly enjoyed working alongside people who were eager to learn more. The collaborative process itself was rewarding, and the encouragement and support from the professor played a significant role in motivating our work. Looking ahead, we hope to collaborate with the Binghamton and Cornell chapters to furthering improve the medical experience for local communities at Guthrie and Cayuga Medical Center- whether through increased transportation access or by empowering patients with a better understanding of what they deserve when receiving medical care.",
-        images: ["/ithacacollege/IC_promo.png"],
+        images: ["/ithacacollege/IC_promo.PNG"],
         semester: "Fall 2025",
         featured: true
       },
@@ -110,7 +110,7 @@ export const whatWeDoPage = {
         images: [
           { src: "/media/10.jpeg", alt: "Tabling at CMU", caption: "Carnegie Mellon University" },
           { src: "/media/11.jpeg", alt: "Tabling at Amherst", caption: "Amherst College" },
-          { src: "/media/12.jpeg", alt: "Tabling at Binghamton", caption: "Binghamton University" }
+          { src: "/media/12.png", alt: "Tabling at Binghamton", caption: "Binghamton University" }
         ]
       },
       {
@@ -127,7 +127,7 @@ export const whatWeDoPage = {
         title: "Empowerment",
         description: "Our student leaders are dedicated to creating welcoming spaces where peers feel empowered to learn, connect, and take action toward health equity. Stop by a Voices of Equity table on your campus to explore how you can get involved!",
         images: [
-          { src: "/media/17.jpeg", alt: "Student Empowerment" },
+          { src: "/media/17.png", alt: "Student Empowerment" },
           { src: "/media/18.jpg", alt: "Community Connection" }
         ]
       },
