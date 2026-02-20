@@ -37,31 +37,173 @@ export default function HomePage() {
 
   return (
     <PageLayout fullWidth>
-      <Hero
-        title={homePage.hero.title}
-        description={homePage.hero.description}
-      />
+      <style jsx>{`
+        @keyframes voeFloat {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
+        @keyframes voeGlow {
+          0% { opacity: 0.35; }
+          50% { opacity: 0.6; }
+          100% { opacity: 0.35; }
+        }
+        @keyframes voePan {
+          0% { transform: scale(1.02); }
+          50% { transform: scale(1.06); }
+          100% { transform: scale(1.02); }
+        }
+        @keyframes voeFadeUp {
+          0% { opacity: 0; transform: translateY(18px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes voePop {
+          0% { opacity: 0; transform: scale(0.96); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes voeOrbit {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes voeMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .voe-float {
+          animation: voeFloat 10s ease-in-out infinite;
+        }
+        .voe-glow {
+          animation: voeGlow 8s ease-in-out infinite;
+        }
+        .voe-pan {
+          animation: voePan 14s ease-in-out infinite;
+        }
+        .voe-fade-up {
+          animation: voeFadeUp 700ms ease-out both;
+        }
+        .voe-pop {
+          animation: voePop 650ms ease-out both;
+        }
+        .voe-delay-1 { animation-delay: 120ms; }
+        .voe-delay-2 { animation-delay: 240ms; }
+        .voe-delay-3 { animation-delay: 360ms; }
+        .voe-delay-4 { animation-delay: 480ms; }
+        .voe-delay-5 { animation-delay: 600ms; }
+        .voe-delay-6 { animation-delay: 720ms; }
+        .voe-marquee {
+          animation: voeMarquee 62s linear infinite;
+          will-change: transform;
+        }
+        .voe-orbit {
+          position: relative;
+          height: 440px;
+        }
+        .voe-orbit-spin {
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          width: 100%;
+          height: 100%;
+          animation: voeOrbit 22s linear infinite;
+        }
+        .voe-orbit-item {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));
+        }
+        .voe-orbit-item-inner {}
+      `}</style>
+      <div className="voe-fade-up relative">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#607AD4]/15 via-white/30 to-[#498B86]/15" />
+        <Hero
+          title={homePage.hero.title}
+          description={homePage.hero.description}
+        />
+      </div>
 
-      <Section variant="alternate">
-        <div className="text-center mb-12">
-          {/* <p className="font-serif text-lg text-primary-600 mb-3 italic">
-            Our Purpose
-          </p> */}
-          <h2 className="text-3xl font-bold mb-6">{mission.heading}</h2>
-          <p className="font-serif text-xl md:text-2xl text-gray-800 italic leading-relaxed max-w-3xl mx-auto mb-12">
-            {mission.text}
-          </p>
+      {/* Hero Mosaic */}
+      <section className="relative -mt-6 pb-16 overflow-hidden">
+        <div className="relative w-full">
+          <div className="relative overflow-hidden px-2 sm:px-4">
+            <div className="flex gap-6 w-max voe-marquee">
+              {(() => {
+                const images = [
+                  '/impact-stories.jpeg',
+                  '/local-initiatives.jpeg',
+                  '/paintingtry.jpg',
+                  '/team-picture.jpg',
+                  '/hero-image-new.png',
+                  '/our-vision-2.png',
+                  '/empower.jpg',
+                  '/voe-journey.jpeg',
+                  '/cornell-chapter.jpg',
+                  '/home-resources.jpg',
+                  '/our-history-1.png',
+                  '/hero-new.jpeg',
+                ];
+                return [...images, ...images].map((src, idx) => (
+                  <div key={`${src}-${idx}`} className="relative h-48 sm:h-56 md:h-72 w-72 md:w-96 lg:w-[26rem] flex-shrink-0 rounded-2xl overflow-hidden shadow-[0_18px_50px_-30px_rgba(96,122,212,0.45)]">
+                    <Image src={src} alt="" fill className="object-cover" sizes="(max-width: 768px) 70vw, 30vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+                  </div>
+                ));
+              })()}
+            </div>
+          </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {missionPoints.map((point, index) => (
-            <Card key={index} className="text-center">
-              <div className="text-primary-500 mb-4 flex justify-center">{point.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{point.title}</h3>
-              <p className="text-gray-600">{point.description}</p>
-            </Card>
-          ))}
+      </section>
+
+      <Section variant="alternate" className="relative overflow-hidden">
+        <div className="absolute -top-24 right-0 h-64 w-64 rounded-full bg-white blur-3xl voe-glow" />
+        <div className="absolute -bottom-28 left-0 h-64 w-64 rounded-full bg-white blur-3xl voe-float" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-4">
+            {/* <p className="font-serif text-lg text-primary-600 mb-3 italic">
+              Our Purpose
+            </p> */}
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#607AD4] voe-fade-up">{mission.heading}</h2>
+            <p className="font-semibold text-gray-900 leading-tight text-1xl md:text-2xl voe-fade-up voe-delay-2">
+              {mission.text}
+            </p>
+          </div>
+          <div className="lg:col-span-8">
+            <div className="grid gap-8 md:grid-cols-3">
+              {missionPoints.map((point, index) => (
+                <Card
+                  key={index}
+                  className="text-center transition-transform duration-500 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="text-primary-500 mb-4 flex justify-center">{point.icon}</div>
+                  <h3 className="text-lg font-bold mb-2 text-[#607AD4]">{point.title}</h3>
+                  <p className="text-sm text-gray-600">{point.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
+
+      <div className="relative h-24 sm:h-32 overflow-hidden bg-gray-50">
+        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1440 160" preserveAspectRatio="none">
+          <path
+            fill="#F9FAFB"
+            d="M0,80 C180,60 360,40 540,55 C720,70 900,120 1080,120 C1260,120 1350,95 1440,80 L1440,160 L0,160 Z"
+          />
+          <path
+            fill="#BFD3F1"
+            d="M0,95 C200,115 380,130 560,120 C740,110 900,70 1080,70 C1260,70 1350,90 1440,100 L1440,160 L0,160 Z"
+          />
+          <path
+            fill="#8FB0E6"
+            d="M0,115 C210,90 420,75 600,95 C780,115 960,140 1140,135 C1320,130 1380,120 1440,110 L1440,160 L0,160 Z"
+          />
+          <path
+            fill="#607AD4"
+            d="M0,130 C220,150 440,160 620,150 C800,140 980,110 1160,110 C1340,110 1400,125 1440,135 L1440,160 L0,160 Z"
+          />
+        </svg>
+      </div>
 
       {/* Carousel Section */}
       <Section title="" className="bg-[#607AD4]">
@@ -76,7 +218,7 @@ export default function HomePage() {
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {/* Instagram Slide */}
-              <div className="w-full flex-shrink-0">
+              <div className="min-w-full flex-none">
                 <div className="relative h-96 md:h-[500px]">
                   <div
                     aria-hidden
@@ -86,7 +228,7 @@ export default function HomePage() {
                   <span className="sr-only">Follow our Instagram</span>
                   <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white max-w-4xl mx-auto px-8">
+                    <div className="text-center text-white max-w-4xl mx-auto px-8 voe-fade-up">
                       <div className="mb-4">
                         <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                           Instagram
@@ -105,13 +247,13 @@ export default function HomePage() {
               </div>
 
               {/* National Initiatives Slide */}
-              <div className="w-full flex-shrink-0">
+              <div className="min-w-full flex-none">
                 <div className="relative h-96 md:h-[500px]">
                   <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/paintingtry.jpg')", backgroundPosition: 'center 45%' }} />
                   <span className="sr-only">National Initiatives</span>
                   <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white max-w-4xl mx-auto px-8">
+                    <div className="text-center text-white max-w-4xl mx-auto px-8 voe-fade-up voe-delay-2">
                       <div className="mb-4">
                         <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                           Programs
@@ -130,13 +272,13 @@ export default function HomePage() {
               </div>
 
               {/* Local Initiatives Slide */}
-              <div className="w-full flex-shrink-0">
+              <div className="min-w-full flex-none">
                 <div className="relative h-96 md:h-[500px]">
                   <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/local-initiatives.jpeg')", backgroundPosition: 'center 30%' }} />
                   <span className="sr-only">Local Initiatives</span>
                   <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white max-w-4xl mx-auto px-8">
+                    <div className="text-center text-white max-w-4xl mx-auto px-8 voe-fade-up voe-delay-3">
                       <div className="mb-4">
                         <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                           Community
@@ -155,14 +297,14 @@ export default function HomePage() {
               </div>
 
               {/* Impact Stories Slide */}
-              <div className="w-full flex-shrink-0">
+              <div className="min-w-full flex-none">
                 <Link href="/what-we-do/impact" className="block">
                   <div className="relative h-96 md:h-[500px]">
                     <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/impact-stories.jpeg')", backgroundPosition: 'center 45%' }} />
                     <span className="sr-only">Impact Stories</span>
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-white max-w-4xl mx-auto px-8">
+                      <div className="text-center text-white max-w-4xl mx-auto px-8 voe-fade-up voe-delay-4">
                         <div className="mb-4">
                           <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                             Stories
@@ -182,14 +324,14 @@ export default function HomePage() {
               </div>
 
               {/* Our Chapters Slide */}
-              <div className="w-full flex-shrink-0">
+              <div className="min-w-full flex-none">
                 <Link href="/get-involved/chapters" className="block">
                   <div className="relative h-96 md:h-[500px]">
                     <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/cornell-chapter.jpg')", backgroundPosition: 'center 30%' }} />
                     <span className="sr-only">Our Chapters</span>
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#607AD4]/60 to-[#498B86]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-white max-w-4xl mx-auto px-8">
+                      <div className="text-center text-white max-w-4xl mx-auto px-8 voe-fade-up voe-delay-5">
                         <div className="mb-4">
                           <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                             Chapters
@@ -209,14 +351,14 @@ export default function HomePage() {
               </div>
 
               {/* Resources Slide */}
-              <div className="w-full flex-shrink-0">
+              <div className="min-w-full flex-none">
                 <Link href="/resources" className="block">
                   <div className="relative h-96 md:h-[500px]">
                     <div aria-hidden className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: "url('/home-resources.jpg')", backgroundPosition: 'center 30%' }} />
                     <span className="sr-only">Our Resources</span>
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#498B86]/60 to-[#607AD4]/60 backdrop-blur-sm" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-white max-w-4xl mx-auto px-8">
+                      <div className="text-center text-white max-w-4xl mx-auto px-8 voe-fade-up voe-delay-6">
                         <div className="mb-4">
                           <span className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-full text-sm font-medium border border-white/30">
                             Education
@@ -271,8 +413,12 @@ export default function HomePage() {
       </Section>
 
       {/* Callouts with accent background */}
-      <Section className="bg-gradient-to-r from-[#607AD4]/10 to-[#498B86]/10">
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <Section className="relative overflow-hidden bg-gradient-to-br from-[#607AD4]/10 via-white to-[#498B86]/10">
+        <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[#607AD4]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-28 left-0 h-80 w-80 rounded-full bg-[#498B86]/15 blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#607AD4]/50 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#498B86]/50 to-transparent" />
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto relative z-10">
           <Callout
             eyebrow="Meet Our Team"
             title="Executive Leadership"
@@ -282,7 +428,7 @@ export default function HomePage() {
               href: "/who-we-are/team"
             }}
             variant="impact"
-            className="bg-white text-gray-900"
+            className="relative bg-white/90 text-gray-900 backdrop-blur-sm border border-[#607AD4]/25 shadow-[0_24px_70px_-50px_rgba(96,122,212,0.7)] ring-1 ring-[#607AD4]/15 voe-pop voe-delay-1"
           />
           <Callout
             eyebrow="Start A Chapter"
@@ -293,42 +439,54 @@ export default function HomePage() {
               href: "/get-involved/start"
             }}
             variant="resources"
-            className="bg-white/80 text-gray-900 border border-white/70 shadow-[0_20px_50px_-35px_rgba(73,139,134,0.35)] backdrop-blur"
+            className="relative bg-white/90 text-gray-900 backdrop-blur-sm border border-[#498B86]/25 shadow-[0_24px_70px_-50px_rgba(72,139,134,0.7)] ring-1 ring-[#498B86]/15 voe-pop voe-delay-2"
           />
         </div>
       </Section>
 
       {/* Initiatives with alternating accent colors */}
-      <Section className="bg-white">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#607AD4]">Key Initiatives</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      <Section className="relative overflow-hidden bg-white">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(96,122,212,0.08),_transparent_55%)]" />
+        <div className="text-center mb-12 voe-fade-up relative z-10">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#607AD4]/30 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#607AD4] shadow-sm">
+            Key Initiatives
+          </div>
+          <h2 className="mt-4 text-3xl font-bold text-[#1F2A44]">Building Health Equity</h2>
+          <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
             Building health equity through education, activation, and community-driven change.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center relative z-10">
           {homePage.initiatives.map((initiative, index) => (
             <div 
               key={initiative.title} 
-              className="p-8 bg-white rounded-lg shadow-2xl transform transition-all duration-300 border-t-4 hover:shadow-[0_20px_50px_rgba(96,122,212,0.3)]"
-              style={{ 
-                borderTopColor: index % 2 === 0 ? '#607AD4' : '#498B86'
-              }}
+              className={`p-8 bg-white/90 rounded-2xl border border-[#E7ECF7] shadow-[0_18px_60px_-45px_rgba(12,18,38,0.6)] transform transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_-50px_rgba(96,122,212,0.45)] voe-pop ${
+                index === 0 ? 'voe-delay-1' : index === 1 ? 'voe-delay-2' : 'voe-delay-3'
+              }`}
             >
-              <h3 className="text-center text-xl font-bold mb-4 transition-colors"
-                  style={{ 
+              <div
+                className="mb-5 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold"
+                style={{
+                  backgroundColor: index % 2 === 0 ? 'rgba(96,122,212,0.12)' : 'rgba(72,139,134,0.12)',
+                  color: index % 2 === 0 ? '#607AD4' : '#498B86'
+                }}
+              >
+                Initiative {index + 1}
+              </div>
+              <h3 className="text-xl font-bold mb-4 transition-colors"
+                  style={{
                     color: index % 2 === 0 ? '#607AD4' : '#498B86'
                   }}>
                 {initiative.title}
               </h3>
-              <div className="mb-4 flex justify-center">
+              <div className="mb-5 flex justify-center">
                 <Image
                   src={initiative.image}
                   alt={initiative.title}
                   width={300}
                   height={300}
                   objectFit="cover"
-                  className="rounded shadow-md"
+                  className="rounded-xl shadow-md"
                 />
               </div>
               <p className="text-gray-700">{initiative.description}</p>
@@ -345,8 +503,8 @@ export default function HomePage() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
         </div>
         <div className="max-w-7xl mx-auto px-8 text-center relative z-10">
-          <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
-          <p className="text-xl mb-8 text-white/95 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6 voe-fade-up">Join Our Community</h2>
+          <p className="text-xl mb-8 text-white/95 max-w-2xl mx-auto voe-fade-up voe-delay-2">
             Join our community of changemakers and help build a more equitable future for all.
           </p>
           <div className="flex gap-4 justify-center">
