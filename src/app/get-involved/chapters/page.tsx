@@ -54,7 +54,7 @@ const allChapters: ChapterData[] = [
   { name: 'UNC Chapel Hill', logo: '/icons/chapters/University of North Carolina at Chapel Hill.png', region: 'South', president: 'Jaden Gao', foundingYear: '2025' },
   { name: 'University of Arkansas', logo: '/icons/chapters/arkansas.png', region: 'South', president: 'Devon Cartwright', foundingYear: '2025' },
   { name: 'U of South Carolina', logo: '/icons/chapters/south-carolina.png', region: 'South', president: 'Hannah Villanueva', foundingYear: '2025' },
-  { name: 'UCF', logo: '/icons/chapters/Purdue University - West Lafayette.png', region: 'South', president: 'Laura Gomes Castro', foundingYear: '2025' }, // Placeholder - Logo Missing
+  { name: 'UCF', logo: '/icons/chapters/ucf.png', region: 'South', president: 'Laura Gomes Castro', foundingYear: '2025' }, // Placeholder - Logo Missing
 
   // West Coast
   { name: 'UCLA', logo: '/icons/chapters/University of California, Los Angeles.png', region: 'West Coast', president: 'Aayzhia Rianne Cruz', foundingYear: '2025' },
