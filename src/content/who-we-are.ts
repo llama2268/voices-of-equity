@@ -172,7 +172,7 @@ export const whoWeArePage = {
         name: "Zaid Al-Shoha",
         role: "Co-Founder & Executive Director",
         image: "/zaid-headshot.png",
-        shortBio: "Zaid Al-Shoha leads efforts to drive impactful change..",
+        shortBio: "As the Co-Founder & Executive Director of Voices of Equity..",
         fullBio: `As the Co-Founder & Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
 
         
@@ -250,7 +250,7 @@ export const whoWeArePage = {
         name: "Monique Lavoie",
         role: "Outreach Undergraduate Liaison",
         image: "/Monique.jpg",
-        shortBio: "Monique brings extensive experience..",
+        shortBio: "Monique Lavoie is a junior Biology major with double minors in...",
         fullBio: `Monique Lavoie is a junior Biology major with double minors in Spanish and Chemistry from Old Lyme, Connecticut. She serves as the Undergraduate Liaison for the Voices of Equity National Outreach Committee.
 
 
@@ -266,7 +266,7 @@ export const whoWeArePage = {
         name: "Eliza Dow",
         role: "National Director of Education",
         image: "/eliza.jpg",
-        shortBio: "Eliza Dow is a junior at Cornell University, studying Biology and Society..",
+        shortBio: "Eliza Dow serves as the National Director of Education. In these roles..",
         fullBio: `Eliza Dow serves as the National Director of Education. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. With the Associate Director of Education Vijay, she oversees the Equity Archive. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its relevance not only in healthcare but in all aspects of life.
 
 
@@ -283,7 +283,7 @@ export const whoWeArePage = {
       name: "Vijay Jagarapu",
       role: "Associate Director of Education",
       image: "/vijay.png",
-      shortBio: "Vijay is passionate about making healthcare more accessible..",
+      shortBio: "Vijay Jagarapu is an undergraduate at Cornell University studying..",
       fullBio: `Vijay Jagarapu is an undergraduate at Cornell University studying Biological Sciences on the premedical track, with a concentration in computational biology. He aims to learn more about emerging neurotechnologies to improve care for individuals with psychiatric and neurological disorders.
 
 
@@ -302,7 +302,7 @@ export const whoWeArePage = {
         id: "jennifer-zhu",
         name: "Jennifer Zhu",
         role: "National Director of Media",
-        shortBio: "Jennifer's experience in healthcare, media, and leadership...",
+        shortBio: "Jennifer Zhu serves as the National Director of Media for Voices of Equity...",
         image: "/jennifer-zhu-new.jpg",
         fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
         to spread and empower discussions about health equity through social media platforms.
@@ -363,7 +363,7 @@ export const whoWeArePage = {
         name: "Adam Jac",
         role: "National Director of Philanthropy",
         image: "/adam-new.jpg",
-        shortBio: "Adam is committed to leverage philanthropy, research...",
+        shortBio: "Adam Jac is a masters student at Cornell University in Biomedical Engineering...",
         fullBio: `Adam Jac is a masters student at Cornell University in Biomedical Engineering and plans on pursuing medical school. 
         He is passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical 
         experience to drive meaningful change in healthcare access and outcomes. 
@@ -390,7 +390,7 @@ export const whoWeArePage = {
         name: "Lucas Santos",
         role: "Philanthropy Undergraduate Liaison",
         image: "/lucas.PNG",
-        shortBio: "Lucas currently serves as the National Philanthropy Liaison...",
+        shortBio: "Lucas Santos is a third-year Biology major with minors in Chemistry and Spanish at Howard University...",
         fullBio: `
         Lucas Santos is a third-year Biology major with minors in Chemistry and Spanish at Howard University. She is deeply committed to advancing health equity through community-based initiatives, culturally competent care, and public health advocacy.
 
@@ -414,7 +414,7 @@ export const whoWeArePage = {
         name: "Angie Ayoubi",
         role: "Vox Equity Executive Director",
         image: "/angie.PNG",
-        shortBio: "Angie believes healthcare and medicine....",
+        shortBio: "Angie Ayoubi is a biological engineer and premed at MIT...",
         fullBio: `Angie Ayoubi is a biological engineer and premed at MIT. She is motivated by the
         challenges we face today in research and equity and is committed to making health and scientific information accessible. As a part of VoE's national initiative, Angie is excited and determined to work with other dedicated leaders and seek out this goal as she pursues a career in medicine.
 
@@ -446,7 +446,7 @@ export const whoWeArePage = {
         name: "Rhea Saranath",
         role: "VOX Equity Co-Director",
         image: "/rhea.jpg",
-        shortBio: "Rhea’s work reflects a consistent commitment to....",
+        shortBio: "Rhea Saranath is a student at Tulane University studying Public Health...",
         fullBio: `Rhea Saranath is a student at Tulane University studying Public Health, on the Pre-Med track. 
         Her academic and professional interests sit at the intersection of health equity, science, and policy, 
         shaped by experiences spanning clinical medicine, global community health, neuroscience research, and sustainability-focused business development. 
@@ -460,7 +460,7 @@ export const whoWeArePage = {
         name: "Conner Entenberg",
         role: "VOX Equity Co-Director",
         image: "/conner.jpg",
-        shortBio: "Conner's work centers around translating scientific advances into....",
+        shortBio: "Conner Entenberg is a pre-medical student at Binghamton University...",
         fullBio: `Conner Entenberg is a pre-medical student at Binghamton University with a focus on bridging biomedical research and health equity. 
         His research experience spans immunology and oncology, and includes his time investigating chemotherapy's effects on thymic function at Albert Einstein College of Medicine, his work researching anti-tuberculosis drugs’ impact on the liver, 
         and his use of bioprinted tumor models to better understand immuno-oncology. He also works directly with patients as a dental assistant. 

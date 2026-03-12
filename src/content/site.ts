@@ -36,7 +36,8 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
       title: 'RESOURCES',
       submenu: [
         { title: 'Our Resources', href: '/resources' },
-        { title: 'Equity Archive', href: '/resources/archive' },
+        { title: 'Our Partners', href: '/resources/partners' },
+        { title: 'Equity Archive', href: '/resources/archive' }
       ],
     },
     {
@@ -55,6 +56,7 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
     ],
     resources: [
       { title: 'Educational Content', href: '/resources' },
+      { title: 'Our Partners', href: '/resources/partners' },
       { title: 'Equity Archive', href: '/resources/archive' }
     ],
     getInvolved: [
