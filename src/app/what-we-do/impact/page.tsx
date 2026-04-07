@@ -2,15 +2,13 @@
 import PageLayout from '../../../components/Layout/PageLayout';
 import { Section } from '@/components/ui/Section';
 import ImpactTracker from '@/components/Stats/ImpactTracker';
-// import { ChapterMap } from '@/components/Map/ChapterMap'; // Removed static import
 import Image from 'next/image';
 
-// Dynamically import ChapterMap with SSR disabled to prevent build errors
 import dynamic from 'next/dynamic';
-const ChapterMap = dynamic(() => import('@/components/Map/ChapterMap').then(mod => mod.ChapterMap), {
+const ChapterMap = dynamic(() => import('@/components/Map/SimpleChapterMap'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[500px] bg-gray-100 rounded-xl flex items-center justify-center text-gray-400">
+    <div className="w-full h-[500px] bg-[#F7F8FA] flex items-center justify-center text-gray-400">
       Loading Map...
     </div>
   )
@@ -26,36 +24,34 @@ export default function ImpactPage() {
     <PageLayout title="Our Impact" subtitle="Driving Change Across Communities">
 
       {/* Impact Hero */}
-      <Section className="relative overflow-hidden bg-gradient-to-b from-white via-[#EAF6F4] to-white" spacing="lg">
-        <div className="absolute -top-24 right-0 h-64 w-64 rounded-full bg-[#607AD4]/25 blur-3xl" />
-        <div className="absolute -bottom-24 left-0 h-64 w-64 rounded-full bg-[#498B86]/25 blur-3xl" />
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6 text-left">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#607AD4] mb-4">Impact</p>
-            <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight">
+            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">Impact</p>
+            <h2 className="text-3xl md:text-5xl font-bold font-display text-[#171219] leading-tight">
               55+ chapters. 60,000+ views. 400+ active members.
-            </h1>
-            <p className="mt-4 text-base md:text-lg text-gray-600">
+            </h2>
+            <p className="mt-6 text-base md:text-lg text-[#4A5568] leading-relaxed">
               Our impact is measured in moments of learning, care, and connection — and in the
               systems we strengthen for long-term health equity.
             </p>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="rounded-xl border border-[#607AD4]/20 bg-white/80 p-4 shadow-sm backdrop-blur">
-                <div className="text-2xl font-semibold text-[#607AD4]">55+</div>
-                <div className="text-sm text-gray-500">Chapters</div>
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="bg-white border border-gray-200 rounded-lg p-5">
+                <div className="text-2xl font-bold text-[#587FDA]">55+</div>
+                <div className="text-sm text-[#4A5568] mt-1">Chapters</div>
               </div>
-              <div className="rounded-xl border border-[#498B86]/20 bg-white/80 p-4 shadow-sm backdrop-blur">
-                <div className="text-2xl font-semibold text-[#498B86]">60,000+</div>
-                <div className="text-sm text-gray-500">Views</div>
+              <div className="bg-white border border-gray-200 rounded-lg p-5">
+                <div className="text-2xl font-bold text-[#587FDA]">60,000+</div>
+                <div className="text-sm text-[#4A5568] mt-1">Views</div>
               </div>
-              <div className="rounded-xl border border-[#607AD4]/20 bg-white/80 p-4 shadow-sm backdrop-blur">
-                <div className="text-2xl font-semibold text-[#607AD4]">400+</div>
-                <div className="text-sm text-gray-500">Active Members</div>
+              <div className="bg-white border border-gray-200 rounded-lg p-5">
+                <div className="text-2xl font-bold text-[#587FDA]">400+</div>
+                <div className="text-sm text-[#4A5568] mt-1">Active Members</div>
               </div>
             </div>
           </div>
           <div className="lg:col-span-6">
-            <div className="relative rounded-3xl overflow-hidden border border-white/60 bg-white/70 shadow-[0_30px_80px_-50px_rgba(96,122,212,0.45)] backdrop-blur">
+            <div className="relative overflow-hidden rounded-lg border border-gray-200">
               <div className="relative w-full h-[320px] md:h-[420px]">
                 <Image
                   src="/impact-stories.jpeg"
@@ -65,7 +61,7 @@ export default function ImpactPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-6">
                 <p className="text-white text-sm md:text-base">
                   Student-led programs advancing health equity through education, advocacy, and community action.
                 </p>
@@ -73,96 +69,119 @@ export default function ImpactPage() {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
+
+      <div className="border-t border-gray-200" />
 
       {/* Impact Tracker */}
-      <Section className="bg-gradient-to-b from-white via-[#F4F7FF] to-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 bg-[#F7F8FA]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ImpactTracker />
         </div>
-      </Section>
+      </section>
+
+      <div className="border-t border-gray-200" />
 
       {/* Our Impact Map + Narrative */}
-      <Section className="bg-gradient-to-b from-white via-[#EAF6F4] to-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-7">
-            <h2 className="text-3xl font-bold mb-6 text-[#607AD4]">Our Global Reach</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#587FDA] mb-8">Our Global Reach</h2>
             <ChapterMap />
           </div>
           <div className="lg:col-span-5">
-            <div className="rounded-2xl border border-[#607AD4]/15 bg-white/80 p-6 shadow-sm backdrop-blur">
-              <p className="text-sm uppercase tracking-[0.25em] text-[#498B86] mb-3">Beyond the map</p>
-              <p className="text-base text-gray-600 leading-relaxed">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">Beyond the map</p>
+              <p className="text-base text-[#4A5568] leading-relaxed">
                 Each chapter represents a network of students and mentors who show up in classrooms,
                 clinics, and communities. We amplify health equity conversations through education,
                 outreach, and media — making it easier for new leaders to take action.
               </p>
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                <div className="rounded-lg bg-[#F4F7FF] p-3">
-                  <div className="text-lg font-semibold text-[#607AD4]">55+</div>
-                  <div className="text-xs text-gray-500">Chapters</div>
+              <div className="mt-8 grid grid-cols-3 gap-4 text-center">
+                <div className="bg-[#F7F8FA] rounded-lg p-4">
+                  <div className="text-lg font-bold text-[#587FDA]">55+</div>
+                  <div className="text-xs text-[#4A5568]">Chapters</div>
                 </div>
-                <div className="rounded-lg bg-[#EAF6F4] p-3">
-                  <div className="text-lg font-semibold text-[#498B86]">60k+</div>
-                  <div className="text-xs text-gray-500">Views</div>
+                <div className="bg-[#F7F8FA] rounded-lg p-4">
+                  <div className="text-lg font-bold text-[#587FDA]">60k+</div>
+                  <div className="text-xs text-[#4A5568]">Views</div>
                 </div>
-                <div className="rounded-lg bg-[#F4F7FF] p-3">
-                  <div className="text-lg font-semibold text-[#607AD4]">350+</div>
-                  <div className="text-xs text-gray-500">Members</div>
+                <div className="bg-[#F7F8FA] rounded-lg p-4">
+                  <div className="text-lg font-bold text-[#587FDA]">350+</div>
+                  <div className="text-xs text-[#4A5568]">Members</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Section>
+      </section>
+
+      <div className="border-t border-gray-200" />
 
       {/* Chapter Reflections */}
-      <Section className="bg-gradient-to-b from-white via-[#F4F7FF] to-white">
-        <ChapterReflections
-          reflections={whatWeDoPage.impact.chapterReflections}
-          title="Chapter Reflections"
-          subtitle="Fall 2025"
-        />
-      </Section>
+      <section className="py-24 bg-[#F7F8FA]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ChapterReflections
+            reflections={whatWeDoPage.impact.chapterReflections}
+            title="Chapter Reflections"
+            subtitle="Fall 2025"
+          />
+        </div>
+      </section>
+
+      <div className="border-t border-gray-200" />
 
       {/* Chapter Spotlights */}
       <Section
         title="Chapter Spotlights"
         subtitle="Leading the charge on campus"
-        className="bg-gradient-to-b from-white via-[#EAF6F4] to-white"
+        className="bg-white"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {whatWeDoPage.impact.spotlights.map((school, i) => (
-            <div key={i} className="group relative overflow-hidden rounded-xl border border-[#498B86]/15 bg-white/85 p-4 shadow-sm backdrop-blur">
-              <div className="relative w-full h-24 mb-3">
-                <Image src={school.image} alt={school.name} fill className="object-contain group-hover:scale-105 transition-transform duration-500" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          {whatWeDoPage.impact.spotlights.map((school, i) => {
+            const isLogo = school.image.includes('/icons/chapters/');
+            return (
+              <div key={i} className="group bg-white border border-gray-200 rounded-lg p-4 hover:shadow-sm transition-shadow">
+                <div className="relative w-full h-24 mb-3 overflow-hidden rounded">
+                  {isLogo ? (
+                    <Image src={school.image} alt={school.name} fill className="object-contain group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="w-full h-full bg-[#587FDA] flex items-center justify-center rounded">
+                      <span className="text-white text-xs font-semibold text-center px-2 leading-tight">{school.name}</span>
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-xs font-semibold text-[#171219] text-center">{school.name}</h3>
               </div>
-              <h3 className="text-xs font-semibold text-gray-700 text-center">{school.name}</h3>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 
+      <div className="border-t border-gray-200" />
+
       {/* National Impacts */}
-      <Section className="bg-gradient-to-b from-white via-[#F4F7FF] to-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl border border-[#607AD4]/10 bg-white/80 p-8 shadow-sm backdrop-blur">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#607AD4] mb-3">National Impacts</p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#498B86]">Impacts from Health Equity Week Fall 2025</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-base text-gray-700">
+      <section className="py-24 bg-[#F7F8FA]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white border border-gray-200 rounded-lg p-8 md:p-10">
+            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">National Impacts</p>
+            <h2 className="text-2xl md:text-3xl font-bold font-display text-[#171219] mb-6">Impacts from Health Equity Week Fall 2025</h2>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-base text-[#4A5568]">
               {whatWeDoPage.impact.nationalStats.map((stat, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-[#607AD4] mt-1">{stat.icon}</span>
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-[#587FDA] mt-1">{stat.icon}</span>
                   <span>{stat.label}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-      </Section>
+      </section>
+
+      <div className="border-t border-gray-200" />
 
       {/* Community Gallery / Initiatives in Action */}
-      <div className="mb-20">
+      <div className="py-24 bg-white">
         <ImpactGallery items={galleryItems} />
       </div>
 

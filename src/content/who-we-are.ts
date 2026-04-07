@@ -56,28 +56,28 @@ export const whoWeArePage = {
       heading: "OUR CORE VALUES",
       items: [
         {
-          title: "Value Every Person",
-          description: "We believe everyone deserves access to healthcare and the opportunity to live a healthy life—no matter their background, income, or zip code"
+          title: "V — Vision",
+          description: "Stay focused on long-term impact and health equity outcomes. Every decision we make should move us closer to a world where healthcare access is not determined by geography, race, or income."
         },
         {
-          title: "Opportunity for Better Health",
-          description: "Health isn't just about doctors and hospitals—it's about the opportunities people have to stay healthy. We fight to remove barriers like lack of insurance, food insecurity, and unequal access to care"
+          title: "O — Opportunity for Better Health",
+          description: "Health isn't just about doctors and hospitals — it's about the opportunities people have to stay healthy. We fight to remove barriers like lack of insurance, food insecurity, and unequal access to care."
         },
         {
-          title: "Impact Over Words",
-          description: "Raising awareness isn't enough. We focus on real, tangible solutions that improve health outcomes—whether that's connecting someone to free medical care or giving them the resources they need to advocate for themselves"
+          title: "I — Impact Over Words",
+          description: "We measure success not by what we say, but by what we do. Every initiative, event, and partnership must drive tangible outcomes for the communities we serve."
         },
         {
-          title: "Community First",
-          description: "Health starts where we live, work, and gather. We listen to communities, support grassroots efforts, and ensure that solutions are created with the people they serve"
+          title: "C — Community First",
+          description: "Health starts where we live, work, and gather. We listen to communities, support grassroots efforts, and ensure that solutions are created with the people they serve."
         },
         {
-          title: "Equity in Action",
-          description: "We don't just talk about health equity—we act on it. From mobile clinics to patient advocacy, we take meaningful steps toward a future where quality healthcare is a right, not a privilege"
+          title: "E — Empowerment",
+          description: "Inspire and enable others to lead and create change. We believe lasting impact comes from building the capacity of individuals to advocate for their own health and the health of their communities."
         },
         {
-          title: "Sustainable Change",
-          description: "Real change doesn't happen overnight. We work to create lasting systems of support—so communities don't just receive temporary relief but have ongoing access to healthcare, education, and resources"
+          title: "S — Sustainability",
+          description: "Build systems and partnerships that endure beyond any single leader, event, or academic year. Real change doesn't happen overnight — we work to create lasting systems of support."
         }
       ]
     },

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import PageLayout from '@/components/Layout/PageLayout';
-import { Section } from '@/components/ui/Section';
 
 const partnerGroups = [
   {
@@ -36,59 +35,80 @@ const partnerGroups = [
 
 export default function PartnersPage() {
   return (
-    <PageLayout title="Our Partners" subtitle="Organizations supporting Voices of Equity's national initiatives">
-      <div className="max-w-6xl mx-auto px-4 pb-16">
-        <Section spacing="sm" className="bg-gradient-to-b from-white via-[#F4F7FF] to-white">
-          {partnerGroups.map((group) => (
-            <div key={group.title} className="mb-12">
-              <div className="text-center mb-8">
-                <p className="text-xs uppercase tracking-[0.35em] text-[#607AD4] mb-3">{group.title}</p>
-                <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">Our Partners</h2>
-              </div>
+    <PageLayout>
+      {/* Dark Hero */}
+      <section className="relative bg-[#171219] pt-32 pb-20 overflow-hidden">
+        {/* Watermark logo */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <Image
+            src="/logo-new.png"
+            alt=""
+            width={600}
+            height={540}
+            className="opacity-5"
+          />
+        </div>
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <p className="text-xs uppercase tracking-widest text-gray-400 font-medium mb-3">Partnerships</p>
+          <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">Our Partners</h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Organizations supporting Voices of Equity&apos;s national initiatives
+          </p>
+        </div>
+      </section>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {group.partners.map((partner) => (
-                  <article
-                    key={partner.name}
-                    className="rounded-2xl border border-white/70 bg-white/90 p-6 shadow-[0_25px_60px_-45px_rgba(96,122,212,0.35)] backdrop-blur"
-                  >
-                    <div className="mx-auto mb-5 w-40 h-40 flex items-center justify-center">
-                      <Image
-                        src={partner.logo}
-                        alt={`${partner.name} logo`}
-                        width={160}
-                        height={160}
-                        className="object-contain"
-                      />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 text-center">{partner.name}</h3>
-                    <p className="text-sm text-gray-600 mt-3 text-center">{partner.description}</p>
-                    <div className="mt-6 flex flex-col sm:flex-row items-stretch gap-3">
+      <div className="max-w-6xl mx-auto px-4">
+        {partnerGroups.map((group) => (
+          <section key={group.title} className="py-24">
+            <div className="mb-12">
+              {group.title && (
+                <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">{group.title}</p>
+              )}
+              <h2 className="font-display font-bold text-3xl md:text-4xl text-[#171219]">Our Partners</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {group.partners.map((partner) => (
+                <article
+                  key={partner.name}
+                  className="bg-white border border-gray-200 rounded-lg p-8"
+                >
+                  <div className="mx-auto mb-6 w-36 h-36 flex items-center justify-center">
+                    <Image
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      width={144}
+                      height={144}
+                      className="object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-[#171219] text-center">{partner.name}</h3>
+                  <p className="text-sm text-[#4A5568] mt-3 text-center leading-relaxed">{partner.description}</p>
+                  <div className="mt-6 flex flex-col sm:flex-row items-stretch gap-3">
+                    <a
+                      href={partner.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-center px-8 py-3 rounded-md bg-[#587FDA] text-white hover:bg-[#4566B8] transition-colors font-medium"
+                    >
+                      Visit Website
+                    </a>
+                    {partner.handout && (
                       <a
-                        href={partner.website}
+                        href={partner.handout}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center px-4 py-3 rounded-lg bg-[#607AD4] text-white hover:bg-[#4F66B8] transition-colors"
+                        className="text-center px-8 py-3 rounded-md border border-gray-200 text-[#587FDA] hover:bg-[#F7F8FA] transition-colors font-medium"
                       >
-                        Visit Website
+                        View Handout
                       </a>
-                      {partner.handout && (
-                        <a
-                          href={partner.handout}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-center px-4 py-3 rounded-lg border border-[#607AD4]/40 text-[#607AD4] hover:bg-[#607AD4] hover:text-white transition-colors"
-                        >
-                          View Handout
-                        </a>
-                      )}
-                    </div>
-                  </article>
-                ))}
-              </div>
+                    )}
+                  </div>
+                </article>
+              ))}
             </div>
-          ))}
-        </Section>
+          </section>
+        ))}
       </div>
     </PageLayout>
   );

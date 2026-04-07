@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx:*)",
+      "Bash(node_modules/.bin/next build:*)",
+      "Bash(ls:*)",
+      "Bash(./node_modules/.bin/next build:*)",
+      "Bash(node:*)",
+      "Bash(NEXT_TURBOPACK=0 ./node_modules/.bin/next build 2>&1 | tail -30)",
+      "Bash(git stash:*)",
+      "Bash(sed:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(./node_modules/.bin/next dev:*)",
+      "WebSearch",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:upload.wikimedia.org)",
+      "Bash(curl:*)",
+      "Bash(file:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(echo:*)",
+      "Bash(npm install:*)",
+      "Bash(kill:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

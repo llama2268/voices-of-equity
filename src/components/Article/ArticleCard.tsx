@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 
 interface ArticleCardProps {
   title: string;
@@ -22,49 +21,42 @@ export function ArticleCard({
   slug,
   variant = 'memo'
 }: ArticleCardProps) {
-  const href = variant === 'memo' 
+  const href = variant === 'memo'
     ? `/what-we-do/voices/${slug}`
     : `/what-we-do/impact/${slug}`;
 
   return (
     <Link href={href}>
-      <article className="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-        {/* Image Container */}
-        <div className="aspect-w-16 aspect-h-9 overflow-hidden">
+      <article className="group bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-sm transition-shadow duration-200">
+        <div className="aspect-video overflow-hidden">
           <img
             src={image}
             alt={title}
-            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-
-        {/* Content */}
         <div className="p-6">
-          {/* Category & Meta */}
           <div className="flex items-center justify-between mb-3">
-            <span className="px-3 py-1 text-sm font-medium bg-secondary-50 text-secondary-600 rounded-lg">
+            <span className="text-xs font-medium uppercase tracking-wider text-[#587FDA]">
               {category}
             </span>
-            <div className="text-sm text-gray-500">
+            <div className="text-xs text-gray-500">
               <time dateTime={date}>{new Date(date).toLocaleDateString('en-US', {
                 month: 'long',
                 day: 'numeric',
                 year: 'numeric'
               })}</time>
-              {readTime && <span className="ml-2">· {readTime}</span>}
+              {readTime && <span className="ml-2">&middot; {readTime}</span>}
             </div>
           </div>
-
-          {/* Title & Excerpt */}
-          <h3 className="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
+          <h3 className="text-lg font-bold font-display text-[#171219] mb-2 group-hover:text-[#587FDA] transition-colors">
             {title}
           </h3>
-          <p className="text-gray-600 line-clamp-2">
+          <p className="text-sm text-[#4A5568] line-clamp-2 leading-relaxed">
             {excerpt}
           </p>
         </div>
       </article>
     </Link>
   );
-} 
+}

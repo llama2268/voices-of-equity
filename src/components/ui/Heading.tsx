@@ -3,41 +3,39 @@ import { cn } from '@/lib/utils';
 interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   children: React.ReactNode;
-  variant?: 'default' | 'gradient' | 'subtle';
+  variant?: 'default' | 'blue' | 'subtle';
 }
 
-export function Heading({ 
-  level = 2, 
+export function Heading({
+  level = 2,
   variant = 'default',
   className,
   children,
-  ...props 
+  ...props
 }: HeadingProps) {
-  const Component = `h${level}` as keyof JSX.IntrinsicElements;
-  
+  const Tag = level === 1 ? 'h1' : level === 2 ? 'h2' : level === 3 ? 'h3' : level === 4 ? 'h4' : level === 5 ? 'h5' : 'h6';
+
   return (
-    <Component
+    <Tag
       className={cn(
-        'font-bold tracking-tight',
+        'font-bold font-display tracking-tight',
         {
-          // Size variations based on heading level
           'text-4xl md:text-5xl lg:text-6xl': level === 1,
           'text-3xl md:text-4xl': level === 2,
           'text-2xl md:text-3xl': level === 3,
           'text-xl md:text-2xl': level === 4,
           'text-lg md:text-xl': level === 5,
           'text-base md:text-lg': level === 6,
-          
-          // Updated variant styles
-          'text-gray-900': variant === 'default',
-          'text-gradient-primary': variant === 'gradient',
-          'text-gray-600': variant === 'subtle',
+
+          'text-[#171219]': variant === 'default',
+          'text-[#587FDA]': variant === 'blue',
+          'text-[#4A5568]': variant === 'subtle',
         },
         className
       )}
       {...props}
     >
       {children}
-    </Component>
+    </Tag>
   );
-} 
+}

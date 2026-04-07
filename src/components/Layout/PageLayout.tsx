@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Container } from "@/components/ui/Container";
 
 interface PageLayoutProps {
   title?: string;
@@ -10,9 +9,9 @@ interface PageLayoutProps {
   reduced?: boolean;
 }
 
-export default function PageLayout({ 
-  title, 
-  subtitle, 
+export default function PageLayout({
+  title,
+  subtitle,
   children,
   hero = false,
   fullWidth = false,
@@ -22,26 +21,27 @@ export default function PageLayout({
     <main className="min-h-screen">
       {(title || subtitle) && (
         <header className={cn(
-          "relative",
+          "relative bg-white",
           hero && "min-h-[40vh] flex items-center",
-          !fullWidth && !reduced && "pt-24 pb-12 md:pb-16 lg:pb-20",
-          reduced && "pt-24 pb-6 md:pb-8 lg:pb-10"
+          !fullWidth && !reduced && "pt-28 pb-16",
+          reduced && "pt-28 pb-8"
         )}>
-          <Container>
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-5xl font-bold font-display text-[#171219] mb-4">
                 {title}
               </h1>
               {subtitle && (
-                <p className="text-lg md:text-xl text-gray-600">
+                <p className="text-lg text-[#4A5568] leading-relaxed">
                   {subtitle}
                 </p>
               )}
             </div>
-          </Container>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 border-b border-gray-200" />
         </header>
       )}
       {children}
     </main>
   );
-} 
+}

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 
 interface FeaturedArticleProps {
   title: string;
@@ -24,51 +23,46 @@ export function FeaturedArticle({
   slug,
   variant = 'memo'
 }: FeaturedArticleProps) {
-  const href = variant === 'memo' 
+  const href = variant === 'memo'
     ? `/what-we-do/voices/${slug}`
     : `/what-we-do/impact/${slug}`;
 
   return (
     <Link href={href}>
       <article className="group relative rounded-lg overflow-hidden">
-        {/* Background Image */}
-        <div className="relative h-[60vh] min-h-[500px]">
+        <div className="relative h-[50vh] min-h-[400px]">
           <img
             src={image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-          
-          {/* Content */}
+          <div className="absolute inset-0 bg-black/50" />
+
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
             <div className="max-w-3xl">
-              {/* Category & Meta */}
               <div className="flex items-center space-x-4 mb-4">
-                <span className="px-4 py-1.5 text-sm font-medium bg-white/90 text-primary-600 rounded-full">
+                <span className="text-xs font-medium uppercase tracking-wider text-white/90">
                   {category}
                 </span>
-                <div className="text-sm text-white/90">
+                <div className="text-xs text-white/70">
                   <time dateTime={date}>{new Date(date).toLocaleDateString('en-US', {
                     month: 'long',
                     day: 'numeric',
                     year: 'numeric'
                   })}</time>
-                  {readTime && <span className="ml-2">· {readTime}</span>}
+                  {readTime && <span className="ml-2">&middot; {readTime}</span>}
                 </div>
               </div>
 
-              {/* Title & Excerpt */}
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-secondary-200 transition-colors">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4 group-hover:text-gray-200 transition-colors">
                 {title}
               </h2>
-              <p className="text-lg text-white/90 line-clamp-2 mb-4">
+              <p className="text-lg text-white/80 line-clamp-2 mb-4 leading-relaxed">
                 {excerpt}
               </p>
 
-              {/* Author if present */}
               {author && (
-                <p className="font-serif text-white/80 italic">
+                <p className="text-white/70 text-sm">
                   By {author}
                 </p>
               )}
@@ -78,4 +72,4 @@ export function FeaturedArticle({
       </article>
     </Link>
   );
-} 
+}

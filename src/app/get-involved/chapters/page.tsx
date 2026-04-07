@@ -1,21 +1,19 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import PageLayout from '@/components/Layout/PageLayout';
-import { Section } from '@/components/ui/Section';
 import { getInvolvedPage } from '@/content';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Callout } from '@/components/ui/Callout';
 import { SocialCallout } from '@/components/ui/SocialCallout';
 import { ResourceIcon, AwardIcon, LeadershipIcon } from '@/components/icons/ChapterIcons';
 import { ChapterCard, ChapterData } from '@/components/Chapter/ChapterCard';
 
 // Dynamically import ChapterMap with SSR disabled
 import dynamic from 'next/dynamic';
-const ChapterMap = dynamic(() => import('@/components/Map/ChapterMap').then(mod => mod.ChapterMap), {
+const ChapterMap = dynamic(() => import('@/components/Map/SimpleChapterMap'), {
   ssr: false,
-  loading: () => <div className="h-[500px] w-full bg-gray-100 rounded-xl" />
+  loading: () => <div className="h-[500px] w-full bg-[#F7F8FA]" />
 });
 
 const regions = ['All', 'Northeast', 'Midwest', 'South', 'West Coast', 'International'];
@@ -54,7 +52,7 @@ const allChapters: ChapterData[] = [
   { name: 'UNC Chapel Hill', logo: '/icons/chapters/University of North Carolina at Chapel Hill.png', region: 'South', president: 'Jaden Gao', foundingYear: '2025' },
   { name: 'University of Arkansas', logo: '/icons/chapters/arkansas.png', region: 'South', president: 'Devon Cartwright', foundingYear: '2025' },
   { name: 'U of South Carolina', logo: '/icons/chapters/south-carolina.png', region: 'South', president: 'Hannah Villanueva', foundingYear: '2025' },
-  { name: 'UCF', logo: '/icons/chapters/ucf.png', region: 'South', president: 'Laura Gomes Castro', foundingYear: '2025' }, // Placeholder - Logo Missing
+  { name: 'UCF', logo: '/icons/chapters/ucf.png', region: 'South', president: 'Laura Gomes Castro', foundingYear: '2025' },
 
   // West Coast
   { name: 'UCLA', logo: '/icons/chapters/University of California, Los Angeles.png', region: 'West Coast', president: 'Aayzhia Rianne Cruz', foundingYear: '2025' },
@@ -80,38 +78,79 @@ export default function ChaptersPage() {
     icon: index === 0 ? <ResourceIcon /> : index === 1 ? <AwardIcon /> : <LeadershipIcon />
   }));
 
+  const chapterPhotos = [
+    '/images/chapters/howard-1.jpg',
+    '/images/chapters/cmu-1.jpg',
+    '/images/chapters/uconn-1.jpg',
+    '/images/chapters/arkansas-1.jpg',
+    '/images/chapters/arkansas-3.jpg',
+    '/images/chapters/howard-4.jpg',
+    '/images/chapters/cmu-3.jpg',
+    '/images/chapters/uconn-2.jpg',
+  ];
+
   return (
-    <PageLayout
-      title={title}
-      subtitle={subtitle}
-      hero
-      reduced
-    >
-      {/* Introduction & Benefits */}
-      <Section spacing="sm">
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <p className="text-lg text-gray-600 leading-relaxed">
-            {content}
+    <PageLayout>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-b from-[#587FDA] to-[#4566B8] py-20 pt-32">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <Image src="/logo-new.png" alt="Voices of Equity" width={180} height={162} className="mx-auto mb-8" />
+          <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">Our Chapters</h1>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+            Student-led chapters driving health equity across 55+ universities nationwide
           </p>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {benefitsWithIcons.map((benefit) => (
-            <div
-              key={benefit.title}
-              className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-[#498B86]"
-            >
-              <div className="text-[#498B86] mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-            </div>
-          ))}
+      {/* Photo Strip */}
+      <div className="bg-[#587FDA] overflow-hidden h-32">
+        <div className="flex gap-1 overflow-hidden h-32">
+          <div className="flex gap-1 w-max voe-marquee h-32">
+            {[...chapterPhotos, ...chapterPhotos].map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt="Chapter photo"
+                width={192}
+                height={128}
+                className="h-32 w-48 object-cover rounded-md border-2 border-white/30"
+              />
+            ))}
+          </div>
         </div>
-      </Section>
+      </div>
+
+      {/* Introduction & Benefits */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-lg text-[#4A5568] leading-relaxed">
+              {content}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {benefitsWithIcons.map((benefit) => (
+              <div
+                key={benefit.title}
+                className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-sm transition-all"
+              >
+                <div className="text-[#587FDA] mb-5">{benefit.icon}</div>
+                <h3 className="text-xl font-bold font-display text-[#171219] mb-3">{benefit.title}</h3>
+                <p className="text-[#4A5568] leading-relaxed">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Chapter Directory */}
-      <Section spacing="sm" title="Our Chapters" subtitle="Universities Leading Change">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-24 bg-[#F7F8FA] border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Universities Leading Change</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219]">Our Chapters</h2>
+          </div>
 
           {/* Filters & Search */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
@@ -121,9 +160,9 @@ export default function ChaptersPage() {
                 <button
                   key={region}
                   onClick={() => setSelectedRegion(region)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedRegion === region
-                    ? 'bg-[#498B86] text-white shadow-md'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${selectedRegion === region
+                    ? 'bg-[#587FDA] text-white'
+                    : 'bg-white border border-gray-200 text-[#4A5568] hover:border-gray-300'
                     }`}
                 >
                   {region}
@@ -138,13 +177,13 @@ export default function ChaptersPage() {
                 placeholder="Search chapters..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#498B86] focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-200 rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-[#587FDA] focus:border-[#587FDA] text-[#4A5568]"
               />
             </div>
           </div>
 
           {/* Chapters Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredChapters.map((chapter) => (
               <ChapterCard key={chapter.name} chapter={chapter} />
             ))}
@@ -155,40 +194,37 @@ export default function ChaptersPage() {
               No chapters found matching your criteria.
             </div>
           )}
-
         </div>
-      </Section>
-
+      </section>
 
       {/* Call to Action */}
-      <Section spacing="sm">
-        <div className="max-w-4xl mx-auto">
-          <Callout
-            eyebrow="Ready to Get Started?"
-            title={cta.title}
-            description={cta.description}
-            link={{
-              text: cta.primaryButton.text,
-              href: cta.primaryButton.href
-            }}
-            variant="impact"
-          />
+      <section className="py-24 bg-white border-t border-gray-200">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Ready to Get Started?</p>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219] mb-4">{cta.title}</h2>
+          <p className="text-lg text-[#4A5568] leading-relaxed mb-8">{cta.description}</p>
+          <Link
+            href={cta.primaryButton.href}
+            className="inline-block px-8 py-3 rounded-md bg-[#587FDA] hover:bg-[#4566B8] text-white font-medium transition-colors"
+          >
+            {cta.primaryButton.text}
+          </Link>
         </div>
-      </Section>
+      </section>
 
       {/* Chapter Map */}
-      <Section spacing="sm">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Our Chapter Locations</h2>
+      <section className="py-24 bg-[#F7F8FA] border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold font-display text-[#171219] mb-10 text-center">Our Chapter Locations</h2>
           <ChapterMap />
         </div>
-      </Section>
+      </section>
 
       {/* Social Media Integration */}
-      <section className="py-20 bg-[#607AD4] text-white">
-        <div className="max-w-7xl mx-auto px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Join Our Community</h2>
-          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+      <section className="py-24 bg-[#171219] border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4">Join Our Community</h2>
+          <p className="text-lg mb-10 text-white/80 max-w-2xl mx-auto leading-relaxed">
             Join our community of changemakers and help build a more equitable future for all.
           </p>
           <div className="flex gap-4 justify-center">

@@ -1,5 +1,4 @@
 import PageLayout from '@/components/Layout/PageLayout';
-import { Section } from '@/components/ui/Section';
 import { getInvolvedPage } from '@/content';
 import Link from 'next/link';
 
@@ -14,39 +13,41 @@ export default function RequirementsPage() {
       reduced
     >
       {/* Requirements */}
-      <Section spacing="lg">
-        <div className="max-w-4xl mx-auto space-y-8">
-          {requirements.map((requirement, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-lg shadow-sm p-8 border-l-4 border-primary-500"
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {requirement.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {requirement.description}
-              </p>
-            </div>
-          ))}
+      <section className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="space-y-0">
+            {requirements.map((requirement, index) => (
+              <div
+                key={index}
+                className="py-8 border-b border-gray-200 first:pt-0 last:border-b-0"
+              >
+                <h3 className="text-xl font-bold font-display text-[#171219] mb-3">
+                  {requirement.title}
+                </h3>
+                <p className="text-[#4A5568] leading-relaxed">
+                  {requirement.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* Bottom Note */}
-      <Section variant="alternate">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4">{bottomNote.title}</h3>
-          <p className="text-lg text-gray-600 mb-8">
+      <section className="py-24 bg-[#F7F8FA] border-t border-gray-200">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold font-display text-[#171219] mb-4">{bottomNote.title}</h3>
+          <p className="text-lg text-[#4A5568] leading-relaxed mb-8">
             {bottomNote.description}
           </p>
           <Link
             href="/get-involved/start"
-            className="inline-block px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-semibold transition-colors"
+            className="inline-block px-8 py-3 bg-[#587FDA] hover:bg-[#4566B8] text-white rounded-md font-medium transition-colors"
           >
             Get Started
           </Link>
         </div>
-      </Section>
+      </section>
     </PageLayout>
   );
 }

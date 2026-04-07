@@ -158,7 +158,15 @@ export interface ArchiveItem {
   url?: string
   image?: string
   featured?: boolean
-  videoId?: string // For YouTube videos
+  videoId?: string
+  subtitle?: string
+  content?: ArticleSection[]
+}
+
+export interface ArticleSection {
+  type: 'paragraph' | 'heading' | 'list' | 'citation'
+  text?: string
+  items?: string[]
 }
 
 export interface ChapterReflection {

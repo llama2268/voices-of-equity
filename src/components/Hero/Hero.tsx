@@ -11,63 +11,40 @@ interface HeroProps {
   }>;
 }
 
-const Hero = ({ title, subtitle, description, ctaButtons }: HeroProps) => {
-  // Split the title into two parts at the comma
-  const [firstHalf, secondHalf] = title.split(',').map(part => part.trim());
-
+const Hero = ({ title, description }: HeroProps) => {
   return (
-    <div className="relative pt-16 items-center bg-gradient-to-b from-white via-[#E3ECFF] to-white overflow-hidden">
-      {/* Gradient Background Accents */}
-      <div className="absolute -top-28 right-0 h-[28rem] w-[28rem] rounded-full bg-[#607AD4]/65 blur-3xl" />
-      <div className="absolute -bottom-28 left-0 h-80 w-80 rounded-full bg-[#607AD4]/30 blur-3xl" />
-      <div className="absolute top-1/3 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-[#498B86]/14 blur-3xl" />
-
-      {/* Content */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+    <section className="relative pt-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2A44] mb-6 leading-tight">
-            <span className="font-display block mb-2 text-[#607AD4]">{title}</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-[#171219] leading-[1.1] mb-8 tracking-tight">
+            {title}
           </h1>
           {description && (
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-[#4A5568] mb-12 leading-relaxed max-w-2xl font-light">
               {description}
             </p>
           )}
           <div className="flex flex-wrap gap-4">
             <Link
               href="/get-involved/chapters"
-              className="px-8 py-4 bg-[#498B86] hover:bg-[#3A6F6B] text-white font-semibold rounded-lg transition-colors"
+              className="px-10 py-4 bg-[#587FDA] hover:bg-[#4566B8] text-white font-medium font-display
+                         rounded-md transition-colors duration-200 hover:scale-[1.02] active:scale-[0.98] tracking-wide uppercase text-sm"
             >
               Join Our Movement
             </Link>
             <Link
               href="/who-we-are/mission"
-              className="px-8 py-4 border border-[#607AD4] text-[#607AD4] hover:bg-[#607AD4]/10 font-semibold rounded-lg transition-colors"
+              className="px-10 py-4 border border-gray-300 text-[#333333] hover:border-gray-400 hover:bg-gray-50
+                         font-medium font-display rounded-md transition-colors duration-200 hover:scale-[1.02] active:scale-[0.98] tracking-wide uppercase text-sm"
             >
               Learn More
             </Link>
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg 
-          className="w-6 h-6 text-[#607AD4]" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M19 14l-7 7m0 0l-7-7m7 7V3" 
-          />
-        </svg>
-      </div>
-    </div>
+      <div className="border-b border-gray-200" />
+    </section>
   );
 };
 
-export default Hero; 
+export default Hero;

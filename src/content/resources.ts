@@ -182,6 +182,17 @@ export const resourcesPage = {
         date: "2025-10-02",
         tags: ["panel", "addiction", "health equity"],
         url: "#" // Placeholder until link is confirmed
+      },
+      {
+        id: "article-redlining-heart-disease",
+        title: "Redlining and Heart Disease",
+        description: "How a 1930s housing policy still shapes cardiovascular risk. This article explores how HOLC redlining maps created disinvestment patterns that persist today \u2014 leading to urban heat islands, air pollution exposure, and worse cardiovascular outcomes in formerly redlined neighborhoods.",
+        type: "article" as const,
+        date: "2026-04-01",
+        author: "Voices of Equity Education Team",
+        tags: ["redlining", "cardiovascular health", "structural racism", "environmental justice", "social determinants"],
+        featured: true,
+        image: "/images/redlining-cover.svg"
       }
     ]
   }

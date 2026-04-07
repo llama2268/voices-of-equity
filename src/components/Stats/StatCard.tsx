@@ -6,18 +6,16 @@ interface StatCardProps {
 
 const StatCard = ({ value, label, description }: StatCardProps) => {
   return (
-    <div className="text-center p-6 bg-white rounded-lg shadow-sm group hover:shadow-md transition-all">
-      <dt className="text-sm font-medium text-primary-600 uppercase tracking-wide">{label}</dt>
-      <dd className="mt-2 text-4xl font-bold text-gray-900">
-        <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          {value}
-        </span>
+    <div className="text-center py-6">
+      <dt className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">{label}</dt>
+      <dd className="text-4xl font-bold font-display text-[#587FDA]">
+        {value}
       </dd>
       {description && (
-        <p className="mt-4 text-base text-gray-600 group-hover:text-secondary-700 transition-colors">{description}</p>
+        <p className="mt-3 text-sm text-[#4A5568]">{description}</p>
       )}
     </div>
   );
 };
 
-export default StatCard; 
+export default StatCard;

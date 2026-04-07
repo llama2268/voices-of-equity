@@ -1,10 +1,9 @@
 import { cn } from "@/lib/utils";
 
-// New component for consistent max-widths and padding
-export function Container({ 
-  children, 
+export function Container({
+  children,
   size = 'default',
-  className 
+  className
 }: {
   children: React.ReactNode;
   size?: 'sm' | 'default' | 'lg' | 'full';
@@ -15,8 +14,8 @@ export function Container({
       'mx-auto px-4 sm:px-6 lg:px-8',
       {
         'max-w-3xl': size === 'sm',
-        'max-w-7xl': size === 'default',
-        'max-w-[1920px]': size === 'lg',
+        'max-w-6xl': size === 'default',
+        'max-w-7xl': size === 'lg',
         'w-full': size === 'full'
       },
       className
@@ -24,4 +23,4 @@ export function Container({
       {children}
     </div>
   );
-} 
+}

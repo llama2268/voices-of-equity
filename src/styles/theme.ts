@@ -1,36 +1,46 @@
 export const theme = {
   colors: {
     primary: {
-      main: '#607AD4', // Equity blue
-      light: '#8A9DE0',
-      dark: '#4A62AA',
-      50: '#F5F7FE',
-      100: '#E8ECFC',
-      200: '#C5D0F7',
-      300: '#A2B4F2',
-      400: '#7F98ED',
-      500: '#607AD4', // main
-      600: '#4C62AA',
-      700: '#394A80',
-      800: '#263155',
-      900: '#13192B'
+      main: '#587FDA',
+      light: '#7A9BE6',
+      dark: '#4566B8',
+      50: '#F4F7FE',
+      100: '#E6EDFC',
+      200: '#C2D1F7',
+      300: '#9DB5F2',
+      400: '#7A9BE6',
+      500: '#587FDA',
+      600: '#4566B8',
+      700: '#344D8A',
+      800: '#23345C',
+      900: '#121A2E'
     },
     secondary: {
-      main: '#498B86', // Equity green
-      light: '#5AABA5',
-      dark: '#3A6F6B',
-      50: '#F2F8F7',
-      100: '#F2A08C',
-      200: '#B66857'
+      main: '#2A8D87',
+      light: '#36B0A8',
+      dark: '#1F6B66',
+      50: '#F0FAF9',
+      100: '#D4F0EE',
+      200: '#A8E1DD'
     },
     accent: {
-      main: '#498B86',
-      light: '#5AABA5',
-      dark: '#3A6F6B'
+      main: '#2A8D87',
+      light: '#36B0A8',
+      dark: '#1F6B66',
+      red: '#F47B67',
+      yellow: '#F2EE68'
+    },
+    brand: {
+      green: '#2A8D87',
+      blue: '#587FDA',
+      white: '#FBFFFE',
+      black: '#171219',
+      red: '#F47B67',
+      yellow: '#F2EE68'
     },
     gray: {
       50: '#F9FAFB',
-      100: '#F3F4F6',
+      100: '#F7F8FA',
       200: '#E5E7EB',
       300: '#D1D5DB',
       400: '#9CA3AF',
@@ -38,48 +48,21 @@ export const theme = {
       600: '#4B5563',
       700: '#374151',
       800: '#1F2937',
-      900: '#111827'
-    }
-  },
-  spacing: {
-    section: {
-      sm: '2rem',    // 32px
-      md: '3rem',    // 48px
-      lg: '4rem',    // 64px
-      xl: '5rem',    // 80px
-      '2xl': '6rem', // 96px
-    },
-    content: {
-      sm: '1rem',    // 16px
-      md: '1.5rem',  // 24px
-      lg: '2rem',    // 32px
-      xl: '2.5rem',  // 40px
+      900: '#171219'
     }
   },
   shadows: {
-    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-    md: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
-    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1)'
-  },
-  gradients: {
-    primary: 'linear-gradient(to right, #4C62AA, #607AD4)',
-    secondary: 'linear-gradient(to right, #3A6F6B, #498B86)',
-    accent: 'linear-gradient(to right, #498B86, #5AABA5)',
-    light: 'linear-gradient(to right, #F5F7FE, #E8ECFC)',
-    dark: 'linear-gradient(to right, #374151, #4B5563)',
-    text: {
-      primary: 'linear-gradient(to right, #4C62AA, #607AD4)',
-      accent: 'linear-gradient(to right, #3A6F6B, #498B86)',
-      subtle: 'linear-gradient(to right, #4B5563, #6B7280)',
-    }
+    sm: '0 1px 2px 0 rgb(0 0 0 / 0.04)',
+    md: '0 2px 4px -1px rgb(0 0 0 / 0.06)',
+    lg: '0 4px 6px -2px rgb(0 0 0 / 0.05)',
+    xl: '0 8px 16px -4px rgb(0 0 0 / 0.06)'
   },
   layout: {
-    maxWidth: '1280px', // Consistent max-width
+    maxWidth: '1152px',
     contentPadding: {
       x: '1rem',
       sm: '1.5rem',
       lg: '2rem'
     }
   }
-}; 
+};

@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+
+  <!-- Street grid lines (thin white, 10% opacity) -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.10">
+    <!-- Horizontal streets -->
+    <line x1="0" y1="85" x2="1200" y2="85"/>
+    <line x1="0" y1="170" x2="1200" y2="170"/>
+    <line x1="0" y1="260" x2="1200" y2="260"/>
+    <line x1="0" y1="340" x2="1200" y2="340"/>
+    <line x1="0" y1="430" x2="1200" y2="430"/>
+    <line x1="0" y1="510" x2="1200" y2="510"/>
+    <line x1="0" y1="580" x2="1200" y2="580"/>
+    <!-- Vertical streets -->
+    <line x1="95" y1="0" x2="95" y2="630"/>
+    <line x1="210" y1="0" x2="210" y2="630"/>
+    <line x1="330" y1="0" x2="330" y2="630"/>
+    <line x1="440" y1="0" x2="440" y2="630"/>
+    <line x1="560" y1="0" x2="560" y2="630"/>
+    <line x1="660" y1="0" x2="660" y2="630"/>
+    <line x1="780" y1="0" x2="780" y2="630"/>
+    <line x1="890" y1="0" x2="890" y2="630"/>
+    <line x1="1010" y1="0" x2="1010" y2="630"/>
+    <line x1="1110" y1="0" x2="1110" y2="630"/>
+  </g>
+
+  <!-- ROW 1: top edge -->
+  <rect x="8" y="8" width="82" height="72" rx="2" fill="#388E3C" opacity="0.40"/>
+  <rect x="100" y="8" width="105" height="72" rx="2" fill="#388E3C" opacity="0.35"/>
+  <rect x="1015" y="8" width="90" height="72" rx="2" fill="#388E3C" opacity="0.40"/>
+  <rect x="1115" y="8" width="78" height="72" rx="2" fill="#388E3C" opacity="0.38"/>
+  <rect x="215" y="8" width="110" height="72" rx="2" fill="#1976D2" opacity="0.50"/>
+  <rect x="335" y="8" width="100" height="72" rx="2" fill="#1976D2" opacity="0.45"/>
+  <rect x="895" y="8" width="110" height="72" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="445" y="8" width="110" height="72" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="785" y="8" width="100" height="72" rx="2" fill="#FBC02D" opacity="0.60"/>
+  <rect x="565" y="8" width="90" height="72" rx="2" fill="#D32F2F" opacity="0.65"/>
+  <rect x="665" y="8" width="110" height="72" rx="2" fill="#D32F2F" opacity="0.70"/>
+
+  <!-- ROW 2 -->
+  <rect x="8" y="90" width="82" height="75" rx="2" fill="#388E3C" opacity="0.38"/>
+  <rect x="100" y="90" width="105" height="75" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="215" y="90" width="110" height="75" rx="2" fill="#1976D2" opacity="0.45"/>
+  <rect x="335" y="90" width="100" height="75" rx="2" fill="#FBC02D" opacity="0.58"/>
+  <rect x="445" y="90" width="110" height="75" rx="2" fill="#FBC02D" opacity="0.60"/>
+  <rect x="565" y="90" width="90" height="75" rx="2" fill="#D32F2F" opacity="0.70"/>
+  <rect x="665" y="90" width="110" height="75" rx="2" fill="#D32F2F" opacity="0.72"/>
+  <rect x="785" y="90" width="100" height="75" rx="2" fill="#D32F2F" opacity="0.68"/>
+  <rect x="895" y="90" width="110" height="75" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="1015" y="90" width="90" height="75" rx="2" fill="#1976D2" opacity="0.50"/>
+  <rect x="1115" y="90" width="78" height="75" rx="2" fill="#388E3C" opacity="0.35"/>
+
+  <!-- ROW 3 -->
+  <rect x="8" y="175" width="82" height="80" rx="2" fill="#1976D2" opacity="0.45"/>
+  <rect x="100" y="175" width="105" height="80" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="215" y="175" width="110" height="80" rx="2" fill="#FBC02D" opacity="0.60"/>
+  <rect x="335" y="175" width="100" height="80" rx="2" fill="#D32F2F" opacity="0.68"/>
+  <rect x="445" y="175" width="110" height="80" rx="2" fill="#D32F2F" opacity="0.72"/>
+  <rect x="565" y="175" width="90" height="80" rx="2" fill="#D32F2F" opacity="0.75"/>
+  <rect x="665" y="175" width="110" height="80" rx="2" fill="#D32F2F" opacity="0.72"/>
+  <rect x="785" y="175" width="100" height="80" rx="2" fill="#D32F2F" opacity="0.70"/>
+  <rect x="895" y="175" width="110" height="80" rx="2" fill="#FBC02D" opacity="0.58"/>
+  <rect x="1015" y="175" width="90" height="80" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="1115" y="175" width="78" height="80" rx="2" fill="#1976D2" opacity="0.48"/>
+
+  <!-- ROW 4 - center, heavily red -->
+  <rect x="8" y="265" width="82" height="70" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="100" y="265" width="105" height="70" rx="2" fill="#D32F2F" opacity="0.65"/>
+  <rect x="215" y="265" width="110" height="70" rx="2" fill="#D32F2F" opacity="0.70"/>
+  <rect x="335" y="265" width="100" height="70" rx="2" fill="#D32F2F" opacity="0.72"/>
+  <rect x="445" y="265" width="110" height="70" rx="2" fill="#D32F2F" opacity="0.75"/>
+  <rect x="565" y="265" width="90" height="70" rx="2" fill="#D32F2F" opacity="0.78"/>
+  <rect x="665" y="265" width="110" height="70" rx="2" fill="#D32F2F" opacity="0.75"/>
+  <rect x="785" y="265" width="100" height="70" rx="2" fill="#D32F2F" opacity="0.72"/>
+  <rect x="895" y="265" width="110" height="70" rx="2" fill="#D32F2F" opacity="0.68"/>
+  <rect x="1015" y="265" width="90" height="70" rx="2" fill="#FBC02D" opacity="0.58"/>
+  <rect x="1115" y="265" width="78" height="70" rx="2" fill="#FBC02D" opacity="0.55"/>
+
+  <!-- ROW 5 -->
+  <rect x="8" y="345" width="82" height="80" rx="2" fill="#FBC02D" opacity="0.58"/>
+  <rect x="100" y="345" width="105" height="80" rx="2" fill="#D32F2F" opacity="0.68"/>
+  <rect x="215" y="345" width="110" height="80" rx="2" fill="#D32F2F" opacity="0.72"/>
+  <rect x="335" y="345" width="100" height="80" rx="2" fill="#D32F2F" opacity="0.70"/>
+  <rect x="445" y="345" width="110" height="80" rx="2" fill="#D32F2F" opacity="0.73"/>
+  <rect x="565" y="345" width="90" height="80" rx="2" fill="#D32F2F" opacity="0.75"/>
+  <rect x="665" y="345" width="110" height="80" rx="2" fill="#D32F2F" opacity="0.70"/>
+  <rect x="785" y="345" width="100" height="80" rx="2" fill="#D32F2F" opacity="0.68"/>
+  <rect x="895" y="345" width="110" height="80" rx="2" fill="#FBC02D" opacity="0.60"/>
+  <rect x="1015" y="345" width="90" height="80" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="1115" y="345" width="78" height="80" rx="2" fill="#1976D2" opacity="0.45"/>
+
+  <!-- ROW 6 -->
+  <rect x="8" y="435" width="82" height="70" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="100" y="435" width="105" height="70" rx="2" fill="#FBC02D" opacity="0.58"/>
+  <rect x="215" y="435" width="110" height="70" rx="2" fill="#D32F2F" opacity="0.68"/>
+  <rect x="335" y="435" width="100" height="70" rx="2" fill="#D32F2F" opacity="0.65"/>
+  <rect x="445" y="435" width="110" height="70" rx="2" fill="#D32F2F" opacity="0.70"/>
+  <rect x="565" y="435" width="90" height="70" rx="2" fill="#D32F2F" opacity="0.72"/>
+  <rect x="665" y="435" width="110" height="70" rx="2" fill="#D32F2F" opacity="0.68"/>
+  <rect x="785" y="435" width="100" height="70" rx="2" fill="#FBC02D" opacity="0.60"/>
+  <rect x="895" y="435" width="110" height="70" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="1015" y="435" width="90" height="70" rx="2" fill="#1976D2" opacity="0.50"/>
+  <rect x="1115" y="435" width="78" height="70" rx="2" fill="#388E3C" opacity="0.38"/>
+
+  <!-- ROW 7 -->
+  <rect x="8" y="515" width="82" height="60" rx="2" fill="#388E3C" opacity="0.40"/>
+  <rect x="100" y="515" width="105" height="60" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="215" y="515" width="110" height="60" rx="2" fill="#1976D2" opacity="0.45"/>
+  <rect x="335" y="515" width="100" height="60" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="445" y="515" width="110" height="60" rx="2" fill="#FBC02D" opacity="0.60"/>
+  <rect x="565" y="515" width="90" height="60" rx="2" fill="#D32F2F" opacity="0.65"/>
+  <rect x="665" y="515" width="110" height="60" rx="2" fill="#D32F2F" opacity="0.62"/>
+  <rect x="785" y="515" width="100" height="60" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="895" y="515" width="110" height="60" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="1015" y="515" width="90" height="60" rx="2" fill="#388E3C" opacity="0.40"/>
+  <rect x="1115" y="515" width="78" height="60" rx="2" fill="#388E3C" opacity="0.38"/>
+
+  <!-- ROW 8: bottom edge -->
+  <rect x="8" y="585" width="82" height="38" rx="2" fill="#388E3C" opacity="0.35"/>
+  <rect x="100" y="585" width="105" height="38" rx="2" fill="#388E3C" opacity="0.38"/>
+  <rect x="215" y="585" width="110" height="38" rx="2" fill="#1976D2" opacity="0.45"/>
+  <rect x="335" y="585" width="100" height="38" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="445" y="585" width="110" height="38" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="565" y="585" width="90" height="38" rx="2" fill="#FBC02D" opacity="0.58"/>
+  <rect x="665" y="585" width="110" height="38" rx="2" fill="#FBC02D" opacity="0.55"/>
+  <rect x="785" y="585" width="100" height="38" rx="2" fill="#1976D2" opacity="0.48"/>
+  <rect x="895" y="585" width="110" height="38" rx="2" fill="#1976D2" opacity="0.45"/>
+  <rect x="1015" y="585" width="90" height="38" rx="2" fill="#388E3C" opacity="0.40"/>
+  <rect x="1115" y="585" width="78" height="38" rx="2" fill="#388E3C" opacity="0.35"/>
+
+  <!-- Irregular offset accent blocks for organic feel -->
+  <rect x="150" y="130" width="70" height="50" rx="2" fill="#D32F2F" opacity="0.55" transform="rotate(2, 185, 155)"/>
+  <rect x="920" y="200" width="65" height="55" rx="2" fill="#D32F2F" opacity="0.50" transform="rotate(-1, 952, 227)"/>
+  <rect x="50" y="300" width="55" height="45" rx="2" fill="#FBC02D" opacity="0.45" transform="rotate(1.5, 77, 322)"/>
+  <rect x="1050" y="400" width="60" height="50" rx="2" fill="#1976D2" opacity="0.40" transform="rotate(-2, 1080, 425)"/>
+  <rect x="350" y="480" width="75" height="40" rx="2" fill="#D32F2F" opacity="0.58" transform="rotate(1, 387, 500)"/>
+  <rect x="750" y="130" width="60" height="45" rx="2" fill="#D32F2F" opacity="0.60" transform="rotate(-1.5, 780, 152)"/>
+
+  <!-- Diagonal avenue lines for organic map feel -->
+  <line x1="0" y1="200" x2="400" y2="170" stroke="#ffffff" stroke-width="1.5" opacity="0.08"/>
+  <line x1="800" y1="170" x2="1200" y2="200" stroke="#ffffff" stroke-width="1.5" opacity="0.08"/>
+  <line x1="300" y1="0" x2="250" y2="630" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
+  <line x1="900" y1="0" x2="950" y2="630" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
+
+  <!-- Dark overlay for center text area -->
+  <rect x="250" y="220" width="700" height="210" rx="8" fill="#1a1a2e" opacity="0.82"/>
+
+  <!-- Title text -->
+  <text x="600" y="298" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="bold" fill="#ffffff" filter="url(#glow)">Redlining &amp; Heart Disease</text>
+
+  <!-- Divider line -->
+  <line x1="570" y1="318" x2="630" y2="318" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+
+  <!-- Subtitle text -->
+  <text x="600" y="352" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" fill="#ffffff" opacity="0.70">How a 1930s Housing Policy Still Shapes Cardiovascular Risk</text>
+
+  <!-- HOLC legend -->
+  <g transform="translate(410, 375)" opacity="0.50">
+    <rect x="0" y="0" width="12" height="12" rx="1" fill="#388E3C"/>
+    <text x="18" y="10" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#ffffff">Best</text>
+    <rect x="60" y="0" width="12" height="12" rx="1" fill="#1976D2"/>
+    <text x="78" y="10" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#ffffff">Desirable</text>
+    <rect x="150" y="0" width="12" height="12" rx="1" fill="#FBC02D"/>
+    <text x="168" y="10" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#ffffff">Declining</text>
+    <rect x="240" y="0" width="12" height="12" rx="1" fill="#D32F2F"/>
+    <text x="258" y="10" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#ffffff">Hazardous</text>
+  </g>
+
+  <!-- Bottom branding -->
+  <text x="600" y="610" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#ffffff" opacity="0.30" letter-spacing="3">VOICES OF EQUITY</text>
+</svg>

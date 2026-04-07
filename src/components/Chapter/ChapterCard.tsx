@@ -16,17 +16,16 @@ export function ChapterCard({ chapter }: { chapter: ChapterData }) {
 
     return (
         <div
-            className="relative w-full h-64 perspective-1000 cursor-pointer group"
+            className="relative w-full h-64 perspective-1000 cursor-pointer"
             onClick={() => setIsFlipped(!isFlipped)}
         >
             <div
-                className={`relative w-full h-full duration-500 preserve-3d transition-transform ${isFlipped ? 'rotate-y-180' : ''
-                    }`}
+                className={`relative w-full h-full duration-500 preserve-3d transition-transform ${isFlipped ? 'rotate-y-180' : ''}`}
                 style={{ transformStyle: 'preserve-3d' }}
             >
-                {/* Front of Card */}
-                <div className="absolute inset-0 backface-hidden bg-white rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center p-6">
-                    <div className="relative w-32 h-32 mb-4 flex items-center justify-center">
+                {/* Front */}
+                <div className="absolute inset-0 backface-hidden bg-white rounded-lg border border-gray-200 flex flex-col items-center justify-center p-6">
+                    <div className="relative w-28 h-28 mb-4 flex items-center justify-center">
                         <Image
                             src={chapter.logo}
                             alt={`${chapter.name} Logo`}
@@ -35,26 +34,26 @@ export function ChapterCard({ chapter }: { chapter: ChapterData }) {
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800 text-center leading-tight">
+                    <h3 className="text-base font-bold font-display text-[#171219] text-center leading-tight">
                         {chapter.name}
                     </h3>
-                    <p className="text-xs text-cool-gray-500 mt-2 font-medium uppercase tracking-wider">{chapter.region}</p>
+                    <p className="text-xs text-gray-500 mt-2 font-medium uppercase tracking-wider">{chapter.region}</p>
                 </div>
 
-                {/* Back of Card */}
+                {/* Back */}
                 <div
-                    className="absolute inset-0 backface-hidden bg-[#498B86] rounded-xl shadow-md flex flex-col items-center justify-center p-6 text-white rotate-y-180"
+                    className="absolute inset-0 backface-hidden bg-[#587FDA] rounded-lg flex flex-col items-center justify-center p-6 text-white rotate-y-180"
                     style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                 >
                     <div className="text-center space-y-4">
                         <div>
-                            <p className="text-xs uppercase tracking-wider font-semibold opacity-80 mb-1">President</p>
-                            <p className="text-lg font-bold">{chapter.president}</p>
+                            <p className="text-xs uppercase tracking-wider font-medium opacity-70 mb-1">President</p>
+                            <p className="text-lg font-bold font-display">{chapter.president}</p>
                         </div>
-                        <div className="w-12 h-1 bg-white/30 mx-auto rounded-full" />
+                        <div className="w-8 h-px bg-white/30 mx-auto" />
                         <div>
-                            <p className="text-xs uppercase tracking-wider font-semibold opacity-80 mb-1">Established</p>
-                            <p className="text-xl font-bold">{chapter.foundingYear}</p>
+                            <p className="text-xs uppercase tracking-wider font-medium opacity-70 mb-1">Established</p>
+                            <p className="text-xl font-bold font-display">{chapter.foundingYear}</p>
                         </div>
                     </div>
                 </div>

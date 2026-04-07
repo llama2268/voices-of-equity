@@ -1,67 +1,75 @@
-import { Section } from '@/components/ui/Section';
 import PageLayout from '@/components/Layout/PageLayout';
 import { resourcesPage } from '@/content';
 import type { ArchiveItem } from '@/content/types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ArchiveCardProps {
   item: ArchiveItem;
 }
 
 function ArchiveCard({ item }: ArchiveCardProps) {
-  const typeColors = {
-    article: 'bg-blue-100 text-blue-800',
-    video: 'bg-red-100 text-red-800', 
-    training: 'bg-green-100 text-green-800',
-    interview: 'bg-purple-100 text-purple-800',
-    module: 'bg-yellow-100 text-yellow-800',
-    'op-ed': 'bg-orange-100 text-orange-800',
-    resource: 'bg-gray-100 text-gray-800'
+  const typeColors: Record<string, string> = {
+    article: 'bg-[#587FDA]/10 text-[#587FDA]',
+    video: 'bg-red-50 text-red-700',
+    training: 'bg-[#2A8D87]/10 text-[#2A8D87]',
+    interview: 'bg-purple-50 text-purple-700',
+    module: 'bg-amber-50 text-amber-700',
+    'op-ed': 'bg-orange-50 text-orange-700',
+    resource: 'bg-gray-100 text-gray-700'
   };
+
+  const getLink = () => {
+    if (item.id === 'article-redlining-heart-disease') {
+      return '/resources/archive/redlining-heart-disease';
+    }
+    return item.url;
+  };
+
+  const link = getLink();
+  const isExternal = link?.startsWith('http');
 
   const CardContent = () => (
     <>
       <div className="flex justify-between items-start mb-3">
-        <span className={`px-3 py-1 rounded-full text-sm font-medium ${typeColors[item.type]}`}>
+        <span className={`px-2.5 py-0.5 rounded text-xs font-medium uppercase tracking-widest ${typeColors[item.type] || typeColors.resource}`}>
           {item.type}
         </span>
-        <span className="text-sm text-gray-500">{item.date}</span>
+        <span className="text-xs text-gray-500">{item.date}</span>
       </div>
-      
-      {/* Image support */}
+
       {item.image && (
-        <div className="relative w-full h-48 mb-4">
+        <div className="relative w-full h-44 mb-4">
           <Image
             src={item.image}
             alt={item.title}
             fill
-            className="object-cover rounded-lg"
+            className="object-cover rounded"
           />
         </div>
       )}
 
-      {/* YouTube iframe for videos */}
       {item.type === 'video' && item.videoId && (
-        <div className="relative w-full h-48 mb-4">
+        <div className="relative w-full h-44 mb-4">
           <iframe
             src={`https://www.youtube.com/embed/${item.videoId}`}
             title={item.title}
-            className="w-full h-full rounded-lg"
+            className="w-full h-full rounded"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         </div>
       )}
-      
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+
+      <h3 className="text-lg font-bold font-display text-[#171219] mb-2 line-clamp-2">{item.title}</h3>
       {item.author && (
-        <p className="text-sm text-gray-600 mb-2">by {item.author}</p>
+        <p className="text-xs text-gray-500 mb-2">by {item.author}</p>
       )}
-      <p className="text-gray-600 mb-4">{item.description}</p>
-      
-      <div className="flex flex-wrap gap-2">
-        {item.tags.map((tag: string, index: number) => (
-          <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">
+      <p className="text-sm text-[#4A5568] mb-4 leading-relaxed line-clamp-3">{item.description}</p>
+
+      <div className="flex flex-wrap gap-1.5 mt-auto">
+        {item.tags.slice(0, 3).map((tag: string, index: number) => (
+          <span key={index} className="px-2 py-0.5 bg-[#F7F8FA] text-gray-500 rounded text-xs">
             {tag}
           </span>
         ))}
@@ -69,144 +77,124 @@ function ArchiveCard({ item }: ArchiveCardProps) {
     </>
   );
 
-  // Wrap items with URLs with links
-  if (item.url) {
+  if (link) {
+    const linkProps = isExternal
+      ? { target: '_blank' as const, rel: 'noopener noreferrer' }
+      : {};
+
+    const Wrapper = isExternal ? 'a' : Link;
+
     return (
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow hover:border-primary-300 h-full max-h-[400px] flex flex-col"
+      <Wrapper
+        href={link}
+        {...linkProps}
+        className="group block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-sm
+                   transition-all duration-200 h-full flex flex-col"
       >
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1 flex flex-col">
           <CardContent />
         </div>
-        <div className="mt-4 text-primary-600 text-sm font-medium">
-          {item.type === 'article' ? 'Read Article' : item.type === 'module' ? 'View Module' : 'View Content'} →
+        <div className="mt-4 pt-3 border-t border-gray-200 text-[#587FDA] text-sm font-semibold font-display
+                        group-hover:text-[#4566B8] transition-colors">
+          {item.type === 'article' ? 'Read Article' : item.type === 'module' ? 'View Module' : 'View Content'} &#x2192;
         </div>
-      </a>
+      </Wrapper>
     );
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow h-full max-h-[400px] flex flex-col">
-      <div className="flex-1 overflow-hidden">
+    <div className="bg-white border border-gray-200 rounded-lg p-6 h-full flex flex-col">
+      <div className="flex-1 flex flex-col">
         <CardContent />
       </div>
     </div>
   );
 }
 
-function FeaturedArchiveCard({ item }: ArchiveCardProps) {
-  const FeaturedContent = () => (
-    <>
-      <div className="flex justify-between items-start mb-4">
-        <span className="px-4 py-2 bg-primary-600 text-white rounded-full text-sm font-medium">
-          Featured
-        </span>
-        <span className="text-sm text-gray-600">{item.date}</span>
-      </div>
-
-      {/* Image support for featured */}
-      {item.image && (
-        <div className="relative w-full h-64 mb-6">
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
-      )}
-
-      {/* YouTube iframe for featured videos */}
-      {item.type === 'video' && item.videoId && (
-        <div className="relative w-full h-64 mb-6">
-          <iframe
-            src={`https://www.youtube.com/embed/${item.videoId}`}
-            title={item.title}
-            className="w-full h-full rounded-lg"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      )}
-      
-      <h2 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h2>
-      {item.author && (
-        <p className="text-sm text-gray-600 mb-3">by {item.author}</p>
-      )}
-      <p className="text-gray-700 mb-6 text-lg">{item.description}</p>
-      
-      <div className="flex flex-wrap gap-2">
-        {item.tags.map((tag: string, index: number) => (
-          <span key={index} className="px-3 py-1 bg-white text-primary-600 rounded-full text-sm font-medium">
-            {tag}
-          </span>
-        ))}
-      </div>
-    </>
-  );
-
-  // Wrap featured articles with links
-  if (item.type === 'article' && item.url) {
-    return (
-      <a 
-        href={item.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="block bg-gradient-to-r from-primary-50 to-secondary-50 border-2 border-primary-200 rounded-lg p-8 hover:shadow-lg transition-shadow"
-      >
-        <FeaturedContent />
-        <div className="mt-4 text-primary-600 font-medium">
-          Read Featured Article →
-        </div>
-      </a>
-    );
-  }
+function FeaturedArticleCard({ item }: ArchiveCardProps) {
+  const link = item.id === 'article-redlining-heart-disease'
+    ? '/resources/archive/redlining-heart-disease'
+    : item.url;
 
   return (
-    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 border-2 border-primary-200 rounded-lg p-8">
-      <FeaturedContent />
-    </div>
+    <Link
+      href={link || '#'}
+      className="group block bg-white border border-gray-200 rounded-lg p-8 md:p-10 hover:shadow-sm transition-all duration-200 mb-12"
+    >
+      <div className="flex flex-col md:flex-row gap-8">
+        {item.image && (
+          <div className="relative w-full md:w-80 h-52 md:h-auto flex-shrink-0">
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              className="object-cover rounded"
+            />
+          </div>
+        )}
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="px-3 py-1 bg-[#587FDA] text-white rounded text-xs font-medium uppercase tracking-widest">
+              Featured
+            </span>
+            <span className="text-xs text-gray-500">{item.date}</span>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold font-display text-[#171219] mb-2 group-hover:text-[#587FDA] transition-colors">
+            {item.title}
+          </h2>
+          {item.author && (
+            <p className="text-sm text-gray-500 mb-3">by {item.author}</p>
+          )}
+          <p className="text-[#4A5568] mb-6 leading-relaxed text-base md:text-lg">{item.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {item.tags.map((tag: string, index: number) => (
+              <span key={index} className="px-3 py-1 bg-[#F7F8FA] text-[#4A5568] rounded text-xs font-medium border border-gray-200">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <span className="text-[#587FDA] font-semibold font-display group-hover:text-[#4566B8] transition-colors">
+            Read Full Article &#x2192;
+          </span>
+        </div>
+      </div>
+    </Link>
   );
 }
 
 export default function ArchivePage() {
   const { archive } = resourcesPage;
 
+  const featuredItems = archive.items.filter((item: ArchiveItem) => item.featured);
+  const regularItems = archive.items.filter((item: ArchiveItem) => !item.featured);
+
   return (
-    <div className="relative">
-      {/* Background Banner Image */}
-      {archive.banner && (
-        <div className="absolute top-0 left-0 w-full h-[600px] -z-10">
-          <Image
-            src={archive.banner}
-            alt="Equity Archive Banner"
-            fill
-            className="object-contain"
-            priority
-          />
-          <div className="absolute inset-0 bg-white/60 backdrop-blur-md" />
-        </div>
-      )}
-
-      <PageLayout title={archive.title} subtitle={archive.subtitle}>
-        <Section>
-          <div className="max-w-6xl mx-auto px-4">
-            {/* All Archive Items */}
-            <div>
-              <h2 className="text-3xl font-bold text-center mb-8">Archive Collection</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {archive.items.map((item: any) => (
-                  <ArchiveCard key={item.id} item={item} />
-                ))}
-              </div>
+    <PageLayout title={archive.title} subtitle={archive.subtitle}>
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Featured Articles */}
+          {featuredItems.length > 0 && (
+            <div className="mb-8">
+              {featuredItems.map((item: ArchiveItem) => (
+                <FeaturedArticleCard key={item.id} item={item} />
+              ))}
             </div>
+          )}
 
+          <div className="border-t border-gray-200 mb-12" />
+
+          {/* Archive Grid */}
+          <div>
+            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Browse All</p>
+            <h2 className="text-2xl font-bold font-display text-[#171219] mb-8">Archive Collection</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {regularItems.map((item: ArchiveItem) => (
+                <ArchiveCard key={item.id} item={item} />
+              ))}
+            </div>
           </div>
-        </Section>
-      </PageLayout>
-    </div>
+        </div>
+      </section>
+    </PageLayout>
   );
 }
