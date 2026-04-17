@@ -40,7 +40,7 @@ export function Section({
         {(title || subtitle || description) && (
           <div className={cn("mb-20", centered && "max-w-3xl mx-auto text-center")}>
             {subtitle && (
-              <p className="text-xs uppercase tracking-widest text-gray-500 mb-4 font-medium">
+              <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 mb-4 font-medium">
                 {subtitle}
               </p>
             )}

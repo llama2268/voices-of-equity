@@ -22,7 +22,7 @@ export function Callout({ eyebrow, title, description, link, variant = 'impact',
         : 'border-[#2A8D87]',
       className
     )}>
-      <p className="text-xs font-medium font-display uppercase tracking-widest mb-3 text-gray-500">
+      <p className="font-display text-xs font-medium uppercase tracking-[0.2em] mb-3 text-gray-500">
         {eyebrow}
       </p>
       <h3 className="text-xl font-bold font-display mb-3 text-[#171219]">{title}</h3>

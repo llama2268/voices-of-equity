@@ -100,7 +100,7 @@ export default async function TeamMemberPage({ params }: { params: { memberId: s
 
             {/* Bio */}
             <div className="lg:col-span-8">
-              <p className="text-xs uppercase tracking-widest text-[#587FDA] font-medium mb-3">
+              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-3">
                 {member.role}
               </p>
               <h1 className="font-display text-4xl md:text-5xl font-bold text-[#171219] mb-8">

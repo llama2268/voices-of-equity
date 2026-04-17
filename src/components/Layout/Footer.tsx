@@ -26,7 +26,7 @@ export function Footer() {
 
           {navigation.mainNav.map((section) => (
             <div key={section.title}>
-              <h3 className="text-xs font-medium uppercase tracking-widest text-gray-500 mb-4">{section.title}</h3>
+              <h3 className="font-display text-xs font-medium uppercase tracking-[0.2em] text-gray-500 mb-4">{section.title}</h3>
               <ul className="space-y-2.5">
                 {section.submenu ? (
                   section.submenu.map((item) => (

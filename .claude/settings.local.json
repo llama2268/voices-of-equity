@@ -24,7 +24,8 @@
       "Bash(echo:*)",
       "Bash(npm install:*)",
       "Bash(kill:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)"
     ]
   }
 }

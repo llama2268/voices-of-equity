@@ -39,7 +39,7 @@ const NavBar = () => {
               <div key={item.title} className="relative group">
                 {item.submenu ? (
                   <>
-                    <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-[#333] hover:text-[#587FDA] transition-colors duration-200">
+                    <button className="inline-flex items-center px-3 py-2 text-sm font-sans font-medium tracking-wide text-[#333] hover:text-[#587FDA] transition-colors duration-200">
                       {item.title}
                       <svg className="ml-1 h-3 w-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -64,7 +64,7 @@ const NavBar = () => {
                 ) : (
                   <Link
                     href={item.href || '/'}
-                    className={`px-3 py-2 text-sm font-medium transition-colors ${
+                    className={`px-3 py-2 text-sm font-sans font-medium tracking-wide transition-colors ${
                       pathname === item.href ? 'text-[#587FDA]' : 'text-[#333] hover:text-[#587FDA]'
                     }`}
                   >
@@ -98,7 +98,7 @@ const NavBar = () => {
             <div key={item.title}>
               {item.submenu ? (
                 <div className="mb-4">
-                  <div className="px-3 py-2 text-xs font-medium uppercase tracking-widest text-gray-400">{item.title}</div>
+                  <div className="px-3 py-2 font-sans text-xs font-medium uppercase tracking-[0.2em] text-gray-400">{item.title}</div>
                   {item.submenu.map((sub) => (
                     <Link
                       key={sub.href}

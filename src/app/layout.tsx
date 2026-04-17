@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import { Montserrat } from 'next/font/google'
+import { Montserrat, Playfair_Display } from 'next/font/google'
 import NavBar from '../components/Navigation/NavBar'
 import { Footer } from '../components/Layout/Footer'
 import { siteConfig } from '../content'
@@ -9,6 +9,13 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-montserrat',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-playfair',
 })
 
 export const metadata = {
@@ -25,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className="h-full scroll-smooth">
       <body className={`
         ${montserrat.variable}
+        ${playfair.variable}
         min-h-full flex flex-col
         font-sans
       `}>

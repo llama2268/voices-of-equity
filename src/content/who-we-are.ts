@@ -99,51 +99,45 @@ export const whoWeArePage = {
     ],
     timeline: [
       {
-        year: 'DEC',
+        year: 'DEC 2024',
         title: "VoE Founded",
         description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action",
         side: 'right'
       },
       {
-        year: 2024
-      },
-      {
-        year: 'JAN',
+        year: 'JAN 2025',
         title: "Cornell Chapter Established",
         description: "The first undergraduate chapter is launched at Cornell University, serving as a model for future chapters and student-led initiatives",
         side: 'left'
       },
       {
-        year: 'FEB',
+        year: 'FEB 2025',
         title: "Curriculum & Educational Development Begins",
         description: "Voices of Equity begins developing a structured health equity curriculum, creating accessible educational materials to guide discussions and empower student leaders",
         side: 'right'
       },
       {
-        year: 'MAR',
+        year: 'MAR 2025',
         title: "National Expansion Begins",
         description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country.",
         side: 'left'
       },
       {
-        year: 'JUN',
+        year: 'JUN 2025',
         title: "Foundations Solidified, Future in Motion",
         description: "As VoE closes out its founding year, over 30 active chapters are established nationwide, a national leadership model is fully implemented, and VoE's boots-on-the-ground communities based initiatives begin shaping the future of student-led health equity",
         side: 'right'
       },
       {
-        year: 2025
-      },
-      {
-        year: 'AUG',
+        year: 'AUG 2025',
         title: "Leadership Onboarding Intensive",
         description: "In August 2025, Voices of Equity hosted its first national onboarding intensive, bringing together over 100 student leaders from 40+ undergraduate institutions. Across two days of training, presidents and committee directors were equipped with the resources, expectations, and networks needed to lead their chapters effectively. This milestone marked the formal launch of a unified national structure and the next stage of VoE's growth.",
         side: 'left'
       },
       {
-        year: 'OCT',
+        year: 'OCT 2025',
         title: "National Health Equity Week",
-        description: "Our first major nationwide initiative launched with incredible momentum. Over the course of the week, we raised over $2,000, distributed $1,000+ in grants, engaged 30+ campuses, and mobilized 200+ members to take action in their communities.",
+        description: "Our first major nationwide initiative launched with incredible momentum. Over the course of the week, we raised over $43,000, distributed $5,000+ in grants, engaged 50+ campuses, and mobilized 1,000+ members to take action in their communities.",
         side: 'right'
       },
     ] satisfies TimelineEvent[],

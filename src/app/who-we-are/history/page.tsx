@@ -2,246 +2,253 @@
 
 import { whoWeArePage } from '@/content';
 import Image from 'next/image';
-import { useState, useRef, useEffect, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
+import AnimatedCounter from '@/components/Animation/AnimatedCounter';
 
-// ── FadeInSection wrapper ──────────────────────────────────────────────
-function FadeInSection({ children, className = '' }: { children: ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry && entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'} ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-// ── Types ──────────────────────────────────────────────────────────────
 interface Milestone {
-  year: string | number;
+  year: string;
   title: string;
   description: string;
-  side?: string;
+  image: string;
+  stats?: { value: number; prefix?: string; suffix?: string; label: string }[];
 }
 
-// ── Interactive Timeline ───────────────────────────────────────────────
-function InteractiveTimeline({ milestones }: { milestones: Milestone[] }) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
+const milestoneMedia: Record<string, { image: string; stats?: Milestone['stats'] }> = {
+  'DEC 2024': { image: '/impact-photos/general-1.jpeg' },
+  'JAN 2025': { image: '/cornell-chapter.jpg' },
+  'FEB 2025': { image: '/impact-photos/cmu-1.jpeg' },
+  'MAR 2025': { image: '/impact-photos/howard-1.jpeg' },
+  'JUN 2025': {
+    image: '/impact-photos/uconn-1.jpeg',
+    stats: [
+      { value: 30, suffix: '+', label: 'Chapters' },
+    ],
+  },
+  'AUG 2025': {
+    image: '/team-picture.jpg',
+    stats: [
+      { value: 100, suffix: '+', label: 'Student Leaders' },
+      { value: 40, suffix: '+', label: 'Institutions' },
+    ],
+  },
+  'OCT 2025': {
+    image: '/impact-photos/nhew-flyer.jpg',
+    stats: [
+      { value: 43000, prefix: '$', suffix: '+', label: 'Raised' },
+      { value: 50, suffix: '+', label: 'Campuses' },
+      { value: 1000, suffix: '+', label: 'Mobilized' },
+    ],
+  },
+};
 
-  const toggle = (i: number) => {
-    setActiveIndex(activeIndex === i ? null : i);
-  };
+function HorizontalTimeline({ milestones }: { milestones: Milestone[] }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [isAutoplay, setIsAutoplay] = useState(false);
 
-  // Fraction of the progress line that should be filled
-  const progressFraction =
-    activeIndex !== null && milestones.length > 1
-      ? activeIndex / (milestones.length - 1)
-      : 0;
+  const goTo = useCallback((next: number) => {
+    setActiveIndex((prev) => {
+      const clamped = Math.max(0, Math.min(milestones.length - 1, next));
+      setDirection(clamped >= prev ? 1 : -1);
+      return clamped;
+    });
+  }, [milestones.length]);
+
+  const next = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
+  const prev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [next, prev]);
+
+  useEffect(() => {
+    if (!isAutoplay) return;
+    const id = window.setInterval(() => {
+      setActiveIndex((prev) => {
+        const n = (prev + 1) % milestones.length;
+        setDirection(1);
+        return n;
+      });
+    }, 6000);
+    return () => window.clearInterval(id);
+  }, [isAutoplay, milestones.length]);
+
+  const active = milestones[activeIndex];
+  if (!active) return null;
+
+  const progressPercent = milestones.length > 1 ? (activeIndex / (milestones.length - 1)) * 100 : 0;
 
   return (
-    <>
-      {/* ── Desktop: horizontal timeline (md+) ── */}
-      <div className="hidden md:block">
-        {/* Node row */}
-        <div className="relative mx-auto max-w-6xl">
-          {/* Background line */}
-          <div className="absolute top-[10px] left-0 right-0 h-1 bg-gray-200 rounded" />
-          {/* Progress line */}
-          <div
-            className="absolute top-[10px] left-0 h-1 bg-[#587FDA] rounded transition-all duration-500 ease-out"
-            style={{ width: `${progressFraction * 100}%` }}
-          />
-
-          {/* Nodes */}
-          <div className="relative flex justify-between">
+    <div className="max-w-6xl mx-auto">
+      {/* Milestone tab row */}
+      <div className="relative mb-12 md:mb-16">
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex items-end justify-between gap-6 md:gap-10 min-w-max md:min-w-0 px-1">
             {milestones.map((m, i) => {
-              const isActive = activeIndex === i;
-              const isPast = activeIndex !== null && i <= activeIndex;
+              const isActive = i === activeIndex;
               return (
                 <button
-                  key={i}
-                  onClick={() => toggle(i)}
-                  className="flex flex-col items-center group focus:outline-none"
-                  style={{ width: `${100 / milestones.length}%` }}
+                  key={m.year}
+                  onClick={() => goTo(i)}
+                  className="group flex flex-col items-center text-center focus:outline-none"
                 >
-                  {/* Dot */}
-                  <div
-                    className={`rounded-full border-[3px] transition-all duration-300 flex items-center justify-center ${
-                      isActive
-                        ? 'w-6 h-6 bg-[#587FDA] border-[#587FDA] scale-110'
-                        : isPast
-                        ? 'w-5 h-5 bg-[#587FDA] border-[#587FDA]'
-                        : 'w-5 h-5 bg-white border-gray-300 group-hover:border-[#587FDA]'
-                    }`}
-                  >
-                    {isActive && (
-                      <div className="w-2 h-2 bg-white rounded-full" />
-                    )}
-                  </div>
-                  {/* Label */}
                   <span
-                    className={`mt-3 text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${
-                      isActive ? 'text-[#587FDA]' : 'text-gray-400 group-hover:text-gray-600'
+                    className={`font-display uppercase tracking-[0.18em] transition-all duration-300 ${
+                      isActive
+                        ? 'text-[#587FDA] font-bold text-base md:text-lg'
+                        : 'text-gray-500 font-medium text-xs md:text-sm group-hover:text-gray-700'
                     }`}
                   >
                     {m.year}
                   </span>
                   <span
-                    className={`mt-1 text-xs leading-tight text-center max-w-[140px] transition-colors duration-300 ${
-                      isActive ? 'text-[#171219] font-medium' : 'text-gray-500'
+                    className={`mt-3 h-[2px] w-12 md:w-16 transition-all duration-300 ${
+                      isActive ? 'bg-[#587FDA] h-[3px]' : 'bg-gray-200 group-hover:bg-gray-300'
                     }`}
-                  >
-                    {m.title}
-                  </span>
+                  />
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Expanded content panel */}
-        <div
-          className="overflow-hidden transition-all duration-500 ease-out"
-          style={{
-            maxHeight: activeIndex !== null ? '500px' : '0px',
-            opacity: activeIndex !== null ? 1 : 0,
-          }}
-        >
-          {activeIndex !== null && milestones[activeIndex] && (
-            <div className="mt-10 max-w-3xl mx-auto text-center p-8 md:p-10 min-h-[200px] flex flex-col items-center justify-center">
-              <h3 className="text-xl md:text-2xl font-bold font-display text-[#171219] mb-4">
-                {milestones[activeIndex]!.title}
-              </h3>
-              <p className="text-base md:text-lg text-[#4A5568] leading-relaxed">
-                {milestones[activeIndex]!.description}
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── Mobile: vertical accordion (below md) ── */}
-      <div className="md:hidden" ref={scrollRef}>
-        <div className="relative pl-10">
-          {/* Vertical line */}
-          <div className="absolute left-[17px] top-0 bottom-0 w-[3px] bg-gray-200 rounded" />
-          {/* Progress line */}
+        {/* Progress bar */}
+        <div className="mt-6 relative h-[2px] bg-gray-100 rounded-full overflow-hidden">
           <div
-            className="absolute left-[17px] top-0 w-[3px] bg-[#587FDA] rounded transition-all duration-500 ease-out"
+            className="absolute inset-y-0 left-0 bg-gradient-accent rounded-full"
             style={{
-              height:
-                activeIndex !== null && milestones.length > 1
-                  ? `${(activeIndex / (milestones.length - 1)) * 100}%`
-                  : '0%',
+              width: `${progressPercent}%`,
+              transition: 'width 600ms cubic-bezier(0.2, 0.8, 0.2, 1)',
             }}
           />
-
-          {milestones.map((m, i) => {
-            const isActive = activeIndex === i;
-            const isPast = activeIndex !== null && i <= activeIndex;
-            return (
-              <div key={i} className="relative mb-6">
-                {/* Dot */}
-                <div
-                  className={`absolute -left-10 top-4 w-8 h-8 rounded-full border-[3px] transition-all duration-300 flex items-center justify-center ${
-                    isActive
-                      ? 'bg-[#587FDA] border-[#587FDA] scale-110'
-                      : isPast
-                      ? 'bg-[#587FDA] border-[#587FDA]'
-                      : 'bg-white border-gray-300'
-                  }`}
-                >
-                  {isActive && (
-                    <div className="w-2 h-2 bg-white rounded-full" />
-                  )}
-                </div>
-
-                {/* Card */}
-                <button
-                  onClick={() => toggle(i)}
-                  className="w-full text-left focus:outline-none"
-                >
-                  <div
-                    className={`rounded-lg border p-6 transition-all duration-300 ${
-                      isActive
-                        ? 'border-[#587FDA] bg-[#587FDA]/5'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="text-sm font-bold uppercase tracking-wider text-[#587FDA]">
-                          {m.year}
-                        </span>
-                        <h3 className="text-lg font-bold font-display text-[#171219] mt-1">
-                          {m.title}
-                        </h3>
-                      </div>
-                      <svg
-                        className={`w-6 h-6 text-[#587FDA] transition-transform duration-300 flex-shrink-0 ml-4 ${
-                          isActive ? 'rotate-180' : ''
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2.5}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-
-                    {/* Expandable description */}
-                    <div
-                      className="overflow-hidden transition-all duration-400 ease-out"
-                      style={{
-                        maxHeight: isActive ? '400px' : '0px',
-                        opacity: isActive ? 1 : 0,
-                        marginTop: isActive ? '16px' : '0px',
-                      }}
-                    >
-                      <p className="text-[#4A5568] leading-relaxed text-base">
-                        {m.description}
-                      </p>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            );
-          })}
         </div>
       </div>
-    </>
+
+      {/* Slide */}
+      <div className="relative">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={active.year}
+            custom={direction}
+            initial={{ opacity: 0, x: direction > 0 ? 20 : -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: direction > 0 ? -20 : 20 }}
+            transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
+            className="grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+          >
+            <div>
+              <p className="font-display text-xs uppercase tracking-[0.25em] text-[#587FDA] font-bold mb-4">
+                {active.year}
+              </p>
+              <h3 className="font-display text-3xl md:text-4xl font-bold text-[#171219] mb-5 leading-tight tracking-tight">
+                {active.title}
+              </h3>
+              <p className="text-base md:text-lg text-[#4A5568] leading-relaxed">
+                {active.description}
+              </p>
+
+              {active.stats && active.stats.length > 0 && (
+                <div
+                  className={`mt-8 grid gap-4 ${
+                    active.stats.length === 1
+                      ? 'grid-cols-1 max-w-xs'
+                      : active.stats.length === 2
+                      ? 'grid-cols-2 max-w-md'
+                      : 'grid-cols-3 max-w-2xl'
+                  }`}
+                >
+                  {active.stats.map((s, si) => (
+                    <div key={si} className="bg-white border border-gray-100 rounded-lg p-4 shadow-resting">
+                      <p className="text-2xl md:text-3xl font-bold font-display text-[#587FDA]">
+                        <AnimatedCounter target={s.value} prefix={s.prefix ?? ''} suffix={s.suffix ?? ''} />
+                      </p>
+                      <p className="text-xs uppercase tracking-wide text-gray-500 mt-1 font-medium">
+                        {s.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-raised">
+              <Image
+                src={active.image}
+                alt={active.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Arrow controls */}
+      <div className="flex items-center justify-between mt-12">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={prev}
+            disabled={activeIndex === 0}
+            aria-label="Previous milestone"
+            className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-[#171219] hover:border-[#587FDA] hover:text-[#587FDA] transition-premium disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-gray-200 disabled:hover:text-[#171219]"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={next}
+            disabled={activeIndex === milestones.length - 1}
+            aria-label="Next milestone"
+            className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-[#171219] hover:border-[#587FDA] hover:text-[#587FDA] transition-premium disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-gray-200 disabled:hover:text-[#171219]"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setIsAutoplay((v) => !v)}
+            aria-label={isAutoplay ? 'Pause autoplay' : 'Play autoplay'}
+            className="ml-2 text-xs font-display uppercase tracking-[0.2em] text-gray-500 hover:text-[#587FDA] transition-premium"
+          >
+            {isAutoplay ? 'Pause' : 'Auto'}
+          </button>
+        </div>
+        <p className="text-xs font-display uppercase tracking-[0.2em] text-gray-400">
+          <span className="text-[#171219] font-semibold">{String(activeIndex + 1).padStart(2, '0')}</span>
+          <span className="mx-2">/</span>
+          {String(milestones.length).padStart(2, '0')}
+        </p>
+      </div>
+    </div>
   );
 }
 
-// ── Page ────────────────────────────────────────────────────────────────
 export default function HistoryPage() {
   const { title, subtitle, content, timeline, conclusion } = whoWeArePage.history;
 
-  // Filter out year-only separator entries — keep only real milestones
   const milestones: Milestone[] = timeline
     .filter((e) => 'title' in e && 'description' in e && !!e.title && !!e.description)
-    .map((e) => ({
-      year: String(e.year),
-      title: (e as { title: string }).title,
-      description: (e as { description: string }).description,
-      side: (e as { side?: string }).side,
-    }));
+    .map((e) => {
+      const key = String(e.year);
+      const media = milestoneMedia[key] ?? { image: '/team-picture.jpg' };
+      return {
+        year: key,
+        title: (e as { title: string }).title,
+        description: (e as { description: string }).description,
+        image: media.image,
+        stats: media.stats,
+      };
+    });
 
   return (
     <>
@@ -260,79 +267,56 @@ export default function HistoryPage() {
       {/* Header */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-[#171219] mb-4">{title}</h1>
-          <p className="text-lg text-[#4A5568] max-w-2xl mx-auto">{subtitle}</p>
+          <AnimateOnScroll animation="fade-up">
+            <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
+              Who We Are
+            </p>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-[#171219] mb-4 tracking-tight">{title}</h1>
+            <p className="text-lg text-[#4A5568] max-w-2xl mx-auto">{subtitle}</p>
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* Content */}
-      <section className="pb-24 bg-white">
+      <section className="pb-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             {content.map((paragraph, index) => (
-              <p key={index} className="mb-6 text-lg text-[#4A5568] leading-relaxed">
-                {paragraph}
-              </p>
+              <AnimateOnScroll key={index} animation="fade-up" delay={index * 100}>
+                <p className="mb-6 text-lg text-[#4A5568] leading-relaxed">{paragraph}</p>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="border-t border-gray-200" />
-
-      {/* Interactive Timeline */}
-      <FadeInSection>
-        <section className="py-28 md:py-32 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium text-center mb-4">MILESTONES</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-center text-[#171219] mb-16">Our Journey</h2>
-            <InteractiveTimeline milestones={milestones} />
-          </div>
-        </section>
-      </FadeInSection>
-
-      {/* Divider */}
-      <div className="border-t border-gray-200" />
-
-      {/* Impact Numbers */}
-      <FadeInSection>
-        <section className="py-24 bg-[#F7F8FA]">
-          <div className="max-w-6xl mx-auto px-6">
-            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium text-center mb-4">By The Numbers</p>
-            <h2 className="font-display text-3xl font-bold text-center text-[#171219] mb-16">Our Impact</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-sm transition-shadow">
-                <h3 className="text-4xl font-bold text-[#587FDA] mb-3">$40,000+</h3>
-                <p className="text-lg font-semibold text-[#171219] mb-3">Raised for Health Equity Initiatives</p>
-                <p className="text-[#4A5568] leading-relaxed">Fueling community impact. Voices of Equity has mobilized over $40,000 to support programs that expand access to care and advance health equity nationwide.</p>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-sm transition-shadow">
-                <h3 className="text-4xl font-bold text-[#587FDA] mb-3">55+</h3>
-                <p className="text-lg font-semibold text-[#171219] mb-3">Chapters Across Undergraduate Institutions Worldwide</p>
-                <p className="text-[#4A5568] leading-relaxed">A growing global network. With more than 55 chapters across the U.S. and abroad, our student-led movement is embedding health equity into campuses and communities everywhere.</p>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-sm transition-shadow">
-                <h3 className="text-4xl font-bold text-[#587FDA] mb-3">60,000+</h3>
-                <p className="text-lg font-semibold text-[#171219] mb-3">People Reached Through Health Equity Education</p>
-                <p className="text-[#4A5568] leading-relaxed">Expanding awareness and action. Our content and programming have reached over 60,000 people, with more than 350 individuals trained through our health equity curriculum.</p>
-              </div>
+      {/* Horizontal Timeline */}
+      <section className="py-24 md:py-32 bg-gradient-surface">
+        <div className="max-w-6xl mx-auto px-6 mb-12 md:mb-16">
+          <AnimateOnScroll animation="heading">
+            <div className="text-center">
+              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
+                Our Journey
+              </p>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-[#171219] tracking-tight">
+                From Idea to Movement
+              </h2>
             </div>
-          </div>
-        </section>
-      </FadeInSection>
-
-      {/* Divider */}
-      <div className="border-t border-gray-200" />
+          </AnimateOnScroll>
+        </div>
+        <div className="px-6">
+          <HorizontalTimeline milestones={milestones} />
+        </div>
+      </section>
 
       {/* Conclusion */}
-      <section className="py-24 bg-[#F7F8FA]">
+      <section className="py-24 bg-warm-wash">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-[#4A5568] leading-relaxed">
-              {conclusion}
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg text-[#4A5568] leading-relaxed">{conclusion}</p>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
     </>

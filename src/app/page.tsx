@@ -7,31 +7,9 @@ import { homePage } from '@/content'
 import { SocialCallout } from '@/components/ui/SocialCallout'
 import { EducateIcon, InspireIcon, EmpowerIcon } from '@/components/icons/MissionIcons';
 import Link from 'next/link'
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-
-function FadeInSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry && entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'} ${className}`}>
-      {children}
-    </div>
-  );
-}
+import AnimateOnScroll from '@/components/Animation/AnimateOnScroll'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -59,7 +37,7 @@ export default function HomePage() {
   const slides = [
     { title: 'National Initiatives', description: 'Nationwide programs advancing health equity across communities', bg: '/paintingtry.jpg', bgPos: 'center 45%', cta: { text: 'Learn More', href: '/what-we-do/national' } },
     { title: 'Our Impact', description: 'Real stories of change and transformation in our communities', bg: '/impact-stories.jpeg', bgPos: 'center 45%', cta: { text: 'See Our Work', href: '/what-we-do/impact' } },
-    { title: 'Our Chapters', description: 'Student-led chapters driving change across 55+ universities nationwide', bg: '/cornell-chapter.jpg', bgPos: 'center 30%', cta: { text: 'Find a Chapter', href: '/get-involved/chapters' } },
+    { title: 'Our Chapters', description: 'Student-led chapters driving change across 60+ universities nationwide', bg: '/cornell-chapter.jpg', bgPos: 'center 30%', cta: { text: 'Find a Chapter', href: '/get-involved/chapters' } },
     { title: 'Resources', description: 'Educational materials and research for health equity advocacy', bg: '/home-resources.jpg', bgPos: 'center 30%', cta: { text: 'Explore Resources', href: '/resources' } },
   ];
 
@@ -88,59 +66,55 @@ export default function HomePage() {
       </section>
 
       {/* Mission */}
-      <section className="py-24 bg-white relative">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-[#587FDA]" />
+      <section className="py-28 bg-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <p className="text-xs uppercase tracking-widest text-gray-500 mb-4 font-medium">Our Purpose</p>
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219] mb-6">
+          <AnimateOnScroll animation="heading">
+            <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] mb-4 font-medium">Our Purpose</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-[#171219] mb-6 tracking-tight max-w-3xl">
               {mission.heading}
             </h2>
-            <p className="text-lg text-[#4A5568] leading-relaxed max-w-3xl mb-20">
+            <p className="text-lg md:text-xl text-[#4A5568] leading-relaxed max-w-3xl mb-20">
               {mission.text}
             </p>
-          </FadeInSection>
+          </AnimateOnScroll>
 
-          <div className="grid md:grid-cols-3 gap-16">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             {missionPoints.map((point, idx) => (
-              <FadeInSection key={point.title} delay={idx * 150}>
-                <div className="text-[#587FDA] mb-4">{point.icon}</div>
-                <h3 className="text-xl font-bold font-display text-[#171219] mb-3">{point.title}</h3>
+              <AnimateOnScroll key={point.title} animation="fade-up" delay={idx * 150}>
+                <div className="text-[#587FDA] mb-5">{point.icon}</div>
+                <h3 className="font-display text-xl font-semibold text-[#171219] mb-3">{point.title}</h3>
                 <p className="text-[#4A5568] leading-relaxed">{point.description}</p>
-              </FadeInSection>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="border-t border-gray-200" />
-
       {/* Impact Stats */}
-      <section className="py-24 bg-[#F7F8FA]">
+      <section className="py-24 bg-gradient-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
+          <AnimateOnScroll animation="heading">
             <div className="mb-16">
-              <p className="text-xs uppercase tracking-widest text-gray-500 mb-4 font-medium">By the Numbers</p>
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219]">Our Impact</h2>
+              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] mb-4 font-medium">By The Numbers</p>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-[#171219] tracking-tight">Our Impact</h2>
             </div>
             <ImpactTracker />
             <div className="mt-12">
               <Link
                 href="/what-we-do/impact"
-                className="text-[#587FDA] font-medium font-display hover:text-[#4566B8] transition-colors"
+                className="text-[#587FDA] font-medium font-display hover:text-[#4566B8] transition-colors link-underline"
               >
                 View Full Impact Report &#x2192;
               </Link>
             </div>
-          </FadeInSection>
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* University Logo Bar */}
-      <section className="py-12 bg-white border-y border-gray-200 overflow-hidden">
+      <section className="py-12 bg-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-          <p className="text-xs uppercase tracking-widest text-gray-500 font-medium text-center">Our Chapter Network</p>
+          <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 font-medium text-center">Our Chapter Network</p>
         </div>
         <div className="flex gap-12 w-max voe-marquee items-center">
           {(() => {
@@ -153,7 +127,7 @@ export default function HomePage() {
       </section>
 
       {/* Carousel */}
-      <section className="bg-white py-24">
+      <section className="bg-warm-wash py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
             <div className="overflow-hidden rounded-lg">
@@ -209,48 +183,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Accent band before Initiatives */}
-      <div className="h-1 bg-[#587FDA]" />
-
       {/* Initiatives */}
-      <section className="py-24 bg-[#F7F8FA]">
+      <section className="py-24 bg-gradient-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <p className="text-xs uppercase tracking-widest text-gray-500 mb-4 font-medium">What We Do</p>
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219] mb-4">Key Initiatives</h2>
+          <AnimateOnScroll animation="heading">
+            <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] mb-4 font-medium">What We Do</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-[#171219] mb-4 tracking-tight">Key Initiatives</h2>
             <p className="text-lg text-[#4A5568] max-w-2xl mb-16">
               Building health equity through education, activation, and community-driven change.
             </p>
-          </FadeInSection>
+          </AnimateOnScroll>
 
           <div className="grid md:grid-cols-3 gap-8">
             {homePage.initiatives.map((initiative, idx) => (
-              <FadeInSection key={initiative.title} delay={idx * 150}>
-                <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-                  <div className="relative h-48">
-                    <Image src={initiative.image} alt={initiative.title} fill className="object-cover" />
+              <AnimateOnScroll key={initiative.title} animation="scale-in" delay={idx * 150}>
+                <div className="premium-card group overflow-hidden h-full">
+                  <div className="relative h-48 overflow-hidden rounded-t-xl">
+                    <Image
+                      src={initiative.image}
+                      alt={initiative.title}
+                      fill
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold font-display text-[#171219] mb-3">{initiative.title}</h3>
+                  <div className="p-7">
+                    <h3 className="font-display text-lg font-semibold text-[#171219] mb-3 transition-colors duration-300 group-hover:text-[#2A8D87]">
+                      {initiative.title}
+                    </h3>
                     <p className="text-[#4A5568] leading-relaxed text-sm">{initiative.description}</p>
                   </div>
                 </div>
-              </FadeInSection>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="border-t border-gray-200" />
-
       {/* Links */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-warm-wash">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <div className="grid md:grid-cols-2 gap-px bg-gray-200">
-              <Link href="/who-we-are/team" className="group bg-white p-10 hover:bg-[#F7F8FA] hover:-translate-y-0.5 transition-all">
-                <p className="text-xs uppercase tracking-widest text-gray-500 mb-3 font-medium">Meet Our Team</p>
+          <div className="grid md:grid-cols-2 gap-px bg-gray-200">
+            <AnimateOnScroll animation="fade-in-left">
+              <Link href="/who-we-are/team" className="group block bg-white p-10 hover:bg-[#F7F8FA] hover-lift">
+                <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 mb-3 font-medium">Meet Our Team</p>
                 <h3 className="text-2xl font-bold font-display text-[#171219] mb-3 group-hover:text-[#587FDA] transition-colors">
                   Executive Leadership
                 </h3>
@@ -259,8 +234,10 @@ export default function HomePage() {
                 </p>
                 <span className="text-[#587FDA] font-medium text-sm">View Team &#x2192;</span>
               </Link>
-              <Link href="/get-involved/start" className="group bg-white p-10 hover:bg-[#F7F8FA] hover:-translate-y-0.5 transition-all">
-                <p className="text-xs uppercase tracking-widest text-gray-500 mb-3 font-medium">Get Involved</p>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fade-in-right">
+              <Link href="/get-involved/start" className="group block bg-white p-10 hover:bg-[#F7F8FA] hover-lift">
+                <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 mb-3 font-medium">Get Involved</p>
                 <h3 className="text-2xl font-bold font-display text-[#171219] mb-3 group-hover:text-[#587FDA] transition-colors">
                   Start a Chapter
                 </h3>
@@ -269,21 +246,21 @@ export default function HomePage() {
                 </p>
                 <span className="text-[#587FDA] font-medium text-sm">Get Started &#x2192;</span>
               </Link>
-            </div>
-          </FadeInSection>
+            </AnimateOnScroll>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-24 bg-[#171219]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeInSection>
+          <AnimateOnScroll animation="heading">
             <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-6">Join Our Community</h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
               Connect with changemakers building a more equitable future for all.
             </p>
             <SocialCallout />
-          </FadeInSection>
+          </AnimateOnScroll>
         </div>
       </section>
     </PageLayout>

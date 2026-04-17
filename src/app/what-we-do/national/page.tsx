@@ -1,72 +1,10 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-/* ------------------------------------------------------------------ */
-/*  Fade-in on scroll                                                  */
-/* ------------------------------------------------------------------ */
-function FadeInSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry && entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold: 0.15 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Animated count-up number                                           */
-/* ------------------------------------------------------------------ */
-function CountUp({ target, prefix = '', suffix = '' }: { target: number; prefix?: string; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry && entry.isIntersecting) { setStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!started) return;
-    const duration = 1600;
-    const steps = 40;
-    const increment = target / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) { setValue(target); clearInterval(timer); }
-      else setValue(Math.floor(current));
-    }, duration / steps);
-    return () => clearInterval(timer);
-  }, [started, target]);
-
-  return <span ref={ref}>{prefix}{value.toLocaleString()}{suffix}</span>;
-}
+import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
+import AnimatedCounter from '@/components/Animation/AnimatedCounter';
 
 /* ------------------------------------------------------------------ */
 /*  CARE Carousel slide type & data                                    */
@@ -111,10 +49,9 @@ const careSlides: InitiativeSlide[] = [
 /*  Stats data                                                         */
 /* ------------------------------------------------------------------ */
 const stats = [
-  { value: 2000, prefix: '$', suffix: '+', label: 'Raised' },
-  { value: 1000, prefix: '$', suffix: '+', label: 'Grants Distributed' },
-  { value: 30, prefix: '', suffix: '+', label: 'Campuses Engaged' },
-  { value: 200, prefix: '', suffix: '+', label: 'Members Mobilized' },
+  { value: 43000, prefix: '$', suffix: '+', label: 'Raised' },
+  { value: 60, prefix: '', suffix: '+', label: 'Chapters Engaged' },
+  { value: 1000, prefix: '', suffix: '+', label: 'Members Involved' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -170,23 +107,25 @@ export default function NationalPage() {
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs uppercase tracking-widest text-white/60 mb-4">What We Do</p>
-          <h1 className="text-5xl md:text-6xl font-bold font-display text-white mb-6">
-            National Initiatives
-          </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Coordinated programs uniting 55+ chapters in a shared mission to advance health equity nationwide.
-          </p>
+          <AnimateOnScroll animation="fade-in">
+            <p className="font-display text-xs uppercase tracking-[0.2em] text-white/60 mb-4">What We Do</p>
+            <h1 className="text-5xl md:text-6xl font-bold font-display text-white mb-6">
+              National Initiatives
+            </h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Coordinated programs uniting 60+ chapters in a shared mission to advance health equity nationwide.
+            </p>
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* ===== 2. NATIONAL HEALTH EQUITY WEEK ===== */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Image */}
-              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <AnimateOnScroll animation="fade-in-left">
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden hover-image-zoom">
                 <Image
                   src="/images/chapters/howard-1.jpg"
                   alt="National Health Equity Week"
@@ -194,10 +133,12 @@ export default function NationalPage() {
                   className="object-cover"
                 />
               </div>
+            </AnimateOnScroll>
 
-              {/* Text */}
+            {/* Text */}
+            <AnimateOnScroll animation="fade-in-right">
               <div>
-                <p className="text-xs uppercase tracking-widest text-[#587FDA] mb-3">Flagship Initiative</p>
+                <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] mb-3">Flagship Initiative</p>
                 <h2 className="text-3xl font-bold font-display text-[#171219] mb-6">
                   National Health Equity Week
                 </h2>
@@ -209,22 +150,24 @@ export default function NationalPage() {
                   For Fall 2025, our focus was health equity through the lens of addiction &mdash; examining how substance use is shaped by disparities in access to care, stigma, systemic bias, and socioeconomic barriers.
                 </p>
               </div>
-            </div>
-          </FadeInSection>
+            </AnimateOnScroll>
+          </div>
         </div>
       </section>
 
       {/* ===== 3. STATS ===== */}
       <section className="py-16 bg-[#F7F8FA] border-y border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <p className="text-4xl md:text-5xl font-bold font-display text-[#171219]">
-                  <CountUp target={s.value} prefix={s.prefix} suffix={s.suffix} />
-                </p>
-                <p className="mt-2 text-sm text-[#4A5568] tracking-wide">{s.label}</p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {stats.map((s, i) => (
+              <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 100}>
+                <div>
+                  <p className="text-4xl md:text-5xl font-bold font-display text-[#171219]">
+                    <AnimatedCounter target={s.value} prefix={s.prefix} suffix={s.suffix} />
+                  </p>
+                  <p className="mt-2 font-sans text-sm uppercase tracking-wide text-[#4A5568]">{s.label}</p>
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -233,28 +176,28 @@ export default function NationalPage() {
       {/* ===== 4. HEALTH EQUITY WEEK ACTIVITIES ===== */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Text (left on desktop) */}
-              <div className="order-2 md:order-1">
-                <h2 className="text-3xl font-bold font-display text-[#171219] mb-6">Week Activities</h2>
-                <ul className="space-y-4 text-[#4A5568]">
-                  {[
-                    'Fundraising efforts to support national and local partners advancing equity in addiction care',
-                    'Advocacy campaigns that raised awareness and pushed for systemic change',
-                    'Educational modules grounding members in the science and policies of addiction',
-                    'Panels and guest speakers featuring professionals and advocates',
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="flex-shrink-0 mt-2 mr-3 h-1.5 w-1.5 rounded-full bg-[#587FDA]" />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Text (left on desktop) */}
+            <AnimateOnScroll animation="fade-in-left" className="order-2 md:order-1">
+              <h2 className="text-3xl font-bold font-display text-[#171219] mb-6">Week Activities</h2>
+              <ul className="space-y-4 text-[#4A5568]">
+                {[
+                  'Fundraising efforts to support national and local partners advancing equity in addiction care',
+                  'Advocacy campaigns that raised awareness and pushed for systemic change',
+                  'Educational modules grounding members in the science and policies of addiction',
+                  'Panels and guest speakers featuring professionals and advocates',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="flex-shrink-0 mt-2 mr-3 h-1.5 w-1.5 rounded-full bg-[#587FDA]" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </AnimateOnScroll>
 
-              {/* Flyer (right on desktop) — tall poster, show full height */}
-              <div className="relative aspect-[3/4] rounded-lg overflow-hidden order-1 md:order-2 bg-[#F7F8FA]">
+            {/* Flyer */}
+            <AnimateOnScroll animation="fade-in-right" className="order-1 md:order-2">
+              <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-[#F7F8FA] hover-image-zoom">
                 <Image
                   src="/health-equity-week-2025-poster.jpg"
                   alt="Health Equity Week 2025 Poster"
@@ -262,17 +205,17 @@ export default function NationalPage() {
                   className="object-contain"
                 />
               </div>
-            </div>
-          </FadeInSection>
+            </AnimateOnScroll>
+          </div>
         </div>
       </section>
 
       {/* ===== 5. CARE PACKETS CAROUSEL ===== */}
-      <section className="py-24 bg-[#F7F8FA]">
+      <section className="py-24 bg-blue-wash">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
+          <AnimateOnScroll animation="heading">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-[#587FDA] mb-3">Spring 2026</p>
+              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] mb-3">Spring 2026</p>
               <h2 className="text-3xl font-bold font-display text-[#171219]">
                 Community Access and Resource Education (CARE)
               </h2>
@@ -283,7 +226,6 @@ export default function NationalPage() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {/* Nav arrows */}
               <button
                 onClick={goPrev}
                 className="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full border border-gray-200 bg-white hover:shadow-md transition-shadow"
@@ -303,7 +245,6 @@ export default function NationalPage() {
                 </svg>
               </button>
 
-              {/* Slide content */}
               <div className="min-h-[300px] flex items-center justify-center px-8">
                 {slide.type === 'text' && (
                   <div>
@@ -328,7 +269,6 @@ export default function NationalPage() {
                 )}
               </div>
 
-              {/* Dot indicators */}
               <div className="flex justify-center mt-8 gap-2">
                 {careSlides.map((_, i) => (
                   <button
@@ -342,43 +282,45 @@ export default function NationalPage() {
                 ))}
               </div>
             </div>
-          </FadeInSection>
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* ===== 6. CHAPTER PHOTO GRID ===== */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection>
+          <AnimateOnScroll animation="heading">
             <h2 className="text-3xl font-bold font-display text-[#171219] text-center mb-12">
               Chapters in Action
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {chapterPhotos.map((photo) => (
-                <div key={photo.src} className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image src={photo.src} alt={photo.alt} fill className="object-cover" />
+          </AnimateOnScroll>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {chapterPhotos.map((photo, i) => (
+              <AnimateOnScroll key={photo.src} animation="scale-in" delay={i * 100}>
+                <div className="relative aspect-[4/3] rounded-lg hover-image-zoom">
+                  <Image src={photo.src} alt={photo.alt} fill className="object-cover rounded-lg" />
                 </div>
-              ))}
-            </div>
-          </FadeInSection>
+              </AnimateOnScroll>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ===== 7. CTA ===== */}
       <section className="py-24 bg-[#171219]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeInSection>
+          <AnimateOnScroll animation="heading">
             <h2 className="text-4xl font-bold font-display text-white mb-4">Join the Movement</h2>
             <p className="text-lg text-white/70 mb-8">
               Start a chapter at your university and be part of our next national initiative.
             </p>
             <Link
               href="/get-involved/start"
-              className="inline-block px-8 py-3 bg-[#587FDA] text-white font-semibold rounded-lg hover:bg-[#4566B8] transition-colors"
+              className="inline-block px-8 py-3 bg-[#587FDA] text-white font-semibold rounded-lg hover:bg-[#4566B8] transition-colors hover-scale"
             >
               Start a Chapter
             </Link>
-          </FadeInSection>
+          </AnimateOnScroll>
         </div>
       </section>
     </>

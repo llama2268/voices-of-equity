@@ -6,11 +6,10 @@ export const whatWeDoPage = {
     title: "Our Impact",
     subtitle: "Stories of change and transformation in our communities",
     nationalStats: [
-      { label: "$2k+ raised", icon: "✓" },
-      { label: "$1000+ in VoE Grant funding distributed", icon: "✓" },
-      { label: "30+ University campuses engaged across North America", icon: "✓" },
-      { label: "200+ members involved", icon: "✓" },
-      { label: "1000+ students reached through educational programing", icon: "✓" }
+      { label: "$43,000+ raised", icon: "✓" },
+      { label: "60+ University chapters engaged across North America", icon: "✓" },
+      { label: "1,000+ members involved", icon: "✓" },
+      { label: "10,000+ students reached through educational programing", icon: "✓" }
     ],
     chapterReflections: [
       {
@@ -59,10 +58,10 @@ export const whatWeDoPage = {
     spotlights: [
       { name: "Purdue University", image: "/icons/chapters/Purdue University - West Lafayette.png" },
       { name: "University of Arkansas", image: "/icons/chapters/arkansas.png" },
-      { name: "Cornell University", image: "/cornell-chapter.jpg" },
-      { name: "Carnegie Mellon", image: "/media/10.jpeg" },
-      { name: "University of Illinois", image: "/media/13.jpeg" },
-      { name: "Amherst College", image: "/media/11.jpeg" },
+      { name: "Cornell University", image: "" },
+      { name: "Carnegie Mellon University", image: "/icons/chapters/Carnegie Mellon University.png" },
+      { name: "University of Illinois", image: "/icons/chapters/University of Illinois at Urbana-Champaign.png" },
+      { name: "Amherst College", image: "/icons/chapters/amherst.png" },
     ],
     content: [
       {

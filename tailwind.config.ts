@@ -23,7 +23,8 @@ export default {
       },
       fontFamily: {
         display: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
-        sans: ['Arial', 'Helvetica', 'system-ui', 'sans-serif'],
+        sans: ['Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
       },
     },
   },

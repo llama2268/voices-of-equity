@@ -8,17 +8,16 @@ import Link from 'next/link';
 import { SocialCallout } from '@/components/ui/SocialCallout';
 import { ResourceIcon, AwardIcon, LeadershipIcon } from '@/components/icons/ChapterIcons';
 import { ChapterCard, ChapterData } from '@/components/Chapter/ChapterCard';
+import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
 
-// Dynamically import ChapterMap with SSR disabled
 import dynamic from 'next/dynamic';
-const ChapterMap = dynamic(() => import('@/components/Map/SimpleChapterMap'), {
+const ChapterMap = dynamic(() => import('@/components/Map/ChapterMap'), {
   ssr: false,
   loading: () => <div className="h-[500px] w-full bg-[#F7F8FA]" />
 });
 
 const regions = ['All', 'Northeast', 'Midwest', 'South', 'West Coast', 'International'];
 
-// Full Chapter List
 const allChapters: ChapterData[] = [
   // Northeast
   { name: 'Cornell University', logo: '/partners/cornell.png', region: 'Northeast', president: 'David Chege', foundingYear: '2025' },
@@ -94,11 +93,13 @@ export default function ChaptersPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-[#587FDA] to-[#4566B8] py-20 pt-32">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <Image src="/logo-new.png" alt="Voices of Equity" width={180} height={162} className="mx-auto mb-8" />
-          <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">Our Chapters</h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Student-led chapters driving health equity across 55+ universities nationwide
-          </p>
+          <AnimateOnScroll animation="fade-in">
+            <Image src="/logo-new.png" alt="Voices of Equity" width={180} height={162} className="mx-auto mb-8" />
+            <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">Our Chapters</h1>
+            <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+              Student-led chapters driving health equity across 60+ universities nationwide
+            </p>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -121,24 +122,25 @@ export default function ChaptersPage() {
       </div>
 
       {/* Introduction & Benefits */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-blue-wash">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-lg text-[#4A5568] leading-relaxed">
-              {content}
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <p className="text-lg text-[#4A5568] leading-relaxed">
+                {content}
+              </p>
+            </div>
+          </AnimateOnScroll>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {benefitsWithIcons.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-sm transition-all"
-              >
-                <div className="text-[#587FDA] mb-5">{benefit.icon}</div>
-                <h3 className="text-xl font-bold font-display text-[#171219] mb-3">{benefit.title}</h3>
-                <p className="text-[#4A5568] leading-relaxed">{benefit.description}</p>
-              </div>
+            {benefitsWithIcons.map((benefit, i) => (
+              <AnimateOnScroll key={benefit.title} animation="scale-in" delay={i * 150}>
+                <div className="bg-white border border-gray-200 rounded-lg p-8 hover-lift">
+                  <div className="text-[#587FDA] mb-5">{benefit.icon}</div>
+                  <h3 className="text-xl font-bold font-display text-[#171219] mb-3">{benefit.title}</h3>
+                  <p className="text-[#4A5568] leading-relaxed">{benefit.description}</p>
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -147,14 +149,15 @@ export default function ChaptersPage() {
       {/* Chapter Directory */}
       <section className="py-24 bg-[#F7F8FA] border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Universities Leading Change</p>
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219]">Our Chapters</h2>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-16">
+              <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 font-medium mb-3">Universities Leading Change</p>
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219]">Our Chapters</h2>
+            </div>
+          </AnimateOnScroll>
 
           {/* Filters & Search */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
-            {/* Region Filter */}
             <div className="flex flex-wrap gap-2 justify-center">
               {regions.map(region => (
                 <button
@@ -170,7 +173,6 @@ export default function ChaptersPage() {
               ))}
             </div>
 
-            {/* Search Bar */}
             <div className="w-full md:w-64">
               <input
                 type="text"
@@ -198,38 +200,44 @@ export default function ChaptersPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-white border-t border-gray-200">
+      <section className="py-24 bg-warm-wash border-t border-gray-200">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Ready to Get Started?</p>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219] mb-4">{cta.title}</h2>
-          <p className="text-lg text-[#4A5568] leading-relaxed mb-8">{cta.description}</p>
-          <Link
-            href={cta.primaryButton.href}
-            className="inline-block px-8 py-3 rounded-md bg-[#587FDA] hover:bg-[#4566B8] text-white font-medium transition-colors"
-          >
-            {cta.primaryButton.text}
-          </Link>
+          <AnimateOnScroll animation="fade-up">
+            <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 font-medium mb-3">Ready to Get Started?</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#171219] mb-4">{cta.title}</h2>
+            <p className="text-lg text-[#4A5568] leading-relaxed mb-8">{cta.description}</p>
+            <Link
+              href={cta.primaryButton.href}
+              className="inline-block px-8 py-3 rounded-md bg-[#587FDA] hover:bg-[#4566B8] text-white font-medium transition-colors hover-scale"
+            >
+              {cta.primaryButton.text}
+            </Link>
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* Chapter Map */}
       <section className="py-24 bg-[#F7F8FA] border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold font-display text-[#171219] mb-10 text-center">Our Chapter Locations</h2>
-          <ChapterMap />
+          <AnimateOnScroll animation="fade-up">
+            <h2 className="text-3xl font-bold font-display text-[#171219] mb-10 text-center">Our Chapter Locations</h2>
+            <ChapterMap />
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* Social Media Integration */}
       <section className="py-24 bg-[#171219] border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4">Join Our Community</h2>
-          <p className="text-lg mb-10 text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Join our community of changemakers and help build a more equitable future for all.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <SocialCallout />
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4">Join Our Community</h2>
+            <p className="text-lg mb-10 text-white/80 max-w-2xl mx-auto leading-relaxed">
+              Join our community of changemakers and help build a more equitable future for all.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <SocialCallout />
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
     </PageLayout>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voices of Equity — Grant Recipient Payment Information</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a23;
+    --ink-light: #1e1e3f;
+    --ink-muted: #5a5a7a;
+    --cream: #f5f7fa;
+    --cream-dark: #e8ecf1;
+    --accent: #3b82f6;
+    --accent-light: #60a5fa;
+    --accent-pale: #eff6ff;
+    --accent-glow: rgba(59, 130, 246, 0.08);
+    --navy: #0a0a23;
+    --navy-light: #16163a;
+    --border: #d1d5db;
+    --border-focus: #3b82f6;
+    --white: #ffffff;
+    --error: #dc2626;
+    --error-bg: #fef2f2;
+    --shadow-sm: 0 1px 3px rgba(10,10,35,0.06);
+    --shadow-md: 0 4px 16px rgba(10,10,35,0.08);
+    --shadow-lg: 0 8px 32px rgba(10,10,35,0.10);
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(59,130,246,0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(10,10,35,0.03) 0%, transparent 60%),
+      var(--cream);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* Header */
+  .org-header {
+    text-align: center;
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s ease-out;
+  }
+
+  .org-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+  }
+
+  .org-logo svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--white);
+  }
+
+  .org-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+
+  .org-tagline {
+    font-size: 13px;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+  }
+
+  /* Form Card */
+  .form-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    animation: fadeUp 0.6s ease-out 0.1s both;
+  }
+
+  .form-card-header {
+    padding: 32px 36px 28px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--accent-glow) 0%, transparent 100%);
+  }
+
+  .form-card-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .form-card-header p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  .form-body {
+    padding: 36px;
+  }
+
+  /* Sections */
+  .form-section {
+    margin-bottom: 36px;
+  }
+
+  .form-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: var(--accent);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* Form Fields */
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .field-row.single {
+    grid-template-columns: 1fr;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+
+  .field-group label .req {
+    color: var(--error);
+    margin-left: 2px;
+  }
+
+  .field-group input,
+  .field-group select,
+  .field-group textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .field-group input::placeholder,
+  .field-group textarea::placeholder {
+    color: #b0afa8;
+  }
+
+  .field-group input:focus,
+  .field-group select:focus,
+  .field-group textarea:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+  }
+
+  .field-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236e6e8a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+
+  .field-group textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  .field-hint {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  /* Radio Group */
+  .radio-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--ink-light);
+  }
+
+  .radio-option input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    transition: border-color 0.15s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .radio-option input[type="radio"]:checked {
+    border-color: var(--accent);
+  }
+
+  .radio-option input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* Certification Box */
+  .certification-box {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin-top: 8px;
+  }
+
+  .certification-box p {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .checkbox-row input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    position: relative;
+  }
+
+  .checkbox-row input[type="checkbox"]:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .checkbox-row input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 6px;
+    height: 10px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .checkbox-row span {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* Security Notice */
+  .security-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--accent-pale);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-top: 28px;
+  }
+
+  .security-notice svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .security-notice p {
+    font-size: 12.5px;
+    color: var(--accent);
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  /* Submit */
+  .form-footer {
+    padding: 24px 36px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-submit {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius);
+    padding: 14px 48px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    letter-spacing: 0.02em;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .btn-submit:hover {
+    background: var(--accent-light);
+    box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+    transform: translateY(-1px);
+  }
+
+  .btn-submit:active {
+    transform: translateY(0);
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: var(--ink-muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Bottom Branding */
+  .page-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.6s ease-out 0.2s both;
+  }
+
+  .page-footer p {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+  }
+
+  .page-footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Print Styles */
+  @media print {
+    .page-bg { display: none; }
+    body { background: white; }
+    .form-card { box-shadow: none; border: 1px solid #ccc; }
+    .btn-submit { display: none; }
+
+    .field-group input,
+    .field-group select,
+    .field-group textarea {
+      border: none;
+      border-bottom: 1.5px solid #999;
+      border-radius: 0;
+      padding-left: 0;
+      min-height: 28px;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 24px 16px 60px; }
+    .form-card-header { padding: 24px 20px; }
+    .form-body { padding: 24px 20px; }
+    .form-footer { padding: 20px 20px 28px; }
+    .field-row { grid-template-columns: 1fr; gap: 14px; }
+    .org-name { font-size: 24px; }
+    .radio-group { flex-direction: column; gap: 10px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="page-bg"></div>
+<div class="container">
+
+  <!-- Header -->
+  <header class="org-header">
+    <div class="org-logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+      </svg>
+    </div>
+    <h2 class="org-name">Voices of Equity</h2>
+  </header>
+
+  <!-- Form -->
+  <div class="form-card">
+    <div class="form-card-header">
+      <h1>Payment Information Form</h1>
+      <p>Please complete all required fields below so that we may process your grant reimbursement via direct deposit. All information is handled in strict confidence.</p>
+    </div>
+
+    <div class="form-body">
+
+      <!-- Section 1: Recipient Information -->
+      <div class="form-section">
+        <div class="section-label">
+          <span class="section-number">1</span>
+          <span class="section-title">Recipient Information</span>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" placeholder="Jane">
+          </div>
+          <div class="field-group">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" placeholder="Doe">
+          </div>
+        </div>
+
+        <div class="field-row single">
+          <div class="field-group">
+            <label>Organization / Entity Name (if applicable)</label>
+            <input type="text" placeholder="Organization or business name">
+          </div>
+        </div>
+
+        <div class="field-row single">
+          <div class="field-group">
+            <label>Mailing Address <span class="req">*</span></label>
+            <input type="text" placeholder="Street address">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>City <span class="req">*</span></label>
+            <input type="text" placeholder="City">
+          </div>
+          <div class="field-group">
+            <label>State <span class="req">*</span></label>
+            <select>
+              <option value="" disabled selected>Select state</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+              <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+              <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+              <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+              <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+              <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+              <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+              <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+              <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+              <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+              <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+              <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+              <option>Wisconsin</option><option>Wyoming</option><option>District of Columbia</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>ZIP Code <span class="req">*</span></label>
+            <input type="text" placeholder="00000">
+          </div>
+          <div class="field-group">
+            <label>Phone Number <span class="req">*</span></label>
+            <input type="tel" placeholder="(000) 000-0000">
+          </div>
+        </div>
+
+        <div class="field-row single">
+          <div class="field-group">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" placeholder="jane.doe@email.com">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Grant Details -->
+      <div class="form-section">
+        <div class="section-label">
+          <span class="section-number">2</span>
+          <span class="section-title">Grant Details</span>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>Grant Name / Program <span class="req">*</span></label>
+            <input type="text" placeholder="Name of grant or program">
+          </div>
+          <div class="field-group">
+            <label>Award Amount <span class="req">*</span></label>
+            <input type="text" placeholder="$0.00">
+          </div>
+        </div>
+
+        <div class="field-row single">
+          <div class="field-group">
+            <label>Grant Agreement / Reference Number</label>
+            <input type="text" placeholder="If applicable">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Banking Information -->
+      <div class="form-section">
+        <div class="section-label">
+          <span class="section-number">3</span>
+          <span class="section-title">Direct Deposit Information</span>
+        </div>
+
+        <div class="field-row single" style="margin-top:0">
+          <div class="field-group">
+            <label>Name on Bank Account <span class="req">*</span></label>
+            <input type="text" placeholder="Exact name as shown on account">
+          </div>
+        </div>
+
+        <div class="field-row single">
+          <div class="field-group">
+            <label>Financial Institution Name <span class="req">*</span></label>
+            <input type="text" placeholder="Bank or credit union name">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>Account Type <span class="req">*</span></label>
+            <select>
+              <option value="" disabled selected>Select type</option>
+              <option>Checking</option>
+              <option>Savings</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Bank Routing Number (ABA) <span class="req">*</span></label>
+            <input type="text" placeholder="9-digit routing number">
+            <span class="field-hint">Found at the bottom left of your check</span>
+          </div>
+        </div>
+
+        <div class="field-row single">
+          <div class="field-group">
+            <label>Bank Account Number <span class="req">*</span></label>
+            <input type="text" placeholder="Account number">
+          </div>
+        </div>
+
+        <div class="field-row single">
+          <div class="field-group">
+            <label>Confirm Bank Account Number <span class="req">*</span></label>
+            <input type="text" placeholder="Re-enter account number">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Certification -->
+      <div class="form-section">
+        <div class="section-label">
+          <span class="section-number">4</span>
+          <span class="section-title">Certification &amp; Authorization</span>
+        </div>
+
+        <div class="certification-box">
+          <p>I hereby certify that the information provided on this form is accurate and complete. I authorize Voices of Equity to initiate payment to the account indicated above. I understand that I am responsible for notifying Voices of Equity immediately of any changes to the information provided. I acknowledge that the grant funds disbursed are subject to the terms outlined in my grant agreement.</p>
+
+          <div class="checkbox-row" style="margin-bottom: 12px;">
+            <input type="checkbox" id="cert1">
+            <span>I certify that all information provided above is true and correct. <span style="color:var(--error)">*</span></span>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="cert2">
+            <span>I authorize Voices of Equity to deposit grant funds into the account listed. <span style="color:var(--error)">*</span></span>
+          </div>
+        </div>
+
+        <div class="field-row" style="margin-top: 20px;">
+          <div class="field-group">
+            <label>Signature (Typed Full Legal Name) <span class="req">*</span></label>
+            <input type="text" placeholder="Full legal name" style="font-style: italic;">
+          </div>
+          <div class="field-group">
+            <label>Date <span class="req">*</span></label>
+            <input type="date">
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Notice -->
+      <div class="security-notice">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+        </svg>
+        <p>Your banking and personal information is collected solely for the purpose of processing grant disbursements and will be stored securely in accordance with applicable data protection regulations.</p>
+      </div>
+
+    </div>
+
+    <div class="form-footer">
+      <button class="btn-submit" onclick="window.print()">Submit Information</button>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <p>&copy; 2026 Voices of Equity &middot; All Rights Reser

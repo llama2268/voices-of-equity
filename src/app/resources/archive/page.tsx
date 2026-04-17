@@ -1,8 +1,11 @@
+'use client';
+
 import PageLayout from '@/components/Layout/PageLayout';
 import { resourcesPage } from '@/content';
 import type { ArchiveItem } from '@/content/types';
 import Image from 'next/image';
 import Link from 'next/link';
+import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
 
 interface ArchiveCardProps {
   item: ArchiveItem;
@@ -39,7 +42,7 @@ function ArchiveCard({ item }: ArchiveCardProps) {
       </div>
 
       {item.image && (
-        <div className="relative w-full h-44 mb-4">
+        <div className="relative w-full h-44 mb-4 hover-image-zoom">
           <Image
             src={item.image}
             alt={item.title}
@@ -88,7 +91,7 @@ function ArchiveCard({ item }: ArchiveCardProps) {
       <Wrapper
         href={link}
         {...linkProps}
-        className="group block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-sm
+        className="group block bg-white border border-gray-200 rounded-lg p-6 hover-lift
                    transition-all duration-200 h-full flex flex-col"
       >
         <div className="flex-1 flex flex-col">
@@ -119,11 +122,11 @@ function FeaturedArticleCard({ item }: ArchiveCardProps) {
   return (
     <Link
       href={link || '#'}
-      className="group block bg-white border border-gray-200 rounded-lg p-8 md:p-10 hover:shadow-sm transition-all duration-200 mb-12"
+      className="group block bg-white border border-gray-200 rounded-lg p-8 md:p-10 hover-lift transition-all duration-200 mb-12"
     >
       <div className="flex flex-col md:flex-row gap-8">
         {item.image && (
-          <div className="relative w-full md:w-80 h-52 md:h-auto flex-shrink-0">
+          <div className="relative w-full md:w-80 h-52 md:h-auto flex-shrink-0 hover-image-zoom">
             <Image
               src={item.image}
               alt={item.title}
@@ -176,7 +179,9 @@ export default function ArchivePage() {
           {featuredItems.length > 0 && (
             <div className="mb-8">
               {featuredItems.map((item: ArchiveItem) => (
-                <FeaturedArticleCard key={item.id} item={item} />
+                <AnimateOnScroll key={item.id} animation="fade-up">
+                  <FeaturedArticleCard item={item} />
+                </AnimateOnScroll>
               ))}
             </div>
           )}
@@ -185,11 +190,15 @@ export default function ArchivePage() {
 
           {/* Archive Grid */}
           <div>
-            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Browse All</p>
-            <h2 className="text-2xl font-bold font-display text-[#171219] mb-8">Archive Collection</h2>
+            <AnimateOnScroll animation="fade-up">
+              <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Browse All</p>
+              <h2 className="text-2xl font-bold font-display text-[#171219] mb-8">Archive Collection</h2>
+            </AnimateOnScroll>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {regularItems.map((item: ArchiveItem) => (
-                <ArchiveCard key={item.id} item={item} />
+              {regularItems.map((item: ArchiveItem, i: number) => (
+                <AnimateOnScroll key={item.id} animation="scale-in" delay={i * 80}>
+                  <ArchiveCard item={item} />
+                </AnimateOnScroll>
               ))}
             </div>
           </div>

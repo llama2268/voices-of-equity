@@ -1,6 +1,8 @@
-import Image from 'next/image';
+'use client';
 
+import Image from 'next/image';
 import PageLayout from '@/components/Layout/PageLayout';
+import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
 
 const partnerGroups = [
   {
@@ -38,7 +40,6 @@ export default function PartnersPage() {
     <PageLayout>
       {/* Dark Hero */}
       <section className="relative bg-[#171219] pt-32 pb-20 overflow-hidden">
-        {/* Watermark logo */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <Image
             src="/logo-new.png"
@@ -49,62 +50,65 @@ export default function PartnersPage() {
           />
         </div>
         <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 font-medium mb-3">Partnerships</p>
-          <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">Our Partners</h1>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-            Organizations supporting Voices of Equity&apos;s national initiatives
-          </p>
+          <AnimateOnScroll animation="fade-in">
+            <p className="text-xs uppercase tracking-widest text-gray-400 font-medium mb-3">Partnerships</p>
+            <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">Our Partners</h1>
+            <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+              Organizations supporting Voices of Equity&apos;s national initiatives
+            </p>
+          </AnimateOnScroll>
         </div>
       </section>
 
       <div className="max-w-6xl mx-auto px-4">
         {partnerGroups.map((group) => (
           <section key={group.title} className="py-24">
-            <div className="mb-12">
-              {group.title && (
-                <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">{group.title}</p>
-              )}
-              <h2 className="font-display font-bold text-3xl md:text-4xl text-[#171219]">Our Partners</h2>
-            </div>
+            <AnimateOnScroll animation="fade-up">
+              <div className="mb-12">
+                {group.title && (
+                  <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">{group.title}</p>
+                )}
+                <h2 className="font-display font-bold text-3xl md:text-4xl text-[#171219]">Our Partners</h2>
+              </div>
+            </AnimateOnScroll>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {group.partners.map((partner) => (
-                <article
-                  key={partner.name}
-                  className="bg-white border border-gray-200 rounded-lg p-8"
-                >
-                  <div className="mx-auto mb-6 w-36 h-36 flex items-center justify-center">
-                    <Image
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      width={144}
-                      height={144}
-                      className="object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold font-display text-[#171219] text-center">{partner.name}</h3>
-                  <p className="text-sm text-[#4A5568] mt-3 text-center leading-relaxed">{partner.description}</p>
-                  <div className="mt-6 flex flex-col sm:flex-row items-stretch gap-3">
-                    <a
-                      href={partner.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-center px-8 py-3 rounded-md bg-[#587FDA] text-white hover:bg-[#4566B8] transition-colors font-medium"
-                    >
-                      Visit Website
-                    </a>
-                    {partner.handout && (
+              {group.partners.map((partner, i) => (
+                <AnimateOnScroll key={partner.name} animation="scale-in" delay={i * 150}>
+                  <article className="bg-white border border-gray-200 rounded-lg p-8 hover-lift">
+                    <div className="mx-auto mb-6 w-36 h-36 flex items-center justify-center">
+                      <Image
+                        src={partner.logo}
+                        alt={`${partner.name} logo`}
+                        width={144}
+                        height={144}
+                        className="object-contain"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold font-display text-[#171219] text-center">{partner.name}</h3>
+                    <p className="text-sm text-[#4A5568] mt-3 text-center leading-relaxed">{partner.description}</p>
+                    <div className="mt-6 flex flex-col sm:flex-row items-stretch gap-3">
                       <a
-                        href={partner.handout}
+                        href={partner.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center px-8 py-3 rounded-md border border-gray-200 text-[#587FDA] hover:bg-[#F7F8FA] transition-colors font-medium"
+                        className="text-center px-8 py-3 rounded-md bg-[#587FDA] text-white hover:bg-[#4566B8] transition-colors font-medium hover-scale"
                       >
-                        View Handout
+                        Visit Website
                       </a>
-                    )}
-                  </div>
-                </article>
+                      {partner.handout && (
+                        <a
+                          href={partner.handout}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-center px-8 py-3 rounded-md border border-gray-200 text-[#587FDA] hover:bg-[#F7F8FA] transition-colors font-medium"
+                        >
+                          View Handout
+                        </a>
+                      )}
+                    </div>
+                  </article>
+                </AnimateOnScroll>
               ))}
             </div>
           </section>

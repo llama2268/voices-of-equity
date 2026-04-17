@@ -8,7 +8,7 @@ export function SectionIntro({ eyebrow, heading, description }: SectionIntroProp
   return (
     <div className="max-w-3xl mx-auto mb-16">
       {eyebrow && (
-        <p className="text-xs uppercase tracking-widest text-gray-500 mb-4 font-medium">
+        <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 mb-4 font-medium">
           {eyebrow}
         </p>
       )}
