@@ -1,183 +1,198 @@
 // Centralized type definitions for all content
 
 export interface TeamMember {
-  id: string
-  name: string
-  role: string
-  image: string
-  shortBio: string
-  fullBio: string
-  email: string
-  linkedin: string
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  shortBio: string;
+  fullBio: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface Engineer {
-  id: string
-  name: string
-  role: string
-  image: string
-  shortBio: string
-  fullBio: string
-  email: string
-  linkedin: string
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  shortBio: string;
+  fullBio: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface Media {
-  id: string
-  name: string
-  role: string
-  image: string
-  shortBio: string
-  fullBio: string
-  email: string
-  linkedin: string
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  shortBio: string;
+  fullBio: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface Education {
-  id: string
-  name: string
-  role: string
-  image: string
-  shortBio: string
-  fullBio: string
-  email: string
-  linkedin: string
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  shortBio: string;
+  fullBio: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface Outreach {
-  id: string
-  name: string
-  role: string
-  image: string
-  shortBio: string
-  fullBio: string
-  email: string
-  linkedin: string
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  shortBio: string;
+  fullBio: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface Philanthrophy {
-  id: string
-  name: string
-  role: string
-  image: string
-  shortBio: string
-  fullBio: string
-  email: string
-  linkedin: string
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  shortBio: string;
+  fullBio: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface VOX {
-  id: string
-  name: string
-  role: string
-  image: string
-  shortBio: string
-  fullBio: string
-  email: string
-  linkedin: string
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  shortBio: string;
+  fullBio: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface Chapter {
-  name: string
-  location: string
-  established: string
-  members: number
-  image: string
-  achievements: string[]
+  name: string;
+  location: string;
+  established: string;
+  members: number;
+  image: string;
+  achievements: string[];
   leadership: {
-    president: string
-    vicePresident: string
-    contact: string
-  }
-  featured: boolean
-  slug: string
-  stats: Array<{ label: string; value: string }>
-  link: string
+    president: string;
+    vicePresident: string;
+    contact: string;
+  };
+  featured: boolean;
+  slug: string;
+  stats: Array<{ label: string; value: string }>;
+  link: string;
 }
 
 export interface Stat {
-  value: string
-  label: string
-  description?: string
+  value: string;
+  label: string;
+  description?: string;
 }
 
 export interface Initiative {
-  title: string
-  description: string
-  icon: string
-  image: string
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
 }
 
 export interface TimelineEvent {
-  year: string | number
-  title?: string
-  description?: string
-  side?: 'left' | 'right'
+  year: string | number;
+  title?: string;
+  description?: string;
+  side?: "left" | "right";
 }
 
 export interface NavItem {
-  title: string
-  href?: string
-  submenu?: Array<{ title: string; href: string }>
+  title: string;
+  href?: string;
+  submenu?: Array<{ title: string; href: string }>;
 }
 
 export interface Video {
-  videoId: string
-  title: string
-  description: string
+  videoId: string;
+  title: string;
+  description: string;
+}
+
+export interface DocumentaryEpisode {
+  episode: number;
+  title: string;
+  description: string;
+  videoId?: string;
+  status: "released" | "coming-soon";
 }
 
 export interface ResearchPaper {
-  title: string
-  authors: string
-  year: string
-  description: string
-  link: string
+  title: string;
+  authors: string;
+  year: string;
+  description: string;
+  link: string;
 }
 
 export interface Guide {
-  title: string
-  description: string
-  icon: string
-  link: string
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
 }
 
 export interface Requirement {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
 export interface ArchiveItem {
-  id: string
-  title: string
-  description: string
-  type: 'article' | 'video' | 'training' | 'interview' | 'module' | 'op-ed' | 'resource'
-  date: string
-  author?: string
-  tags: string[]
-  url?: string
-  image?: string
-  featured?: boolean
-  videoId?: string
-  subtitle?: string
-  content?: ArticleSection[]
+  id: string;
+  title: string;
+  description: string;
+  type:
+    | "article"
+    | "video"
+    | "training"
+    | "interview"
+    | "module"
+    | "op-ed"
+    | "resource";
+  date: string;
+  author?: string;
+  tags: string[];
+  url?: string;
+  image?: string;
+  featured?: boolean;
+  videoId?: string;
+  subtitle?: string;
+  content?: ArticleSection[];
 }
 
 export interface ArticleSection {
-  type: 'paragraph' | 'heading' | 'list' | 'citation'
-  text?: string
-  items?: string[]
+  type: "paragraph" | "heading" | "list" | "citation";
+  text?: string;
+  items?: string[];
 }
 
 export interface ChapterReflection {
-  chapterName: string
+  chapterName: string;
   president: {
-    name: string
-    title: string
-    headshot?: string
-  }
-  quote: string
-  images: string[]
-  semester: string
-  featured?: boolean
+    name: string;
+    title: string;
+    headshot?: string;
+  };
+  quote: string;
+  images: string[];
+  semester: string;
+  featured?: boolean;
 }
