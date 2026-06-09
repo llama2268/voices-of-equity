@@ -52,20 +52,26 @@ export const resourcesPage = {
           {
             episode: 2,
             title: "Episode 2",
-            description: "Coming soon.",
-            status: "coming-soon",
+            description:
+              "Episode 2 of our documentary series on addiction, health care, and equity.",
+            videoId: "9SbBiFzP43A",
+            status: "released",
           },
           {
             episode: 3,
             title: "Episode 3",
-            description: "Coming soon.",
-            status: "coming-soon",
+            description:
+              "Episode 3 of our documentary series on addiction, health care, and equity.",
+            videoId: "iE86E4O0rn0",
+            status: "released",
           },
           {
             episode: 4,
             title: "Episode 4",
-            description: "Coming soon.",
-            status: "coming-soon",
+            description:
+              "Episode 4 of our documentary series on addiction, health care, and equity.",
+            videoId: "RVPqdXU5wVI",
+            status: "released",
           },
           {
             episode: 5,
