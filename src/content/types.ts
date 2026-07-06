@@ -81,18 +81,18 @@ export interface Chapter {
   name: string;
   location: string;
   established: string;
-  members: number;
+  members?: number;
   image: string;
-  achievements: string[];
-  leadership: {
+  achievements?: string[];
+  leadership?: {
     president: string;
     vicePresident: string;
     contact: string;
   };
-  featured: boolean;
+  featured?: boolean;
   slug: string;
-  stats: Array<{ label: string; value: string }>;
-  link: string;
+  stats?: Array<{ label: string; value: string }>;
+  link?: string;
 }
 
 export interface Stat {

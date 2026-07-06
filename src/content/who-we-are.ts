@@ -1,4 +1,13 @@
-import type { TeamMember, Engineer, TimelineEvent, Media, Outreach, Education, Philanthrophy, VOX} from './types'
+import type {
+  TeamMember,
+  Engineer,
+  TimelineEvent,
+  Media,
+  Outreach,
+  Education,
+  Philanthrophy,
+  VOX,
+} from "./types";
 
 // WHO WE ARE PAGES
 export const whoWeArePage = {
@@ -6,8 +15,9 @@ export const whoWeArePage = {
     title: "Our Mission",
     subtitle: "Building a more equitable future in healthcare",
     introduction: {
-      mainHeading: "VOICES OF EQUITY IS AT THE FOREFRONT OF ADVANCING HEALTH EQUITY",
-      text: "We are a nationwide organization committed to addressing systemic health disparities through education, advocacy, and community engagement. Through our growing network of empowered students, healthcare professionals, and community leaders, we create opportunities for meaningful change in healthcare accessibility and outcomes."
+      mainHeading:
+        "VOICES OF EQUITY IS AT THE FOREFRONT OF ADVANCING HEALTH EQUITY",
+      text: "We are a nationwide organization committed to addressing systemic health disparities through education, advocacy, and community engagement. Through our growing network of empowered students, healthcare professionals, and community leaders, we create opportunities for meaningful change in healthcare accessibility and outcomes.",
     },
     mission: {
       heading: "OUR MISSION",
@@ -15,20 +25,23 @@ export const whoWeArePage = {
       keyPoints: [
         {
           title: "Educate",
-          description: "We equip students, healthcare professionals, and communities with accessible resources, engaging workshops, and thought-provoking discussions to raise awareness about systemic health disparities and the social determinants of health.",
-          icon: "📚"
+          description:
+            "We equip students, healthcare professionals, and communities with accessible resources, engaging workshops, and thought-provoking discussions to raise awareness about systemic health disparities and the social determinants of health.",
+          icon: "📚",
         },
         {
           title: "Inspire",
-          description: "Through storytelling, lived experiences, and expert insights, we spark passion and motivation in the next generation of changemakers, encouraging them to prioritize health equity in their careers and communities.",
-          icon: "📢"
+          description:
+            "Through storytelling, lived experiences, and expert insights, we spark passion and motivation in the next generation of changemakers, encouraging them to prioritize health equity in their careers and communities.",
+          icon: "📢",
         },
         {
           title: "Empower",
-          description: "By providing leadership opportunities, establishing campus chapters, and fostering advocacy initiatives, we empower individuals with the tools, network, and support they need to take tangible action in addressing health inequities nationwide.",
-          icon: "✨"
-        }
-      ]
+          description:
+            "By providing leadership opportunities, establishing campus chapters, and fostering advocacy initiatives, we empower individuals with the tools, network, and support they need to take tangible action in addressing health inequities nationwide.",
+          icon: "✨",
+        },
+      ],
     },
     vision: {
       heading: "OUR VISION",
@@ -57,36 +70,42 @@ export const whoWeArePage = {
       items: [
         {
           title: "V — Vision",
-          description: "Stay focused on long-term impact and health equity outcomes. Every decision we make should move us closer to a world where healthcare access is not determined by geography, race, or income."
+          description:
+            "Stay focused on long-term impact and health equity outcomes. Every decision we make should move us closer to a world where healthcare access is not determined by geography, race, or income.",
         },
         {
           title: "O — Opportunity for Better Health",
-          description: "Health isn't just about doctors and hospitals — it's about the opportunities people have to stay healthy. We fight to remove barriers like lack of insurance, food insecurity, and unequal access to care."
+          description:
+            "Health isn't just about doctors and hospitals — it's about the opportunities people have to stay healthy. We fight to remove barriers like lack of insurance, food insecurity, and unequal access to care.",
         },
         {
           title: "I — Impact Over Words",
-          description: "We measure success not by what we say, but by what we do. Every initiative, event, and partnership must drive tangible outcomes for the communities we serve."
+          description:
+            "We measure success not by what we say, but by what we do. Every initiative, event, and partnership must drive tangible outcomes for the communities we serve.",
         },
         {
           title: "C — Community First",
-          description: "Health starts where we live, work, and gather. We listen to communities, support grassroots efforts, and ensure that solutions are created with the people they serve."
+          description:
+            "Health starts where we live, work, and gather. We listen to communities, support grassroots efforts, and ensure that solutions are created with the people they serve.",
         },
         {
           title: "E — Empowerment",
-          description: "Inspire and enable others to lead and create change. We believe lasting impact comes from building the capacity of individuals to advocate for their own health and the health of their communities."
+          description:
+            "Inspire and enable others to lead and create change. We believe lasting impact comes from building the capacity of individuals to advocate for their own health and the health of their communities.",
         },
         {
           title: "S — Sustainability",
-          description: "Build systems and partnerships that endure beyond any single leader, event, or academic year. Real change doesn't happen overnight — we work to create lasting systems of support."
-        }
-      ]
+          description:
+            "Build systems and partnerships that endure beyond any single leader, event, or academic year. Real change doesn't happen overnight — we work to create lasting systems of support.",
+        },
+      ],
     },
     callToAction: {
       heading: "Join Our Mission",
       text: "Together, we can create a more equitable healthcare system for all.",
       buttonText: "Get Involved",
-      buttonLink: "/get-involved/chapters"
-    }
+      buttonLink: "/get-involved/chapters",
+    },
   },
   history: {
     title: "Our History",
@@ -95,100 +114,103 @@ export const whoWeArePage = {
       "Our journey began with firsthand experiences in hospitals, community clinics, and underserved neighborhoods — both locally and globally — where the stark realities of health disparities were impossible to ignore. Whether it was witnessing patients struggle to access quality care or hearing stories of systemic barriers from healthcare professionals, the message was clear: the time for change is now.",
       "Driven by a blend of personal and professional experiences, the Voices of Equity team understood the urgency of this issue. They realized that addressing these disparities required both awareness and meaningful action—bridging the gaps between education, inspiration, and empowerment.",
       "In response, Voices of Equity was established to amplify the call for systemic change. By bringing together students, healthcare professionals, and community leaders, we created a platform to educate the next generation, share powerful stories, and equip communities with the tools to fight for equity. What started as a grassroots initiative has grown into a nationwide movement, uniting diverse voices around a shared mission: to dismantle barriers to health and create a world where everyone has the opportunity to thrive.",
-      "Today, Voices of Equity stands as a testament to the power of collective action. Together, we're building awareness, inspiring change, and empowering communities—one story, one initiative, and one VOICE at a time."
+      "Today, Voices of Equity stands as a testament to the power of collective action. Together, we're building awareness, inspiring change, and empowering communities—one story, one initiative, and one VOICE at a time.",
     ],
     timeline: [
       {
-        year: 'DEC 2024',
+        year: "DEC 2024",
         title: "VoE Founded",
-        description: "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action",
-        side: 'right'
+        description:
+          "Voices of Equity is officially established, laying the foundation for a nationwide movement to advance health equity through education, advocacy, and community action",
+        side: "right",
       },
       {
-        year: 'JAN 2025',
+        year: "JAN 2025",
         title: "Cornell Chapter Established",
-        description: "The first undergraduate chapter is launched at Cornell University, serving as a model for future chapters and student-led initiatives",
-        side: 'left'
+        description:
+          "The first undergraduate chapter is launched at Cornell University, serving as a model for future chapters and student-led initiatives",
+        side: "left",
       },
       {
-        year: 'FEB 2025',
+        year: "FEB 2025",
         title: "Curriculum & Educational Development Begins",
-        description: "Voices of Equity begins developing a structured health equity curriculum, creating accessible educational materials to guide discussions and empower student leaders",
-        side: 'right'
+        description:
+          "Voices of Equity begins developing a structured health equity curriculum, creating accessible educational materials to guide discussions and empower student leaders",
+        side: "right",
       },
       {
-        year: 'MAR 2025',
+        year: "MAR 2025",
         title: "National Expansion Begins",
-        description: "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country.",
-        side: 'left'
+        description:
+          "Voices of Equity kicks off its expansion efforts, recruiting student leaders and forming partnerships to establish chapters at universities across the country.",
+        side: "left",
       },
       {
-        year: 'JUN 2025',
+        year: "JUN 2025",
         title: "Foundations Solidified, Future in Motion",
-        description: "As VoE closes out its founding year, over 30 active chapters are established nationwide, a national leadership model is fully implemented, and VoE's boots-on-the-ground communities based initiatives begin shaping the future of student-led health equity",
-        side: 'right'
+        description:
+          "As VoE closes out its founding year, over 30 active chapters are established nationwide, a national leadership model is fully implemented, and VoE's boots-on-the-ground communities based initiatives begin shaping the future of student-led health equity",
+        side: "right",
       },
       {
-        year: 'AUG 2025',
+        year: "AUG 2025",
         title: "Leadership Onboarding Intensive",
-        description: "In August 2025, Voices of Equity hosted its first national onboarding intensive, bringing together over 100 student leaders from 40+ undergraduate institutions. Across two days of training, presidents and committee directors were equipped with the resources, expectations, and networks needed to lead their chapters effectively. This milestone marked the formal launch of a unified national structure and the next stage of VoE's growth.",
-        side: 'left'
+        description:
+          "In August 2025, Voices of Equity hosted its first national onboarding intensive, bringing together over 100 student leaders from 40+ undergraduate institutions. Across two days of training, presidents and committee directors were equipped with the resources, expectations, and networks needed to lead their chapters effectively. This milestone marked the formal launch of a unified national structure and the next stage of VoE's growth.",
+        side: "left",
       },
       {
-        year: 'OCT 2025',
+        year: "OCT 2025",
         title: "National Health Equity Week",
-        description: "Our first major nationwide initiative launched with incredible momentum. Over the course of the week, we raised over $43,000, distributed $5,000+ in grants, engaged 50+ campuses, and mobilized 1,000+ members to take action in their communities.",
-        side: 'right'
+        description:
+          "Our first major nationwide initiative launched with incredible momentum. Over the course of the week, we raised over $43,000, distributed $5,000+ in grants, engaged 50+ campuses, and mobilized 1,000+ members to take action in their communities.",
+        side: "right",
       },
     ] satisfies TimelineEvent[],
-    conclusion: "What began with a small team and a bold vision has now grown into a national movement. With chapters active across the country and a growing network of student leaders, Voices of Equity is building the infrastructure for long-term impact. As we expand into new communities, launch innovative initiatives, and develop the next generation of health equity leaders, our commitment remains the same: dismantling barriers to health through education, advocacy, and community-based action."
+    conclusion:
+      "What began with a small team and a bold vision has now grown into a national movement. With chapters active across the country and a growing network of student leaders, Voices of Equity is building the infrastructure for long-term impact. As we expand into new communities, launch innovative initiatives, and develop the next generation of health equity leaders, our commitment remains the same: dismantling barriers to health through education, advocacy, and community-based action.",
   },
   team: {
     title: "Our Team",
     subtitle: "Meet the people behind Voices of Equity",
-    members: [
+    formerMembers: [
       {
         id: "caleb-suh",
         name: "Caleb T. Suh",
         role: "Co-Founder & Executive Director",
         image: "/caleb-new-4.jpg",
-        shortBio: "Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity..",
+        shortBio:
+          "Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity..",
         fullBio: `Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity, where he oversees strategic direction, internal operations, and national chapter development. He leads national operations, oversees organizational growth strategy, and directs internal systems that support long-term scale and execution. His work focuses on clear execution, measurable outcomes, and long-term capacity building.
 
         Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations. Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges.
 
         His leadership extends across academic, nonprofit, and operational domains. He has led national service initiatives, authored peer-reviewed research, and managed large-scale, cross-institutional projects within data coordination and translational science. At Voices of Equity, he applies these experiences to grow a mission-driven team focused on building practical, scalable solutions to systemic challenges.`,
         email: "Suh.t.caleb@outlook.com",
-        linkedin: "https://www.linkedin.com/in/caleb-suh-028a956a/"
+        linkedin: "https://www.linkedin.com/in/caleb-suh-028a956a/",
       },
+    ] satisfies TeamMember[],
+    members: [
       {
         id: "zaid-al-shoha",
         name: "Zaid Al-Shoha",
         role: "Co-Founder & Executive Director",
         image: "/zaid-headshot.png",
-        shortBio: "As the Co-Founder & Executive Director of Voices of Equity..",
-        fullBio: `As the Co-Founder & Executive Director of Voices of Equity, Zaid Al-Shoha leads efforts to drive impactful change, amplify marginalized voices, and empower communities in addressing healthcare disparities. He is responsible for shaping the organization's strategic direction, building collaborative partnerships, and advancing community-centered solutions for equitable healthcare. 
+        shortBio:
+          "Zaid Al-Shoha leads a national, student-led movement working to address disparities in healthcare access and outcomes.",
+        fullBio: `As Co-Founder & Executive Director of Voices of Equity, Zaid Al-Shoha leads a national, student-led movement working to address disparities in healthcare access and outcomes. He is responsible for the organization's strategic direction, building collaborative partnerships, and developing community-centered solutions that reach students and communities nationwide. Through this work, he strives to bridge gaps in access to quality care, inspire future healthcare leaders, and develop scalable approaches to inequity within the medical field. Zaid is a recipient of the Arab America Foundation's 30 Under 30.
 
-        
-
-        Zaid is an undergraduate student at Cornell University, studying Biological Sciences on the premedical track. With aspirations in academic medicine, he is particularly passionate about surgery and leveraging leadership to foster systemic change in healthcare. Through his work, he strives to bridge gaps in access to quality care, inspire future healthcare leaders, and develop innovative solutions to address inequities within the medical field.
-
- 
-
-        Beyond his role at Voices of Equity, his commitment to global health equity is evident in his leadership of multiple campaigns with the Red Crescent, where he has worked to improve healthcare accessibility and provide humanitarian relief. At Cornell, he works on the education subteam of Cornell Assistive Technologies, where he takes part in workshops teaching families how to modify toys for children with disabilities and contributes to the development of assistive solutions. His dedication to scientific advancement is reflected in his neuroregeneration research in the Lin Lab, where he explores the underlying mechanisms of peripheral nervous system regeneration in efforts to develop interventions for neurological disorders and trauma.
-
- 
-
-        Zaid's extensive experiences in leadership, healthcare, and research guide his work at Voices of Equity, driving initiatives that foster long-term, structural improvements in healthcare accessibility and equity.`,
-        email: "zaid@voicesofequity.org",
-        linkedin: "https://www.linkedin.com/in/zaid-al-shoha/"
+        Zaid is an undergraduate at Cornell University studying Biological Sciences on the premedical track, with aspirations in academic medicine. At Cornell, he leads a health equity research team investigating frameworks for undergraduate-led community health work. He also conducts cardiac surgery outcomes research at Yale School of Medicine, neuroregeneration research in the Lin Lab, and translational cancer research at the National Institutes of Health. He is interested in advancing public health through academic medicine by developing innovative, scalable approaches to improving health outcomes in underserved communities.`,
+        email: "zalshoha29@gmail.com",
+        linkedin: "https://www.linkedin.com/in/zaid-al-shoha/",
       },
       {
         id: "jimmy-quinlan",
         name: "Jimmy Quinlan",
-        role: "Executive Chief of Staff",
+        role: "Deputy Executive Director",
         image: "/jimmy.jpg",
-        shortBio: "Jimmy Quinlan serves as a student leader, organizer, and builder across...",
+        shortBio:
+          "Jimmy Quinlan serves as a student leader, organizer, and builder across...",
         fullBio: `James R. Quinlan serves as a student leader, organizer, and builder across multiple mission-driven initiatives. He is the Founder and former President of the Voices of Equity undergraduate chapter at Cornell, where he helped in developing the Voices of Equity Undergraduate Framework and expanding Voices of Equity across the Cornell campus. 
 
         In this role, he focuses on translating mission into action through clear organization, thoughtful outreach, and sustainable systems that allow student leaders to execute meaningful work at scale.
@@ -198,8 +220,23 @@ export const whoWeArePage = {
         At the core of his work is a commitment to equity, service, and thoughtful execution — using student leadership as a platform to build practical, scalable initiatives that strengthen both campus community and broader social impact.
         .`,
         email: "voicesofequity.cornell@gmail.com",
-        linkedin: ""
-      }
+        linkedin: "",
+      },
+      {
+        id: "devon-cartwright",
+        name: "Devon Cartwright",
+        role: "Executive Chief of Staff",
+        image: "/team/devon-cartwright.png",
+        shortBio:
+          "Devon Cartwright is an undergraduate engineering student at the University of Arkansas committed to advancing healthcare through research, leadership, and community service.",
+        fullBio: `Devon Cartwright is an undergraduate engineering student at the University of Arkansas committed to advancing healthcare through research, leadership, and community service. He conducts research in regenerative medicine and biomaterials, investigating volumetric muscle loss injuries using advanced microscopy techniques and extracellular matrix based biomaterial fibers for tissue engineering applications. Through this work, he hopes to contribute to the development of novel approaches to tissue and muscle regeneration.
+
+        Beyond the laboratory, he serves as a peer mentor for first-year engineering students, helping incoming students navigate the transition to college through academic guidance, community building, and personal and professional development. He also serves as the initiate trainer for Tau Beta Pi, the engineering honor society, where he leads the onboarding and professional development of new members, fostering a culture of scholarship, integrity, and service while helping initiates build connections within the engineering community.
+
+        Outside of campus, Devon works at an independent family pharmacy in Fayetteville. This pharmacy hosts Blood drives, educational outreach events, and other programs that improve access to health resources and strengthen connections within the local community. These experiences have reinforced his commitment to serving others while providing firsthand insight into the role of community-based healthcare.`,
+        email: "",
+        linkedin: "",
+      },
     ] satisfies TeamMember[],
     engineers: [
       {
@@ -210,7 +247,7 @@ export const whoWeArePage = {
         shortBio: "Coming Soon",
         fullBio: `Coming Soon`,
         email: "tyleryang2268@gmail.com",
-        linkedin: "https://www.linkedin.com/in/tyler-yang-88841b289/"
+        linkedin: "https://www.linkedin.com/in/tyler-yang-88841b289/",
       },
       {
         id: "arnab-ghosh",
@@ -220,11 +257,10 @@ export const whoWeArePage = {
         shortBio: "Coming Soon",
         fullBio: `Coming Soon`,
         email: "arnabcare21@gmail.com",
-        linkedin: "https://www.linkedin.com/in/arnab-ghosh819/"
-      }
-    ] satisfies Engineer[]
-    ,
-      Outreach: [
+        linkedin: "https://www.linkedin.com/in/arnab-ghosh819/",
+      },
+    ] satisfies Engineer[],
+    Outreach: [
       {
         id: "grace-chen",
         name: "Grace Chen",
@@ -237,21 +273,48 @@ export const whoWeArePage = {
         
         In addition, Grace is also a Policy and Practices Subteam Lead for Cornell iGEM, where she conducts interview-based research with policy experts to examine the ethical, regulatory, and societal implications of synthetic biology. Across her research and leadership roles, Grace is motivated by a commitment to equity-driven science and believes that advancing health equity requires both rigorous scientific inquiry and intentional community-centered leadership.`,
         email: "Gyc23@cornell.edu",
-        linkedin: "https://www.linkedin.com/in/grace-chen-192024245/"
+        linkedin: "https://www.linkedin.com/in/grace-chen-192024245/",
       },
       {
         id: "monique-lavoie",
         name: "Monique Lavoie",
         role: "Outreach Undergraduate Liaison",
         image: "/Monique.jpg",
-        shortBio: "Monique Lavoie is a junior Biology major with double minors in...",
+        shortBio:
+          "Monique Lavoie is a junior Biology major with double minors in...",
         fullBio: `Monique Lavoie is a junior Biology major with double minors in Spanish and Chemistry from Old Lyme, Connecticut. She serves as the Undergraduate Liaison for the Voices of Equity National Outreach Committee.
 
 
         She brings extensive experience coordinating outreach initiatives, including her role as a Site Coordinator for the largest student-led undergraduate Alternative Spring Break program in the country. In addition, she currently serves as the Outreach Director and President of the Howard University Voices of Equity Chapter. Health equity is central to her commitment to community service, and she is deeply driven by the belief that everyone deserves access to the resources necessary to thrive.
 `,
         email: "",
-        linkedin: ""
+        linkedin: "",
+      },
+      {
+        id: "nina-mananu",
+        name: "Nina Mananu",
+        role: "Outreach Head of Public Relations",
+        image: "/team/nina-mananu.png",
+        shortBio:
+          "Nina Mananu is a Health Sciences student at Ithaca College focused on health data analytics, compassion, and equity.",
+        fullBio: `I'm Nina Mananu, a Health Sciences student at Ithaca College, designing my own major in Health Data Analytics with a pre-Physician Assistant track, because I believe the future of healthcare lies at the intersection of data, compassion, and equity. As a Certified Nursing Assistant in the Telemetry Unit at Cayuga Medical Center, I witness the direct impact of health disparities on patients. In the Kari Bossard-Stoos Lab, I analyze antibiotic resistance data that reveals larger patterns of environmental and healthcare inequity. These experiences taught me that understanding health data is only half the battle, communicating it accessibly is what creates real change.
+
+        That's why my work extends beyond the hospital and lab. As Director of Community Outreach for Voices of Equity at Ithaca College, Physician Assistant Chair for IC Pre-Health Society, Vice President of the African Student Association, Senior Editor for HerCampus, and a volunteer with New York Cares, I've learned that representation matters. In healthcare leadership, in the media, and in who gets to tell their own story. Growing up in NYC, I saw how information gaps become barriers to care, and now every role I hold is part of dismantling those barriers. When I'm not working, writing, or leading, you'll find me cheering for Ithaca College, running, reading, crocheting, or chasing warm weather wherever I can find it.`,
+        email: "",
+        linkedin: "",
+      },
+      {
+        id: "manushree-navaneethakrishnan",
+        name: "Manushree Navaneethakrishnan",
+        role: "National Recruitment Chair of Outreach",
+        image: "/team/manushree-navaneethakrishnan.png",
+        shortBio:
+          "Manushree Navaneethakrishnan leads national recruitment initiatives and supports chapter expansion efforts.",
+        fullBio: `Manushree Navaneethakrishnan is a senior at Vanderbilt University majoring in Medicine, Health & Society and Gender & Sexuality Studies. She serves as the National Outreach Chair of Recruitment for Voices of Equity, where she leads national recruitment initiatives, supports chapter expansion efforts, and works to strengthen connections between undergraduate advocates committed to advancing health equity.
+
+        Beyond Voices of Equity, Manushree is deeply involved in community engagement, health advocacy, and student leadership. She serves as a Peer Educator with Project Safe and is a former Opinion Editor and current Games Editor of The Vanderbilt Hustler. She also serves as Editorial Director of the Nashville Student Union News Network (SUNN), working with student journalists across Tennessee to amplify youth perspectives on issues affecting their communities. Passionate about the intersection of medicine, storytelling, and health equity, Manushree believes that understanding and communicating people's experiences is essential to creating meaningful change. Through journalism, advocacy, and community engagement, she seeks to elevate underrepresented voices and examine the social factors that shape health outcomes. She hopes to pursue a career in medicine grounded in compassionate care, public engagement, and a commitment to advancing health equity.`,
+        email: "",
+        linkedin: "",
       },
     ] satisfies Outreach[],
     Education: [
@@ -260,7 +323,8 @@ export const whoWeArePage = {
         name: "Eliza Dow",
         role: "National Director of Education",
         image: "/eliza.jpg",
-        shortBio: "Eliza Dow serves as the National Director of Education. In these roles..",
+        shortBio:
+          "Eliza Dow serves as the National Director of Education. In these roles..",
         fullBio: `Eliza Dow serves as the National Director of Education. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. With the Associate Director of Education Vijay, she oversees the Equity Archive. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its relevance not only in healthcare but in all aspects of life.
 
 
@@ -270,15 +334,16 @@ export const whoWeArePage = {
         Beyond her work with Voices of Equity, she has held many leadership positions, including having been a biochemistry teaching assistant, currently a lead volunteer at the Emergency Department at Cayuga Medical Center, and captain of the Cornell Women’s Club Lacrosse team. At her sorority, the Chi chapter of Delta Gamma at Cornell, she has served as Vice President of Member Education, junior Honor Board member, and director of special events.  She is also a certified EMT, an editor for The Healthcare Review at Cornell University, and a member of the pre-medical fraternity Phi Delta Epsilon. Additionally, she previously served as the. With extensive experience in developing educational materials, teaching about diverse communities, and efficient team management skills, she brings invaluable expertise to Voices of Equity's mission.
 `,
         email: "Ed497@cornell.edu",
-        linkedin: "https://www.linkedin.com/in/eliza-dow-44815324a/"
+        linkedin: "https://www.linkedin.com/in/eliza-dow-44815324a/",
       },
-    {
-      id: "vijay-jagarapu",
-      name: "Vijay Jagarapu",
-      role: "Associate Director of Education",
-      image: "/vijay.png",
-      shortBio: "Vijay Jagarapu is an undergraduate at Cornell University studying..",
-      fullBio: `Vijay Jagarapu is an undergraduate at Cornell University studying Biological Sciences on the premedical track, with a concentration in computational biology. He aims to learn more about emerging neurotechnologies to improve care for individuals with psychiatric and neurological disorders.
+      {
+        id: "vijay-jagarapu",
+        name: "Vijay Jagarapu",
+        role: "Associate Director of Education",
+        image: "/vijay.png",
+        shortBio:
+          "Vijay Jagarapu is an undergraduate at Cornell University studying..",
+        fullBio: `Vijay Jagarapu is an undergraduate at Cornell University studying Biological Sciences on the premedical track, with a concentration in computational biology. He aims to learn more about emerging neurotechnologies to improve care for individuals with psychiatric and neurological disorders.
 
 
     Outside of his studies, Vijay volunteers as a firefighter and EMT and works directly with patients with psychiatric disorders in a hospital setting. At the Cornell Life History Lab, he studies how early-life environments, stress, and social nutrition shape brain development and behavior.
@@ -287,16 +352,32 @@ export const whoWeArePage = {
     Vijay is passionate about making healthcare more accessible. Through Voices of Equity, he serves as the Associate Director of Education and is responsible for building the Equity Archive to expand access to health equity information. Through the integration of medicine and engineering, Vijay aspires to develop innovative solutions that broaden access to care.
 
 `,
-      email: "",
-      linkedin: ""
-    },
+        email: "",
+        linkedin: "",
+      },
+      {
+        id: "samantha-shick",
+        name: "Samantha Shick",
+        role: "Education Undergraduate Liaison",
+        image: "/team/samantha-shick.png",
+        shortBio:
+          "Samantha Shick serves as the Educational Undergraduate Liaison, supporting educational directors nationwide.",
+        fullBio: `Samantha serves as the Educational Undergraduate Liaison, where she coordinates with National Director of Education, Eliza, and Assistant National Director, Vjay, to support and oversee all of VOE’s educational directors nationwide. Her work ensures smooth communication between chapter directors and the educational national board, helping ensure cohesive programming and logistical collaboration.
+
+      Samantha is a freshman studying psychology on the pre medical track at the College of Arts and Sciences at Cornell University. She is interested in holistic views of health, aiming to intersect her interest in the study of human interactions with their physiological states through the lens of regenerative and preventative medicine. She is committed to the idea that patient wellness and adequate care extend beyond physiologies, but rather are extensive toward their mental, situational, and health equity access.
+
+      Beyond her work at Voices of Equity, Samantha remains committed to serving and understanding her surrounding communities. She serves as Cornell’s American Red Cross Fundraiser Chair, supporting humanitarian relief efforts, and trains as a probationary officer with the Varna Fire Company, a volunteer first responder department in Tompkins County. She works with the athletic trainers on Division One athletes under Cornell’s Division One Athletics Department, where she is certified to practice preliminary sports medical techniques, is a member of the pre-medical fraternity Phi Delta Epsilon, and is a part of the club figure skating team.`,
+        email: "",
+        linkedin: "",
+      },
     ] satisfies Education[],
     Media_team: [
       {
         id: "jennifer-zhu",
         name: "Jennifer Zhu",
         role: "National Director of Media",
-        shortBio: "Jennifer Zhu serves as the National Director of Media for Voices of Equity...",
+        shortBio:
+          "Jennifer Zhu serves as the National Director of Media for Voices of Equity...",
         image: "/jennifer-zhu-new.jpg",
         fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
         to spread and empower discussions about health equity through social media platforms.
@@ -326,7 +407,7 @@ export const whoWeArePage = {
         Jennifer's experience in healthcare, media, and leadership has prepared her well to address
         healthcare disparities by supporting the missions and goals for Voices of Equity`,
         email: "Jjz57@cornell.edu",
-        linkedin: "https://www.linkedin.com/in/jennifer-zhu-a741221a8/"
+        linkedin: "https://www.linkedin.com/in/jennifer-zhu-a741221a8/",
       },
       {
         id: "gbemi-soneye",
@@ -348,7 +429,7 @@ export const whoWeArePage = {
         Across her work, Gbemi strives to integrate research, policy, and community engagement to drive meaningful, equity-focused change in the field of public health. 
         `,
         email: "",
-        linkedin: ""
+        linkedin: "",
       },
     ] satisfies Media[],
     Philanthrophy: [
@@ -356,8 +437,9 @@ export const whoWeArePage = {
         id: "adam-jac",
         name: "Adam Jac",
         role: "National Director of Philanthropy",
-        image: "/adam-new.jpg",
-        shortBio: "Adam Jac is a masters student at Cornell University in Biomedical Engineering...",
+        image: "/team/adam-jac-updated.png",
+        shortBio:
+          "Adam Jac is a masters student at Cornell University in Biomedical Engineering...",
         fullBio: `Adam Jac is a masters student at Cornell University in Biomedical Engineering and plans on pursuing medical school. 
         He is passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical 
         experience to drive meaningful change in healthcare access and outcomes. 
@@ -377,14 +459,15 @@ export const whoWeArePage = {
         His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.
         `,
         email: "Aj439@cornell.edu",
-        linkedin: "https://www.linkedin.com/in/adam-jac-41a833299/"
+        linkedin: "https://www.linkedin.com/in/adam-jac-41a833299/",
       },
       {
         id: "lucas-santos",
         name: "Lucas Santos",
         role: "Philanthropy Undergraduate Liaison",
         image: "/lucas.PNG",
-        shortBio: "Lucas Santos is a third-year Biology major with minors in Chemistry and Spanish at Howard University...",
+        shortBio:
+          "Lucas Santos is a third-year Biology major with minors in Chemistry and Spanish at Howard University...",
         fullBio: `
         Lucas Santos is a third-year Biology major with minors in Chemistry and Spanish at Howard University. She is deeply committed to advancing health equity through community-based initiatives, culturally competent care, and public health advocacy.
 
@@ -399,69 +482,57 @@ export const whoWeArePage = {
 
         `,
         email: "",
-        linkedin: ""
-      }
-    ] satisfies Philanthrophy[],
-      VOX: [
-      {
-        id: "angie-ayoubi",
-        name: "Angie Ayoubi",
-        role: "Vox Equity Executive Director",
-        image: "/angie.PNG",
-        shortBio: "Angie Ayoubi is a biological engineer and premed at MIT...",
-        fullBio: `Angie Ayoubi is a biological engineer and premed at MIT. She is motivated by the
-        challenges we face today in research and equity and is committed to making health and scientific information accessible. As a part of VoE's national initiative, Angie is excited and determined to work with other dedicated leaders and seek out this goal as she pursues a career in medicine.
-
-
-        In addition to her study of bioengineering and responsibilities as a student-researcher, she is an active member of MIT's Biotech Group and Undergraduate Research Journal.
-        She is also a member of the Martin Trust Center's Engineering Entrepreneurship
-        program, and the New Engineering Education Transformation (the NEET program). In
-        the NEET Living Machines track, she applies engineering principles and concepts to
-        problems in the life and medical sciences through biotechnological innovation. Outside of campus, she volunteers and trains in the lab at Mass General Brigham in
-        Boston, Massachusetts, and continues to support high school science research
-        students back home in New York's Hudson River Valley by both coaching them in
-        effective communication as well as judging at competitive fairs.
-
-
-        In the past, Angie has won grand awards at Regeneron Pharmaceutical's international
-        science research fair (ISEF) and the International GENIUS Olympiad. She made Arab
-        America's 2025 pick for the nation's top 20 Under 20.
-
-
-        Angie believes healthcare and medicine are where our progress in mathematics,
-        physics, the sciences, and engineering come together for practical application in our
-        society by promoting our health and well-being—fighting against humanity's biggest
-        threats and for its best interests.`,
-        email: "Angie_ai@mit.edu",
-        linkedin: "https://www.linkedin.com/in/angie-ayoubi-67876a245/"
+        linkedin: "",
       },
-            {
+    ] satisfies Philanthrophy[],
+    VOX: [
+      {
         id: "rhea-saranth",
         name: "Rhea Saranath",
         role: "VOX Equity Co-Director",
         image: "/rhea.jpg",
-        shortBio: "Rhea Saranath is a student at Tulane University studying Public Health...",
+        shortBio:
+          "Rhea Saranath is a student at Tulane University studying Public Health...",
         fullBio: `Rhea Saranath is a student at Tulane University studying Public Health, on the Pre-Med track. 
         Her academic and professional interests sit at the intersection of health equity, science, and policy, 
         shaped by experiences spanning clinical medicine, global community health, neuroscience research, and sustainability-focused business development. 
         From founding and scaling a nonprofit addressing hygiene poverty to working in sports medicine with Tulane Athletics and conducting neuroimaging research on premature brain injury, Rhea’s work reflects a consistent commitment to translating knowledge into impact.
          She is particularly drawn to spaces where data, compassion, and systems-level thinking converge—whether in public health, medicine, or global development—and approaches her work with both rigor and humanity. `,
         email: "",
-        linkedin: ""
+        linkedin: "",
       },
-            {
+      {
         id: "conner-entenberg",
         name: "Conner Entenberg",
         role: "VOX Equity Co-Director",
         image: "/conner.jpg",
-        shortBio: "Conner Entenberg is a pre-medical student at Binghamton University...",
+        shortBio:
+          "Conner Entenberg is a pre-medical student at Binghamton University...",
         fullBio: `Conner Entenberg is a pre-medical student at Binghamton University with a focus on bridging biomedical research and health equity. 
         His research experience spans immunology and oncology, and includes his time investigating chemotherapy's effects on thymic function at Albert Einstein College of Medicine, his work researching anti-tuberculosis drugs’ impact on the liver, 
         and his use of bioprinted tumor models to better understand immuno-oncology. He also works directly with patients as a dental assistant. 
         Both clinically and in a laboratory, Conner's work centers around translating scientific advances into improved healthcare outcomes for all patients, especially underserved populations. `,
         email: "",
-        linkedin: ""
+        linkedin: "",
+      },
+      {
+        id: "jimmy-quinlan-vox",
+        name: "Jimmy Quinlan",
+        role: "Acting VOX Equity Exeuctive Director",
+        image: "/jimmy.jpg",
+        shortBio:
+          "Jimmy Quinlan serves as a student leader, organizer, and builder across...",
+        fullBio: `James R. Quinlan serves as a student leader, organizer, and builder across multiple mission-driven initiatives. He is the Founder and former President of the Voices of Equity undergraduate chapter at Cornell, where he helped in developing the Voices of Equity Undergraduate Framework and expanding Voices of Equity across the Cornell campus. 
+
+        In this role, he focuses on translating mission into action through clear organization, thoughtful outreach, and sustainable systems that allow student leaders to execute meaningful work at scale.
+
+        Outside of Voices of Equity, James is a practicing EMT and Firefighter, serving his community in fast-paced, high-responsibility environments that demand composure, teamwork, and decisive action. Through this work, he has developed a strong sense of accountability, clear communication under pressure, and an ability to translate training into meaningful service during moments of crisis. 
+        These experiences reflect his broader commitment to service, preparedness, and showing up for others when it matters most, qualities that shape both his leadership and his approach to his academic and professional goals.
+        At the core of his work is a commitment to equity, service, and thoughtful execution — using student leadership as a platform to build practical, scalable initiatives that strengthen both campus community and broader social impact.
+        .`,
+        email: "voicesofequity.cornell@gmail.com",
+        linkedin: "",
       },
     ] satisfies VOX[],
-  }
-}
+  },
+};

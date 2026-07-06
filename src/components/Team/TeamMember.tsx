@@ -15,7 +15,12 @@ interface TeamMemberProps {
 }
 
 function getInitials(name: string) {
-  return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
 }
 
 const TeamMember = ({
@@ -39,7 +44,7 @@ const TeamMember = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -50,21 +55,23 @@ const TeamMember = ({
       ref={ref}
       onClick={() => router.push(`/who-we-are/team/${id}`)}
       className={`group cursor-pointer transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
       }`}
     >
-      {/* Portrait Photo — grayscale by default, color on hover */}
-      <div className="relative aspect-[3/4] w-full max-w-[200px] overflow-hidden rounded-lg mb-4">
+      {/* Portrait Photo */}
+      <div className="relative mb-4 aspect-[3/4] w-full max-w-[200px] overflow-hidden rounded-lg">
         {imgError ? (
-          <div className="absolute inset-0 bg-[#587FDA] flex items-center justify-center">
-            <span className="text-white text-2xl font-bold font-display">{getInitials(name)}</span>
+          <div className="absolute inset-0 flex items-center justify-center bg-[#587FDA]">
+            <span className="font-display text-2xl font-bold text-white">
+              {getInitials(name)}
+            </span>
           </div>
         ) : (
           <Image
             src={image}
             alt={name}
             fill
-            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-400 group-hover:scale-105"
+            className="duration-400 object-cover transition-all group-hover:scale-105"
             sizes="200px"
             onError={() => setImgError(true)}
           />
@@ -72,23 +79,27 @@ const TeamMember = ({
       </div>
 
       {/* Name & Role */}
-      <div className="border-b-2 border-transparent group-hover:border-[#587FDA] transition-colors duration-300 pb-2">
-        <h3 className="text-base font-bold font-display text-[#171219] group-hover:text-[#587FDA] transition-colors duration-300">
+      <div className="border-b-2 border-transparent pb-2 transition-colors duration-300 group-hover:border-[#587FDA]">
+        <h3 className="font-display text-base font-bold text-[#171219] transition-colors duration-300 group-hover:text-[#587FDA]">
           {name}
         </h3>
-        <p className="text-sm text-[#4A5568] mt-0.5">{role}</p>
+        <p className="mt-0.5 text-sm text-[#4A5568]">{role}</p>
       </div>
 
       {/* Social links */}
       {(email || linkedin) && (
-        <div className="flex gap-3 mt-3">
+        <div className="mt-3 flex gap-3">
           {email && (
             <div onClick={(e) => e.stopPropagation()}>
               <a
                 href={`mailto:${email}`}
-                className="text-gray-400 hover:text-[#587FDA] transition-colors"
+                className="text-gray-400 transition-colors hover:text-[#587FDA]"
               >
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </a>
@@ -96,8 +107,17 @@ const TeamMember = ({
           )}
           {linkedin && (
             <div onClick={(e) => e.stopPropagation()}>
-              <a href={linkedin} className="text-gray-400 hover:text-[#587FDA] transition-colors" target="_blank" rel="noopener noreferrer">
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <a
+                href={linkedin}
+                className="text-gray-400 transition-colors hover:text-[#587FDA]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </a>
