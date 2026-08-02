@@ -97,12 +97,6 @@ export const resourcesPage = {
             videoId: "mi1hZTdchKs",
             status: "released",
           },
-          {
-            episode: 8,
-            title: "Episode 8",
-            description: "Coming soon.",
-            status: "coming-soon",
-          },
         ] satisfies DocumentaryEpisode[],
       },
       videos: [
