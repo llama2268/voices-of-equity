@@ -1,234 +1,181 @@
-"use client";
+'use client';
 
-import PageLayout from "../../../components/Layout/PageLayout";
-import TeamMember from "../../../components/Team/TeamMember";
-import { whoWeArePage } from "@/content";
-import Image from "next/image";
-import AnimateOnScroll from "@/components/Animation/AnimateOnScroll";
+import Link from 'next/link';
+import { whoWeArePage, siteConfig } from '@/content';
+import TeamMember from '@/components/Team/TeamMember';
+import PeopleRail from '@/components/Team/PeopleRail';
+import Reveal from '@/components/Animation/Reveal';
+import PageHero from '@/components/Layout/PageHero';
+import { Edge, GROUND } from '@/components/Layout/Seam';
 
-const departmentDescriptions: Record<string, string> = {
+/**
+ * Our Team.
+ *
+ * Executive leadership, then the four national departments, all as one
+ * continuous ledger - the group's remit in the margin, its people beside
+ * it at the same size throughout. VOX Equity and the Board of Advisors
+ * close the page.
+ */
+const DEPARTMENT_COPY: Record<string, string> = {
   Education:
-    "Our education team develops curriculum, modules, and resources that foster practical learning experiences around health equity — ensuring every member gains a deeper understanding of systemic health disparities.",
+    'Our education team develops curriculum, modules, and resources that foster practical learning experiences around health equity — ensuring every member gains a deeper understanding of systemic health disparities.',
   Philanthropy:
-    "The philanthropy team leads national fundraising campaigns like National Health Equity Week and the CARE packet project, mobilizing resources to address structural health disparities and support community organizations.",
+    'The philanthropy team leads national fundraising campaigns like National Health Equity Week and the CARE packet project, mobilizing resources to address structural health disparities and support community organizations.',
   Outreach:
-    "Our outreach team drives national expansion, maintains cross-chapter communication, and builds sustainable structures that support health equity initiatives at universities across the country.",
+    'Our outreach team drives national expansion, maintains cross-chapter communication, and builds sustainable structures that support health equity initiatives at universities across the country.',
   Media:
-    "The media team amplifies health equity discussions through social media, integrating graphic design with educational content and personal stories that reach thousands of students nationwide.",
+    'The media team amplifies health equity discussions through social media, integrating graphic design with educational content and personal stories that reach thousands of students nationwide.',
 };
 
 export default function TeamPage() {
-  const {
-    members,
-    engineers,
-    Media_team,
-    Education,
-    Outreach,
-    Philanthrophy,
-    VOX,
-  } = whoWeArePage.team;
+  const { members, advisors, Media_team, Education, Outreach, Philanthrophy, VOX } = whoWeArePage.team;
 
   const departments = [
-    { label: "Education", data: Education },
-    { label: "Philanthropy", data: Philanthrophy },
-    { label: "Outreach", data: Outreach },
-    { label: "Media", data: Media_team },
+    { label: 'Education', people: Education },
+    { label: 'Philanthropy', people: Philanthrophy },
+    { label: 'Outreach', people: Outreach },
+    { label: 'Media', people: Media_team },
   ];
 
   return (
-    <PageLayout fullWidth>
-      {/* Hero */}
-      <section className="bg-[#F7F8FA] pb-24 pt-32">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="fade-up">
-            <p className="mb-4 font-display text-xs font-medium uppercase tracking-[0.2em] text-[#587FDA]">
-              Who We Are
-            </p>
-            <h1 className="mb-6 font-display text-5xl font-bold text-[#171219] md:text-6xl">
-              Meet Our Team
-            </h1>
-            <p className="max-w-2xl text-xl leading-relaxed text-[#4A5568]">
-              The national leadership team driving health equity forward through
-              education, advocacy, and community engagement across 60+
-              universities.
-            </p>
-          </AnimateOnScroll>
-        </div>
-      </section>
+    <main className="min-h-screen">
+      <PageHero
+        eyebrow="Who We Are"
+        title="Meet Our Team"
+        subtitle="The national leadership team driving health equity forward through education, advocacy, and community engagement across 70+ universities."
+        image="/photos/ursinus-poster.jpg"
+        imageAlt="Chapter leaders presenting their work"
+        objectPosition="center 34%"
+      />
 
-      {/* Executive Leadership */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
-            <p className="mb-4 font-display text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
-              Leadership
-            </p>
-            <h2 className="mb-6 font-display text-3xl font-bold text-[#171219] md:text-4xl">
-              Executive Leadership
-            </h2>
-            <p className="mb-16 max-w-2xl text-lg leading-relaxed text-[#4A5568]">
-              Our executive team sets the strategic direction and ensures Voices
-              of Equity delivers on its mission nationwide.
-            </p>
-          </AnimateOnScroll>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-            {members?.map((member, i) => (
-              <AnimateOnScroll
-                key={member.name}
-                animation="scale-in"
-                delay={i * 80}
-              >
-                <TeamMember {...member} />
-              </AnimateOnScroll>
-            ))}
+      {/* ─── Executive leadership ────────────────────────────────────── */}
+      <section className="voe-section voe-ground-white voe-people-host">
+        <div className="voe-container">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <Reveal variant="left">
+                <h2 className="voe-display-lg font-display text-[#171219]">Executive Leadership</h2>
+                <div className="voe-rule my-5" />
+                <p className="leading-relaxed text-[#4A5568]">
+                  Our executive team sets the strategic direction and ensures Voices of Equity delivers on its mission nationwide.
+                </p>
+              </Reveal>
+            </div>
+            <PeopleRail label="Executive leadership">
+              {members?.map((member, i) => (
+                <Reveal key={member.id} variant="up" delay={i * 80} className="voe-people__item">
+                  <TeamMember {...member} />
+                </Reveal>
+              ))}
+            </PeopleRail>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-gray-200" />
+      {/* ─── Departments ─────────────────────────────────────────────── */}
+      <Edge from={GROUND.white} size="sm" />
+      <section className="voe-section voe-section--tight-top voe-ground-blue-soft voe-people-host">
+        <div className="voe-container">
+          <Reveal variant="fade">
+            <h2 className="voe-display-lg font-display text-[#171219]">National Leadership</h2>
+          </Reveal>
 
-      {/* Department Sections */}
-      {departments.map((dept, index) => {
-        const bgClass = index % 2 === 0 ? "bg-blue-wash" : "bg-warm-wash";
-        const deptDesc = departmentDescriptions[dept.label] || "";
-        const memberCount = dept.data?.length || 0;
-
-        return (
-          <div key={dept.label}>
-            <section className={`py-24 ${bgClass}`}>
-              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <AnimateOnScroll animation="heading">
-                  <div className="mb-16 text-center">
-                    <p className="mb-3 font-display text-xs font-medium uppercase tracking-[0.2em] text-[#587FDA]">
-                      {dept.label}
-                    </p>
-                    <h2 className="mb-4 font-display text-2xl font-bold text-[#171219] md:text-3xl">
-                      {dept.label} Team
-                    </h2>
-                    <p className="mx-auto max-w-2xl leading-relaxed text-[#4A5568]">
-                      {deptDesc}
-                    </p>
-                  </div>
-                </AnimateOnScroll>
-
-                <div
-                  className={`flex flex-wrap justify-center gap-8 ${memberCount <= 2 ? "mx-auto max-w-lg" : "mx-auto max-w-3xl"}`}
-                >
-                  {dept.data?.map((member, i) => (
-                    <AnimateOnScroll
-                      key={member.name}
-                      animation="scale-in"
-                      delay={i * 80}
-                    >
-                      <div className="w-[160px]">
-                        <TeamMember {...member} />
-                      </div>
-                    </AnimateOnScroll>
-                  ))}
-                </div>
+          {departments.map((dept, index) => (
+            <div
+              key={dept.label}
+              className={`grid gap-8 py-12 md:py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] lg:gap-16 ${
+                index === 0 ? '' : 'border-t border-[#171219]/10'
+              }`}
+            >
+              <div className="lg:sticky lg:top-28 lg:self-start">
+                <Reveal variant="left">
+                  <h3 className="voe-display-md font-display text-[#171219]">{dept.label}</h3>
+                  <div className="voe-rule my-5" />
+                  <p className="leading-relaxed text-[#4A5568]">{DEPARTMENT_COPY[dept.label]}</p>
+                </Reveal>
               </div>
-            </section>
+              <PeopleRail label={dept.label}>
+                {dept.people?.map((member, i) => (
+                  <Reveal key={member.id} variant="up" delay={i * 80} className="voe-people__item">
+                    <TeamMember {...member} />
+                  </Reveal>
+                ))}
+              </PeopleRail>
+            </div>
+          ))}
+        </div>
+      </section>
 
-            {index < departments.length - 1 && (
-              <div className="border-t border-gray-200" />
-            )}
-          </div>
-        );
-      })}
-
-      <div className="border-t border-gray-200" />
-
-      {/* VOX Equity */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
-            <p className="mb-4 font-display text-xs font-medium uppercase tracking-[0.2em] text-[#587FDA]">
-              Publication
-            </p>
-            <h2 className="mb-6 font-display text-3xl font-bold text-[#171219] md:text-4xl">
-              VOX Equity
-            </h2>
-            <p className="mb-16 max-w-2xl text-lg leading-relaxed text-[#4A5568]">
-              Our student-led publication advancing health equity discourse
-              through rigorous research, analysis, and storytelling.
-            </p>
-          </AnimateOnScroll>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-            {VOX?.map((member, i) => (
-              <AnimateOnScroll
-                key={member.name}
-                animation="scale-in"
-                delay={i * 80}
-              >
-                <TeamMember {...member} />
-              </AnimateOnScroll>
-            ))}
+      {/* ─── VOX Equity ──────────────────────────────────────────────── */}
+      <section className="voe-section voe-ground-white voe-people-host">
+        <div className="voe-container">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <Reveal variant="left">
+                <p className="voe-eyebrow mb-3">Publication</p>
+                <h2 className="voe-display-md font-display text-[#171219]">VOX Equity</h2>
+                <div className="voe-rule my-5" />
+                <p className="leading-relaxed text-[#4A5568]">
+                  Our student-led publication advancing health equity discourse through rigorous research, analysis, and storytelling.
+                </p>
+              </Reveal>
+            </div>
+            <PeopleRail label="VOX Equity">
+              {VOX?.map((member, i) => (
+                <Reveal key={`${member.id}-${i}`} variant="up" delay={i * 80} className="voe-people__item">
+                  <TeamMember {...member} />
+                </Reveal>
+              ))}
+            </PeopleRail>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-gray-200" />
-
-      {/* Engineers */}
-      <section className="bg-[#F7F8FA] py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
-            <p className="mb-4 font-display text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
-              Technology
-            </p>
-            <h2 className="mb-16 font-display text-3xl font-bold text-[#171219]">
-              Engineering
-            </h2>
-          </AnimateOnScroll>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-            {engineers?.map((member, i) => (
-              <AnimateOnScroll
-                key={member.name}
-                animation="scale-in"
-                delay={i * 80}
-              >
-                <TeamMember {...member} />
-              </AnimateOnScroll>
-            ))}
+      {/* ─── Board of Advisors ───────────────────────────────────────── */}
+      <section className="voe-section voe-ground-white voe-people-host !pt-0">
+        <div className="voe-container">
+          <div className="grid gap-8 border-t border-[#171219]/10 pt-12 md:pt-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <Reveal variant="left">
+                <h2 className="voe-display-lg font-display text-[#171219]">Board of Advisors</h2>
+                <div className="voe-rule my-5" />
+                <p className="leading-relaxed text-[#4A5568]">
+                  Our advisors guide the national team on long-term strategy, partnerships, and growth, and hold the organization to the mission it was founded on.
+                </p>
+              </Reveal>
+            </div>
+            <PeopleRail label="Board of Advisors">
+              {advisors?.map((member, i) => (
+                <Reveal key={member.id} variant="up" delay={i * 80} className="voe-people__item">
+                  <TeamMember {...member} static />
+                </Reveal>
+              ))}
+            </PeopleRail>
           </div>
         </div>
       </section>
 
-      {/* Photo Strip / Geographic Reach */}
-      <section className="overflow-hidden border-t border-gray-200 bg-white">
-        <div className="voe-marquee flex w-max gap-1">
-          {(() => {
-            const images = [
-              "/impact-stories.jpeg",
-              "/local-initiatives.jpeg",
-              "/paintingtry.jpg",
-              "/team-picture.jpg",
-              "/empower.jpg",
-              "/voe-journey.jpeg",
-              "/cornell-chapter.jpg",
-              "/home-resources.jpg",
-              "/hero-new.jpeg",
-            ];
-            return [...images, ...images].map((src, idx) => (
-              <div
-                key={`${src}-${idx}`}
-                className="relative h-40 w-64 flex-shrink-0"
-              >
-                <Image
-                  src={src}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="256px"
-                />
-              </div>
-            ));
-          })()}
+      {/* ─── Join ────────────────────────────────────────────────────── */}
+      <Edge from={GROUND.white} />
+      <section className="voe-section voe-section--tight-top voe-ground-blue-deep voe-texture">
+        <div className="voe-container text-center">
+          <Reveal variant="up">
+            <p className="voe-eyebrow mb-3">Work with us</p>
+            <h2 className="voe-display-lg font-display mb-5 text-white">Join the national team.</h2>
+            <p className="voe-lead mx-auto mb-9 max-w-2xl">
+              Interested in a role on the national team? Tell us what you’d like to work on.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href={siteConfig.links.contact} className="voe-btn voe-btn--on-dark">
+                Get in touch
+              </a>
+              <Link href="/get-involved/chapters" className="voe-btn voe-btn--outline-white">
+                Find your chapter
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
-    </PageLayout>
+    </main>
   );
 }

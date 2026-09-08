@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import AnimateOnScroll from '@/components/Animation/AnimateOnScroll'
+import Reveal from '@/components/Animation/Reveal';
+import PageHero from '@/components/Layout/PageHero';
+import { Edge, GROUND } from '@/components/Layout/Seam';
 
 const GRANT_APPLICATION_URL =
   'https://docs.google.com/document/d/1BEeCtxVcqXeV5EiqcWwTwoIO-kjp0TTtOrCbr4Uma-8/edit?usp=sharing'
@@ -78,79 +80,75 @@ const criteria = [
 ]
 
 const steps = [
-  { n: '01', title: 'Review Requirements', body: 'Understand what your application needs before starting.' },
-  { n: '02', title: 'Submit Application', body: 'Complete the VoE Grant Application form.' },
-  { n: '03', title: 'Receive Decision', body: 'Applications are reviewed on a rolling basis.' },
+  { title: 'Review the requirements', body: 'Understand what your application needs before starting.' },
+  { title: 'Submit the application', body: 'Complete the VoE Grant Application form.' },
+  { title: 'Hear back', body: 'Applications are reviewed on a rolling basis.' },
 ]
 
 // Shared type treatments — keeps the page typographically consistent
-const eyebrow = 'font-display text-xs uppercase tracking-[0.2em] font-medium text-[#587FDA] mb-3'
-const heading = 'font-display text-3xl md:text-4xl font-semibold text-[#171219] mb-6 tracking-tight'
-const body = 'text-base md:text-lg leading-relaxed text-[#4A5568] max-w-2xl'
-const buttonBase = 'inline-flex items-center justify-center gap-2 px-8 py-3 font-display font-semibold rounded-md transition-premium'
+const eyebrow = 'voe-eyebrow mb-3'
+const heading = 'voe-display-md font-display text-[#171219] mb-6'
+const body = 'voe-lead max-w-2xl'
+const buttonBase = 'voe-btn'
 
 export default function GrantsPage() {
   return (
     <main className="min-h-screen">
       {/* ── Group 1: Hero + Purpose + Eligibility (white) ───────────────── */}
-      <div className="bg-white section-mask-fade">
+      <div className="voe-ground-white">
         {/* Hero */}
-        <section className="pt-40 pb-24 bg-gradient-hero">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimateOnScroll animation="fade-up">
-              <p className={eyebrow}>Chapter Resources</p>
-              <h1 className="font-display text-5xl md:text-6xl font-bold text-[#171219] mb-6 leading-[1.05] tracking-tight max-w-4xl">
-                Voices of Equity Grant Program
-              </h1>
-              <p className="text-lg md:text-xl text-[#4A5568] leading-relaxed max-w-3xl">
-                Supplemental funding for chapters launching high-impact, community-based events that advance health equity.
-              </p>
-            </AnimateOnScroll>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Chapter Resources"
+          title="Voices of Equity Grant Program"
+          subtitle="Supplemental funding for chapters launching high-impact, community-based events that advance health equity."
+          image="/impact-photos/general-3.jpg"
+          imageAlt="Chapter members tabling on campus"
+          objectPosition="center 58%"
+          height="min-h-[74vh]"
+        />
 
-        {/* Purpose */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimateOnScroll animation="fade-up">
-              <p className={eyebrow}>About The Grant</p>
-              <h2 className={heading}>Empowering Chapters to Create Real Community Impact</h2>
-              <p className={body}>
-                The Voices of Equity Grant is designed to empower chapters to create high-impact, community-based events that advance our mission of health equity. This grant provides supplemental funding for chapters with strong plans, local partnerships, and a vision to make a difference.
-              </p>
-            </AnimateOnScroll>
-          </div>
-        </section>
 
-        {/* Eligibility */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimateOnScroll animation="fade-up">
-              <p className={eyebrow}>Eligibility</p>
-              <h2 className={heading}>Who Can Apply</h2>
-              <p className={body}>
-                Any official VoE chapter is eligible to apply. The Chapter Director of Philanthropy is responsible for submitting the application on behalf of the chapter.
-              </p>
-            </AnimateOnScroll>
+        {/* Purpose + eligibility, side by side */}
+        <section className="voe-section">
+          <div className="voe-container">
+            <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+              <Reveal variant="left">
+                <p className={eyebrow}>About The Grant</p>
+                <h2 className={heading}>Empowering chapters to create real community impact</h2>
+                <p className={body}>
+                  The Voices of Equity Grant is designed to empower chapters to create high-impact, community-based events that advance our mission of health equity. This grant provides supplemental funding for chapters with strong plans, local partnerships, and a vision to make a difference.
+                </p>
+              </Reveal>
+              <Reveal variant="right" delay={120}>
+                <div className="rounded-3xl bg-[#F1F5FD] p-8">
+                  <p className={eyebrow}>Eligibility</p>
+                  <h3 className="voe-display-sm font-display mb-3 text-[#171219]">Who can apply</h3>
+                  <p className="leading-relaxed text-[#4A5568]">
+                    Any official VoE chapter is eligible to apply. The Chapter Director of Philanthropy is responsible for submitting the application on behalf of the chapter.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
           </div>
         </section>
       </div>
 
-      {/* ── Group 2: Requirements + Evaluation (gradient-surface) ───────── */}
-      <div className="bg-gradient-surface section-mask-fade">
+      {/* ── Group 2: Requirements + Evaluation ─────────────────────────── */}
+      <Edge from={GROUND.white} size="sm" />
+      <div className="voe-ground-blue-soft">
         {/* Requirements */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimateOnScroll animation="heading">
-              <div className="mb-14">
+        <section className="voe-section">
+          <div className="voe-container">
+            <Reveal variant="fade">
+              <div className="mb-9">
                 <p className={eyebrow}>Application Requirements</p>
                 <h2 className={heading}>What to Include in Your Application</h2>
               </div>
-            </AnimateOnScroll>
+            </Reveal>
 
             <div className="grid md:grid-cols-2 gap-6 md:gap-8 auto-rows-fr">
               {requirements.map((req, idx) => (
-                <AnimateOnScroll key={req.title} animation="fade-up" delay={idx * 100} className="h-full">
+                <Reveal key={req.title} variant="up" delay={idx * 100} className="h-full">
                   <div className="premium-card h-full p-8 md:p-10 flex flex-col">
                     <div className="text-[#587FDA] mb-5">{req.icon}</div>
                     <h3 className="font-display text-xl font-semibold text-[#171219] mb-5 tracking-tight">
@@ -165,16 +163,16 @@ export default function GrantsPage() {
                       ))}
                     </ul>
                   </div>
-                </AnimateOnScroll>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* Evaluation Criteria */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimateOnScroll animation="heading">
+        <section className="voe-section">
+          <div className="voe-container">
+            <Reveal variant="fade">
               <div className="mb-12">
                 <p className={eyebrow}>How Applications Are Reviewed</p>
                 <h2 className={heading}>Evaluation Criteria</h2>
@@ -182,62 +180,58 @@ export default function GrantsPage() {
                   Applications are reviewed by the National Leadership Team and selected based on four criteria:
                 </p>
               </div>
-            </AnimateOnScroll>
+            </Reveal>
 
-            <div className="divide-y divide-gray-200/70 border-t border-b border-gray-200/70 max-w-5xl">
+            <div className="max-w-5xl divide-y divide-[#171219]/10">
               {criteria.map((c, idx) => (
-                <AnimateOnScroll key={c.title} animation="fade-up" delay={idx * 100}>
+                <Reveal key={c.title} variant="up" delay={idx * 100}>
                   <div className="grid md:grid-cols-[220px_1fr] gap-4 md:gap-10 py-6 md:py-8">
                     <h3 className="font-display text-xl font-semibold text-[#171219] tracking-tight">
                       {c.title}
                     </h3>
                     <p className="text-base md:text-lg text-[#4A5568] leading-relaxed">{c.body}</p>
                   </div>
-                </AnimateOnScroll>
+                </Reveal>
               ))}
             </div>
 
-            <p className="mt-8 text-sm italic text-gray-500">
+            <p className="mt-8 text-sm italic text-[#4A5568]">
               Projects don&apos;t need to fit the semester&apos;s national theme.
             </p>
           </div>
         </section>
       </div>
 
-      {/* ── Group 3: Application Process + Dual CTA (white) ─────────────── */}
-      <div className="bg-white section-mask-fade">
+      {/* ── Group 3: Application Process + Dual CTA ─────────────────────── */}
+      <div className="voe-ground-white">
         {/* Application Process */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimateOnScroll animation="heading">
-              <div className="mb-14">
+        <section className="voe-section">
+          <div className="voe-container">
+            <Reveal variant="fade">
+              <div className="mb-9">
                 <p className={eyebrow}>How to Apply</p>
                 <h2 className={heading}>The Application Process</h2>
               </div>
-            </AnimateOnScroll>
+            </Reveal>
 
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {steps.map((step, idx) => (
-                <AnimateOnScroll key={step.n} animation="fade-up" delay={idx * 120}>
-                  <div className="relative h-full bg-white rounded-xl border border-gray-100 p-8 shadow-resting">
-                    <p className="font-display text-5xl font-bold text-gradient-accent leading-none mb-4">
-                      {step.n}
-                    </p>
-                    <h3 className="font-display text-xl font-semibold text-[#171219] mb-3 tracking-tight">
-                      {step.title}
-                    </h3>
-                    <p className="text-[#4A5568] leading-relaxed">{step.body}</p>
+                <Reveal key={step.title} variant="up" delay={idx * 120} className="h-full">
+                  <div className="voe-card flex h-full flex-col rounded-3xl bg-[#F1F5FD] p-8">
+                    <h3 className="voe-display-sm font-display mb-3 text-[#171219]">{step.title}</h3>
+                    <div className="voe-rule mb-4" />
+                    <p className="text-[15px] leading-relaxed text-[#4A5568]">{step.body}</p>
                   </div>
-                </AnimateOnScroll>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* Dual CTA */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <AnimateOnScroll animation="fade-up">
+        <section className="voe-section">
+          <div className="voe-container text-center">
+            <Reveal variant="up">
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-[#171219] mb-6 tracking-tight">
                 Ready to Apply?
               </h2>
@@ -249,7 +243,7 @@ export default function GrantsPage() {
                   href={GRANT_APPLICATION_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${buttonBase} bg-gradient-accent text-white shadow-raised hover:shadow-hover-lift`}
+                  className={`${buttonBase} voe-btn--primary`}
                 >
                   Start Your Application
                   <span aria-hidden>→</span>
@@ -258,43 +252,44 @@ export default function GrantsPage() {
                   href={GRANT_APPLICATION_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${buttonBase} border border-gray-300 text-[#171219] hover:border-[#587FDA] hover:text-[#587FDA]`}
+                  className={`${buttonBase} voe-btn--ghost`}
                 >
                   Download Application Template
                   <span aria-hidden>→</span>
                 </a>
               </div>
-            </AnimateOnScroll>
+            </Reveal>
           </div>
         </section>
       </div>
 
-      {/* ── Group 4: Payment Info (gradient-surface) ────────────────────── */}
-      <div className="bg-gradient-surface section-mask-fade">
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <AnimateOnScroll animation="fade-up">
-              <p className={eyebrow}>For Awarded Recipients</p>
-              <h2 className={heading}>Submit Payment Information</h2>
-              <p className={`${body} mx-auto mb-10`}>
+      {/* ── Group 4: Payment Info ───────────────────────────────────────── */}
+      <Edge from={GROUND.white} />
+      <div className="voe-ground-blue-deep voe-texture">
+        <section className="voe-section">
+          <div className="voe-container text-center">
+            <Reveal variant="up">
+              <p className={`${eyebrow} !text-white/80`}>For Awarded Recipients</p>
+              <h2 className={`${heading} !text-white`}>Submit Payment Information</h2>
+              <p className={`${body} mx-auto mb-10 !text-white/85`}>
                 Once your grant has been approved, complete the secure payment information form so funds can be disbursed to your chapter.
               </p>
               <Link
                 href="/resources/grants/payment-info"
-                className={`${buttonBase} bg-[#587FDA] hover:bg-[#4566B8] text-white`}
+                className={`${buttonBase} voe-btn--on-dark`}
               >
                 Submit Payment Info
                 <span aria-hidden>→</span>
               </Link>
-            </AnimateOnScroll>
+            </Reveal>
           </div>
         </section>
       </div>
 
-      {/* ── Group 5: Contact (white) ────────────────────────────────────── */}
-      <div className="bg-white">
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── Group 5: Contact ────────────────────────────────────────────── */}
+      <div className="voe-ground-white">
+        <section className="voe-section--tight-top pb-10 pt-6">
+          <div className="voe-container text-center">
             <p className="text-sm text-[#4A5568] leading-relaxed">
               Questions? Reach out to <span className="font-semibold text-[#171219]">Adam Jac</span>, National Director of Philanthropy, via Slack or email.
             </p>

@@ -3,6 +3,7 @@ import { Montserrat, Playfair_Display } from 'next/font/google'
 import NavBar from '../components/Navigation/NavBar'
 import { Footer } from '../components/Layout/Footer'
 import { siteConfig } from '../content'
+import { ScrollProgress } from '../components/Animation/Parallax'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
         min-h-full flex flex-col
         font-sans
       `}>
+        <ScrollProgress />
         <NavBar />
         <main className="flex-grow">
           {children}

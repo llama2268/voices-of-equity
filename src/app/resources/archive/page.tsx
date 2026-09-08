@@ -5,7 +5,8 @@ import { resourcesPage } from '@/content';
 import type { ArchiveItem } from '@/content/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
+import Reveal from '@/components/Animation/Reveal';
+import { Edge, GROUND } from '@/components/Layout/Seam';
 
 interface ArchiveCardProps {
   item: ArchiveItem;
@@ -14,12 +15,12 @@ interface ArchiveCardProps {
 function ArchiveCard({ item }: ArchiveCardProps) {
   const typeColors: Record<string, string> = {
     article: 'bg-[#587FDA]/10 text-[#587FDA]',
-    video: 'bg-red-50 text-red-700',
+    video: 'bg-[#F47B67]/15 text-[#C8553F]',
     training: 'bg-[#2A8D87]/10 text-[#2A8D87]',
-    interview: 'bg-purple-50 text-purple-700',
-    module: 'bg-amber-50 text-amber-700',
-    'op-ed': 'bg-orange-50 text-orange-700',
-    resource: 'bg-gray-100 text-gray-700'
+    interview: 'bg-[#587FDA]/10 text-[#587FDA]',
+    module: 'bg-[#F2EE68]/40 text-[#6B6A1E]',
+    'op-ed': 'bg-[#F47B67]/15 text-[#C8553F]',
+    resource: 'bg-[#F1F5FD] text-[#4A5568]'
   };
 
   const getLink = () => {
@@ -35,19 +36,19 @@ function ArchiveCard({ item }: ArchiveCardProps) {
   const CardContent = () => (
     <>
       <div className="flex justify-between items-start mb-3">
-        <span className={`px-2.5 py-0.5 rounded text-xs font-medium uppercase tracking-widest ${typeColors[item.type] || typeColors.resource}`}>
+        <span className={`rounded-full px-2.5 py-0.5 font-display text-[11px] font-semibold uppercase tracking-[0.14em] ${typeColors[item.type] || typeColors.resource}`}>
           {item.type}
         </span>
-        <span className="text-xs text-gray-500">{item.date}</span>
+        <span className="text-xs text-[#4A5568]/80">{item.date}</span>
       </div>
 
       {item.image && (
-        <div className="relative w-full h-44 mb-4 hover-image-zoom">
+        <div className="voe-photo relative mb-4 h-44 w-full rounded-2xl">
           <Image
             src={item.image}
             alt={item.title}
             fill
-            className="object-cover rounded"
+            className="object-cover rounded-2xl"
           />
         </div>
       )}
@@ -57,7 +58,7 @@ function ArchiveCard({ item }: ArchiveCardProps) {
           <iframe
             src={`https://www.youtube.com/embed/${item.videoId}`}
             title={item.title}
-            className="w-full h-full rounded"
+            className="h-full w-full rounded-2xl"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -66,13 +67,13 @@ function ArchiveCard({ item }: ArchiveCardProps) {
 
       <h3 className="text-lg font-bold font-display text-[#171219] mb-2 line-clamp-2">{item.title}</h3>
       {item.author && (
-        <p className="text-xs text-gray-500 mb-2">by {item.author}</p>
+        <p className="mb-2 text-xs text-[#4A5568]/80">by {item.author}</p>
       )}
       <p className="text-sm text-[#4A5568] mb-4 leading-relaxed line-clamp-3">{item.description}</p>
 
       <div className="flex flex-wrap gap-1.5 mt-auto">
         {item.tags.slice(0, 3).map((tag: string, index: number) => (
-          <span key={index} className="px-2 py-0.5 bg-[#F7F8FA] text-gray-500 rounded text-xs">
+          <span key={index} className="rounded-full bg-[#F1F5FD] px-2.5 py-0.5 text-xs text-[#4A5568]">
             {tag}
           </span>
         ))}
@@ -91,13 +92,12 @@ function ArchiveCard({ item }: ArchiveCardProps) {
       <Wrapper
         href={link}
         {...linkProps}
-        className="group block bg-white border border-gray-200 rounded-lg p-6 hover-lift
-                   transition-all duration-200 h-full flex flex-col"
+        className="voe-card group flex h-full flex-col rounded-3xl bg-white p-6 shadow-[0_12px_32px_rgba(14,26,51,0.08)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(14,26,51,0.14)]"
       >
         <div className="flex-1 flex flex-col">
           <CardContent />
         </div>
-        <div className="mt-4 pt-3 border-t border-gray-200 text-[#587FDA] text-sm font-semibold font-display
+        <div className="mt-4 pt-3 text-[#587FDA] text-sm font-semibold font-display
                         group-hover:text-[#4566B8] transition-colors">
           {item.type === 'article' ? 'Read Article' : item.type === 'module' ? 'View Module' : 'View Content'} &#x2192;
         </div>
@@ -106,7 +106,7 @@ function ArchiveCard({ item }: ArchiveCardProps) {
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 h-full flex flex-col">
+    <div className="voe-card flex h-full flex-col rounded-3xl bg-white p-6 shadow-[0_12px_32px_rgba(14,26,51,0.08)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(14,26,51,0.14)]">
       <div className="flex-1 flex flex-col">
         <CardContent />
       </div>
@@ -122,36 +122,36 @@ function FeaturedArticleCard({ item }: ArchiveCardProps) {
   return (
     <Link
       href={link || '#'}
-      className="group block bg-white border border-gray-200 rounded-lg p-8 md:p-10 hover-lift transition-all duration-200 mb-12"
+      className="voe-card group block rounded-3xl bg-white p-8 shadow-[0_18px_44px_rgba(14,26,51,0.12)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(14,26,51,0.18)] md:p-10"
     >
       <div className="flex flex-col md:flex-row gap-8">
         {item.image && (
-          <div className="relative w-full md:w-80 h-52 md:h-auto flex-shrink-0 hover-image-zoom">
+          <div className="voe-photo relative h-52 w-full flex-shrink-0 rounded-2xl md:h-auto md:w-80">
             <Image
               src={item.image}
               alt={item.title}
               fill
-              className="object-cover rounded"
+              className="object-cover rounded-2xl"
             />
           </div>
         )}
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-[#587FDA] text-white rounded text-xs font-medium uppercase tracking-widest">
+            <span className="rounded-full bg-[#587FDA] px-3 py-1 font-display text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
               Featured
             </span>
-            <span className="text-xs text-gray-500">{item.date}</span>
+            <span className="text-xs text-[#4A5568]/80">{item.date}</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold font-display text-[#171219] mb-2 group-hover:text-[#587FDA] transition-colors">
+          <h2 className="voe-display-md font-display mb-2 text-[#171219] transition-colors group-hover:text-[#587FDA]">
             {item.title}
           </h2>
           {item.author && (
-            <p className="text-sm text-gray-500 mb-3">by {item.author}</p>
+            <p className="mb-3 text-sm text-[#4A5568]/80">by {item.author}</p>
           )}
           <p className="text-[#4A5568] mb-6 leading-relaxed text-base md:text-lg">{item.description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {item.tags.map((tag: string, index: number) => (
-              <span key={index} className="px-3 py-1 bg-[#F7F8FA] text-[#4A5568] rounded text-xs font-medium border border-gray-200">
+              <span key={index} className="rounded-full bg-[#F1F5FD] px-3 py-1 text-xs font-medium text-[#4A5568]">
                 {tag}
               </span>
             ))}
@@ -172,35 +172,44 @@ export default function ArchivePage() {
   const regularItems = archive.items.filter((item: ArchiveItem) => !item.featured);
 
   return (
-    <PageLayout title={archive.title} subtitle={archive.subtitle}>
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Featured Articles */}
-          {featuredItems.length > 0 && (
-            <div className="mb-8">
-              {featuredItems.map((item: ArchiveItem) => (
-                <AnimateOnScroll key={item.id} animation="fade-up">
-                  <FeaturedArticleCard item={item} />
-                </AnimateOnScroll>
-              ))}
-            </div>
-          )}
+    <PageLayout
+      title={archive.title}
+      subtitle={archive.subtitle}
+      eyebrow="Equity Archive"
+      image="/impact-photos/binghamton-2.jpg"
+      imageAlt="A chapter presentation in a classroom"
+    >
+      {/* ─── Featured ────────────────────────────────────────────────── */}
+      {featuredItems.length > 0 && (
+        <section className="voe-section voe-ground-white">
+          <div className="voe-container">
+            <Reveal variant="fade">
+              <p className="voe-eyebrow mb-3">Featured</p>
+              <h2 className="voe-display-md font-display mb-8 text-[#171219]">Start here</h2>
+            </Reveal>
+            {featuredItems.map((item: ArchiveItem) => (
+              <Reveal key={item.id} variant="up">
+                <FeaturedArticleCard item={item} />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
-          <div className="border-t border-gray-200 mb-12" />
-
-          {/* Archive Grid */}
-          <div>
-            <AnimateOnScroll animation="fade-up">
-              <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">Browse All</p>
-              <h2 className="text-2xl font-bold font-display text-[#171219] mb-8">Archive Collection</h2>
-            </AnimateOnScroll>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {regularItems.map((item: ArchiveItem, i: number) => (
-                <AnimateOnScroll key={item.id} animation="scale-in" delay={i * 80}>
-                  <ArchiveCard item={item} />
-                </AnimateOnScroll>
-              ))}
-            </div>
+      {/* ─── The collection ──────────────────────────────────────────── */}
+      <Edge from={GROUND.white} size="sm" />
+      <section className="voe-section voe-section--tight-top voe-ground-blue-soft">
+        <div className="voe-container">
+          <Reveal variant="fade">
+            <p className="voe-eyebrow mb-3">Browse All</p>
+            <h2 className="voe-display-md font-display mb-8 text-[#171219]">Archive Collection</h2>
+          </Reveal>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {regularItems.map((item: ArchiveItem, i: number) => (
+              <Reveal key={item.id} variant="up" delay={Math.min(i, 8) * 70} className="h-full">
+                <ArchiveCard item={item} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

@@ -5,19 +5,23 @@ import Image from "next/image";
 import PageLayout from "@/components/Layout/PageLayout";
 import { getInvolvedPage } from "@/content";
 import Link from "next/link";
-import { SocialCallout } from "@/components/ui/SocialCallout";
-import {
-  ResourceIcon,
-  AwardIcon,
-  LeadershipIcon,
-} from "@/components/icons/ChapterIcons";
 import { ChapterCard, ChapterData } from "@/components/Chapter/ChapterCard";
-import AnimateOnScroll from "@/components/Animation/AnimateOnScroll";
+import Reveal from '@/components/Animation/Reveal';
+import PageHero from '@/components/Layout/PageHero';
+import { Edge, GROUND } from '@/components/Layout/Seam';
+import { ParallaxFill } from '@/components/Animation/Parallax';
+
+// One photograph per benefit - the icon cards read as clip art.
+const BENEFIT_PHOTOS = [
+  { src: '/photos/education-team.jpg', alt: 'Chapter members with curriculum materials', position: 'center 30%' },
+  { src: '/photos/ursinus-poster.jpg', alt: 'Students presenting a research poster', position: 'center 40%' },
+  { src: '/photos/committee-presentation.jpg', alt: 'A chapter leader presenting to the room', position: 'center 30%' },
+];
 
 import dynamic from "next/dynamic";
 const ChapterMap = dynamic(() => import("@/components/Map/ChapterMap"), {
   ssr: false,
-  loading: () => <div className="h-[500px] w-full bg-[#F7F8FA]" />,
+  loading: () => <div className="h-[500px] w-full bg-[#F1F5FD]" />,
 });
 
 const regions = [
@@ -55,7 +59,7 @@ const allChapters: ChapterData[] = [
   },
   {
     name: "Ithaca College",
-    logo: "/icons/chapters/Formal_Seal_of_Ithaca_College,_Ithaca,_NY,_USA.svg.png",
+    logo: "/icons/chapters/Formal_Seal_of_Ithaca_College_Ithaca_NY_USA.svg.png",
     region: "Northeast",
     president: "Aya Oulida",
     foundingYear: "2025",
@@ -278,7 +282,7 @@ const allChapters: ChapterData[] = [
   },
   {
     name: "UCLA",
-    logo: "/icons/chapters/University of California, Los Angeles.png",
+    logo: "/icons/chapters/University of California Los Angeles.png",
     region: "West Coast",
     president: "Aayzhia Rianne Cruz",
     foundingYear: "2025",
@@ -338,18 +342,6 @@ export default function ChaptersPage() {
     return matchesRegion && matchesSearch;
   });
 
-  const benefitsWithIcons = benefits.map((benefit, index) => ({
-    ...benefit,
-    icon:
-      index === 0 ? (
-        <ResourceIcon />
-      ) : index === 1 ? (
-        <AwardIcon />
-      ) : (
-        <LeadershipIcon />
-      ),
-  }));
-
   const chapterPhotos = [
     "/images/chapters/howard-1.jpg",
     "/images/chapters/cmu-1.jpg",
@@ -363,187 +355,178 @@ export default function ChaptersPage() {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#587FDA] to-[#4566B8] py-20 pt-32">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <AnimateOnScroll animation="fade-in">
-            <Image
-              src="/logo-new.png"
-              alt="Voices of Equity"
-              width={180}
-              height={162}
-              className="mx-auto mb-8"
-            />
-            <h1 className="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
-              Our Chapters
-            </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/80">
-              Student-led chapters driving health equity across 60+ universities
-              nationwide
-            </p>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      {/* ─── 1. Hero ─────────────────────────────────────────────────── */}
+      <PageHero
+        eyebrow="Get Involved"
+        title="Our Chapters"
+        subtitle="Student-led chapters driving health equity across 70+ universities nationwide."
+        image="/photos/cmu-activities-fair.jpg"
+        imageAlt="Chapter members at a campus activities fair"
+        objectPosition="center 44%"
+      />
 
-      {/* Photo Strip */}
-      <div className="h-32 overflow-hidden bg-[#587FDA]">
-        <div className="flex h-32 gap-1 overflow-hidden">
-          <div className="voe-marquee flex h-32 w-max gap-1">
-            {[...chapterPhotos, ...chapterPhotos].map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt="Chapter photo"
-                width={192}
-                height={128}
-                className="h-32 w-48 rounded-md border-2 border-white/30 object-cover"
-              />
-            ))}
-          </div>
+      {/* ─── 2. Photo strip - chapters in motion ─────────────────────── */}
+      <div className="voe-ground-blue voe-texture overflow-hidden py-3">
+        <div className="voe-marquee flex h-36 w-max gap-2">
+          {/* four copies: the loop shifts by half the strip, so one half must
+              be wider than any viewport or the ground shows at the end */}
+          {[...chapterPhotos, ...chapterPhotos, ...chapterPhotos, ...chapterPhotos].map((src, i) => (
+            <div key={i} className="relative h-36 w-52 shrink-0 overflow-hidden rounded-xl">
+              <Image src={src} alt="" fill className="object-cover" sizes="208px" />
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Introduction & Benefits */}
-      <section className="bg-blue-wash py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <AnimateOnScroll animation="fade-up">
-            <div className="mx-auto mb-16 max-w-3xl text-center">
-              <p className="text-lg leading-relaxed text-[#4A5568]">
-                {content}
-              </p>
+      {/* ─── 3. What a chapter is, and what it gets ─────────────────── */}
+      <section className="voe-section voe-ground-white">
+        <div className="voe-container">
+          <Reveal variant="fade">
+            <div className="mx-auto mb-14 max-w-3xl text-center">
+              <p className="voe-eyebrow mb-4">On the Ground</p>
+              <h2 className="voe-display-lg font-display mb-6 text-[#171219]">
+                Where the work actually happens
+              </h2>
+              <p className="voe-lead">{content}</p>
             </div>
-          </AnimateOnScroll>
+          </Reveal>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {benefitsWithIcons.map((benefit, i) => (
-              <AnimateOnScroll
-                key={benefit.title}
-                animation="scale-in"
-                delay={i * 150}
-              >
-                <div className="hover-lift rounded-lg border border-gray-200 bg-white p-8">
-                  <div className="mb-5 text-[#587FDA]">{benefit.icon}</div>
-                  <h3 className="mb-3 font-display text-xl font-bold text-[#171219]">
-                    {benefit.title}
-                  </h3>
-                  <p className="leading-relaxed text-[#4A5568]">
-                    {benefit.description}
-                  </p>
-                </div>
-              </AnimateOnScroll>
+          <div className="grid gap-6 md:grid-cols-3">
+            {benefits.map((benefit, i) => (
+              <Reveal key={benefit.title} variant="up" delay={i * 110} className="h-full">
+                <article className="voe-card flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_44px_rgba(14,26,51,0.12)]">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <ParallaxFill
+                      src={BENEFIT_PHOTOS[i]!.src}
+                      alt={BENEFIT_PHOTOS[i]!.alt}
+                      objectPosition={BENEFIT_PHOTOS[i]!.position}
+                      strength={40}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-7">
+                    <h3 className="voe-display-sm font-display mb-2 text-[#171219]">{benefit.title}</h3>
+                    <div className="voe-rule mb-4" />
+                    <p className="text-[15px] leading-relaxed text-[#4A5568]">{benefit.description}</p>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Chapter Directory */}
-      <section className="border-t border-gray-200 bg-[#F7F8FA] py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <AnimateOnScroll animation="fade-up">
-            <div className="mb-16 text-center">
-              <p className="mb-3 font-display text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
-                Universities Leading Change
-              </p>
-              <h2 className="font-display text-3xl font-bold text-[#171219] md:text-4xl">
-                Our Chapters
-              </h2>
+      {/* ─── 4. Where we are - the map, up front ─────────────────────── */}
+      <Edge from={GROUND.white} size="sm" />
+      <section className="voe-section voe-section--tight-top voe-ground-blue-soft">
+        <div className="voe-container">
+          <Reveal variant="fade">
+            <div className="mb-8 text-center">
+              <p className="voe-eyebrow mb-3">Coast to Coast</p>
+              <h2 className="voe-display-md font-display text-[#171219]">Where we are</h2>
             </div>
-          </AnimateOnScroll>
+          </Reveal>
+          <Reveal variant="up" delay={100}>
+            <div className="overflow-hidden rounded-3xl bg-white p-4 shadow-[0_18px_44px_rgba(14,26,51,0.10)] md:p-8">
+              <ChapterMap />
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-          {/* Filters & Search */}
-          <div className="mb-12 flex flex-col items-center justify-between gap-6 md:flex-row">
-            <div className="flex flex-wrap justify-center gap-2">
-              {regions.map((region) => (
+      {/* ─── 5. Directory ────────────────────────────────────────────── */}
+      <section className="voe-section voe-ground-white">
+        <div className="voe-container">
+          <Reveal variant="fade">
+            <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <p className="voe-eyebrow mb-3">Universities Leading Change</p>
+                <h2 className="voe-display-md font-display text-[#171219]">Find your chapter</h2>
+              </div>
+              <label className="relative w-full md:w-72">
+                <span className="sr-only">Search chapters</span>
+                <svg className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6B7280]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Search by school"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full rounded-full border border-[#171219]/12 bg-white py-3 pl-11 pr-4 text-[15px] text-[#171219] placeholder:text-[#6B7280] focus:border-[#2A8D87] focus:outline-none focus:ring-2 focus:ring-[#2A8D87]/25"
+                />
+              </label>
+            </div>
+          </Reveal>
+
+          {/* region filter */}
+          <div className="mb-10 flex flex-wrap gap-2">
+            {regions.map((region) => {
+              const active = selectedRegion === region;
+              const n = region === "All" ? allChapters.length : allChapters.filter((c) => c.region === region).length;
+              return (
                 <button
                   key={region}
                   onClick={() => setSelectedRegion(region)}
-                  className={`rounded-md px-4 py-2 text-sm font-medium transition-all ${
-                    selectedRegion === region
-                      ? "bg-[#587FDA] text-white"
-                      : "border border-gray-200 bg-white text-[#4A5568] hover:border-gray-300"
+                  className={`rounded-full px-4 py-2 font-display text-sm font-semibold transition-colors ${
+                    active
+                      ? "bg-[#2A8D87] text-white"
+                      : "bg-[#F1F5FD] text-[#171219] hover:bg-[#E6EDFC]"
                   }`}
                 >
                   {region}
+                  <span className={`ml-2 text-xs ${active ? "text-white/75" : "text-[#6B7280]"}`}>{n}</span>
                 </button>
-              ))}
-            </div>
-
-            <div className="w-full md:w-64">
-              <input
-                type="text"
-                placeholder="Search chapters..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-[#4A5568] focus:border-[#587FDA] focus:outline-none focus:ring-1 focus:ring-[#587FDA]"
-              />
-            </div>
+              );
+            })}
           </div>
 
-          {/* Chapters Grid */}
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-            {filteredChapters.map((chapter) => (
-              <ChapterCard key={chapter.name} chapter={chapter} />
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {filteredChapters.map((chapter, i) => (
+              <Reveal key={chapter.name} variant="scale" delay={Math.min(i, 9) * 40} className="!block">
+                <ChapterCard chapter={chapter} />
+              </Reveal>
             ))}
           </div>
 
           {filteredChapters.length === 0 && (
-            <div className="py-12 text-center text-gray-500">
-              No chapters found matching your criteria.
+            <div className="py-12 text-center text-[#6B7280]">
+              No chapters match that yet — try another region or spelling.
             </div>
           )}
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-warm-wash border-t border-gray-200 py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <AnimateOnScroll animation="fade-up">
-            <p className="mb-3 font-display text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
-              Ready to Get Started?
-            </p>
-            <h2 className="mb-4 font-display text-3xl font-bold text-[#171219] md:text-4xl">
-              {cta.title}
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-[#4A5568]">
-              {cta.description}
-            </p>
-            <Link
-              href={cta.primaryButton.href}
-              className="hover-scale inline-block rounded-md bg-[#587FDA] px-8 py-3 font-medium text-white transition-colors hover:bg-[#4566B8]"
-            >
-              {cta.primaryButton.text}
-            </Link>
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      {/* Chapter Map */}
-      <section className="border-t border-gray-200 bg-[#F7F8FA] py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <AnimateOnScroll animation="fade-up">
-            <h2 className="mb-10 text-center font-display text-3xl font-bold text-[#171219]">
-              Our Chapter Locations
-            </h2>
-            <ChapterMap />
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      {/* Social Media Integration */}
-      <section className="border-t border-gray-200 bg-[#171219] py-24">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <AnimateOnScroll animation="fade-up">
-            <h2 className="mb-4 font-display text-3xl font-bold text-white md:text-4xl">
-              Join Our Community
-            </h2>
-            <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/80">
-              Join our community of changemakers and help build a more equitable
-              future for all.
-            </p>
-            <div className="flex justify-center gap-4">
-              <SocialCallout />
-            </div>
-          </AnimateOnScroll>
+      {/* ─── 6. Start one ────────────────────────────────────────────── */}
+      <Edge from={GROUND.white} />
+      <section className="voe-section voe-section--tight-top voe-ground-blue-deep voe-texture">
+        <div className="voe-container">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+            <Reveal variant="left">
+              <p className="voe-eyebrow mb-4">Not on the list?</p>
+              <h2 className="voe-display-lg font-display mb-5 text-white">{cta.title}</h2>
+              <p className="voe-lead mb-9 max-w-xl">{cta.description}</p>
+              <div className="flex flex-wrap gap-4">
+                <Link href={cta.primaryButton.href} className="voe-btn voe-btn--on-dark">
+                  {cta.primaryButton.text}
+                </Link>
+                <Link href="/get-involved/requirements" className="voe-btn voe-btn--outline-white">
+                  What it takes
+                </Link>
+              </div>
+            </Reveal>
+            <Reveal variant="right" delay={120}>
+              <div className="voe-photo voe-ar-landscape shadow-[0_24px_60px_rgba(14,26,51,0.28)]">
+                <ParallaxFill
+                  src="/photos/gbm-brainstorm.jpg"
+                  alt="Chapter members planning at a whiteboard"
+                  strength={60}
+                  objectPosition="center 40%"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
     </PageLayout>

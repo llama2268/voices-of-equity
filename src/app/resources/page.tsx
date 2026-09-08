@@ -5,7 +5,8 @@ import VideoPlayer from "@/components/Video/VideoPlayer";
 import { resourcesPage } from "@/content";
 import Link from "next/link";
 import { useState } from "react";
-import AnimateOnScroll from "@/components/Animation/AnimateOnScroll";
+import Reveal from '@/components/Animation/Reveal';
+import { Edge, GROUND } from '@/components/Layout/Seam';
 
 export default function ResourcesPage() {
   const { main } = resourcesPage;
@@ -43,13 +44,19 @@ export default function ResourcesPage() {
   ];
 
   return (
-    <PageLayout title={main.title} subtitle={main.subtitle}>
-      <div className="mx-auto max-w-6xl px-4">
+    <PageLayout
+      title={main.title}
+      subtitle={main.subtitle}
+      eyebrow="Resources"
+      image="/photos/gbm-brainstorm.jpg"
+      imageAlt="Chapter members in a general body meeting"
+    >
         {/* Documentary Section */}
-        <section className="py-20 md:py-24">
-          <AnimateOnScroll animation="fade-up">
+        <section className="voe-section voe-ground-white">
+          <div className="voe-container">
+          <Reveal variant="up">
             <div className="mb-10 max-w-4xl">
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-gray-600">
+              <p className="voe-eyebrow mb-4">
                 {main.content.documentary.eyebrow}
               </p>
               <h2 className="mb-5 font-display text-3xl font-bold tracking-tight text-[#171219] md:text-5xl">
@@ -59,11 +66,11 @@ export default function ResourcesPage() {
                 {main.content.documentary.description}
               </p>
             </div>
-          </AnimateOnScroll>
+          </Reveal>
 
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
-            <AnimateOnScroll animation="fade-in-left">
-              <div className="shadow-resting overflow-hidden rounded-lg border border-gray-200 bg-white">
+            <Reveal variant="left">
+              <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_44px_rgba(14,26,51,0.10)]">
                 {selectedDocumentaryEpisode?.videoId && (
                   <VideoPlayer
                     videoId={selectedDocumentaryEpisode.videoId}
@@ -97,15 +104,15 @@ export default function ResourcesPage() {
                   </p>
                 </div>
               </div>
-            </AnimateOnScroll>
+            </Reveal>
 
-            <AnimateOnScroll animation="fade-in-right">
-              <aside className="sticky top-24 rounded-lg border border-gray-200 bg-[#F7F8FA] p-4">
+            <Reveal variant="right">
+              <aside className="sticky top-24 rounded-2xl border border-[#171219]/8 bg-[#F1F5FD] p-4">
                 <div className="mb-4 flex items-center justify-between gap-4">
                   <h3 className="mb-0 font-display text-sm font-bold uppercase tracking-[0.18em] text-[#171219]">
                     Documentary Playlist
                   </h3>
-                  <span className="text-sm font-semibold text-gray-500">
+                  <span className="text-sm font-semibold text-[#4A5568]">
                     {releasedDocumentaryEpisodes.length}/
                     {main.content.documentary.episodes.length}
                   </span>
@@ -126,16 +133,16 @@ export default function ResourcesPage() {
                           }
                         }}
                         disabled={!isReleased}
-                        className={`w-full rounded-md p-3 text-left transition-colors ${
+                        className={`w-full rounded-xl p-3 text-left transition-colors ${
                           isSelected
-                            ? "border border-l-4 border-gray-200 border-l-[#587FDA] bg-white"
+                            ? "bg-white shadow-[0_6px_18px_rgba(14,26,51,0.08)] ring-1 ring-[#587FDA]/30"
                             : isReleased
                               ? "hover:bg-white"
                               : "cursor-not-allowed opacity-55"
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded bg-gray-200">
+                          <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md bg-[#E6EDFC]">
                             {episode.videoId ? (
                               <img
                                 src={`https://img.youtube.com/vi/${episode.videoId}/mqdefault.jpg`}
@@ -143,13 +150,13 @@ export default function ResourcesPage() {
                                 className="h-full w-full object-cover"
                               />
                             ) : (
-                              <div className="flex h-full w-full items-center justify-center bg-white text-xs font-semibold uppercase tracking-[0.16em] text-gray-400">
+                              <div className="flex h-full w-full items-center justify-center bg-white text-xs font-semibold uppercase tracking-[0.16em] text-[#587FDA]/70">
                                 Soon
                               </div>
                             )}
                           </div>
                           <div className="min-w-0 flex-1">
-                            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">
+                            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#587FDA]">
                               Episode {episode.episode}
                             </p>
                             <h4
@@ -164,34 +171,35 @@ export default function ResourcesPage() {
                   })}
                 </div>
               </aside>
-            </AnimateOnScroll>
+            </Reveal>
+          </div>
           </div>
         </section>
 
-        <div className="border-t border-gray-200" />
-
         {/* Sub-resources */}
-        <section className="py-20">
-          <AnimateOnScroll animation="heading">
+        <Edge from={GROUND.white} size="sm" />
+        <section className="voe-section voe-section--tight-top voe-ground-blue-soft">
+          <div className="voe-container">
+          <Reveal variant="fade">
             <div className="mb-12">
-              <p className="mb-3 text-xs font-medium uppercase tracking-widest text-[#587FDA]">
+              <p className="voe-eyebrow mb-3">
                 Chapter Resources
               </p>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-[#171219] md:text-4xl">
+              <h2 className="voe-display-md font-display text-[#171219]">
                 Explore Our Resources
               </h2>
             </div>
-          </AnimateOnScroll>
+          </Reveal>
           <div className="grid gap-6 md:grid-cols-3 md:gap-8">
             {subResources.map((r, idx) => (
-              <AnimateOnScroll
+              <Reveal
                 key={r.title}
-                animation="fade-up"
+                variant="up"
                 delay={idx * 100}
               >
                 <Link href={r.href} className="block h-full">
                   <div className="premium-card group h-full p-8">
-                    <p className="mb-3 font-display text-xs font-medium uppercase tracking-[0.2em] text-[#587FDA]">
+                    <p className="mb-3 voe-eyebrow">
                       {r.eyebrow}
                     </p>
                     <h3 className="mb-3 font-display text-xl font-semibold tracking-tight text-[#171219]">
@@ -205,30 +213,32 @@ export default function ResourcesPage() {
                     </span>
                   </div>
                 </Link>
-              </AnimateOnScroll>
+              </Reveal>
             ))}
+          </div>
           </div>
         </section>
 
         {/* Videos Section */}
-        <section className="py-24">
-          <AnimateOnScroll animation="fade-up">
-            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-gray-500">
+        <section className="voe-section voe-ground-white">
+          <div className="voe-container">
+          <Reveal variant="up">
+            <p className="voe-eyebrow mb-3">
               Educational Content
             </p>
-            <h2 className="mb-4 font-display text-3xl font-bold text-[#171219] md:text-4xl">
+            <h2 className="voe-display-md font-display mb-4 text-[#171219]">
               Learn Through Stories
             </h2>
-            <p className="mb-12 max-w-2xl leading-relaxed text-[#4A5568]">
+            <p className="voe-lead mb-12 max-w-2xl">
               Explore our curated collection of videos highlighting key issues
               and solutions in health equity
             </p>
-          </AnimateOnScroll>
+          </Reveal>
 
           <div className="flex flex-col gap-8 lg:flex-row">
             {/* Main Video Player */}
-            <AnimateOnScroll animation="fade-in-left" className="lg:w-2/3">
-              <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">
+            <Reveal variant="left" className="lg:w-2/3">
+              <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_44px_rgba(14,26,51,0.10)]">
                 <div className="w-full">
                   <VideoPlayer
                     videoId={selectedVideo?.videoId ?? ""}
@@ -244,11 +254,11 @@ export default function ResourcesPage() {
                   </p>
                 </div>
               </div>
-            </AnimateOnScroll>
+            </Reveal>
 
             {/* Video Sidebar */}
-            <AnimateOnScroll animation="fade-in-right" className="lg:w-1/3">
-              <div className="sticky top-24 rounded-lg border border-gray-200 bg-[#F7F8FA] p-4">
+            <Reveal variant="right" className="lg:w-1/3">
+              <div className="sticky top-24 rounded-2xl border border-[#171219]/8 bg-[#F1F5FD] p-4">
                 <h3 className="mb-4 font-display text-sm font-bold uppercase tracking-widest text-[#171219]">
                   More Videos
                 </h3>
@@ -257,14 +267,14 @@ export default function ResourcesPage() {
                     <button
                       key={index}
                       onClick={() => setSelectedVideo(video)}
-                      className={`w-full rounded-md p-3 text-left transition-colors ${
+                      className={`w-full rounded-xl p-3 text-left transition-colors ${
                         selectedVideo === video
-                          ? "border border-l-4 border-gray-200 border-l-[#587FDA] bg-white"
+                          ? "bg-white shadow-[0_6px_18px_rgba(14,26,51,0.08)] ring-1 ring-[#587FDA]/30"
                           : "hover:bg-white"
                       }`}
                     >
                       <div className="flex items-start space-x-3">
-                        <div className="h-16 w-24 flex-shrink-0 overflow-hidden rounded bg-gray-200">
+                        <div className="h-16 w-24 flex-shrink-0 overflow-hidden rounded-md bg-[#E6EDFC]">
                           <img
                             src={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`}
                             alt={video.title}
@@ -287,27 +297,26 @@ export default function ResourcesPage() {
                   ))}
                 </div>
               </div>
-            </AnimateOnScroll>
+            </Reveal>
+          </div>
           </div>
         </section>
 
-        <div className="border-t border-gray-200" />
-
         {/* Research Papers Section */}
-        <section className="-mx-4 bg-[#F7F8FA] px-4 py-24">
-          <div className="mx-auto max-w-6xl">
-            <AnimateOnScroll animation="fade-up">
-              <p className="mb-3 text-xs font-medium uppercase tracking-widest text-gray-500">
+        <section className="voe-section voe-ground-mist">
+          <div className="voe-container">
+            <Reveal variant="up">
+              <p className="voe-eyebrow mb-3">
                 Academic Research
               </p>
-              <h2 className="mb-4 font-display text-3xl font-bold text-[#171219] md:text-4xl">
+              <h2 className="voe-display-md font-display mb-4 text-[#171219]">
                 Evidence-Based Insights
               </h2>
-              <p className="mb-12 max-w-2xl leading-relaxed text-[#4A5568]">
+              <p className="voe-lead mb-12 max-w-2xl">
                 Discover peer-reviewed research and analysis on health equity
                 challenges and solutions
               </p>
-            </AnimateOnScroll>
+            </Reveal>
 
             {/* Papers Carousel */}
             <div className="relative w-full">
@@ -324,23 +333,23 @@ export default function ResourcesPage() {
                         href={paper.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover-lift mx-auto block flex min-h-[300px] max-w-4xl flex-col justify-between rounded-lg border border-gray-200 bg-white p-8"
+                        className="voe-card mx-auto flex min-h-[300px] max-w-4xl flex-col justify-between rounded-3xl bg-white p-8 shadow-[0_14px_36px_rgba(14,26,51,0.10)]"
                       >
                         <div>
-                          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-gray-500">
+                          <p className="voe-eyebrow mb-4">
                             Research Paper
                           </p>
                           <h3 className="mb-4 font-display text-2xl font-bold leading-tight text-[#587FDA]">
                             {paper.title}
                           </h3>
-                          <p className="mb-4 text-sm font-medium text-gray-500">
+                          <p className="mb-4 text-sm font-medium text-[#4A5568]">
                             {paper.authors} &middot; {paper.year}
                           </p>
                           <p className="text-lg leading-relaxed text-[#4A5568]">
                             {paper.description}
                           </p>
                         </div>
-                        <div className="mt-6 border-t border-gray-200 pt-4">
+                        <div className="mt-6 border-t border-[#171219]/10 pt-4">
                           <span className="inline-flex items-center font-semibold text-[#587FDA]">
                             Read Full Paper
                             <svg
@@ -373,7 +382,7 @@ export default function ResourcesPage() {
                       : currentPaperSlide - 1,
                   )
                 }
-                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 transform rounded-md border border-gray-200 bg-white p-3 text-[#171219] transition-colors hover:shadow-sm"
+                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-white p-3 text-[#171219] shadow-[0_8px_24px_rgba(14,26,51,0.14)] transition-colors hover:text-[#587FDA]"
               >
                 <svg
                   className="h-5 w-5"
@@ -397,7 +406,7 @@ export default function ResourcesPage() {
                       : currentPaperSlide + 1,
                   )
                 }
-                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 transform rounded-md border border-gray-200 bg-white p-3 text-[#171219] transition-colors hover:shadow-sm"
+                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-white p-3 text-[#171219] shadow-[0_8px_24px_rgba(14,26,51,0.14)] transition-colors hover:text-[#587FDA]"
               >
                 <svg
                   className="h-5 w-5"
@@ -423,7 +432,7 @@ export default function ResourcesPage() {
                     className={`h-2.5 w-2.5 rounded-full transition-colors ${
                       currentPaperSlide === slide
                         ? "bg-[#587FDA]"
-                        : "bg-gray-300"
+                        : "bg-[#171219]/15"
                     }`}
                   />
                 ))}
@@ -432,31 +441,31 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        <div className="border-t border-gray-200" />
-
         {/* Call to Action */}
-        <section className="bg-warm-wash py-24 text-center">
-          <AnimateOnScroll animation="fade-up">
-            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-gray-500">
+        <Edge from={GROUND.mist} />
+        <section className="voe-section voe-section--tight-top voe-ground-blue-deep voe-texture text-center">
+          <div className="voe-container">
+          <Reveal variant="up">
+            <p className="voe-eyebrow mb-3 !text-white/80">
               Take the Next Step
             </p>
-            <h2 className="mb-8 font-display text-3xl font-bold text-[#171219] md:text-4xl">
+            <h2 className="voe-display-lg font-display mb-6 text-white">
               Get Involved
             </h2>
             <blockquote className="mx-auto mb-10 max-w-3xl">
-              <p className="text-xl leading-relaxed text-[#4A5568]">
+              <p className="voe-lead !text-white/85">
                 &quot;{main.quote.text}&quot;
               </p>
             </blockquote>
             <Link
               href="/contact"
-              className="hover-scale inline-block rounded-md bg-[#587FDA] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#4566B8]"
+              className="voe-btn voe-btn--on-dark"
             >
               Contact Us
             </Link>
-          </AnimateOnScroll>
+          </Reveal>
+          </div>
         </section>
-      </div>
     </PageLayout>
   );
 }

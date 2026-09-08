@@ -1,3 +1,5 @@
+@import './design-system.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,13 +22,20 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* `clip` instead of `hidden`: hidden makes the element a scroll
+     container, which silently breaks every `position: sticky` inside it
+     (the sticky VOICES wordmark on the mission page, for one). `clip`
+     suppresses the same horizontal overflow without that side effect.
+     The `hidden` line stays as a fallback for browsers without `clip`. */
   overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
 body {
   @apply antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -163,7 +172,9 @@ input, select, textarea {
     background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
   }
   .bg-hero-gradient {
-    background: linear-gradient(135deg, #171219 0%, #1a1a2e 50%, #16213e 100%);
+    /* Rebuilt out of Equity Black and Equity Blue; the old midpoints
+       (#1a1a2e, #16213e) were off the brand hue wheel. */
+    background: linear-gradient(135deg, #171219 0%, #1B2540 50%, #3A57A6 100%);
   }
   .accent-strip-blue {
     /* Removed — softer section transitions preferred */

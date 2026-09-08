@@ -11,6 +11,14 @@ export interface TeamMember {
   linkedin: string;
 }
 
+/** Board of Advisors: a portrait, a name and a title - no profile page. */
+export interface Advisor {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+}
+
 export interface Engineer {
   id: string;
   name: string;

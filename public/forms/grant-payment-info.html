@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voices of Equity — Grant Recipient Payment Information</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0a0a23;
-    --ink-light: #1e1e3f;
-    --ink-muted: #5a5a7a;
-    --cream: #f5f7fa;
-    --cream-dark: #e8ecf1;
-    --accent: #3b82f6;
-    --accent-light: #60a5fa;
-    --accent-pale: #eff6ff;
-    --accent-glow: rgba(59, 130, 246, 0.08);
-    --navy: #0a0a23;
-    --navy-light: #16163a;
+    --ink: #171219;
+    --ink-light: #2A2532;
+    --ink-muted: #5B5F6E;
+    --cream: #F8FAFE;
+    --cream-dark: #E6EDFC;
+    --accent: #587FDA;
+    --accent-light: #7A9AE5;
+    --accent-pale: #EEF2FB;
+    --accent-glow: rgba(88, 127, 218, 0.10);
+    --navy: #16264A;
+    --navy-light: #1F3468;
     --border: #d1d5db;
-    --border-focus: #3b82f6;
+    --border-focus: #587FDA;
     --white: #ffffff;
     --error: #dc2626;
     --error-bg: #fef2f2;
@@ -33,7 +33,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: var(--cream);
     color: var(--ink);
     line-height: 1.6;
@@ -46,7 +46,7 @@
     inset: 0;
     z-index: 0;
     background:
-      radial-gradient(ellipse at 20% 0%, rgba(59,130,246,0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 0%, rgba(88,127,218,0.04) 0%, transparent 60%),
       radial-gradient(ellipse at 80% 100%, rgba(10,10,35,0.03) 0%, transparent 60%),
       var(--cream);
   }
@@ -75,7 +75,7 @@
     background: var(--accent);
     border-radius: 50%;
     margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+    box-shadow: 0 4px 20px rgba(88,127,218,0.25);
   }
 
   .org-logo svg {
@@ -85,7 +85,7 @@
   }
 
   .org-name {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; letter-spacing: -0.02em;
     font-size: 28px;
     color: var(--ink);
     letter-spacing: -0.02em;
@@ -117,7 +117,7 @@
   }
 
   .form-card-header h1 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; letter-spacing: -0.02em;
     font-size: 22px;
     color: var(--ink);
     margin-bottom: 8px;
@@ -206,7 +206,7 @@
   .field-group input,
   .field-group select,
   .field-group textarea {
-    font-family: 'DM Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: var(--ink);
     padding: 11px 14px;
@@ -226,7 +226,7 @@
   .field-group select:focus,
   .field-group textarea:focus {
     border-color: var(--border-focus);
-    box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+    box-shadow: 0 0 0 3px rgba(88,127,218,0.12);
   }
 
   .field-group select {
@@ -384,7 +384,7 @@
   }
 
   .btn-submit {
-    font-family: 'DM Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: var(--white);
@@ -401,7 +401,7 @@
 
   .btn-submit:hover {
     background: var(--accent-light);
-    box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+    box-shadow: 0 4px 20px rgba(88,127,218,0.25);
     transform: translateY(-1px);
   }
 
@@ -469,6 +469,12 @@
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* Embedded inside thevoicesof.org: the page carries its own header. */
+  html.embedded .org-header,
+  html.embedded .page-footer { display: none; }
+  html.embedded .container { padding-top: 8px; padding-bottom: 32px; }
+  html.embedded body { min-height: 0; }
 </style>
 </head>
 <body>
@@ -698,4 +704,19 @@
   </div>
 
   <footer class="page-footer">
-    <p>&copy; 2026 Voices of Equity &middot; All Rights Reser
+    <p>&copy; 2026 Voices of Equity &middot; All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      if (/[?&]embed/.test(location.search)) document.documentElement.classList.add('embedded');
+      function report() {
+        if (window.parent === window) return;
+        window.parent.postMessage({ type: 'voe-form-height', height: document.documentElement.scrollHeight }, '*');
+      }
+      window.addEventListener('load', report);
+      if ('ResizeObserver' in window) new ResizeObserver(report).observe(document.body);
+    })();
+  </script>
+</body>
+</html>

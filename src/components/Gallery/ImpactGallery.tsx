@@ -28,9 +28,6 @@ export function ImpactGallery({ items }: { items: GalleryItem[] }) {
                             className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
                         >
                             <div className={`lg:col-span-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                                <p className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 mb-3 font-medium">
-                                    {String(index + 1).padStart(2, '0')}
-                                </p>
                                 <h3 className="text-2xl md:text-3xl font-bold font-display text-[#171219] mb-4">
                                     {item.title}
                                 </h3>

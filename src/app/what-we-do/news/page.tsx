@@ -1,29 +1,26 @@
 'use client';
 
 import PageLayout from '@/components/Layout/PageLayout';
-import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
+import ComingSoon from '@/components/ui/ComingSoon';
 
 export default function NewsPage() {
   return (
     <PageLayout
       title="Voices & Impact"
       subtitle="Deep dives into health equity issues and updates from our community"
+      eyebrow="What We Do"
+      image="/photos/committee-presentation.jpg"
+      imageAlt="A chapter presentation"
+      objectPosition="center 38%"
     >
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[40vh]">
-          <AnimateOnScroll animation="fade-up">
-            <div className="text-center">
-              <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">Stay tuned</p>
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-[#171219] mb-4">
-                Coming Soon
-              </h2>
-              <p className="text-lg text-[#4A5568] leading-relaxed">
-                News and impact stories coming soon.
-              </p>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      <ComingSoon
+        title="Stories from the chapters are on their way."
+        body="We’re gathering news and impact stories from across the network. Until then, the Equity Archive and our impact page carry the work so far."
+        links={[
+          { label: 'Read the Equity Archive', href: '/resources/archive' },
+          { label: 'See our impact', href: '/what-we-do/impact' },
+        ]}
+      />
     </PageLayout>
   );
 }

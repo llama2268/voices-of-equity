@@ -1,5 +1,6 @@
 import type {
   TeamMember,
+  Advisor,
   Engineer,
   TimelineEvent,
   Media,
@@ -163,7 +164,35 @@ export const whoWeArePage = {
         year: "OCT 2025",
         title: "National Health Equity Week",
         description:
-          "Our first major nationwide initiative launched with incredible momentum. Over the course of the week, we raised over $43,000, distributed $5,000+ in grants, engaged 50+ campuses, and mobilized 1,000+ members to take action in their communities.",
+          "Our first major nationwide initiative launched with incredible momentum. Over the course of the week, we raised over $43,000, distributed $5,000+ in grants, and engaged 50+ campuses across the country.",
+        side: "right",
+      },
+      {
+        year: "JAN 2026",
+        title: "Winter Leadership Onboarding",
+        description:
+          "As chapters returned for the spring semester, Voices of Equity convened its second national onboarding, welcoming new chapters and incoming presidents and directors into the network and setting a shared agenda for the semester ahead.",
+        side: "left",
+      },
+      {
+        year: "JUN 2026",
+        title: "VOX Equity Journal: Inaugural Issue",
+        description:
+          "VOX Equity, VoE's student-led research and policy think tank, published Volume 1, Issue 1 of the VOX Equity Journal — the first peer-reviewed publication from its student research cohort, bringing together original research and literature reviews on health equity, cognitive disparities, and the intersection of race, housing, and health outcomes.",
+        side: "right",
+      },
+      {
+        year: "JUL 2026",
+        title: "The VoE BAD Documentary",
+        description:
+          "Voices of Equity released BAD, a seven-episode documentary series telling the story of addiction, healthcare, and equity, and carrying VoE's educational mission into a new medium.",
+        side: "left",
+      },
+      {
+        year: "AUG 2026",
+        title: "Third National Leadership Intensive",
+        description:
+          "VoE's third national onboarding brought together its largest cohort of student leaders yet. Presidents and committee directors from 70+ chapters were equipped with the resources, expectations, and networks to lead their chapters, opening the new academic year as one organization.",
         side: "right",
       },
     ] satisfies TimelineEvent[],
@@ -173,23 +202,33 @@ export const whoWeArePage = {
   team: {
     title: "Our Team",
     subtitle: "Meet the people behind Voices of Equity",
-    formerMembers: [
+    /* The Board of Advisors: portrait, name and title only. */
+    advisors: [
       {
         id: "caleb-suh",
         name: "Caleb T. Suh",
-        role: "Co-Founder & Executive Director",
-        image: "/caleb-new-4.jpg",
-        shortBio:
-          "Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity..",
-        fullBio: `Caleb T. Suh serves as the Co-Founder & Executive Director of Voices of Equity, where he oversees strategic direction, internal operations, and national chapter development. He leads national operations, oversees organizational growth strategy, and directs internal systems that support long-term scale and execution. His work focuses on clear execution, measurable outcomes, and long-term capacity building.
-
-        Caleb brings extensive leadership experience to his role. As a cadet at the United States Military Academy, he ranked in the top 1% of his class and was selected to serve as the Regimental Commander for Cadet Basic Training, leading over 300 cadet leaders and overseeing the training of 1,500 cadets in mission-critical operations. Beyond his academic and military achievements, Caleb founded Operation Golden Shield, a nonprofit organization dedicated to providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity. These roles reinforced his commitment to service, operational excellence, and the power of collaboration in addressing systemic challenges.
-
-        His leadership extends across academic, nonprofit, and operational domains. He has led national service initiatives, authored peer-reviewed research, and managed large-scale, cross-institutional projects within data coordination and translational science. At Voices of Equity, he applies these experiences to grow a mission-driven team focused on building practical, scalable solutions to systemic challenges.`,
-        email: "Suh.t.caleb@outlook.com",
-        linkedin: "https://www.linkedin.com/in/caleb-suh-028a956a/",
+        role: "Co-Founder & Board Chair",
+        image: "/team/advisors/caleb-suh.jpg",
       },
-    ] satisfies TeamMember[],
+      {
+        id: "martin-shapiro",
+        name: "Dr. Martin Shapiro",
+        role: "Professor of Medicine, Weill Cornell Medicine",
+        image: "/team/advisors/martin-shapiro.jpg",
+      },
+      {
+        id: "ashawari-chaudhuri",
+        name: "Dr. Ashawari Chaudhuri",
+        role: "Lecturer, Science & Technology Studies, Cornell University",
+        image: "/team/advisors/ashawari-chaudhuri.jpg",
+      },
+      {
+        id: "kwadwo-amoako-boadu",
+        name: "Kwadwo Amoako-Boadu",
+        role: "MD Candidate, Weill Cornell Medicine",
+        image: "/team/advisors/kwadwo-amoako-boadu.jpg",
+      },
+    ] satisfies Advisor[],
     members: [
       {
         id: "zaid-al-shoha",
@@ -276,17 +315,15 @@ export const whoWeArePage = {
         linkedin: "https://www.linkedin.com/in/grace-chen-192024245/",
       },
       {
-        id: "monique-lavoie",
-        name: "Monique Lavoie",
-        role: "Outreach Undergraduate Liaison",
-        image: "/Monique.jpg",
+        id: "ben-soriano",
+        name: "Ben Soriano",
+        role: "National Recruitment Chair of Outreach",
+        image: "/team/ben-soriano.jpg",
         shortBio:
-          "Monique Lavoie is a junior Biology major with double minors in...",
-        fullBio: `Monique Lavoie is a junior Biology major with double minors in Spanish and Chemistry from Old Lyme, Connecticut. She serves as the Undergraduate Liaison for the Voices of Equity National Outreach Committee.
+          "Ben Soriano leads national recruitment for the Outreach team and acts as a liaison to chapter leadership across the country.",
+        fullBio: `Ben Soriano serves as the National Recruitment Chair of Outreach for Voices of Equity, where he advances national expansion efforts and acts as a liaison to leadership at the chapter level. He is a sophomore at Cornell University studying Biological Sciences with a minor in Psychology.
 
-
-        She brings extensive experience coordinating outreach initiatives, including her role as a Site Coordinator for the largest student-led undergraduate Alternative Spring Break program in the country. In addition, she currently serves as the Outreach Director and President of the Howard University Voices of Equity Chapter. Health equity is central to her commitment to community service, and she is deeply driven by the belief that everyone deserves access to the resources necessary to thrive.
-`,
+        Ben is passionate about medicine, health equity, and public service. With a background in mental health and therapeutic listening work, he brings those experiences to leadership and mentorship. Beyond Voices of Equity, he pursues his interest in physiology in the Womack Lab, studying the evolution of frog skin across microhabitats and species. He is also a member of the Cornell chapter of Phi Delta Epsilon International Medical Fraternity, where he serves on the recruitment board with the goal of building a diverse and equitable body of students at Cornell, and in medicine at large. Through Voices of Equity, Ben is excited to carry these values of diversity, leadership, equity, and medicine forward, using VoE's platform to empower students on campuses worldwide.`,
         email: "",
         linkedin: "",
       },
@@ -303,19 +340,6 @@ export const whoWeArePage = {
         email: "",
         linkedin: "",
       },
-      {
-        id: "manushree-navaneethakrishnan",
-        name: "Manushree Navaneethakrishnan",
-        role: "National Recruitment Chair of Outreach",
-        image: "/team/manushree-navaneethakrishnan.png",
-        shortBio:
-          "Manushree Navaneethakrishnan leads national recruitment initiatives and supports chapter expansion efforts.",
-        fullBio: `Manushree Navaneethakrishnan is a senior at Vanderbilt University majoring in Medicine, Health & Society and Gender & Sexuality Studies. She serves as the National Outreach Chair of Recruitment for Voices of Equity, where she leads national recruitment initiatives, supports chapter expansion efforts, and works to strengthen connections between undergraduate advocates committed to advancing health equity.
-
-        Beyond Voices of Equity, Manushree is deeply involved in community engagement, health advocacy, and student leadership. She serves as a Peer Educator with Project Safe and is a former Opinion Editor and current Games Editor of The Vanderbilt Hustler. She also serves as Editorial Director of the Nashville Student Union News Network (SUNN), working with student journalists across Tennessee to amplify youth perspectives on issues affecting their communities. Passionate about the intersection of medicine, storytelling, and health equity, Manushree believes that understanding and communicating people's experiences is essential to creating meaningful change. Through journalism, advocacy, and community engagement, she seeks to elevate underrepresented voices and examine the social factors that shape health outcomes. She hopes to pursue a career in medicine grounded in compassionate care, public engagement, and a commitment to advancing health equity.`,
-        email: "",
-        linkedin: "",
-      },
     ] satisfies Outreach[],
     Education: [
       {
@@ -325,33 +349,44 @@ export const whoWeArePage = {
         image: "/eliza.jpg",
         shortBio:
           "Eliza Dow serves as the National Director of Education. In these roles..",
-        fullBio: `Eliza Dow serves as the National Director of Education. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. With the Associate Director of Education Vijay, she oversees the Equity Archive. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its relevance not only in healthcare but in all aspects of life.
+        fullBio: `Eliza Dow serves as the National Director of Education. In these roles, she develops an expansive curriculum, educational modules, and resources designed to foster engaging and practical learning experiences. Alongside Associate Directors Karina Pallikala and Michelle Pan, she oversees the curriculum and the Equity Archive. Her work ensures that Voices of Equity members—and the communities they reach—gain a deeper understanding of health equity, emphasizing its relevance not only in healthcare but in all aspects of life.
 
 
         She will be graduating from Cornell University in May 2026, and is intending on pursuing a Masters in Health Administration immediately after graduation. She is currently studying Biology and Society in the College of Arts and Sciences. She is deeply passionate about health equity, particularly in the context of inclusive clinical trial practices and policies that improve healthcare outcomes for historically disadvantaged populations. Eliza hopes to use her passion to educate others on equitable practices within and beyond healthcare. She aims to teach future healthcare professionals to recognize how policies and practices can either help or harm their patients, empower patients to understand and advocate for their rights, and drive meaningful change in medicine by highlighting critical perspectives on healthcare and health equity.
 
 
-        Beyond her work with Voices of Equity, she has held many leadership positions, including having been a biochemistry teaching assistant, currently a lead volunteer at the Emergency Department at Cayuga Medical Center, and captain of the Cornell Women’s Club Lacrosse team. At her sorority, the Chi chapter of Delta Gamma at Cornell, she has served as Vice President of Member Education, junior Honor Board member, and director of special events.  She is also a certified EMT, an editor for The Healthcare Review at Cornell University, and a member of the pre-medical fraternity Phi Delta Epsilon. Additionally, she previously served as the. With extensive experience in developing educational materials, teaching about diverse communities, and efficient team management skills, she brings invaluable expertise to Voices of Equity's mission.
+        Beyond her work with Voices of Equity, she has held many leadership positions, including having been a biochemistry teaching assistant, currently a lead volunteer at the Emergency Department at Cayuga Medical Center, and captain of the Cornell Women’s Club Lacrosse team. At her sorority, the Chi chapter of Delta Gamma at Cornell, she has served as Vice President of Member Education, junior Honor Board member, and director of special events.  She is also a certified EMT, an editor for The Healthcare Review at Cornell University, and a member of the pre-medical fraternity Phi Delta Epsilon. With extensive experience in developing educational materials, teaching about diverse communities, and efficient team management skills, she brings invaluable expertise to Voices of Equity's mission.
 `,
         email: "Ed497@cornell.edu",
         linkedin: "https://www.linkedin.com/in/eliza-dow-44815324a/",
       },
       {
-        id: "vijay-jagarapu",
-        name: "Vijay Jagarapu",
-        role: "Associate Director of Education",
-        image: "/vijay.png",
+        id: "karina-pallikala",
+        name: "Karina Pallikala",
+        role: "Associate Director of Curriculum Development",
+        image: "/team/karina-pallikala.jpg",
         shortBio:
-          "Vijay Jagarapu is an undergraduate at Cornell University studying..",
-        fullBio: `Vijay Jagarapu is an undergraduate at Cornell University studying Biological Sciences on the premedical track, with a concentration in computational biology. He aims to learn more about emerging neurotechnologies to improve care for individuals with psychiatric and neurological disorders.
+          "Karina Pallikala works with the Education Team to develop the curriculum and educational modules that help members understand health equity.",
+        fullBio: `Karina Pallikala serves as the Associate Director of Curriculum Development. In this role, she works with the rest of the Education Team to advance the development of curriculum and educational modules, helping Voices of Equity members gain a fuller understanding of health equity and spread awareness of these issues.
 
+        She is an undergraduate at Cornell University majoring in Health Care Policy in the Brooks School of Public Policy, with an interest in pursuing law school in the future. Karina is passionate about advancing health equity through more inclusive and equitable health policies that improve access to care and patient outcomes. By examining past and current gaps in the healthcare landscape, she works to highlight the changes needed to reach underserved communities, and she believes that access to adequate healthcare is an essential part of human dignity.
 
-    Outside of his studies, Vijay volunteers as a firefighter and EMT and works directly with patients with psychiatric disorders in a hospital setting. At the Cornell Life History Lab, he studies how early-life environments, stress, and social nutrition shape brain development and behavior.
+        Beyond her work with Voices of Equity, Karina spent her first semester at Cornell studying in the nation's capital as a DC Start Scholar, gaining an in-depth understanding of how public policy is formed and implemented. On campus, she is involved with Cornell Social Business Consulting, applying analytical thinking to socially impactful consulting projects, and serves on the organization's marketing committee. She also works as an editor for The Healthcare Review at Cornell University. Previously, Karina interned at the Silicon Valley Chapter of the American Red Cross, where she earned First Aid/CPR/AED certification, served as a Blood Donor Ambassador at the San Jose Blood Center, and trained as a Disaster Action Team Specialist.`,
+        email: "",
+        linkedin: "",
+      },
+      {
+        id: "michelle-pan",
+        name: "Michelle Pan",
+        role: "Associate Director of Equity Archive",
+        image: "/team/michelle-pan.jpg",
+        shortBio:
+          "Michelle Pan oversees the Equity Archive, Voices of Equity's national hub for storytelling, student-led initiatives, and educational resources.",
+        fullBio: `Michelle Pan serves as the Associate Director of Equity Archive at Voices of Equity, where she oversees the development and production of the Equity Archive: the organization's national hub for storytelling, student-led initiatives, and educational resources that help people understand and address health disparities. Through this work, Michelle is committed to making health equity resources easily accessible and to empowering students to become advocates for a more equitable healthcare system.
 
+        Michelle is an undergraduate at Cornell University studying Psychology on the pre-med track in the College of Arts and Sciences. She is passionate about the intersection of psychological and biological health and hopes to bring that perspective to compassionate, patient-centered care.
 
-    Vijay is passionate about making healthcare more accessible. Through Voices of Equity, he serves as the Associate Director of Education and is responsible for building the Equity Archive to expand access to health equity information. Through the integration of medicine and engineering, Vijay aspires to develop innovative solutions that broaden access to care.
-
-`,
+        In addition to her work with Voices of Equity, Michelle conducts neuroscience research at the National Institute of Mental Health, where she studies the role of the endogenous opioid system in motivational behavior. She is also a member of the Laboratory of Neurobiology of Learning and Memory at Cornell, where she investigates the neural mechanisms underlying learning and memory. Outside of research, Michelle plays the flute and performs with the Cornell Wind Symphony and Flute Ensemble.`,
         email: "",
         linkedin: "",
       },
@@ -362,7 +397,7 @@ export const whoWeArePage = {
         image: "/team/samantha-shick.png",
         shortBio:
           "Samantha Shick serves as the Educational Undergraduate Liaison, supporting educational directors nationwide.",
-        fullBio: `Samantha serves as the Educational Undergraduate Liaison, where she coordinates with National Director of Education, Eliza, and Assistant National Director, Vjay, to support and oversee all of VOE’s educational directors nationwide. Her work ensures smooth communication between chapter directors and the educational national board, helping ensure cohesive programming and logistical collaboration.
+        fullBio: `Samantha serves as the Educational Undergraduate Liaison, where she coordinates with National Director of Education Eliza Dow and Associate Directors Karina Pallikala and Michelle Pan to support and oversee all of VoE’s educational directors nationwide. Her work ensures smooth communication between chapter directors and the educational national board, helping ensure cohesive programming and logistical collaboration.
 
       Samantha is a freshman studying psychology on the pre medical track at the College of Arts and Sciences at Cornell University. She is interested in holistic views of health, aiming to intersect her interest in the study of human interactions with their physiological states through the lens of regenerative and preventative medicine. She is committed to the idea that patient wellness and adequate care extend beyond physiologies, but rather are extensive toward their mental, situational, and health equity access.
 
@@ -378,7 +413,7 @@ export const whoWeArePage = {
         role: "National Director of Media",
         shortBio:
           "Jennifer Zhu serves as the National Director of Media for Voices of Equity...",
-        image: "/jennifer-zhu-new.jpg",
+        image: "/team/jennifer-zhu.jpg",
         fullBio: `Jennifer Zhu serves as the National Director of Media for Voices of Equity, leading the initiative
         to spread and empower discussions about health equity through social media platforms.
         Jennifer has substantial experience in the fields of art and digital design, in addition to managing
@@ -414,7 +449,7 @@ export const whoWeArePage = {
         name: "Gbemi Soneye",
         role: "Media Undergraduate Liaison",
         shortBio: "Gbemi Soneye is a Karsh STEM Scholar and Honors student..",
-        image: "/gbemi.jpg",
+        image: "/team/gbemi-soneye.jpg",
         fullBio: `Gbemi Soneye is a Karsh STEM Scholar and Honors student at Howard University, where she pursues interdisciplinary training at the intersection of neuroscience, public health, and translational science.
         As a Karsh Scholar, a distinction awarded to outstanding students demonstrating exceptional promise in science and leadership, Gbemi has cultivated a foundation in research, service, and innovation. She is deeply 
         committed to understanding the structural determinants of health and translating knowledge into actionable solutions for health disparities.
@@ -437,7 +472,7 @@ export const whoWeArePage = {
         id: "adam-jac",
         name: "Adam Jac",
         role: "National Director of Philanthropy",
-        image: "/team/adam-jac-updated.png",
+        image: "/team/adam-jac.jpg",
         shortBio:
           "Adam Jac is a masters student at Cornell University in Biomedical Engineering...",
         fullBio: `Adam Jac is a masters student at Cornell University in Biomedical Engineering and plans on pursuing medical school. 

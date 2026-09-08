@@ -8,7 +8,7 @@ import {
   Marker,
 } from "react-simple-maps";
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
+const geoUrl = "/geo/states-10m.json";
 
 const chapters: { name: string; coordinates: [number, number] }[] = [
   // Northeast
@@ -63,20 +63,20 @@ const chapters: { name: string; coordinates: [number, number] }[] = [
 
 const stateStyle = {
   default: {
-    fill: "#E8E8E8",
-    stroke: "#FFFFFF",
+    fill: "#DCE5F8",
+    stroke: "#FBFFFE",
     strokeWidth: 0.5,
     outline: "none",
   },
   hover: {
-    fill: "#E8E8E8",
-    stroke: "#FFFFFF",
+    fill: "#DCE5F8",
+    stroke: "#FBFFFE",
     strokeWidth: 0.5,
     outline: "none",
   },
   pressed: {
-    fill: "#E8E8E8",
-    stroke: "#FFFFFF",
+    fill: "#DCE5F8",
+    stroke: "#FBFFFE",
     strokeWidth: 0.5,
     outline: "none",
   },
@@ -108,14 +108,14 @@ export default function ChapterMap() {
           >
             <circle
               r={hovered === chapter.name ? 7 : 5}
-              fill="#587FDA"
-              style={{ transition: "r 200ms ease" }}
+              fill={hovered === chapter.name ? "#23736E" : "#2A8D87"}
+              style={{ transition: "r 200ms ease, fill 200ms ease" }}
             />
           </Marker>
         ))}
       </ComposableMap>
       {hovered && (
-        <div className="pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-md">
+        <div className="pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-[#171219] px-4 py-2 font-display text-sm font-semibold text-white shadow-[0_10px_30px_rgba(14,26,51,0.2)]">
           {hovered}
         </div>
       )}

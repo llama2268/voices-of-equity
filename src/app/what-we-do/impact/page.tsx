@@ -3,14 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
-import AnimatedCounter from '@/components/Animation/AnimatedCounter';
+import Reveal, { CountUp } from '@/components/Animation/Reveal';
+import { Edge, GROUND } from '@/components/Layout/Seam';
+import { ParallaxFill, ScrollFadeOut } from '@/components/Animation/Parallax';
+import ImpactMetrics from '@/components/Stats/ImpactMetrics';
+import InstagramGrid from '@/components/Social/InstagramGrid';
+import ZoomWall from '@/components/Impact/ZoomWall';
 
 const ChapterMap = dynamic(() => import('@/components/Map/ChapterMap'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[600px] bg-[#F7F8FA] flex items-center justify-center text-gray-400">
-      Loading Map...
+    <div className="flex h-[600px] w-full items-center justify-center bg-[#F1F5FD] font-display text-sm font-semibold uppercase tracking-[0.14em] text-[#587FDA]">
+      Loading map
     </div>
   )
 });
@@ -53,13 +57,6 @@ const cbiPhases = [
   },
 ];
 
-const stats = [
-  { value: 60, suffix: '+', label: 'Chapters', prefix: '' },
-  { value: 1000, suffix: '+', label: 'Members', prefix: '' },
-  { value: 43000, suffix: '+', label: 'Raised', prefix: '$' },
-  { value: 10000, suffix: '+', label: 'Reach', prefix: '' },
-];
-
 const partners = [
   {
     name: 'Operation Golden Shield',
@@ -86,8 +83,9 @@ const splitThemes = [
       "VoE chapters don't show up to 'help' communities — they show up to listen, learn, and contribute where undergraduate capacity is genuinely needed.",
       'Our chapters approach community health work with humility, grounding every initiative in Community Health Assessments and direct conversations with local health organizations before proposing any action.',
     ],
-    image: '/impact-photos/howard-1.jpeg',
+    image: '/media/12.jpeg',
     caption: 'Chapter members at a community tabling event',
+    objectPosition: 'center 38%',
     imageLeft: true,
   },
   {
@@ -98,6 +96,7 @@ const splitThemes = [
     ],
     image: '/impact-photos/arkansas-3.jpg',
     caption: 'Volunteers at a National Health Equity Week event',
+    objectPosition: 'center 30%',
     imageLeft: false,
   },
 ];
@@ -110,8 +109,8 @@ const containedThemes = [
       "A successful CBI isn't a single semester's project — it's the foundation of an ongoing relationship.",
       'Chapters maintain partnerships across leadership transitions through structured documentation, transition plans, and mentorship from outgoing leaders to incoming ones.',
     ],
-    image: '/impact-photos/cmu-3.jpeg',
-    caption: 'Chapter leadership at a partner organization meeting',
+    image: '/paintingtry.jpg',
+    caption: 'Chapter members volunteering at a community partner event',
     imageLeft: false,
   },
   {
@@ -126,105 +125,62 @@ const containedThemes = [
   },
 ];
 
-// Masonry gallery — varied row spans
-const gallery: { src: string; span: string }[] = [
-  { src: '/impact-photos/binghamton-1.jpg', span: 'row-span-2' },
-  { src: '/impact-photos/cmu-2.jpeg', span: '' },
-  { src: '/impact-photos/howard-2.jpeg', span: '' },
-  { src: '/impact-photos/arkansas-2.jpg', span: '' },
-  { src: '/impact-photos/uconn-2.jpeg', span: 'row-span-2' },
-  { src: '/impact-photos/general-1.jpeg', span: '' },
-  { src: '/impact-photos/binghamton-3.jpg', span: '' },
-  { src: '/impact-photos/howard-4.jpeg', span: '' },
-  { src: '/impact-photos/general-3.jpg', span: '' },
-  { src: '/impact-photos/cmu-1.jpeg', span: '' },
-];
-
 function CBIInteractive() {
   const [active, setActive] = useState(0);
   const phase = cbiPhases[active]!;
-  const progressPercent = ((active + 1) / cbiPhases.length) * 100;
+  const fill = cbiPhases.length > 1 ? (active / (cbiPhases.length - 1)) * 100 : 0;
 
   return (
     <div>
-      {/* Progress bar */}
-      <div className="mb-10">
-        <div className="relative h-[3px] bg-gray-200 rounded-full overflow-hidden">
-          <div
-            className="absolute top-0 left-0 h-full rounded-full transition-all duration-500 ease-out"
-            style={{
-              width: `${progressPercent}%`,
-              background: 'linear-gradient(90deg, #4A6FCC 0%, #587FDA 50%, #6B8FE8 100%)',
-            }}
-          />
-        </div>
-        <div className="flex justify-between mt-3">
-          {cbiPhases.map((p, i) => (
-            <span
-              key={p.num}
-              className={`text-[10px] md:text-xs font-display uppercase tracking-wider transition-colors duration-300 ${
-                i <= active ? 'text-[#587FDA] font-semibold' : 'text-gray-400'
-              }`}
-            >
-              Phase {p.num}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Phase tabs */}
-      <div className="grid grid-cols-5 gap-2 md:gap-3 mb-10">
+      {/* Phase rail - the five phases in order, read left to right */}
+      <div className="voe-steps mb-12" role="tablist" aria-label="Community-Based Initiative framework phases">
+        <span className="voe-steps__fill" style={{ width: `${fill}%` }} aria-hidden />
         {cbiPhases.map((p, i) => {
           const isActive = i === active;
+          const isDone = i < active;
           return (
             <button
-              key={p.num}
+              key={p.name}
+              role="tab"
+              aria-selected={isActive}
               onClick={() => setActive(i)}
-              className={`group flex flex-col items-center py-4 md:py-6 rounded-xl border transition-all duration-300 focus:outline-none ${
-                isActive
-                  ? 'bg-[#587FDA] border-[#587FDA] text-white shadow-lg shadow-[#587FDA]/25'
-                  : 'bg-white border-gray-200 text-[#171219] hover:border-[#587FDA]/50'
-              }`}
+              className={`voe-step ${isActive ? 'is-active' : ''} ${isDone ? 'is-done' : ''}`}
             >
-              <span
-                className={`font-display font-bold transition-all duration-300 ${
-                  isActive ? 'text-3xl md:text-4xl' : 'text-xl md:text-2xl opacity-70'
-                }`}
-              >
-                {p.num}
-              </span>
-              <span
-                className={`mt-1 text-[10px] md:text-xs font-display font-semibold uppercase tracking-wider ${
-                  isActive ? 'text-white' : 'text-gray-500 group-hover:text-[#171219]'
-                }`}
-              >
-                {p.name}
-              </span>
+              <span className="voe-step__dot" aria-hidden />
+              <span className="voe-step__name font-display">{p.name}</span>
+              <span className="voe-step__short">{p.short}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Active phase content */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div key={`img-${active}`} className="relative aspect-[4/3] rounded-xl overflow-hidden animate-fadeIn">
-          <Image
-            src={phase.image}
-            alt={phase.name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+      {/* Active phase */}
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div key={`img-${active}`} className="voe-photo voe-grade voe-ar-landscape animate-fadeIn shadow-[0_24px_60px_rgba(14,26,51,0.14)]">
+          <Image src={phase.image} alt={phase.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
         </div>
         <div key={`txt-${active}`} className="animate-fadeIn">
-          <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-3">
-            Phase {phase.num}
-          </p>
-          <h3 className="text-3xl md:text-4xl font-bold font-display text-[#171219] mb-4 leading-tight">
-            {phase.name}
-          </h3>
-          <p className="text-lg font-display font-semibold text-[#4A5568] mb-4">{phase.short}</p>
-          <p className="text-base text-[#4A5568] leading-relaxed">{phase.long}</p>
+          <p className="voe-eyebrow mb-3">{phase.short}</p>
+          <h3 className="voe-display-md font-display mb-5 text-[#171219]">{phase.name}</h3>
+          <p className="leading-relaxed text-[#4A5568] md:text-[17px]">{phase.long}</p>
+          <div className="mt-8 flex gap-3">
+            <button
+              type="button"
+              onClick={() => setActive((v) => Math.max(0, v - 1))}
+              disabled={active === 0}
+              className="voe-btn voe-btn--ghost disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Previous
+            </button>
+            <button
+              type="button"
+              onClick={() => setActive((v) => Math.min(cbiPhases.length - 1, v + 1))}
+              disabled={active === cbiPhases.length - 1}
+              className="voe-btn voe-btn--primary disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Next phase
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -237,88 +193,110 @@ export default function ImpactPage() {
       {/* 1. Headline Hero */}
       <section
         id="hero"
-        className="pt-40 pb-32 relative overflow-hidden bg-gradient-hero"
+        data-hero
+        className="relative min-h-[80vh] w-full overflow-hidden"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="fade-up">
-            <h1 className="font-display font-bold text-[#171219] text-5xl md:text-7xl leading-[1.05] tracking-tight">
-              60+ chapters.<br />
+        <div className="absolute inset-0 overflow-hidden">
+          <ParallaxFill
+            src="/photos/ursinus-poster.jpg"
+            alt="Voices of Equity chapter members presenting their community impact"
+            objectPosition="center 38%"
+            strength={130}
+            priority
+          />
+        </div>
+        <div aria-hidden className="absolute inset-0 z-[1] bg-[#587FDA] mix-blend-multiply opacity-[0.82]" />
+        <div aria-hidden className="absolute inset-0 z-[1] bg-[#3A57A6]/35" />
+        <div className="voe-container relative z-10 flex min-h-[80vh] flex-col justify-end pb-24 pt-40">
+          <ScrollFadeOut>
+          <Reveal variant="up">
+            <h1 className="voe-display-xl font-display text-white">
+              70+ chapters.<br />
               1,000+ members.<br />
-              <span className="text-[#587FDA]">1 mission.</span>
+              <span className="text-[#FFD166]">1 mission.</span>
             </h1>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-up" delay={150}>
-            <p className="mt-10 text-lg md:text-xl text-[#4A5568] leading-relaxed max-w-3xl">
+          </Reveal>
+          <Reveal variant="up" delay={220}>
+            <p className="voe-lead mt-10 max-w-3xl !text-white/80">
               At Voices of Equity, impact is measured in mobilization — the community
               partnerships built, the initiatives launched, and the undergraduates equipped to
               lead health equity work beyond their campuses. Since our founding in December
               2024, we&apos;ve grown from one chapter to a nationwide movement of students turning
               health equity principles into action.
             </p>
-          </AnimateOnScroll>
+          </Reveal>
+          </ScrollFadeOut>
         </div>
       </section>
 
       {/* 2. Map */}
-      <section id="map" className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
+      <section id="map" className="voe-section voe-ground-white">
+        <div className="voe-container">
+          <Reveal variant="fade">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
+              <p className="voe-eyebrow mb-4">
                 Where We Work
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold font-display text-[#171219] mb-6">
+              <h2 className="voe-display-lg font-display mb-6 text-[#171219]">
                 A Nationwide Network
               </h2>
-              <p className="text-base md:text-lg text-[#4A5568] leading-relaxed">
+              <p className="voe-lead">
                 Each marker represents a chapter of undergraduates organizing health equity
                 work in their community. Behind every dot is a team running workshops,
                 building partnerships, and launching community-based initiatives.
               </p>
             </div>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="scale-in">
-            <div className="rounded-lg overflow-hidden">
+          </Reveal>
+          <Reveal variant="scale">
+            <div className="overflow-hidden rounded-3xl">
               <ChapterMap />
             </div>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-up" delay={150}>
+          </Reveal>
+          <Reveal variant="up" delay={150}>
             <p className="mt-8 text-center font-display text-lg md:text-xl font-semibold text-[#171219]">
-              60+ chapters across the United States
+              70+ chapters across the United States and Canada
             </p>
-          </AnimateOnScroll>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 2b. The network on one call */}
+      <section id="network" className="voe-ground-white pb-[var(--voe-section-y)] pt-6">
+        <div className="voe-container">
+          <ZoomWall />
         </div>
       </section>
 
       {/* 3. CBI Framework — interactive tabs */}
-      <section id="cbi" className="py-24 bg-gradient-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
+      <Edge from={GROUND.white} size="sm" />
+      <section id="cbi" className="voe-section voe-section--tight-top voe-ground-green-soft voe-accent-green">
+        <div className="voe-container">
+          <Reveal variant="fade">
             <div className="text-center mb-8 max-w-3xl mx-auto">
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
+              <p className="voe-eyebrow mb-4">
                 How We Mobilize
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold font-display text-[#171219] mb-6">
+              <h2 className="voe-display-lg font-display mb-6 text-[#171219]">
                 The Community-Based Initiative Framework
               </h2>
             </div>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-up" delay={100}>
-            <p className="text-base md:text-lg text-[#4A5568] leading-relaxed max-w-3xl mx-auto text-center mb-16">
+          </Reveal>
+          <Reveal variant="up" delay={100}>
+            <p className="voe-lead mx-auto mb-10 max-w-3xl text-center">
               Every VoE chapter uses our Community-Based Initiative (CBI) Framework to build
               meaningful, sustainable health equity work. Rather than creating parallel
               programs, chapters partner with the organizations already leading community
               health work — amplifying their capacity with the outreach power, volunteer
               energy, and university resources undergraduates uniquely offer.
             </p>
-          </AnimateOnScroll>
+          </Reveal>
 
-          <AnimateOnScroll animation="fade-up" delay={200}>
+          <Reveal variant="up" delay={200}>
             <CBIInteractive />
-          </AnimateOnScroll>
+          </Reveal>
 
-          <AnimateOnScroll animation="fade-up" delay={300}>
-            <div className="mt-16 text-center">
+          <Reveal variant="up" delay={300}>
+            <div className="mt-10 text-center">
               <Link
                 href="/resources"
                 className="inline-flex items-center gap-2 font-display font-semibold text-[#587FDA] hover:text-[#4A6FCC] transition-colors text-base"
@@ -327,43 +305,26 @@ export default function ImpactPage() {
                 <span aria-hidden>→</span>
               </Link>
             </div>
-          </AnimateOnScroll>
+          </Reveal>
         </div>
       </section>
 
       {/* 4. Stats Bar */}
-      <section id="stats" className="py-24 bg-gradient-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
-            <div className="text-center mb-14">
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
-                By The Numbers
-              </p>
-              <h2 className="text-3xl md:text-5xl font-bold font-display text-[#171219] tracking-tight">
-                Impact at a Glance
-              </h2>
-            </div>
-          </AnimateOnScroll>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-            {stats.map((s, i) => (
-              <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 100}>
-                <p className="inline-block px-3 text-5xl md:text-6xl font-bold font-display text-gradient-accent leading-none">
-                  <AnimatedCounter target={s.value} prefix={s.prefix} suffix={s.suffix} />
-                </p>
-                <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-[#4A5568] mt-4 font-display font-medium">
-                  {s.label}
-                </p>
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
+      <Edge from={GROUND.greenSoft} />
+      <section id="stats" className="voe-section voe-section--tight-top voe-ground-blue voe-texture">
+        <ImpactMetrics
+          onDark
+          cutout="/photos/cutouts/student-podium-cutout.png"
+          cutoutAlt="A chapter member speaking at a general body meeting"
+          sticker="70 chapters and counting"
+        />
       </section>
 
-      {/* 5. NHEW */}
-      <section id="nhew" className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-6">
-          <AnimateOnScroll animation="fade-in-left">
-            <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
+      <Edge from={GROUND.blue} />
+      <section id="nhew" className="voe-section voe-section--tight-top voe-ground-mist">
+        <div className="voe-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-6">
+          <Reveal variant="left">
+            <div className="voe-photo voe-ar-portrait shadow-[0_24px_60px_rgba(14,26,51,0.16)]">
               <Image
                 src="/impact-photos/nhew-flyer.jpg"
                 alt="National Health Equity Week 2025"
@@ -372,15 +333,15 @@ export default function ImpactPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-in-right">
-            <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
+          </Reveal>
+          <Reveal variant="right">
+            <p className="voe-eyebrow mb-4">
               Flagship Initiative
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold font-display text-[#171219] leading-tight">
+            <h2 className="voe-display-lg font-display text-[#171219]">
               National Health Equity Week
             </h2>
-            <p className="mt-6 text-base md:text-lg text-[#4A5568] leading-relaxed">
+            <p className="voe-lead mt-6">
               Our first National Health Equity Week launched in Fall 2025 with the theme
               <em> Addiction in Health Equity </em>— examining how substance use is shaped by
               disparities in access to care, stigma, systemic bias, and socioeconomic
@@ -389,7 +350,7 @@ export default function ImpactPage() {
               keynote from addiction recovery advocate and former NFL quarterback Ryan Leaf.
             </p>
             <p className="mt-6 text-sm md:text-base text-[#4A5568] font-medium">
-              $43,000+ raised &nbsp;·&nbsp; 50+ campuses engaged &nbsp;·&nbsp; 1,000+ students mobilized
+              $43,000+ raised &nbsp;·&nbsp; 50+ campuses engaged
             </p>
             <Link
               href="/what-we-do/national"
@@ -398,38 +359,39 @@ export default function ImpactPage() {
               Learn about NHEW
               <span aria-hidden>→</span>
             </Link>
-          </AnimateOnScroll>
+          </Reveal>
         </div>
       </section>
 
       {/* 6. Partnerships */}
-      <section id="partners" className="py-24 bg-gradient-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
+      
+      <section id="partners" className="voe-section voe-section--tight-top voe-ground-green-soft voe-accent-green">
+        <div className="voe-container">
+          <Reveal variant="fade">
             <div className="text-center mb-6 max-w-3xl mx-auto">
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
+              <p className="voe-eyebrow mb-4">
                 Partnerships
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold font-display text-[#171219] mb-6">
+              <h2 className="voe-display-lg font-display mb-6 text-[#171219]">
                 Standing With Community
               </h2>
             </div>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-up" delay={100}>
-            <p className="text-base md:text-lg text-[#4A5568] leading-relaxed max-w-3xl mx-auto text-center mb-16">
+          </Reveal>
+          <Reveal variant="up" delay={100}>
+            <p className="voe-lead mx-auto mb-10 max-w-3xl text-center">
               We partner with organizations that share our commitment to on-the-ground health
               equity work. Our partners bring deep expertise in the communities they serve —
               we bring undergraduate energy, reach, and resources to amplify their impact.
             </p>
-          </AnimateOnScroll>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {partners.map((p, i) => (
-              <AnimateOnScroll key={p.name} animation="fade-up" delay={i * 120}>
+              <Reveal key={p.name} variant="up" delay={i * 120}>
                 <Link
                   href={p.href}
-                  className="block bg-white border border-gray-200 rounded-lg p-8 h-full hover-lift card-hover-border"
+                  className="voe-card block h-full rounded-3xl bg-white p-8 shadow-[0_14px_36px_rgba(14,26,51,0.10)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_24px_54px_rgba(14,26,51,0.16)]"
                 >
-                  <h3 className="font-display font-bold text-xl text-[#171219] mb-3">
+                  <h3 className="voe-display-sm font-display mb-3 text-[#171219]">
                     {p.name}
                   </h3>
                   <p className="text-sm text-[#4A5568] leading-relaxed mb-4">
@@ -439,7 +401,7 @@ export default function ImpactPage() {
                     Learn more <span aria-hidden>→</span>
                   </span>
                 </Link>
-              </AnimateOnScroll>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -456,39 +418,40 @@ export default function ImpactPage() {
                 alt={splitThemes[0].caption}
                 fill
                 className="object-cover"
+                style={{ objectPosition: splitThemes[0].objectPosition }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div
-              className={`flex items-center px-8 md:px-16 py-16 md:py-24 ${splitThemes[0].imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
-              style={{ background: 'linear-gradient(135deg, #F7F8FA 0%, #F0F4FF 100%)' }}
+              className={`flex items-center px-8 md:px-16 voe-section ${splitThemes[0].imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
+              style={{ background: '#EEF2FB' }}
             >
               <div className="max-w-xl">
-                <AnimateOnScroll animation={splitThemes[0].imageLeft ? 'fade-in-right' : 'fade-in-left'}>
-                  <h3 className="text-3xl md:text-4xl font-display font-semibold text-[#171219] leading-tight mb-6">
+                <Reveal variant={splitThemes[0].imageLeft ? 'right' : 'left'}>
+                  <h3 className="voe-display-md font-display mb-6 text-[#171219]">
                     {splitThemes[0].title}
                   </h3>
                   {splitThemes[0].paragraphs.map((p, idx) => (
-                    <p key={idx} className="text-base md:text-lg text-[#4A5568] leading-relaxed mb-4">
+                    <p key={idx} className="mb-4 leading-relaxed text-[#4A5568] md:text-[17px]">
                       {p}
                     </p>
                   ))}
-                </AnimateOnScroll>
+                </Reveal>
               </div>
             </div>
           </div>
         )}
 
         {/* Contained blocks */}
-        <div className="py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+        <div className="voe-section voe-ground-white">
+          <div className="voe-container space-y-14">
             {containedThemes.map((theme) => (
               <div key={theme.title} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <AnimateOnScroll
-                  animation={theme.imageLeft ? 'fade-in-left' : 'fade-in-right'}
+                <Reveal
+                  variant={theme.imageLeft ? 'left' : 'right'}
                   className={theme.imageLeft ? 'lg:order-1' : 'lg:order-2'}
                 >
-                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden hover-image-zoom">
+                  <div className="voe-photo voe-grade aspect-[4/3] shadow-[0_18px_44px_rgba(14,26,51,0.12)]">
                     <Image
                       src={theme.image}
                       alt={theme.caption}
@@ -497,21 +460,20 @@ export default function ImpactPage() {
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
-                  <p className="mt-3 text-sm italic text-gray-500">{theme.caption}</p>
-                </AnimateOnScroll>
-                <AnimateOnScroll
-                  animation={theme.imageLeft ? 'fade-in-right' : 'fade-in-left'}
+                </Reveal>
+                <Reveal
+                  variant={theme.imageLeft ? 'right' : 'left'}
                   className={theme.imageLeft ? 'lg:order-2' : 'lg:order-1'}
                 >
-                  <h3 className="text-3xl font-display font-semibold text-[#171219] leading-tight mb-6">
+                  <h3 className="voe-display-md font-display mb-6 text-[#171219]">
                     {theme.title}
                   </h3>
                   {theme.paragraphs.map((p, idx) => (
-                    <p key={idx} className="text-base md:text-lg text-[#4A5568] leading-relaxed mb-4">
+                    <p key={idx} className="mb-4 leading-relaxed text-[#4A5568] md:text-[17px]">
                       {p}
                     </p>
                   ))}
-                </AnimateOnScroll>
+                </Reveal>
               </div>
             ))}
           </div>
@@ -526,89 +488,67 @@ export default function ImpactPage() {
                 alt={splitThemes[1].caption}
                 fill
                 className="object-cover"
+                style={{ objectPosition: splitThemes[1].objectPosition }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div
-              className={`flex items-center px-8 md:px-16 py-16 md:py-24 ${splitThemes[1].imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
-              style={{ background: 'linear-gradient(135deg, #F0F4FF 0%, #F7F8FA 100%)' }}
+              className={`flex items-center px-8 md:px-16 voe-section ${splitThemes[1].imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
+              style={{ background: '#EEF2FB' }}
             >
               <div className="max-w-xl">
-                <AnimateOnScroll animation={splitThemes[1].imageLeft ? 'fade-in-right' : 'fade-in-left'}>
-                  <h3 className="text-3xl md:text-4xl font-display font-semibold text-[#171219] leading-tight mb-6">
+                <Reveal variant={splitThemes[1].imageLeft ? 'right' : 'left'}>
+                  <h3 className="voe-display-md font-display mb-6 text-[#171219]">
                     {splitThemes[1].title}
                   </h3>
                   {splitThemes[1].paragraphs.map((p, idx) => (
-                    <p key={idx} className="text-base md:text-lg text-[#4A5568] leading-relaxed mb-4">
+                    <p key={idx} className="mb-4 leading-relaxed text-[#4A5568] md:text-[17px]">
                       {p}
                     </p>
                   ))}
-                </AnimateOnScroll>
+                </Reveal>
               </div>
             </div>
           </div>
         )}
       </section>
 
-      {/* 8. Masonry Gallery */}
-      <section id="gallery" className="py-24 bg-gradient-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll animation="heading">
-            <div className="text-center mb-16 max-w-3xl mx-auto">
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-[#587FDA] font-medium mb-4">
-                In The Field
-              </p>
-              <h2 className="text-3xl md:text-5xl font-bold font-display text-[#171219]">
-                Moments That Matter
-              </h2>
-            </div>
-          </AnimateOnScroll>
-          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-4">
-            {gallery.map((photo, i) => (
-              <AnimateOnScroll key={photo.src} animation="scale-in" delay={i * 50} className={photo.span}>
-                <div className="relative w-full h-full overflow-hidden rounded-lg group">
-                  <Image
-                    src={photo.src}
-                    alt=""
-                    fill
-                    className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
+      {/* 9. Instagram wall */}
+      
+      <section id="instagram" className="voe-section voe-section--tight-top voe-ground-white">
+        <InstagramGrid />
       </section>
 
-      {/* 9. Final CTA */}
-      <section id="cta" className="py-24 bg-gradient-accent">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimateOnScroll animation="fade-up">
-            <h2 className="text-4xl md:text-5xl font-bold font-display text-white leading-tight mb-6">
+      {/* 10. Final CTA */}
+      <Edge from={GROUND.white} />
+      <section id="cta" className="voe-section voe-section--tight-top voe-ground-blue-deep voe-texture">
+        <div className="voe-container text-center">
+          <Reveal variant="up">
+            <p className="voe-eyebrow mb-3">Get involved</p>
+            <h2 className="voe-display-lg font-display mb-6 text-white">
               Join the Movement
             </h2>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-10">
+            <p className="voe-lead mx-auto mb-10 max-w-2xl">
               Whether you want to start a chapter, volunteer, or partner with VoE, there&apos;s a
               place for you in this movement.
             </p>
-          </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-up" delay={150}>
+          </Reveal>
+          <Reveal variant="up" delay={150}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/get-involved/start"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#587FDA] font-display font-semibold rounded-md hover:bg-gray-100 transition-colors"
+                className="voe-btn voe-btn--on-dark"
               >
                 Start a Chapter
               </Link>
               <Link
                 href="/get-involved/partner"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-display font-semibold rounded-md hover:bg-white hover:text-[#587FDA] transition-colors"
+                className="voe-btn voe-btn--outline-white"
               >
                 Become a Partner
               </Link>
             </div>
-          </AnimateOnScroll>
+          </Reveal>
         </div>
       </section>
     </main>

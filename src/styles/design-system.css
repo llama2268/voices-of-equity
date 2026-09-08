@@ -1,0 +1,1189 @@
+/* ============================================================
+   Voices of Equity - design system layer
+   Additive. Pages not yet migrated keep their existing styles.
+   Anchor colour stays #587FDA; this file adds depth around it.
+   ============================================================ */
+
+:root {
+  /* --------------------------------------------------------------
+     Brand palette - straight from The Brand Guidelines v1, p19.
+
+       Equity Green  #2A8D87   primary   40%
+       Equity Blue   #587FDA   primary   40%
+       Equity Red    #F47B67   secondary 10%
+       Equity White  #FBFFFE   primary   10%
+       Equity Yellow #F2EE68   secondary  5%
+       Equity Black  #171219   secondary  5%
+
+     The numbered steps are tints and shades of those exact hues -
+     needed for gradients, hovers and type contrast - not new colours.
+
+     How the site uses them: Equity Blue is the ground and the action -
+     coloured sections, buttons, links, eyebrows. Equity Green is the
+     tertiary colour - it marks position and progress: the dots on the
+     map and the timeline, the active filter, the focused field, the
+     short rule under a heading. Equity Yellow is the sticker. Green
+     never sits on blue; the guidelines don't allow the pairing.
+     -------------------------------------------------------------- */
+
+  /* --- Equity Blue --- */
+  --voe-blue-50:  #F4F7FE;
+  --voe-blue-100: #E6EDFC;
+  --voe-blue-200: #C2D1F7;
+  --voe-blue-300: #9DB5F2;
+  --voe-blue-400: #7A9BE6;
+  --voe-blue-500: #587FDA;   /* Equity Blue */
+  --voe-blue-600: #4A6FCC;
+  --voe-blue-700: #3A57A6;
+
+  /* --- Equity Green --- */
+  --voe-green-50:  #F1FAF9;
+  --voe-green-100: #DFF2F0;
+  --voe-green-200: #B6E1DD;
+  --voe-green-300: #7FCAC4;
+  --voe-green-400: #47ABA4;
+  --voe-green-500: #2A8D87;  /* Equity Green */
+  --voe-green-600: #23736E;
+  --voe-green-700: #1B5A56;
+
+  /* --- Secondary, used sparingly (10% / 5%) --- */
+  --voe-red:    #F47B67;     /* Equity Red */
+  --voe-yellow: #F2EE68;     /* Equity Yellow */
+
+  /* --- Equity White / Black --- */
+  --voe-white:  #FBFFFE;
+  --voe-ink:    #171219;     /* Equity Black */
+  --voe-ink-muted:#4A5568;
+  --voe-ink-soft: #6B7280;
+
+  /* --- Cool neutrals: near-white page grounds, tinted with the brand
+         blue rather than the warm cream this file used to carry. --- */
+  --voe-frost: #F8FAFE;
+  --voe-mist:  #F1F5FD;
+
+  /* --- The one deep ground. Reserved for specific places (a photo
+         gallery, a full-bleed band) - never the default. --- */
+  --voe-deep:  #16264A;
+
+  /* --- Fluid editorial type scale --- */
+  --voe-display-xl: clamp(2.75rem, 6.2vw, 5.25rem);
+  --voe-display-lg: clamp(2.25rem, 4.4vw, 3.75rem);
+  --voe-display-md: clamp(1.75rem, 3vw, 2.5rem);
+  --voe-display-sm: clamp(1.35rem, 2.1vw, 1.75rem);
+  --voe-lead:       clamp(1.05rem, 1.35vw, 1.3rem);
+
+  /* --- Rhythm --- */
+  --voe-section-y:  clamp(3rem, 5.5vw, 5.5rem);
+  --voe-gutter:     clamp(1rem, 4vw, 2rem);
+
+  /* --- Motion --- */
+  --voe-ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --voe-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+
+.voe-display-xl { font-size: var(--voe-display-xl); line-height: 0.98; letter-spacing: -0.035em; font-weight: 700; }
+.voe-display-lg { font-size: var(--voe-display-lg); line-height: 1.04; letter-spacing: -0.03em;  font-weight: 700; }
+.voe-display-md { font-size: var(--voe-display-md); line-height: 1.12; letter-spacing: -0.02em;  font-weight: 700; }
+.voe-display-sm { font-size: var(--voe-display-sm); line-height: 1.25; letter-spacing: -0.01em;  font-weight: 600; }
+.voe-lead       { font-size: var(--voe-lead);       line-height: 1.6;  color: var(--voe-ink-muted); }
+
+/* Small caps eyebrow above section headings */
+.voe-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--voe-blue-500);
+}
+.voe-eyebrow--on-dark { color: var(--voe-blue-300); }
+
+/* ============================================================
+   Grounds
+   ============================================================ */
+
+.voe-ground-white { background: var(--voe-white); }
+.voe-ground-frost { background: var(--voe-frost); }
+.voe-ground-mist  { background: var(--voe-mist); }
+
+/* Saturated brand grounds. A soft lift down each colour field and a
+   highlight in its upper half - the ambient gradient that stays. Blends
+   *between* sections are gone (they read as smeared on a real display);
+   that's the lattice edge now. The lift runs straight down, so the last
+   row of every ground is one flat colour - the colour the lattice edge
+   below it picks up (see GROUND in Seam.tsx). */
+.voe-ground-blue {
+  background:
+    radial-gradient(ellipse 110% 70% at 74% 10%, rgba(157, 181, 242, 0.42) 0%, transparent 64%),
+    linear-gradient(180deg, #6E92E4 0%, var(--voe-blue-500) 42%, var(--voe-blue-600) 100%);
+  color: var(--voe-white);
+}
+/* The closing field: the call-to-action band at the foot of every page.
+   Flat Equity Blue, so it runs straight into the footer below it with no
+   seam at all - the way the reference site's footer works. (The class
+   name is historical; it is no longer a darker blue.) */
+.voe-ground-blue-deep {
+  background: var(--voe-blue-500);
+  color: var(--voe-white);
+}
+.voe-ground-green {
+  background:
+    radial-gradient(ellipse 110% 70% at 26% 8%, rgba(127, 202, 196, 0.34) 0%, transparent 64%),
+    linear-gradient(180deg, #3FA69F 0%, var(--voe-green-500) 42%, var(--voe-green-600) 100%);
+  color: var(--voe-white);
+}
+
+/* The footer: the same flat Equity Blue as the call-to-action band above
+   it, so the two are one continuous block. */
+.voe-ground-footer {
+  background: var(--voe-blue-500);
+  color: var(--voe-white);
+}
+
+/* Equity Black. The 5% colour - a photo band, one gallery. */
+.voe-ground-ink { background: var(--voe-ink); color: var(--voe-white); }
+
+/* The deep blue. Allowed, but only where a section genuinely needs to
+   recede behind photography; it is not a default dark. */
+.voe-ground-navy { background: var(--voe-deep); color: var(--voe-white); }
+
+/* Type on the saturated grounds. The guidelines pair blue with white or
+   yellow only, and green with white, yellow or red - never green on
+   blue, never black on either. */
+.voe-ground-blue .voe-lead,
+.voe-ground-blue-deep .voe-lead,
+.voe-ground-green .voe-lead,
+.voe-ground-ink .voe-lead,
+.voe-ground-navy .voe-lead { color: rgba(255,255,255,0.84); }
+
+.voe-ground-blue .voe-eyebrow,
+.voe-ground-blue-deep .voe-eyebrow,
+.voe-ground-green .voe-eyebrow,
+.voe-ground-ink .voe-eyebrow,
+.voe-ground-navy .voe-eyebrow { color: rgba(255,255,255,0.78); }
+
+.voe-ground-blue .voe-rule,
+.voe-ground-blue-deep .voe-rule,
+.voe-ground-green .voe-rule,
+.voe-ground-ink .voe-rule,
+.voe-ground-navy .voe-rule { background: rgba(255,255,255,0.9); }
+
+/* Tinted light grounds - the same two hues at a whisper, flat */
+.voe-ground-blue-soft  { background: #E6EDFC; }
+.voe-ground-green-soft { background: #DFF2F0; }
+
+/* Accent variants so light sections don't all read blue */
+.voe-accent-green .voe-eyebrow { color: var(--voe-green-600); }
+.voe-accent-green .voe-rule    { background: var(--voe-green-500); }
+.voe-accent-red   .voe-eyebrow { color: #D65B45; }
+.voe-accent-red   .voe-rule    { background: var(--voe-red); }
+
+/* ---- Brand lattice ------------------------------------------------
+   The tessellated logomark from the brand pattern assets, cut to one
+   seamless period (223 x 167). Two uses:
+
+   .voe-texture  lays it over a colour block at low opacity so a flat
+                 field of blue or green has some surface to it.
+
+   .voe-edge     the divider between sections: the upper section's colour
+                 dissolving through the lattice onto the section below -
+                 the brand's own "Blue Pattern" motif, used as a section
+                 edge. It lies over the top of the next section, so the
+                 lower colour is that section's real background (gradient,
+                 texture and all) and the only colour the edge paints is
+                 the one above, which fades to nothing. There is no seam
+                 to match at either end.
+   ------------------------------------------------------------------ */
+.voe-texture { position: relative; isolation: isolate; }
+.voe-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/design/lattice-tile.png');
+  background-repeat: repeat;
+  background-size: 223px 167px;
+  background-position: center top;
+  opacity: var(--voe-texture-opacity, 0.08);
+  pointer-events: none;
+  /* thins out toward the foot of the block, so the lines never end on
+     a straight cut where the next section's edge takes over */
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+}
+.voe-texture--faint { --voe-texture-opacity: 0.06; }
+.voe-texture--bold  { --voe-texture-opacity: 0.16; }
+
+.voe-edge {
+  --voe-edge-scale: 0.6;
+  --voe-edge-h: 200px;
+  position: relative;
+  z-index: 1;
+  height: var(--voe-edge-h);
+  /* one pixel up into the section above, and the whole band down over
+     the section below: the next section starts where the edge starts */
+  margin-top: -1px;
+  margin-bottom: calc(-1 * var(--voe-edge-h));
+  pointer-events: none;
+}
+/* the section above, fading out over the section below. The mask is a
+   plain top-to-bottom gradient (a quintic curve, flat at both ends, so
+   there is no visible start or finish) with the lattice woven into it:
+   the pattern's strength is a smooth bump that is zero at both ends, so
+   it emerges from nothing mid-band and dissolves again. Two tile rows
+   tall (223 x 334), so height = 334 * scale keeps it undistorted. */
+.voe-edge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--voe-edge-from, var(--voe-white));
+  -webkit-mask-image: url('/design/lattice-edge.png');
+          mask-image: url('/design/lattice-edge.png');
+  -webkit-mask-repeat: repeat-x;
+          mask-repeat: repeat-x;
+  -webkit-mask-size: calc(223px * var(--voe-edge-scale)) var(--voe-edge-h);
+          mask-size: calc(223px * var(--voe-edge-scale)) var(--voe-edge-h);
+  -webkit-mask-position: center top;
+          mask-position: center top;
+}
+.voe-edge--sm { --voe-edge-scale: 0.36; --voe-edge-h: 120px; }
+.voe-edge--lg { --voe-edge-scale: 0.72; --voe-edge-h: 240px; }
+
+/* Whatever follows an edge sits underneath it, so it takes the band's
+   height as extra room at the top and its content starts below the
+   lattice, exactly where it did when the band was in normal flow. */
+.voe-edge + * { --voe-edge-pad: 200px; }
+.voe-edge--sm + * { --voe-edge-pad: 120px; }
+.voe-edge--lg + * { --voe-edge-pad: 240px; }
+
+.voe-section { padding-block: var(--voe-section-y); }
+.voe-section--tight-top { padding-top: calc(var(--voe-section-y) * 0.55); }
+.voe-edge + :not(.voe-section, .voe-section--tight-top) { padding-top: var(--voe-edge-pad); }
+.voe-edge + .voe-section { padding-top: calc(var(--voe-section-y) + var(--voe-edge-pad)); }
+.voe-edge + .voe-section--tight-top { padding-top: calc(var(--voe-section-y) * 0.55 + var(--voe-edge-pad)); }
+.voe-edge + .voe-footer__body { padding-top: calc(var(--voe-edge-pad) + 2.5rem); }
+.voe-section--tight-bottom { padding-bottom: calc(var(--voe-section-y) * 0.55); }
+.voe-container { max-width: 1200px; margin-inline: auto; padding-inline: var(--voe-gutter); }
+.voe-container--narrow { max-width: 820px; }
+
+/* ============================================================
+   Photography
+   Unifies mixed-quality phone photography into one visual set:
+   a light warm grade + consistent framing + optional scrim.
+   ============================================================ */
+
+.voe-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--voe-mist);
+}
+.voe-photo > img,
+.voe-photo > span > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Aspect presets so a mixed library crops to a consistent rhythm */
+.voe-ar-portrait  { aspect-ratio: 4 / 5; }
+.voe-ar-tall      { aspect-ratio: 3 / 4; }
+.voe-ar-square    { aspect-ratio: 1 / 1; }
+.voe-ar-landscape { aspect-ratio: 3 / 2; }
+.voe-ar-wide      { aspect-ratio: 16 / 9; }
+.voe-ar-cinema    { aspect-ratio: 21 / 9; }
+
+/* The grade: gentle warmth + contrast lift so fluorescent classroom
+   shots and outdoor tabling shots sit together without clashing. */
+.voe-grade > img,
+.voe-grade > span > img {
+  filter: saturate(1.06) contrast(1.05) brightness(1.02);
+}
+.voe-grade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(88,127,218,0.05) 0%, rgba(23,18,25,0.07) 100%);
+  pointer-events: none;
+}
+
+/* Scrim for text sitting over a photo */
+.voe-scrim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14,26,51,0.10) 0%, rgba(14,26,51,0.34) 45%, rgba(14,26,51,0.80) 100%);
+  pointer-events: none;
+}
+.voe-scrim--side::after {
+  background: linear-gradient(90deg, rgba(14,26,51,0.82) 0%, rgba(14,26,51,0.42) 45%, rgba(14,26,51,0.05) 100%);
+}
+
+/* Slow drift on hero imagery - reads as intentional, hides softness */
+@keyframes voeKenBurns {
+  from { transform: scale(1.06) translate3d(0, 0, 0); }
+  to   { transform: scale(1.14) translate3d(0, -1.5%, 0); }
+}
+.voe-kenburns > img,
+.voe-kenburns > span > img {
+  animation: voeKenBurns 22s var(--voe-ease) infinite alternate;
+  will-change: transform;
+}
+
+/* Full-bleed photo band - breaks up stacked text sections */
+.voe-band {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.voe-band-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+@media (min-width: 768px) {
+  .voe-band-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.voe-band-grid > * { aspect-ratio: 1 / 1; position: relative; overflow: hidden; }
+
+/* Asymmetric mosaic - a colour section with real photographs inside it */
+.voe-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 150px;
+  gap: 12px;
+}
+@media (min-width: 900px) {
+  .voe-mosaic { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 195px; }
+  .voe-mosaic > *:first-child { grid-row: span 2; grid-column: span 2; }
+}
+.voe-mosaic > * { min-height: 0; }
+
+/* Pull a photo up into the band above it */
+.voe-overlap { margin-top: calc(var(--voe-section-y) * -1); }
+
+/* ============================================================
+   Scroll reveal
+   Paired with <Reveal /> - the class is applied on mount,
+   .is-in is added by IntersectionObserver and never removed.
+   ============================================================ */
+
+.voe-reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition:
+    opacity 800ms var(--voe-ease-out),
+    transform 800ms var(--voe-ease-out);
+  transition-delay: var(--voe-delay, 0ms);
+  will-change: opacity, transform;
+}
+.voe-reveal.is-in { opacity: 1; transform: none; }
+
+.voe-reveal--left  { transform: translate3d(-36px, 0, 0); }
+.voe-reveal--right { transform: translate3d(36px, 0, 0); }
+.voe-reveal--scale { transform: scale(0.94); }
+.voe-reveal--fade  { transform: none; }
+.voe-reveal--mask  { clip-path: inset(0 0 100% 0); transform: none; transition: clip-path 1000ms var(--voe-ease-out), opacity 600ms ease; }
+.voe-reveal--mask.is-in { clip-path: inset(0 0 0 0); }
+
+/* Per-word headline rise */
+.voe-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 0.7em, 0);
+  transition: opacity 620ms var(--voe-ease-out), transform 620ms var(--voe-ease-out);
+  transition-delay: var(--voe-delay, 0ms);
+}
+.is-in > .voe-word { opacity: 1; transform: none; }
+
+/* ============================================================
+   Components
+   ============================================================ */
+
+.voe-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 200ms var(--voe-ease), background-color 200ms var(--voe-ease), box-shadow 200ms var(--voe-ease);
+}
+.voe-btn:hover { transform: translateY(-2px); }
+
+.voe-btn--primary {
+  background: var(--voe-blue-500);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(88,127,218,0.28);
+}
+.voe-btn--primary:hover { background: var(--voe-blue-600); box-shadow: 0 10px 28px rgba(88,127,218,0.36); }
+
+.voe-btn--ghost {
+  background: transparent;
+  color: var(--voe-ink);
+  border: 1.5px solid rgba(23,18,25,0.16);
+}
+.voe-btn--ghost:hover { border-color: var(--voe-blue-500); color: var(--voe-blue-600); }
+
+.voe-btn--on-dark {
+  background: #fff;
+  color: var(--voe-ink);
+}
+.voe-btn--on-dark:hover { background: var(--voe-blue-50); }
+
+/* Outlined white button for use over photography and colour fields */
+.voe-btn--outline-white {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.85);
+}
+.voe-btn--outline-white:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+/* Rule that draws itself in when the lead metric reveals */
+.voe-metric-rule {
+  height: 2px;
+  width: 100%;
+  max-width: 320px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1100ms var(--voe-ease-out) 260ms;
+}
+.is-in .voe-metric-rule,
+.voe-reveal.is-in .voe-metric-rule { transform: scaleX(1); }
+
+/* Editorial rule used under section headings - Equity Green, the one
+   place the tertiary colour appears on nearly every page */
+.voe-rule {
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--voe-green-500);
+}
+
+/* Stat block */
+.voe-stat-value {
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--voe-blue-600);
+}
+.voe-ground-navy .voe-stat-value { color: #fff; }
+.voe-stat-label {
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--voe-ink-muted);
+}
+.voe-ground-navy .voe-stat-label { color: rgba(255,255,255,0.6); }
+
+/* Card */
+.voe-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(17,24,39,0.04);
+  transition: transform 320ms var(--voe-ease), box-shadow 320ms var(--voe-ease);
+}
+.voe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(17,24,39,0.10);
+}
+
+/* ============================================================
+   Core values - V.O.I.C.E.S.
+
+   Third pass. The sticky wordmark with its travelling dash was too
+   clever and not attractive; this drops the mechanism entirely.
+
+   Each value is a white card on the Equity Blue ground with its letter
+   set as a drop cap, so the acronym assembles itself down the page
+   without anything having to track the scroll. Typography moved off
+   the huge white display type onto something quieter: a heavy Montserrat
+   initial, the value name at reading size, body copy in Arial. Letters
+   alternate Equity Blue and Equity Green - the 40/40 primaries - which
+   is an approved pairing on white.
+   ============================================================ */
+
+.voe-value {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--voe-white);
+  border-radius: 26px;
+  padding: clamp(1.5rem, 2.4vw, 2.1rem);
+  box-shadow: 0 18px 40px rgba(14, 26, 51, 0.14);
+  transition: transform 420ms var(--voe-ease-out), box-shadow 420ms var(--voe-ease-out);
+}
+
+@media (hover: hover) {
+  .voe-value:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 60px rgba(14, 26, 51, 0.22);
+  }
+}
+
+/* The letter, set in a small Equity Black tile - one colour, no drop cap,
+   the same weight on every card. */
+.voe-value__letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 12px;
+  background: var(--voe-ink);
+  color: var(--voe-white);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.1rem;
+}
+
+/* Short green rule, drawn in when the card arrives */
+.voe-value__rule {
+  width: 34px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--voe-green-500);
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 700ms var(--voe-ease-out) 220ms;
+}
+.voe-reveal.is-in .voe-value__rule { transform: scaleX(1); }
+
+.voe-value__title {
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--voe-ink);
+  margin: 0 0 0.6rem;
+  text-wrap: balance;
+}
+
+.voe-value__body {
+  font-size: 0.975rem;
+  line-height: 1.65;
+  color: var(--voe-ink-muted);
+  margin: 0;
+}
+
+
+/* ============================================================
+   Pop-out figure.
+
+   A person cut out of their photograph, standing in front of a rounded
+   panel and breaking its top edge - the trick the reference sites use to
+   stop a page feeling like a grid of rectangles. The cutout is a
+   transparent PNG; the drop shadow is what sells the depth.
+   ============================================================ */
+
+.voe-popout {
+  position: relative;
+  /* headroom for the figure to rise into */
+  padding-top: clamp(2rem, 5vw, 4.5rem);
+}
+
+/* Soft light behind the figure - stops the flat field of colour above
+   her reading as empty, and gives the cutout something to stand in. */
+.voe-popout::before {
+  content: '';
+  position: absolute;
+  left: 57%;
+  bottom: 6%;
+  width: 92%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.08) 42%, transparent 68%);
+  pointer-events: none;
+}
+
+.voe-popout__panel {
+  position: relative;
+  border-radius: clamp(24px, 3vw, 40px);
+  aspect-ratio: 4 / 3.55;
+  overflow: hidden;
+}
+
+/* Tinted panel behind the figure. Two brand-safe variants. */
+.voe-popout__panel--white { background: var(--voe-white); }
+.voe-popout__panel--soft {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(42,141,135,0.18) 0%, transparent 70%),
+    linear-gradient(180deg, #EDF2FE 0%, #DCE6FB 100%);
+}
+
+.voe-popout__figure {
+  position: absolute;
+  left: 57%;
+  bottom: 0;
+  width: auto;
+  height: 116%;
+  transform: translateX(-50%);
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 26px 34px rgba(14, 26, 51, 0.32));
+  pointer-events: none;
+}
+
+/* Two people side by side: the figure is set by width, centred, and the
+   panel is a little wider than tall so the heads clear its top edge. */
+.voe-popout--duo::before { left: 50%; bottom: 0; width: 110%; }
+.voe-popout--duo .voe-popout__panel { aspect-ratio: 4 / 3.3; }
+.voe-popout--duo .voe-popout__figure {
+  left: 50%;
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+.voe-popout__panel--blue {
+  background:
+    radial-gradient(ellipse 110% 70% at 74% 10%, rgba(157,181,242,0.42) 0%, transparent 64%),
+    linear-gradient(168deg, #6E92E4 0%, var(--voe-blue-500) 42%, var(--voe-blue-600) 100%);
+}
+
+/* Rotated sticker, the way the reference sites label a photo. Equity
+   Yellow with blue type - yellow pairs with green, blue or red, never
+   white. */
+/* Highlighter behind a phrase - the yellow accent for headings on light
+   grounds, where yellow type itself would not read. One solid band the
+   full height of the letters; on a wrapped phrase every line gets its
+   own band (the band is a touch shorter than the line, so bands on
+   neighbouring lines never collide). */
+.voe-highlight {
+  background-image: linear-gradient(#FFD166, #FFD166);
+  background-repeat: no-repeat;
+  background-size: 100% 82%;
+  background-position: 0 55%;
+  padding: 0 0.14em;
+  margin: 0 -0.14em;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}
+
+.voe-sticker {
+  position: absolute;
+  z-index: 3;
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: var(--voe-yellow);
+  color: var(--voe-blue-700);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  border-radius: 4px;
+  transform: rotate(-5deg);
+  box-shadow: 0 10px 22px rgba(14, 26, 51, 0.22);
+}
+
+
+/* ============================================================
+   Instagram grid
+   ============================================================ */
+
+.voe-ig {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.5rem, 1vw, 0.9rem);
+}
+@media (min-width: 640px) { .voe-ig { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .voe-ig { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+.voe-ig__tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--voe-blue-100);
+}
+
+.voe-ig__tile img {
+  transition: transform 700ms var(--voe-ease-out);
+}
+@media (hover: hover) {
+  .voe-ig__tile:hover img { transform: scale(1.06); }
+  .voe-ig__tile:hover .voe-ig__veil { opacity: 1; }
+}
+.voe-ig__tile:focus-visible {
+  outline: 3px solid var(--voe-blue-500);
+  outline-offset: 3px;
+}
+
+/* Embed mode: Instagram's own iframes, three across. Each is a
+   third-party document, so they are lazy and load only on approach.
+   This is the fallback until the post artwork is saved locally. */
+.voe-ig-embeds {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.4vw, 1.25rem);
+}
+@media (min-width: 700px)  { .voe-ig-embeds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1080px) { .voe-ig-embeds { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.voe-ig-embed {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--voe-blue-50);
+  box-shadow: 0 10px 30px rgba(14, 26, 51, 0.10);
+}
+.voe-ig-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.voe-ig__veil {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.85rem;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  background: linear-gradient(180deg, rgba(23,18,25,0) 35%, rgba(23,18,25,0.82) 100%);
+  opacity: 0;
+  transition: opacity 320ms var(--voe-ease-out);
+}
+
+/* Chapter directory card: tapped-open state mirrors hover for touch */
+.voe-chapter.is-open .voe-chapter__detail { transform: translateY(0); }
+
+/* ============================================================
+   Accessibility
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .voe-reveal,
+  .voe-word {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+  .voe-kenburns > img,
+  .voe-kenburns > span > img { animation: none; }
+  .voe-btn:hover, .voe-card:hover { transform: none; }
+
+  .voe-value,
+  .voe-value__rule,
+  .voe-ig__tile img,
+  .voe-ig__veil { transition: none !important; }
+  .voe-value__rule { transform: scaleX(1) !important; }
+}
+
+/* ============================================================
+   Steps - an ordered process without numerals: dots on a rail,
+   the completed stretch filled in, the active phase haloed.
+   ============================================================ */
+.voe-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+.voe-steps::before,
+.voe-steps__fill {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 10%;
+  height: 2px;
+  border-radius: 2px;
+}
+.voe-steps::before { right: 10%; background: rgba(23, 18, 25, 0.12); }
+.voe-steps__fill {
+  max-width: 80%;
+  background: var(--voe-green-500);
+  transition: width 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.voe-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.25rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+  color: var(--voe-ink-muted);
+}
+.voe-step:focus-visible { outline: 2px solid var(--voe-green-500); outline-offset: 6px; border-radius: 8px; }
+.voe-step__dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(23, 18, 25, 0.22);
+  background: #fff;
+  transition: background 300ms ease, border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+}
+.voe-step:hover .voe-step__dot { border-color: var(--voe-green-500); }
+.voe-step.is-done .voe-step__dot,
+.voe-step.is-active .voe-step__dot { background: var(--voe-green-500); border-color: var(--voe-green-500); }
+.voe-step.is-active .voe-step__dot { box-shadow: 0 0 0 7px rgba(42, 141, 135, 0.18); transform: scale(1.1); }
+.voe-step__name {
+  margin-top: 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--voe-ink);
+  transition: color 300ms ease;
+}
+@media (min-width: 640px) { .voe-step__name { font-size: 0.8rem; } }
+.voe-step.is-active .voe-step__name { color: var(--voe-green-600); }
+.voe-step__short {
+  display: none;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--voe-ink-muted);
+}
+@media (min-width: 900px) { .voe-step__short { display: block; } }
+
+
+/* ============================================================
+   Stacked cards - the values, one after another.
+   Each card is sticky a few pixels lower than the one before it, so as
+   you scroll the next card slides up over the last and the pile grows
+   at the top of the viewport. The card underneath is scaled back a
+   touch (set by StackedCards) so the stack has depth.
+   ============================================================ */
+.voe-stack {
+  --voe-stack-top: 7rem;
+  --voe-stack-step: 1rem;
+  --voe-stack-h: min(560px, 72vh);
+  position: relative;
+}
+.voe-stack__item {
+  position: sticky;
+  top: calc(var(--voe-stack-top) + var(--voe-stack-i, 0) * var(--voe-stack-step));
+  height: var(--voe-stack-h);
+  margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
+}
+.voe-stack__item:last-child { margin-bottom: 0; }
+.voe-stack__card {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 0.42fr) minmax(0, 1fr);
+  background: var(--voe-white);
+  border-radius: clamp(24px, 3vw, 36px);
+  box-shadow: 0 24px 60px rgba(14, 26, 51, 0.22);
+  transform-origin: top center;
+  transform: scale(var(--voe-stack-scale, 1));
+  filter: brightness(var(--voe-stack-dim, 1));
+  will-change: transform;
+}
+@media (min-width: 900px) {
+  .voe-stack__card { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); grid-template-rows: none; }
+}
+.voe-stack__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.6rem, 3.2vw, 3.25rem);
+  min-width: 0;
+}
+.voe-stack__photo {
+  position: relative;
+  min-height: 0;
+  order: -1;
+}
+@media (min-width: 900px) { .voe-stack__photo { order: 0; } }
+.voe-stack__photo > img { width: 100%; height: 100%; object-fit: cover; }
+.voe-stack__count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--voe-blue-500);
+}
+.voe-stack__title {
+  margin: 0.9rem 0 0.9rem;
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--voe-ink);
+  text-wrap: balance;
+}
+.voe-stack__text {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.15vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--voe-ink-muted);
+  max-width: 34rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .voe-stack__item { position: relative; top: auto; height: auto; }
+  .voe-stack__card { transform: none !important; filter: none !important; }
+  .voe-stack__photo { min-height: 260px; }
+}
+@media (max-width: 899px) {
+  .voe-stack { --voe-stack-h: min(600px, 80vh); --voe-stack-top: 5rem; --voe-stack-step: 0.75rem; }
+  .voe-stack__card { grid-template-rows: minmax(0, 0.36fr) minmax(0, 1fr); }
+}
+
+/* ============================================================
+   Rail - a horizontal timeline you scroll sideways.
+   The rail bleeds to the viewport edges but its first card lines up
+   with the page container; each card carries a stretch of the line and
+   its own dot, so the line reads as continuous across the gaps.
+   ============================================================ */
+.voe-rail {
+  list-style: none;
+  margin: 0;
+  --voe-rail-gap: clamp(1rem, 2vw, 1.75rem);
+  --voe-rail-pad: max(var(--voe-gutter), calc((100vw - 1200px) / 2 + var(--voe-gutter)));
+  display: flex;
+  gap: var(--voe-rail-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--voe-rail-pad);
+  /* room above the cards for the line and its dots */
+  padding: 2.75rem var(--voe-rail-pad) 1.5rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.voe-rail::-webkit-scrollbar { display: none; }
+.voe-rail__card {
+  position: relative;
+  flex: 0 0 min(400px, 82vw);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: var(--voe-white);
+  border-radius: 26px;
+  box-shadow: 0 16px 44px rgba(14, 26, 51, 0.10);
+  /* no overflow clipping here: the line and dot hang above the card */
+}
+/* the line, running through every card and across the gap to the next */
+.voe-rail__card::before {
+  content: '';
+  position: absolute;
+  top: -1.375rem;
+  left: 0;
+  right: calc(var(--voe-rail-gap) * -1);
+  height: 2px;
+  background: rgba(42, 141, 135, 0.3);
+  pointer-events: none;
+}
+.voe-rail__card:last-child::before { right: 0; }
+.voe-rail__card::after {
+  content: '';
+  position: absolute;
+  top: calc(-1.375rem - 6px);
+  left: 1.75rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--voe-green-500);
+  box-shadow: 0 0 0 5px rgba(42, 141, 135, 0.18);
+}
+.voe-rail__photo { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 26px 26px 0 0; }
+.voe-rail__photo > img { width: 100%; height: 100%; object-fit: cover; }
+.voe-rail__body { display: flex; flex-direction: column; flex: 1; padding: 1.5rem 1.75rem 1.75rem; }
+.voe-rail__date { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--voe-blue-500); }
+.voe-rail__title { margin: 0.6rem 0 0.7rem; font-size: 1.3rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; color: var(--voe-ink); text-wrap: balance; }
+.voe-rail__text { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--voe-ink-muted); }
+.voe-rail__stats { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin-top: auto; padding-top: 1.25rem; border-top: 1px solid rgba(23, 18, 25, 0.1); }
+.voe-rail__stat-value { font-size: 1.7rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--voe-ink); }
+.voe-rail__stat-label { display: block; margin-top: 0.4rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--voe-blue-500); }
+
+/* A card that is a link (the VOX journal goes to voxthinktank.org). The
+   white card and its shadow move onto the anchor so the card can lift on
+   hover while the line and dot, which belong to the list item, stay put. */
+.voe-rail__card--link { background: transparent; box-shadow: none; }
+.voe-rail__link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 26px;
+  background: var(--voe-white);
+  box-shadow: 0 16px 44px rgba(14, 26, 51, 0.10);
+  color: inherit;
+  text-decoration: none;
+  outline-offset: 4px;
+  transition: transform 350ms var(--voe-ease-out), box-shadow 350ms var(--voe-ease-out);
+}
+.voe-rail__link:hover { transform: translateY(-4px); box-shadow: 0 26px 56px rgba(14, 26, 51, 0.16); }
+.voe-rail__link:focus-visible { outline: 3px solid var(--voe-blue-500); }
+.voe-rail__link .voe-rail__photo img { transition: transform 900ms var(--voe-ease-out); }
+.voe-rail__link:hover .voe-rail__photo img { transform: scale(1.04); }
+.voe-rail__link:hover .voe-rail__title { color: var(--voe-blue-500); }
+.voe-rail__title { transition: color 200ms ease; }
+.voe-rail__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--voe-blue-500);
+}
+.voe-rail__stats + .voe-rail__cta { margin-top: 0; }
+.voe-rail__cta svg { width: 0.95em; height: 0.95em; transition: transform 250ms var(--voe-ease-out); }
+.voe-rail__link:hover .voe-rail__cta svg { transform: translate(2px, -2px); }
+
+.voe-rail-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(23, 18, 25, 0.16);
+  background: var(--voe-white);
+  color: var(--voe-ink);
+  transition: border-color 200ms ease, color 200ms ease, transform 200ms ease, opacity 200ms ease;
+}
+.voe-rail-nav:hover:not(:disabled) { border-color: var(--voe-blue-500); color: var(--voe-blue-500); transform: translateY(-2px); }
+.voe-rail-nav:disabled { opacity: 0.35; cursor: not-allowed; }
+.voe-rail-progress { position: relative; height: 3px; border-radius: 3px; background: rgba(23, 18, 25, 0.1); overflow: hidden; }
+.voe-rail-progress > span { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--voe-green-500); transition: width 200ms ease; }
+
+/* Team portraits: black and white until the pointer is on them, then
+   colour. Where there is no pointer to hover with (phones), colour. */
+.voe-portrait img {
+  filter: grayscale(1);
+  transition: filter 600ms var(--voe-ease), transform 700ms var(--voe-ease-out);
+}
+@media (hover: hover) {
+  .group:hover .voe-portrait img { filter: grayscale(0); }
+}
+@media (hover: none) {
+  .voe-portrait img { filter: none; }
+}
+
+/* ============================================================
+   People rail - a row of team portraits that scrolls sideways.
+   Three cards fill the column at full size, and the row runs on past
+   the column's edge to the edge of the screen, so a fourth card shows
+   in the margin and it is obvious there are more; a bigger group
+   scrolls left and right instead of wrapping. On a phone two cards and
+   part of a third show. The padding-and-negative-margin pair keeps the
+   card shadows from being clipped by the scroller.
+   ============================================================ */
+/* inline-size containment: the rail's contents must never set the width
+   of the column it sits in (on a phone the grid column is auto-sized and
+   would otherwise grow to fit every card side by side) */
+.voe-people {
+  /* from the column's right edge to the edge of the screen */
+  --voe-bleed: calc(var(--voe-gutter) + max(0px, (100vw - 1200px) / 2));
+  position: relative;
+  min-width: 0;
+  margin-right: calc(-1 * var(--voe-bleed));
+  contain: inline-size;
+}
+.voe-people__rail {
+  --voe-people-gap: 1.5rem;
+  display: flex;
+  gap: var(--voe-people-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 6px;
+  scrollbar-width: none;
+  /* the right padding is the bleed: the cards are sized to the column,
+     the fourth spills into the margin, and at the end of the scroll the
+     last card lines up with the column's edge */
+  padding: 12px calc(var(--voe-bleed) + 6px) 60px 6px;
+  margin: -12px -6px -60px;
+  -webkit-overflow-scrolling: touch;
+}
+.voe-people__rail::-webkit-scrollbar { display: none; }
+.voe-people__item {
+  flex: 0 0 calc((100% - 2 * var(--voe-people-gap)) / 2.5);
+  scroll-snap-align: start;
+}
+@media (min-width: 640px) {
+  .voe-people__item { flex-basis: calc((100% - 2 * var(--voe-people-gap)) / 3); }
+}
+@media (min-width: 1024px) {
+  .voe-people__rail { --voe-people-gap: 1.75rem; }
+}
+/* the arrows sit in a row beneath the cards, flush with the column's
+   right edge - never over anyone's face */
+.voe-people__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-right: var(--voe-bleed);
+}
+@media (max-width: 639px) { .voe-people__controls { display: none; } }
+/* the bleed reaches the screen edge, so the sections that hold a rail
+   clip sideways (clip, not hidden: the sticky column keeps working) */
+.voe-people-host { overflow-x: clip; }
+
+/* The cards are white whatever ground the stack sits on, so their rules
+   keep the green even inside a blue section. */
+.voe-stack__card .voe-rule { background: var(--voe-green-500); }
+
+/* ============================================================
+   Zoom wall - a call screenshot with tiles lifted out of the grid.
+   ============================================================ */
+.voe-zoom {
+  position: relative;
+  /* headroom for the tiles that overhang the grid */
+  margin: 8% 6% 9%;
+}
+.voe-zoom__grid {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--voe-ink);
+  box-shadow: 0 24px 60px rgba(14, 26, 51, 0.22);
+}
+.voe-zoom__grid > img { display: block; }
+.voe-zoom__tile { position: absolute; z-index: 2; }
+.voe-zoom__frame {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 22px 44px rgba(14, 26, 51, 0.32), 0 0 0 3px rgba(255, 255, 255, 0.9);
+}
+.voe-zoom__frame > img { display: block; }
+.voe-zoom__cap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+  padding: 0.45em 0.75em 0.55em;
+  background: #fff;
+  font-size: clamp(8px, 0.85vw, 12px);
+  line-height: 1.25;
+  text-align: left;
+}
+.voe-zoom__name { font-weight: 700; color: var(--voe-ink); letter-spacing: -0.01em; }
+.voe-zoom__org { color: var(--voe-ink-muted); font-size: 0.9em; }
+@media (max-width: 1024px) { .voe-zoom__cap { font-size: clamp(8px, 1.6vw, 12px); } }
+.voe-zoom__sticker { left: 5%; bottom: -7%; z-index: 3; }
+@media (max-width: 640px) {
+  .voe-zoom { margin: 10% 8% 12%; }
+  .voe-zoom__sticker { font-size: 0.78rem; padding: 0.5rem 0.8rem; }
+}

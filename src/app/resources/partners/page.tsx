@@ -2,7 +2,9 @@
 
 import Image from 'next/image';
 import PageLayout from '@/components/Layout/PageLayout';
-import AnimateOnScroll from '@/components/Animation/AnimateOnScroll';
+import Link from 'next/link';
+import Reveal from '@/components/Animation/Reveal';
+import { Edge, GROUND } from '@/components/Layout/Seam';
 
 const partnerGroups = [
   {
@@ -37,83 +39,70 @@ const partnerGroups = [
 
 export default function PartnersPage() {
   return (
-    <PageLayout>
-      {/* Dark Hero */}
-      <section className="relative bg-[#171219] pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <Image
-            src="/logo-new.png"
-            alt=""
-            width={600}
-            height={540}
-            className="opacity-5"
-          />
-        </div>
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <AnimateOnScroll animation="fade-in">
-            <p className="text-xs uppercase tracking-widest text-gray-400 font-medium mb-3">Partnerships</p>
-            <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">Our Partners</h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-              Organizations supporting Voices of Equity&apos;s national initiatives
-            </p>
-          </AnimateOnScroll>
+    <PageLayout
+      title="Our Partners"
+      subtitle="Organizations supporting Voices of Equity's national initiatives"
+      eyebrow="Partnerships"
+      image="/media/16.jpeg"
+      imageAlt="Chapter members running an outreach table"
+      objectPosition="center 45%"
+    >
+      <section className="voe-section voe-ground-white">
+        <div className="voe-container">
+          <Reveal variant="fade">
+            <div className="mb-12 max-w-2xl">
+              <p className="voe-eyebrow mb-3">In good company</p>
+              <h2 className="voe-display-lg font-display text-[#171219]">Organizations we work alongside</h2>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {partnerGroups.flatMap((g) => g.partners).map((partner, i) => (
+              <Reveal key={partner.name} variant="up" delay={i * 110} className="h-full">
+                <article className="voe-card flex h-full flex-col rounded-3xl bg-white p-8 text-center shadow-[0_14px_36px_rgba(14,26,51,0.10)]">
+                  <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-2xl bg-[#F1F5FD] p-4">
+                    <Image
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      width={112}
+                      height={112}
+                      className="max-h-full w-auto object-contain"
+                    />
+                  </div>
+                  <h3 className="voe-display-sm font-display text-[#171219]">{partner.name}</h3>
+                  <p className="mt-3 flex-1 text-[15px] leading-relaxed text-[#4A5568]">{partner.description}</p>
+                  <div className="mt-7 flex flex-col items-stretch gap-3">
+                    <a href={partner.website} target="_blank" rel="noopener noreferrer" className="voe-btn voe-btn--primary justify-center">
+                      Visit website
+                    </a>
+                    {partner.handout && (
+                      <a href={partner.handout} target="_blank" rel="noopener noreferrer" className="voe-btn voe-btn--ghost justify-center">
+                        View handout
+                      </a>
+                    )}
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4">
-        {partnerGroups.map((group) => (
-          <section key={group.title} className="py-24">
-            <AnimateOnScroll animation="fade-up">
-              <div className="mb-12">
-                {group.title && (
-                  <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">{group.title}</p>
-                )}
-                <h2 className="font-display font-bold text-3xl md:text-4xl text-[#171219]">Our Partners</h2>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {group.partners.map((partner, i) => (
-                <AnimateOnScroll key={partner.name} animation="scale-in" delay={i * 150}>
-                  <article className="bg-white border border-gray-200 rounded-lg p-8 hover-lift">
-                    <div className="mx-auto mb-6 w-36 h-36 flex items-center justify-center">
-                      <Image
-                        src={partner.logo}
-                        alt={`${partner.name} logo`}
-                        width={144}
-                        height={144}
-                        className="object-contain"
-                      />
-                    </div>
-                    <h3 className="text-xl font-bold font-display text-[#171219] text-center">{partner.name}</h3>
-                    <p className="text-sm text-[#4A5568] mt-3 text-center leading-relaxed">{partner.description}</p>
-                    <div className="mt-6 flex flex-col sm:flex-row items-stretch gap-3">
-                      <a
-                        href={partner.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-center px-8 py-3 rounded-md bg-[#587FDA] text-white hover:bg-[#4566B8] transition-colors font-medium hover-scale"
-                      >
-                        Visit Website
-                      </a>
-                      {partner.handout && (
-                        <a
-                          href={partner.handout}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-center px-8 py-3 rounded-md border border-gray-200 text-[#587FDA] hover:bg-[#F7F8FA] transition-colors font-medium"
-                        >
-                          View Handout
-                        </a>
-                      )}
-                    </div>
-                  </article>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
+      <Edge from={GROUND.white} />
+      <section className="voe-section voe-section--tight-top voe-ground-blue-deep voe-texture">
+        <div className="voe-container text-center">
+          <Reveal variant="up">
+            <p className="voe-eyebrow mb-3">Join them</p>
+            <h2 className="voe-display-lg font-display mb-5 text-white">Work with our chapters.</h2>
+            <p className="voe-lead mx-auto mb-9 max-w-2xl">
+              Community health organizations, clinics and nonprofits — student capacity for the work you already lead.
+            </p>
+            <Link href="/get-involved/partner" className="voe-btn voe-btn--on-dark">
+              Partner with us
+            </Link>
+          </Reveal>
+        </div>
+      </section>
     </PageLayout>
   );
 }

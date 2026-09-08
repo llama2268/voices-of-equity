@@ -1,20 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const impactStats = [
-    { label: 'Raised', numericValue: 43, unit: 'K+', prefix: '$' },
-    { label: 'Chapters', numericValue: 60, unit: '+', prefix: '' },
+    { label: 'Chapters', numericValue: 70, unit: '+', prefix: '' },
     { label: 'Members', numericValue: 1000, unit: '+', prefix: '' },
-    { label: 'Students Reached', numericValue: 10000, unit: '+', prefix: '' },
+    { label: 'Events', numericValue: 240, unit: '+', prefix: '' },
+    { label: 'Raised', numericValue: 44, unit: 'K+', prefix: '$' },
 ];
 
 function CountUpNumber({ numericValue, prefix, unit }: { numericValue: number; prefix: string; unit: string }) {
     const [count, setCount] = useState(0);
     const ref = useRef<HTMLSpanElement>(null);
     const [isVisible, setIsVisible] = useState(false);
+    const hasAnimated = useRef(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => { if (entry) setIsVisible(entry.isIntersecting); },
+            ([entry]) => {
+                // latch on first reveal - never un-set, or the number snaps back to 0
+                if (entry?.isIntersecting && !hasAnimated.current) {
+                    hasAnimated.current = true;
+                    setIsVisible(true);
+                }
+            },
             { threshold: 0.5 }
         );
         if (ref.current) observer.observe(ref.current);
@@ -22,7 +29,7 @@ function CountUpNumber({ numericValue, prefix, unit }: { numericValue: number; p
     }, []);
 
     useEffect(() => {
-        if (!isVisible) { setCount(0); return; }
+        if (!isVisible) return;
         let start = 0;
         const end = numericValue;
         const duration = 2000;

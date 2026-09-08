@@ -6,10 +6,10 @@ export const whatWeDoPage = {
     title: "Our Impact",
     subtitle: "Stories of change and transformation in our communities",
     nationalStats: [
-      { label: "$43,000+ raised", icon: "✓" },
-      { label: "60+ University chapters engaged across North America", icon: "✓" },
+      { label: "$44,000+ raised", icon: "✓" },
+      { label: "70+ University chapters engaged across North America", icon: "✓" },
       { label: "1,000+ members involved", icon: "✓" },
-      { label: "10,000+ students reached through educational programing", icon: "✓" }
+      { label: "240+ events run with 140+ partner organizations", icon: "✓" }
     ],
     chapterReflections: [
       {
