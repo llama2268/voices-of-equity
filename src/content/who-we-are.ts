@@ -209,6 +209,11 @@ export const whoWeArePage = {
         name: "Caleb T. Suh",
         role: "Co-Founder & Board Chair",
         image: "/team/advisors/caleb-suh.jpg",
+        fullBio: `Caleb T. Suh co-founded Voices of Equity and serves as Chair of the Board of Advisors. He previously served as Co-Executive Director from 2024 to 2026, where he set strategic direction, ran national operations, and built the chapter structure and internal systems the organization scaled on. His work focused on clear execution, measurable outcomes, and long-term capacity.
+
+        Caleb graduated summa cum laude from Cornell University with a B.A. in Biology & Society and is an MPH candidate in Health Policy and Management at the Columbia Mailman School of Public Health, where he is a Columbia Public Health Scholarship Award recipient. He is a Senior Research Associate at the Translational Resuscitation Science Laboratory at Weill Cornell Medicine, coordinating clinical data for a multi-site registry in emergency care, and has authored peer-reviewed research in resuscitation science and systems engineering.
+
+        He also founded Operation Golden Shield, a nonprofit started during the COVID pandemic that provides immediate relief to veterans, individuals experiencing homelessness, Afghan refugees, and other vulnerable populations.`,
       },
       {
         id: "martin-shapiro",

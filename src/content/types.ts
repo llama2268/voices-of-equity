@@ -11,12 +11,19 @@ export interface TeamMember {
   linkedin: string;
 }
 
-/** Board of Advisors: a portrait, a name and a title - no profile page. */
+/**
+ * Board of Advisors: a portrait, a name and a title. An advisor who has
+ * sent a biography also gets a profile page behind the card; the others
+ * stay static until theirs arrives.
+ */
 export interface Advisor {
   id: string;
   name: string;
   role: string;
   image: string;
+  fullBio?: string;
+  email?: string;
+  linkedin?: string;
 }
 
 export interface Engineer {

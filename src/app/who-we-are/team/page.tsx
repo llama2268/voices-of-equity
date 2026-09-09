@@ -147,7 +147,7 @@ export default function TeamPage() {
             <PeopleRail label="Board of Advisors">
               {advisors?.map((member, i) => (
                 <Reveal key={member.id} variant="up" delay={i * 80} className="voe-people__item">
-                  <TeamMember {...member} static />
+                  <TeamMember {...member} static={!member.fullBio} />
                 </Reveal>
               ))}
             </PeopleRail>

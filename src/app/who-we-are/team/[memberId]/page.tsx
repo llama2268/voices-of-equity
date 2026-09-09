@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { whoWeArePage } from '@/content';
+import type { Advisor } from '@/content/types';
 import Reveal from '@/components/Animation/Reveal';
 import { Edge, GROUND } from '@/components/Layout/Seam';
 
@@ -14,6 +15,11 @@ import { Edge, GROUND } from '@/components/Layout/Seam';
  */
 function allMembers() {
   return [
+    // Board advisors carry no biography until they send one; the ones who
+    // have get a profile page behind their card, the rest stay static.
+    ...(whoWeArePage.team.advisors as Advisor[]).filter(
+      (a): a is Advisor & { fullBio: string } => Boolean(a.fullBio),
+    ),
     ...whoWeArePage.team.members,
     ...whoWeArePage.team.engineers,
     ...whoWeArePage.team.Media_team,
