@@ -15,7 +15,6 @@ export default function ChapterStub({
   school,
   logo,
   region,
-  presidents,
   foundingYear,
   image,
   imageAlt,
@@ -24,14 +23,12 @@ export default function ChapterStub({
   school: string;
   logo: string;
   region: string;
-  presidents: string;
   foundingYear: string;
   image: string;
   imageAlt: string;
 }) {
   const facts = [
     { label: 'Region', value: region },
-    { label: 'Chapter presidents', value: presidents },
     { label: 'Established', value: foundingYear },
   ];
 

@@ -9,7 +9,6 @@ export default function UPennChapterPage() {
       school="University of Pennsylvania"
       logo="/icons/chapters/University of Pennsylvania.png"
       region="Northeast"
-      presidents="Christina Makinde & Emily Qin"
       foundingYear="2025"
       image="/photos/ucf-tabling.jpg"
       imageAlt="Chapter tabling event"

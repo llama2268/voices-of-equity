@@ -763,8 +763,6 @@
   transition: opacity 320ms var(--voe-ease-out);
 }
 
-/* Chapter directory card: tapped-open state mirrors hover for touch */
-.voe-chapter.is-open .voe-chapter__detail { transform: translateY(0); }
 
 /* ============================================================
    Accessibility

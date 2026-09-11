@@ -9,7 +9,6 @@ export default function HarvardChapterPage() {
       school="Harvard University"
       logo="/partners/harvard.png"
       region="Northeast"
-      presidents="Maryam Al Qaderi & Matteo Burnett"
       foundingYear="2025"
       image="/photos/osu-tabling.jpg"
       imageAlt="Chapter tabling event"
