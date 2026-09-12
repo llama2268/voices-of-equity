@@ -20,6 +20,15 @@ function getInitials(name: string) {
 /**
  * One chapter in the directory: mark, name, region and founding year.
  *
+ * The mark sits in a full-width, fixed-height box rather than a square:
+ * the supplied logos run from square seals to wordmarks nearly six times
+ * wider than they are tall, and a square box shrinks those to a smear.
+ *
+ * Institutions with no logo we can use fall back to a monogram, so
+ * a thin ring and the initials, which reads
+ * as a mark in the same register as the engraved seals beside it rather
+ * than as a missing image.
+ *
  * There used to be a panel that slid up on hover carrying the chapter
  * president's name. Presidents turn over every year, so those names went
  * stale faster than anyone could maintain them and they are gone. What is
@@ -31,18 +40,21 @@ export function ChapterCard({ chapter }: { chapter: ChapterData }) {
 
   return (
     <div className="voe-chapter group relative flex h-full min-h-[11rem] w-full flex-col items-center justify-center gap-0 rounded-2xl border border-[#171219]/8 bg-white p-5 text-center transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(14,26,51,0.14)]">
-      <div className="relative mb-3 flex h-14 w-14 shrink-0 items-center justify-center">
+      <div className="relative mb-3 flex h-14 w-full shrink-0 items-center justify-center">
         {chapter.logo && !logoError ? (
           <Image
             src={chapter.logo}
             alt=""
             fill
             className="object-contain"
-            sizes="56px"
+            sizes="200px"
             onError={() => setLogoError(true)}
           />
         ) : (
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#E6EDFC] font-display text-base font-bold text-[#587FDA]">
+          <div
+            aria-hidden
+            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#C2D1F7] font-display text-[13px] font-bold tracking-[0.08em] text-[#4A6FCC]"
+          >
             {getInitials(chapter.name)}
           </div>
         )}
