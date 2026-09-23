@@ -216,6 +216,17 @@ export const whoWeArePage = {
         He also founded Operation Golden Shield, a nonprofit started during the COVID pandemic that provides immediate relief to veterans, individuals experiencing homelessness, Afghan refugees, and other vulnerable populations.`,
       },
       {
+        id: "adam-milam",
+        name: "Dr. Adam J. Milam",
+        role: "Professor of Anesthesiology, Johns Hopkins Medicine",
+        image: "/team/advisors/adam-milam.jpg",
+        fullBio: `Adam J. Milam, MD, PhD, is Professor of Anesthesiology at the Johns Hopkins University School of Medicine, where he serves as Vice Chair for Health Outcomes in the Department of Anesthesiology and Critical Care Medicine. He is board-certified in both Anesthesiology and Adult Cardiothoracic Anesthesiology. Before Johns Hopkins he was Professor of Anesthesiology at Mayo Clinic Arizona, where he chaired the Health Equity Subcommittee.
+
+        His research is rooted in the practices, policies, and interventions that address health disparities, and extends to the barriers facing a more diverse medical workforce. He has published more than 130 peer-reviewed articles and three book chapters and delivered over 100 national, international, and invited presentations. His findings have reached leading public health and medical journals as well as Men's Health, Rolling Stone, and US News & World Report, and have been used to guide local and state legislation promoting health equity. In 2024 he joined the editorial board of Anesthesia & Analgesia as Executive Editor and Section Editor for the People and Health Advocacy section.
+
+        Dr. Milam graduated from Johns Hopkins University with a B.A. in Public Health and holds a Master of Health Science and a PhD in Public Health from the Department of Mental Health at the Johns Hopkins Bloomberg School of Public Health. He earned his medical degree at Wayne State University School of Medicine, completed his residency at Cedars-Sinai Medical Center, and completed his cardiothoracic anesthesiology fellowship at Cleveland Clinic. He is a fellow of the American Society of Echocardiography, the American Heart Association, and the American Society of Anesthesiologists.`,
+      },
+      {
         id: "martin-shapiro",
         name: "Dr. Martin Shapiro",
         role: "Professor of Medicine, Weill Cornell Medicine",
