@@ -1065,17 +1065,9 @@
 .voe-rail-progress { position: relative; height: 3px; border-radius: 3px; background: rgba(23, 18, 25, 0.1); overflow: hidden; }
 .voe-rail-progress > span { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--voe-green-500); transition: width 200ms ease; }
 
-/* Team portraits: black and white until the pointer is on them, then
-   colour. Where there is no pointer to hover with (phones), colour. */
+/* Team portraits: full colour everywhere, with the slow scale on hover. */
 .voe-portrait img {
-  filter: grayscale(1);
-  transition: filter 600ms var(--voe-ease), transform 700ms var(--voe-ease-out);
-}
-@media (hover: hover) {
-  .group:hover .voe-portrait img { filter: grayscale(0); }
-}
-@media (hover: none) {
-  .voe-portrait img { filter: none; }
+  transition: transform 700ms var(--voe-ease-out);
 }
 
 /* ============================================================

@@ -141,7 +141,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ mem
                 <div className="voe-rule mb-8" />
                 <div className="max-w-2xl space-y-6">
                   {paragraphs.map((paragraph, index) => (
-                    <p key={index} className={index === 0 ? 'voe-lead' : 'leading-relaxed text-[#4A5568] md:text-[17px]'}>
+                    <p key={index} className="leading-relaxed text-[#4A5568] md:text-[17px]">
                       {paragraph}
                     </p>
                   ))}

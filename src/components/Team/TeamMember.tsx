@@ -32,7 +32,7 @@ function getInitials(name: string) {
  * profile; the mail and LinkedIn marks sit outside it so they stay
  * independently clickable. A `static` card (the Board of Advisors) is
  * the portrait, name and title alone - nothing to click through to.
- * Portraits sit in black and white and take colour on hover (.voe-portrait).
+ * Portraits are full colour and scale slightly on hover (.voe-portrait).
  */
 export default function TeamMember({ id, name, role, image, email, linkedin, size = 'default', static: isStatic = false }: TeamMemberProps) {
   const [imgError, setImgError] = useState(false);
