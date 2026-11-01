@@ -1,0 +1,19 @@
+src/content/who-we-are.ts
+  s_28f9cd97f34e1f::t_b0b21c23741bcf 241,245
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1a93cf7196322892df8298f8f23fd5586b540f25",
+  "prompts": {},
+  "sessions": {
+    "s_28f9cd97f34e1f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1e935bcc-ee0e-4559-9c75-e3244fa04b10",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Arnab Ghosh <arnabcare21@gmail.com>"
+    }
+  }
+}
