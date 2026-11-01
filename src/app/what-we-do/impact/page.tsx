@@ -59,11 +59,6 @@ const cbiPhases = [
 
 const partners = [
   {
-    name: 'Operation Golden Shield',
-    description: 'Providing immediate relief to individuals and Veterans experiencing homelessness and food insecurity.',
-    href: '/resources/partners',
-  },
-  {
     name: 'The Phoenix',
     description: 'A free sober active community fostering health, healing, and connection through movement.',
     href: '/resources/partners',

@@ -25,13 +25,6 @@ const partnerGroups = [
         handout: '/phoenixhandout.pdf',
         description:
           'Recovery community programs and partnerships built around support, connection, and long-term stability.'
-      },
-      {
-        name: 'Operation Golden Shield',
-        logo: '/operationgoldenshield.jpg',
-        website: 'https://operationgoldenshield.com/',
-        description:
-          'Community recovery and support partnership extending resources and services for people impacted by addiction and instability.'
       }
     ]
   }
