@@ -51,9 +51,9 @@ export default function MissionPage() {
         eyebrow="Who We Are"
         title="Our Mission"
         subtitle={introduction.text}
-        image="/team-picture.jpg"
-        imageAlt="The Voices of Equity team"
-        objectPosition="center 38%"
+        image="/photos/gbm-brainstorm.jpg"
+        imageAlt="Voices of Equity members at a chapter brainstorm session"
+        objectPosition="center 40%"
       />
 
       {/* ─── 2. The mission, set large, with the pillars hanging off it ── */}

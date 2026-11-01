@@ -27,7 +27,7 @@ const MEDIA: Record<string, Pick<Milestone, 'image' | 'objectPosition' | 'stats'
     stats: [{ value: 30, suffix: '+', label: 'Active chapters' }],
   },
   'AUG 2025': {
-    image: '/team-picture.jpg',
+    image: '/photos/gbm-brainstorm.jpg',
     stats: [
       { value: 100, suffix: '+', label: 'Student leaders' },
       { value: 40, suffix: '+', label: 'Institutions' },
@@ -65,7 +65,7 @@ export default function HistoryPage() {
     .filter((e) => 'title' in e && 'description' in e && !!e.title && !!e.description)
     .map((e) => {
       const key = String(e.year);
-      const media = MEDIA[key] ?? { image: '/team-picture.jpg' };
+      const media = MEDIA[key] ?? { image: '/photos/gbm-brainstorm.jpg' };
       return {
         year: key,
         title: (e as { title: string }).title,
