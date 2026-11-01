@@ -1,0 +1,19 @@
+src/app/who-we-are/history/page.tsx
+  s_28f9cd97f34e1f::t_29302f2f9654ad 21,103-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "25fb8ce02bcee6f66b61ab1d1240568f53fad230",
+  "prompts": {},
+  "sessions": {
+    "s_28f9cd97f34e1f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1e935bcc-ee0e-4559-9c75-e3244fa04b10",
+        "model": "unknown"
+      },
+      "human_author": "Arnab Ghosh <arnabcare21@gmail.com>"
+    }
+  }
+}
