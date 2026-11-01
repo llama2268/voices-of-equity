@@ -1,0 +1,21 @@
+src/app/who-we-are/history/page.tsx
+  s_28f9cd97f34e1f::t_8803c60e8215b5 30,68
+src/app/who-we-are/mission/page.tsx
+  s_28f9cd97f34e1f::t_934b3c995c871c 54-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f7c5eeade1bf76301fd7260e8f8f784329062684",
+  "prompts": {},
+  "sessions": {
+    "s_28f9cd97f34e1f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1e935bcc-ee0e-4559-9c75-e3244fa04b10",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Arnab Ghosh <arnabcare21@gmail.com>"
+    }
+  }
+}
