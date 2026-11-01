@@ -205,17 +205,6 @@ export const whoWeArePage = {
     /* The Board of Advisors: portrait, name and title only. */
     advisors: [
       {
-        id: "caleb-suh",
-        name: "Caleb T. Suh",
-        role: "Co-Founder & Board Chair",
-        image: "/team/advisors/caleb-suh.jpg",
-        fullBio: `Caleb T. Suh co-founded Voices of Equity and serves as Chair of the Board of Advisors. He previously served as Co-Executive Director from 2024 to 2026, where he set strategic direction, ran national operations, and built the chapter structure and internal systems the organization scaled on. His work focused on clear execution, measurable outcomes, and long-term capacity.
-
-        Caleb graduated summa cum laude from Cornell University with a B.A. in Biology & Society and is an MPH candidate in Health Policy and Management at the Columbia Mailman School of Public Health, where he is a Columbia Public Health Scholarship Award recipient. He is a Senior Research Associate at the Translational Resuscitation Science Laboratory at Weill Cornell Medicine, coordinating clinical data for a multi-site registry in emergency care, and has authored peer-reviewed research in resuscitation science and systems engineering.
-
-        He also founded Operation Golden Shield, a nonprofit started during the COVID pandemic that provides immediate relief to veterans, individuals experiencing homelessness, Afghan refugees, and other vulnerable populations.`,
-      },
-      {
         id: "adam-milam",
         name: "Dr. Adam J. Milam",
         role: "Professor of Anesthesiology, Johns Hopkins Medicine",
@@ -249,11 +238,11 @@ export const whoWeArePage = {
       {
         id: "zaid-al-shoha",
         name: "Zaid Al-Shoha",
-        role: "Co-Founder & Executive Director",
+        role: "Executive Director",
         image: "/zaid-headshot.png",
         shortBio:
           "Zaid Al-Shoha leads a national, student-led movement working to address disparities in healthcare access and outcomes.",
-        fullBio: `As Co-Founder & Executive Director of Voices of Equity, Zaid Al-Shoha leads a national, student-led movement working to address disparities in healthcare access and outcomes. He is responsible for the organization's strategic direction, building collaborative partnerships, and developing community-centered solutions that reach students and communities nationwide. Through this work, he strives to bridge gaps in access to quality care, inspire future healthcare leaders, and develop scalable approaches to inequity within the medical field. Zaid is a recipient of the Arab America Foundation's 30 Under 30.
+        fullBio: `As Executive Director of Voices of Equity, Zaid Al-Shoha leads a national, student-led movement working to address disparities in healthcare access and outcomes. He is responsible for the organization's strategic direction, building collaborative partnerships, and developing community-centered solutions that reach students and communities nationwide. Through this work, he strives to bridge gaps in access to quality care, inspire future healthcare leaders, and develop scalable approaches to inequity within the medical field. Zaid is a recipient of the Arab America Foundation's 30 Under 30.
 
         Zaid is an undergraduate at Cornell University studying Biological Sciences on the premedical track, with aspirations in academic medicine. At Cornell, he leads a health equity research team investigating frameworks for undergraduate-led community health work. He also conducts cardiac surgery outcomes research at Yale School of Medicine, neuroregeneration research in the Lin Lab, and translational cancer research at the National Institutes of Health. He is interested in advancing public health through academic medicine by developing innovative, scalable approaches to improving health outcomes in underserved communities.`,
         email: "zalshoha29@gmail.com",
