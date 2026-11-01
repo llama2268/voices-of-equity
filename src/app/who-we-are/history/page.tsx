@@ -18,7 +18,7 @@ import { Edge, GROUND } from '@/components/Layout/Seam';
 type Milestone = RailMilestone;
 
 const MEDIA: Record<string, Pick<Milestone, 'image' | 'objectPosition' | 'stats' | 'href' | 'cta'>> = {
-  'DEC 2024': { image: '/photos/founding-team.jpg', objectPosition: 'center 45%' },
+  'DEC 2024': { image: '/cornell-chapter.jpg', objectPosition: 'center 45%' },
   'JAN 2025': { image: '/cornell-chapter.jpg' },
   'FEB 2025': { image: '/impact-photos/cmu-1.jpeg', objectPosition: 'center 30%' },
   'MAR 2025': { image: '/impact-photos/howard-1.jpeg' },
@@ -100,8 +100,8 @@ export default function HistoryPage() {
                 <div className="relative">
                   <div className="voe-photo voe-ar-landscape shadow-[0_24px_60px_rgba(14,26,51,0.16)]">
                     <ParallaxFill
-                      src="/photos/founding-team.jpg"
-                      alt="The founding Voices of Equity team at Cornell"
+                      src="/cornell-chapter.jpg"
+                      alt="Voices of Equity at Cornell"
                       strength={50}
                       objectPosition="center 45%"
                       sizes="(max-width: 1024px) 100vw, 45vw"
