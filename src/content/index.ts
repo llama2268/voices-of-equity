@@ -6,6 +6,7 @@ export * from './what-we-do'
 export * from './get-involved'
 export * from './resources'
 export * from './contact'
+export * from './statement'
 
 // Re-export everything for convenience
 export { siteConfig, navigation } from './site'

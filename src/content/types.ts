@@ -211,3 +211,16 @@ export interface ChapterReflection {
   semester: string;
   featured?: boolean;
 }
+
+
+export type StatementSegment = string | { em: string }
+
+export interface StatementPageContent {
+  navTitle: string
+  title: string
+  eyebrow: string
+  heading: string
+  paragraphs: StatementSegment[][]
+  signature: string
+  date: string
+}

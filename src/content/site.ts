@@ -48,6 +48,7 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
         { title: 'Contact Us', href: '/contact' }
       ],
     },
+    { title: 'STATEMENT', href: '/statement' },
   ],
   footerNav: {
     about: [
