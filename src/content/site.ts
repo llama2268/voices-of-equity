@@ -38,9 +38,9 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
         { title: 'Our Resources', href: '/resources' },
         { title: 'VoE Grant', href: '/resources/grants' },
         { title: 'Our Partners', href: '/resources/partners' },
-        { title: 'Equity Archive', href: '/resources/archive' }
       ],
     },
+    { title: 'EQUITY ARCHIVE', href: '/resources/archive' },
     {
       title: 'GET INVOLVED',
       submenu: [
@@ -48,7 +48,6 @@ export const navigation: { mainNav: NavItem[]; footerNav: Record<string, Array<{
         { title: 'Contact Us', href: '/contact' }
       ],
     },
-    { title: 'STATEMENT', href: '/statement' },
   ],
   footerNav: {
     about: [
