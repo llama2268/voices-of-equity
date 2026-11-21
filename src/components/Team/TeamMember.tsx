@@ -41,7 +41,7 @@ export default function TeamMember({ id, name, role, image, email, linkedin, siz
   const card = (
     <>
       <div className="voe-photo voe-portrait voe-ar-portrait rounded-2xl shadow-[0_14px_36px_rgba(14,26,51,0.10)] transition-shadow duration-300 group-hover:shadow-[0_24px_54px_rgba(14,26,51,0.16)]">
-        {imgError ? (
+        {imgError || !image ? (
           <div className="absolute inset-0 flex items-center justify-center bg-[#587FDA]">
             <span className="font-display text-3xl font-bold text-white">{getInitials(name)}</span>
           </div>

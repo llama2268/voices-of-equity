@@ -46,7 +46,7 @@ export const resourcesPage = {
             title: "Episode 1: B.A.D.",
             description:
               "The opening episode of our documentary series on addiction, health care, and equity.",
-            videoId: "xT4J0kljvu0",
+            videoId: "Jy4KUaU2ntY",
             status: "released",
           },
           {
@@ -54,7 +54,7 @@ export const resourcesPage = {
             title: "Episode 2",
             description:
               "Episode 2 of our documentary series on addiction, health care, and equity.",
-            videoId: "9SbBiFzP43A",
+            videoId: "6ua1z91E3MY",
             status: "released",
           },
           {
@@ -62,7 +62,7 @@ export const resourcesPage = {
             title: "Episode 3",
             description:
               "Episode 3 of our documentary series on addiction, health care, and equity.",
-            videoId: "iE86E4O0rn0",
+            videoId: "M2-nJHU5HfU",
             status: "released",
           },
           {
@@ -70,7 +70,7 @@ export const resourcesPage = {
             title: "Episode 4",
             description:
               "Episode 4 of our documentary series on addiction, health care, and equity.",
-            videoId: "RVPqdXU5wVI",
+            videoId: "GVt-a4zRs1M",
             status: "released",
           },
           {
@@ -78,7 +78,7 @@ export const resourcesPage = {
             title: "Episode 5",
             description:
               "Episode 5 of our documentary series on addiction, health care, and equity.",
-            videoId: "I7J2IrFM31U",
+            videoId: "20WPCq4qJa8",
             status: "released",
           },
           {
@@ -86,7 +86,7 @@ export const resourcesPage = {
             title: "Episode 6",
             description:
               "Episode 6 of our documentary series on addiction, health care, and equity.",
-            videoId: "F5-GiRqlzGA",
+            videoId: "8ix6NQjxrZw",
             status: "released",
           },
           {
@@ -94,7 +94,7 @@ export const resourcesPage = {
             title: "Episode 7",
             description:
               "Episode 7 of our documentary series on addiction, health care, and equity.",
-            videoId: "mi1hZTdchKs",
+            videoId: "BFFnsPvSOQ0",
             status: "released",
           },
         ] satisfies DocumentaryEpisode[],

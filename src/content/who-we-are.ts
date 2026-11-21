@@ -281,6 +281,34 @@ export const whoWeArePage = {
         email: "",
         linkedin: "",
       },
+      {
+        id: "adam-jac",
+        name: "Adam Jac",
+        role: "Executive Director of Philanthropy",
+        image: "/team/adam-jac.jpg",
+        shortBio:
+          "Adam Jac is a masters student at Cornell University in Biomedical Engineering...",
+        fullBio: `Adam Jac is a masters student at Cornell University in Biomedical Engineering and plans on pursuing medical school. 
+        He is passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical 
+        experience to drive meaningful change in healthcare access and outcomes. 
+        As the Executive Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives such as National Health 
+        Equity Week and the CARE packet project that align with the organization's mission to address systemic health disparities. 
+        He designs and oversees large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with 
+        chapters to execute impactful philanthropic events. 
+        Additionally, he plays a key role in developing partnerships with organizations that support Voices of Equity's philanthropic goals,
+        ensuring sustainable funding for health equity initiatives.
+
+
+
+        Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary
+         care settings, gaining first hand exposure to the challenges patients face in accessing care. 
+        He conducts clinical research with the Department of Plastic Surgery at Beth Israel Deaconess Medical Center and has started a project at 
+        the DeLisa Research Group at Cornell, where he has received two grants to continue testing ubiquibodies in cancer research. 
+        His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.
+        `,
+        email: "Aj439@cornell.edu",
+        linkedin: "https://www.linkedin.com/in/adam-jac-41a833299/",
+      },
     ] satisfies TeamMember[],
     engineers: [
       {
@@ -342,6 +370,40 @@ export const whoWeArePage = {
         fullBio: `I'm Nina Mananu, a Health Sciences student at Ithaca College, designing my own major in Health Data Analytics with a pre-Physician Assistant track, because I believe the future of healthcare lies at the intersection of data, compassion, and equity. As a Certified Nursing Assistant in the Telemetry Unit at Cayuga Medical Center, I witness the direct impact of health disparities on patients. In the Kari Bossard-Stoos Lab, I analyze antibiotic resistance data that reveals larger patterns of environmental and healthcare inequity. These experiences taught me that understanding health data is only half the battle, communicating it accessibly is what creates real change.
 
         That's why my work extends beyond the hospital and lab. As Director of Community Outreach for Voices of Equity at Ithaca College, Physician Assistant Chair for IC Pre-Health Society, Vice President of the African Student Association, Senior Editor for HerCampus, and a volunteer with New York Cares, I've learned that representation matters. In healthcare leadership, in the media, and in who gets to tell their own story. Growing up in NYC, I saw how information gaps become barriers to care, and now every role I hold is part of dismantling those barriers. When I'm not working, writing, or leading, you'll find me cheering for Ithaca College, running, reading, crocheting, or chasing warm weather wherever I can find it.`,
+        email: "",
+        linkedin: "",
+      },
+      {
+        id: "alana-guo",
+        name: "Alana Guo",
+        role: "Outreach Undergraduate Liaison",
+        image: "/team/alana-guo.jpg",
+        shortBio:
+          "Alana Guo is a biology student at The Ohio State University who connects the National Team with individual chapters.",
+        fullBio: `Alana Guo is a biology student on the pre-health track at The Ohio State University College of Arts and Sciences. Health equity is a strong driving force in her work. Pursuing a certificate in medical anthropology, she is committed to learning about how political, social, and cultural forces shape how individuals experience illness, seek care, and recover.
+
+        As Outreach Undergraduate Liaison, she serves as a point of contact between the National Team and individual chapters helping new chapters navigate registration and onboarding while strengthening engagement among existing chapters.
+
+        As a volunteer case worker for the Red Cross, she helps clients who have been impacted by disaster pave a road to recovery. This experience has shown her how unexpected crises can influence physical and mental health outcomes, and why access to community-based support systems matter.
+
+        Alana’s research spans the lab and the community. She conducted microbiology research focusing on the role of teichoic acids on the structure and growth of rod-shaped bacteria, and is currently assisting a study on fentanyl testing that aims to shed light on drug use behavior and perceptions, identify populations at greater risk of overdose, and strengthen fentanyl overdose prevention efforts.`,
+        email: "",
+        linkedin: "",
+      },
+      {
+        id: "paul-nowosielski",
+        name: "Paul Nowosielski",
+        role: "High School Chapter Development Lead",
+        image: "/team/paul-nowosielski.jpg",
+        shortBio:
+          "Paul Nowosielski is a Health Care Policy student at Cornell University expanding health equity education for high school students.",
+        fullBio: `Paul Nowosielski is an undergraduate student at Cornell University studying Health Care Policy, with a strong interest in healthcare equity, accessibility, and community engagement. He serves as the High School Chapter Development Lead for Voices of Equity, where he works to expand health equity education and engagement opportunities for high school students. Through this role, he focuses on developing partnerships with local schools, promoting student leadership, and creating opportunities for young people to become involved in addressing healthcare disparities.
+
+        Beyond Voices of Equity, Paul is the founder of The Juria Project, an open-source initiative dedicated to improving outdoor accessibility for individuals with disabilities. Through the development of an adaptive mobility device known as The Juria, he has worked to address barriers that prevent individuals with mobility limitations from fully participating in outdoor activities. His work reflects a broader commitment to developing practical solutions that promote independence, inclusion, and equal access to recreational opportunities.
+
+        Paul is also actively involved in GlobeMed, HEART (Health Education Awareness Raising Together), and Phi Delta Epsilon, Cornell's premedical fraternity. Through these organizations, he contributes to initiatives centered on health education, community service, and addressing disparities in healthcare access. Additionally, Paul serves as a volunteer Emergency Medical Technician (EMT) with the Varna Volunteer Fire Company, where he participates in emergency medical response, training, and community service. His experiences in emergency medicine have strengthened his ability to work collaboratively under pressure while providing care to individuals during critical moments.
+
+        Outside of his academic and extracurricular commitments, Paul enjoys sailing, an activity that has strengthened his appreciation for teamwork, adaptability, and perseverance. At the core of his work is a commitment to equity, accessibility, and service, using student leadership, healthcare experience, and community engagement to create meaningful opportunities for others.`,
         email: "",
         linkedin: "",
       },
@@ -474,32 +536,36 @@ export const whoWeArePage = {
     ] satisfies Media[],
     Philanthrophy: [
       {
-        id: "adam-jac",
-        name: "Adam Jac",
+        id: "signe-reichrath",
+        name: "Signe Reichrath",
         role: "National Director of Philanthropy",
-        image: "/team/adam-jac.jpg",
+        image: "/team/signe-reichrath.jpg",
         shortBio:
-          "Adam Jac is a masters student at Cornell University in Biomedical Engineering...",
-        fullBio: `Adam Jac is a masters student at Cornell University in Biomedical Engineering and plans on pursuing medical school. 
-        He is passionate about surgery and advancing health equity, Adam is committed to leveraging philanthropy, research, and clinical 
-        experience to drive meaningful change in healthcare access and outcomes. 
-        As the National Director of Philanthropy at Voices of Equity, Adam leads national philanthropic initiatives such as National Health 
-        Equity Week and the CARE packet project that align with the organization's mission to address systemic health disparities. 
-        He designs and oversees large-scale fundraising campaigns, supports national projects and chapter activities, and collaborates with 
-        chapters to execute impactful philanthropic events. 
-        Additionally, he plays a key role in developing partnerships with organizations that support Voices of Equity's philanthropic goals,
-        ensuring sustainable funding for health equity initiatives.
+          "Signe Reichrath is a postbaccalaureate research technician at the Georgia Institute of Technology and founder of VoE's Georgia Tech chapter.",
+        fullBio: `Signe Reichrath is a postbaccalaureate research technician at the Georgia Institute of Technology, where she earned her Bachelors of Science in Neuroscience. As a member of SipLab, she investigates the neural circuitry underlying decision-making in individuals with major depressive disorder, epilepsy, and multiple sclerosis. She aspires to pursue a career as a physician-scientist, focusing on autonomic disorders, rare diseases, and translational neuroscience.
 
+        Throughout her academic and premedical experiences, Signe has worked with underserved patient populations in both urban and suburban healthcare settings. Her volunteer work at a local community clinic and an urban pediatric emergency department has deepened her understanding of socioeconomic disparities in healthcare access and outcomes. Motivated by these experiences, she became involved with Voices of Equity in November 2025 and founded the organization's Georgia Tech chapter in March 2026.
 
+        Through her research, clinical experiences, and leadership, Signe is committed to advancing healthcare equity, particularly by addressing sex-based disparities in medicine, financial barriers to care, and the challenges faced by individuals living with chronic illnesses. As National Philanthropy Director, she hopes to develop meaningful, hands-on initiatives that empower local chapters to address healthcare disparities within their communities while contributing to broader efforts nationwide. Signe is excited to serve on the national leadership team and looks forward to expanding the organization's philanthropic impact while inspiring future healthcare leaders to become advocates for a more equitable medical system.`,
+        email: "",
+        linkedin: "",
+      },
+      {
+        id: "anushka-peer",
+        name: "Anushka Peer",
+        role: "National Grant Director",
+        image: "/team/anushka-peer.jpg",
+        shortBio:
+          "Anushka Peer is an undergraduate at Duke University researching external funding opportunities to support VoE's initiatives.",
+        fullBio: `Anushka Peer is an undergraduate at Duke University majoring in biochemistry with minors in medical sociology and global health. She is passionate about community-centered care and health education, particularly for rural, underserved, and low-income populations worldwide, and plans to pursue an MD/PhD as a physician-scientist.
 
-        Beyond his work at Voices of Equity, Adam has extensive clinical and research experience. He is a certified EMT and has worked in primary
-         care settings, gaining first hand exposure to the challenges patients face in accessing care. 
-        He conducts clinical research with the Department of Plastic Surgery at Beth Israel Deaconess Medical Center and has started a project at 
-        the DeLisa Research Group at Cornell, where he has received two grants to continue testing ubiquibodies in cancer research. 
-        His diverse experiences in medicine, research, and philanthropy fuel his commitment to creating tangible solutions that bridge gaps in healthcare access.
-        `,
-        email: "Aj439@cornell.edu",
-        linkedin: "https://www.linkedin.com/in/adam-jac-41a833299/",
+        As National Grant Writer on Voices of Equity’s Philanthropy Team, she researches external funding opportunities to support VoE's primary initiatives and overall mission to reduce systemic health disparities. She is also Co-Director of Duke’s VoE chapter, where she brings her national experience to health education and equity efforts on campus and across the Durham community.
+
+        Outside of VoE, she conducts microbiology research, which was nationally recognized with a 2026 Barry M. Goldwater Scholarship. She also conducts global health fieldwork spanning the United Kingdom, Ghana, and Tanzania during her summers. Clinically, she works as a patient navigator at the Duke Spine Center to support the postoperative outcome of surgery patients and volunteers at mobile free clinics during the weekends.
+
+        She currently serves as a grant-writer for the Goldwater Scholars Community and is an undergraduate representative for the Duke-UNC Alzheimer’s Disease Advisory Committee, both valuable experiences that informs the expertise and knowledge she hopes to bring to VoE’s Philanthropy Team.`,
+        email: "",
+        linkedin: "",
       },
       {
         id: "lucas-santos",
@@ -558,7 +624,7 @@ export const whoWeArePage = {
       {
         id: "jimmy-quinlan-vox",
         name: "Jimmy Quinlan",
-        role: "Acting VOX Equity Exeuctive Director",
+        role: "Acting VOX Equity Executive Director",
         image: "/jimmy.jpg",
         shortBio:
           "Jimmy Quinlan serves as a student leader, organizer, and builder across...",
